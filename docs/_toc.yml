@@ -1,0 +1,34 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: modules/1-1._Intro_to_ModelBuilder
+- file: modules/2-1._Python_Notebook
+  sections:
+  - file: modules/2-2._Markdown
+  - file: modules/2-3._Data_Types
+  - file: modules/2-4._Control_Structure
+- file: modules/3-1._More_Data_Types_in_Python
+  sections:
+  - file: modules/3-2._Control_Flow_and_Exception
+  - file: modules/3-3._Python_Function
+- file: modules/4-1._ArcPy_Basics
+  sections:
+  - file: modules/4-2._Running_ArcPy_functions
+  - file: modules/4-3._Using_ArcPy_to_Select
+- file: modules/5-1._Intro_to_NumPy
+  sections:
+  - file: modules/5-2._Intro_to_Pandas
+- file: modules/6-1._Intro_to_Matplotlib
+  sections:
+  - file: modules/6-2._Intro_to_ArcGIS_API_for_Python
+- file: modules/7-1._Raster_Analysis_Basics
+  sections:
+  - file: modules/7-2._ArcPy_Raster
+- file: modules/8-1._develop_a_script_file
+  sections:
+  - file: modules/8-2._setup_for_a_script_tool
+  - file: modules/8-3._additional_features_for_script_tool
+- file: modules/9._Problem_Solving_in_Python_and_GIS
