@@ -21,17 +21,21 @@ chapters:
   - file: modules/4-2._ArcPy_Basics
   - file: modules/4-3._Running_ArcPy_functions
   - file: modules/4-4._Using_ArcPy_to_Select
-- file: modules/5-1._Intro_to_NumPy
+- file: modules/5-0SciPy_Landing
   sections:
+  - file: modules/5-1._Intro_to_NumPy
   - file: modules/5-2._Intro_to_Pandas
-- file: modules/6-1._Intro_to_Matplotlib
+- file: modules/6-0Vizualization_Landing
   sections:
+  - file: modules/6-1._Intro_to_Matplotlib
   - file: modules/6-2._Intro_to_ArcGIS_API_for_Python
-- file: modules/7-1._Raster_Analysis_Basics
+- file: modules/7-0Raster_Landing
   sections:
+  - file: modules/7-1._Raster_Analysis_Basics
   - file: modules/7-2._ArcPy_Raster
-- file: modules/8-1._develop_a_script_file
+- file: modules/8-0Tool_Landing
   sections:
+  - file: modules/8-1._develop_a_script_file
   - file: modules/8-2._setup_for_a_script_tool
   - file: modules/8-3._additional_features_for_script_tool
 - file: modules/9._Problem_Solving_in_Python_and_GIS
