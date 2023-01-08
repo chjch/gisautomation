@@ -1,0 +1,8 @@
+div.cell_output table {
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: black;
+    font-size: 10pt;
+    table-layout: fixed;
+}
