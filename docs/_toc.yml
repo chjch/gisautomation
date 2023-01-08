@@ -3,39 +3,46 @@
 format: jb-book
 root: intro
 chapters:
-- file: modules/1-1._Intro_to_ModelBuilder
-- file: modules/2-0Python_Landing
-  sections:
-  - file: modules/2-1._Python_Notebook
-  - file: modules/2-2._Markdown
-  - file: modules/2-3._Data_Types
-  - file: modules/2-4._Control_Structure
-- file: modules/3-0Data_Types_Landing
-  sections:
-  - file: modules/3-1._More_Data_Types_in_Python
-  - file: modules/3-2._Control_Flow_and_Exception
-  - file: modules/3-3._Python_Function
-- file: modules/4-0ArcPy_Landing
-  sections:
-  - file: modules/4-1._Open_Notebook_from_Browser
-  - file: modules/4-2._ArcPy_Basics
-  - file: modules/4-3._Running_ArcPy_functions
-  - file: modules/4-4._Using_ArcPy_to_Select
-- file: modules/5-0SciPy_Landing
-  sections:
-  - file: modules/5-1._Intro_to_NumPy
-  - file: modules/5-2._Intro_to_Pandas
-- file: modules/6-0Vizualization_Landing
-  sections:
-  - file: modules/6-1._Intro_to_Matplotlib
-  - file: modules/6-2._Intro_to_ArcGIS_API_for_Python
-- file: modules/7-0Raster_Landing
-  sections:
-  - file: modules/7-1._Raster_Analysis_Basics
-  - file: modules/7-2._ArcPy_Raster
-- file: modules/8-0Tool_Landing
-  sections:
-  - file: modules/8-1._develop_a_script_file
-  - file: modules/8-2._setup_for_a_script_tool
-  - file: modules/8-3._additional_features_for_script_tool
-- file: modules/9._Problem_Solving_in_Python_and_GIS
+  - file: modules/1-1.Intro_to_ModelBuilder
+  - file: modules/2-0.Python_Landing
+    sections:
+      - file: modules/2-1.Python_Notebook
+      - file: modules/2-2.Markdown
+      - file: modules/2-3.Data_Types
+      - file: modules/2-4.Control_Structure
+  - file: modules/3-0.Data_Types_Landing
+    sections:
+      - file: modules/3-1.More_Data_Types_in_Python
+      - file: modules/3-2.Control_Flow_and_Exception
+      - file: modules/3-3.Python_Function
+  - file: modules/4-0.ArcPy_Landing
+    sections:
+      - file: modules/4-1.Open_Notebook_from_Browser
+      - file: modules/4-2.ArcPy_Basics
+      - file: modules/4-3.Running_ArcPy_functions
+      - file: modules/4-4.Using_ArcPy_to_Select
+  - file: modules/5-0.SciPy_Landing
+    sections:
+      - file: modules/5-1.Intro_to_NumPy
+      - file: modules/5-2.Intro_to_Pandas
+  - file: modules/6-0.Visualization_Landing
+    sections:
+      - file: modules/6-1.Intro_to_Matplotlib
+      - file: modules/6-2.Intro_to_ArcGIS_API_for_Python
+  - file: modules/7-0.Raster_Landing
+    sections:
+      - file: modules/7-1.Raster_Analysis_Basics
+      - file: modules/7-2.ArcPy_Raster
+  - file: modules/8-0.Tool_Landing
+    sections:
+      - file: modules/8-1.develop_a_script_file
+      - file: modules/8-2.setup_for_a_script_tool
+      - file: modules/8-3.additional_features_for_script_tool
+  - file: modules/9.Problem_Solving_in_Python_and_GIS
+  - file: homework/homework_problems
+    sections:
+      - file: homework/homework1
+      - file: homework/homework2
+      - file: homework/homework3
+      - file: homework/homework4
+      - file: homework/homework5
