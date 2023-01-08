@@ -3,13 +3,13 @@
 
 title: Automation for Geospatial Modeling and Analysis
 author: Changjie Chen
-copyright: "2022" 
+copyright: "2023"
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: 'off'
+  execute_notebooks: 'force'
 
 # Define the name of the latex output file for PDF builds
 latex:
