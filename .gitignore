@@ -1,6 +1,4 @@
 .vscode/
-_build/.doctrees/
-_build/jupyter_execute/
 .ipynb_checkpoints/
 .idea/
 *.gdb/
