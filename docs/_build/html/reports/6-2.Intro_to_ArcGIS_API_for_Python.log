@@ -1,0 +1,70 @@
+Traceback (most recent call last):
+  File "C:\Users\chjch\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+    executenb(
+  File "C:\Users\chjch\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Users\chjch\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\Users\chjch\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\Users\chjch\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\Users\chjch\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\chjch\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\chjch\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+blkgrp_sedf = pd.DataFrame.spatial.from_featureclass(blkgrp_fc)
+blkgrp_sedf.head()
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mValueError[0m                                Traceback (most recent call last)
+[1;32m~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\arcgis\features\geo\_io\fileops.py[0m in [0;36mfrom_featureclass[1;34m(filename, **kwargs)[0m
+[0;32m    579[0m         [1;32mtry[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[1;32m--> 580[1;33m             [0mdesc[0m [1;33m=[0m [0marcpy[0m[1;33m.[0m[0mda[0m[1;33m.[0m[0mDescribe[0m[1;33m([0m[0mfilename[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m    581[0m             [0marea_field[0m [1;33m=[0m [0mdesc[0m[1;33m.[0m[0mpop[0m[1;33m([0m[1;34m"areaFieldName"[0m[1;33m,[0m [1;32mNone[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+
+[1;31mValueError[0m: Object: Error in accessing describe
+
+During handling of the above exception, another exception occurred:
+
+[1;31mOSError[0m                                   Traceback (most recent call last)
+[1;32m<ipython-input-5-6baa35b38315>[0m in [0;36m<module>[1;34m[0m
+[1;32m----> 1[1;33m [0mblkgrp_sedf[0m [1;33m=[0m [0mpd[0m[1;33m.[0m[0mDataFrame[0m[1;33m.[0m[0mspatial[0m[1;33m.[0m[0mfrom_featureclass[0m[1;33m([0m[0mblkgrp_fc[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m      2[0m [0mblkgrp_sedf[0m[1;33m.[0m[0mhead[0m[1;33m([0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+
+[1;32m~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\arcgis\features\geo\_accessor.py[0m in [0;36mfrom_featureclass[1;34m(location, **kwargs)[0m
+[0;32m   2731[0m             [0mA[0m [0mpandas[0m[1;33m.[0m[0mcore[0m[1;33m.[0m[0mframe[0m[1;33m.[0m[0mDataFrame[0m [0mobject[0m[1;33m[0m[1;33m[0m[0m
+[0;32m   2732[0m         """
+[1;32m-> 2733[1;33m         [1;32mreturn[0m [0mfrom_featureclass[0m[1;33m([0m[0mfilename[0m[1;33m=[0m[0mlocation[0m[1;33m,[0m [1;33m**[0m[0mkwargs[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m   2734[0m [1;33m[0m[0m
+[0;32m   2735[0m     [1;31m# ----------------------------------------------------------------------[0m[1;33m[0m[1;33m[0m[0m
+
+[1;32m~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\arcgis\features\geo\_io\fileops.py[0m in [0;36mfrom_featureclass[1;34m(filename, **kwargs)[0m
+[0;32m    582[0m             [0mlength_field[0m [1;33m=[0m [0mdesc[0m[1;33m.[0m[0mpop[0m[1;33m([0m[1;34m"lengthFieldName"[0m[1;33m,[0m [1;32mNone[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0;32m    583[0m         [1;32mexcept[0m[1;33m:[0m  [1;31m# for older versions of arcpy[0m[1;33m[0m[1;33m[0m[0m
+[1;32m--> 584[1;33m             [0mdesc[0m [1;33m=[0m [0marcpy[0m[1;33m.[0m[0mDescribe[0m[1;33m([0m[0mfilename[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m    585[0m             [0mdesc[0m [1;33m=[0m [1;33m{[0m[1;34m"fields"[0m[1;33m:[0m [0mdesc[0m[1;33m.[0m[0mfields[0m[1;33m,[0m [1;34m"shapeType"[0m[1;33m:[0m [0mdesc[0m[1;33m.[0m[0mshapeType[0m[1;33m}[0m[1;33m[0m[1;33m[0m[0m
+[0;32m    586[0m             [0marea_field[0m [1;33m=[0m [0mgetattr[0m[1;33m([0m[0mdesc[0m[1;33m,[0m [1;34m"areaFieldName"[0m[1;33m,[0m [1;32mNone[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+
+[1;32mC:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\__init__.py[0m in [0;36mDescribe[1;34m(value, data_type)[0m
+[0;32m   1273[0m        [1;32mclass[0m [1;32mwith[0m [0mthe[0m [0msame[0m [0mname[0m[1;33m.[0m [0mIn[0m [0mthis[0m [0mcase[0m[1;33m,[0m [0mthe[0m [0mdata[0m [0mtype[0m [1;32mis[0m [0mused[0m [0mto[0m [0mclarify[0m[1;33m[0m[1;33m[0m[0m
+[0;32m   1274[0m        which dataset you want to describe."""
+[1;32m-> 1275[1;33m     [1;32mreturn[0m [0mgp[0m[1;33m.[0m[0mdescribe[0m[1;33m([0m[0mvalue[0m[1;33m,[0m [0mdata_type[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m   1276[0m [1;33m[0m[0m
+[0;32m   1277[0m [1;32mdef[0m [0mCreateObject[0m[1;33m([0m[0mname[0m[1;33m,[0m [0moptions[0m[1;33m=[0m[1;32mNone[0m[1;33m)[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+
+[1;32mC:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py[0m in [0;36mdescribe[1;34m(self, *args)[0m
+[0;32m    382[0m         [1;32mfrom[0m [0marcpy[0m[1;33m.[0m[0marcobjects[0m[1;33m.[0m[0marcobjectconversion[0m [1;32mimport[0m [0mconvertArcObjectToPythonObject[0m[1;33m[0m[1;33m[0m[0m
+[0;32m    383[0m         return convertArcObjectToPythonObject(
+[1;32m--> 384[1;33m                     self._gp.Describe(*gp_fixargs(args, True)))
+[0m[0;32m    385[0m     [1;32mdef[0m [0mcreateObject[0m[1;33m([0m[0mself[0m[1;33m,[0m [1;33m*[0m[0margs[0m[1;33m)[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[0;32m    386[0m         [1;34m"""GP function CreateObject"""[0m[1;33m[0m[1;33m[0m[0m
+
+[1;31mOSError[0m: "blockgroups" does not exist
+OSError: "blockgroups" does not exist
+

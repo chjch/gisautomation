@@ -1,0 +1,50 @@
+Traceback (most recent call last):
+  File "C:\Users\chjch\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+    executenb(
+  File "C:\Users\chjch\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Users\chjch\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\Users\chjch\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\Users\chjch\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\Users\chjch\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\chjch\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\chjch\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# dynamic user inputs
+first_number = int(input("Enter first number: "))
+second_number = int(input("Enter second number: "))
+
+if first_number > second_number:
+    print(str(first_number) + " is greater than " + str(second_number))
+elif first_number < second_number:
+    print(str(first_number) + " is smaller than " + str(second_number))
+else:
+    print(str(first_number) + " is equal to " + str(second_number))
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+[1;32m<ipython-input-6-6619a77d801d>[0m in [0;36m<module>[1;34m[0m
+[0;32m      1[0m [1;31m# dynamic user inputs[0m[1;33m[0m[1;33m[0m[0m
+[1;32m----> 2[1;33m [0mfirst_number[0m [1;33m=[0m [0mint[0m[1;33m([0m[0minput[0m[1;33m([0m[1;34m"Enter first number: "[0m[1;33m)[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m      3[0m [0msecond_number[0m [1;33m=[0m [0mint[0m[1;33m([0m[0minput[0m[1;33m([0m[1;34m"Enter second number: "[0m[1;33m)[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      4[0m [1;33m[0m[0m
+[0;32m      5[0m [1;32mif[0m [0mfirst_number[0m [1;33m>[0m [0msecond_number[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+
+[1;32m~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\ipykernel\kernelbase.py[0m in [0;36mraw_input[1;34m(self, prompt)[0m
+[0;32m    855[0m         """
+[0;32m    856[0m         [1;32mif[0m [1;32mnot[0m [0mself[0m[1;33m.[0m[0m_allow_stdin[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[1;32m--> 857[1;33m             raise StdinNotImplementedError(
+[0m[0;32m    858[0m                 [1;34m"raw_input was called, but this frontend does not support input requests."[0m[1;33m[0m[1;33m[0m[0m
+[0;32m    859[0m             )
+
+[1;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
+
