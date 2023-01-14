@@ -4,7 +4,7 @@ format: jb-book
 root: intro
 chapters:
   - file: modules/1-1.Intro_to_ModelBuilder
-  - file: modules/2-0.Python_Landing
+  - file: modules/2-0.Intro_to_Python
     sections:
       - file: modules/2-1.Python_Notebook
       - file: modules/2-2.Markdown
