@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Homework 4" href="homework4.html" />
@@ -128,7 +130,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../modules/2-0.Python_Landing.html">
+  <a class="reference internal" href="../modules/2-0.Intro_to_Python.html">
    Introduction to Python Programming
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -139,22 +141,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../modules/2-1.Python_Notebook.html">
-     2-1: Jupyter Notebook
+     Basics of Jupyter Notebook
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../modules/2-2.Markdown.html">
-     2-2: Markdown
+     Introduction to Markdown
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../modules/2-3.Data_Types.html">
-     2-3: Data Types
+     Basic Python Data Types
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../modules/2-4.Control_Structure.html">
-     2-4: Control (Flow) Structure
+     2-4. Control (Flow) Structure
     </a>
    </li>
   </ul>
@@ -1084,10 +1086,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.27691405, 0.23318989, 0.75672415, 0.73340643],
-       [0.10848924, 0.86339157, 0.75106847, 0.35560602],
-       [0.2008731 , 0.34722754, 0.6866082 , 0.80832248],
-       [0.15824386, 0.61415939, 0.81399048, 0.83761842]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.76997731, 0.06065735, 0.62519341, 0.76975402],
+       [0.09901259, 0.08025888, 0.59659755, 0.02547287],
+       [0.89811273, 0.41350973, 0.26198084, 0.1133714 ],
+       [0.45004356, 0.26254996, 0.12579486, 0.74608554]])
 </pre></div>
 </div>
 </div>
@@ -1099,25 +1101,25 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.07480658, 0.73537377],
-        [0.68399185, 0.485634  ],
-        [0.74647624, 0.41928081],
-        [0.52407404, 0.3696662 ]],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.86705771, 0.50342178],
+        [0.60380559, 0.56984762],
+        [0.61133003, 0.31757658],
+        [0.6844144 , 0.62154355]],
 
-       [[0.17359503, 0.67298358],
-        [0.13542914, 0.56429447],
-        [0.50428839, 0.02161889],
-        [0.30092789, 0.28032377]],
+       [[0.73464314, 0.25422363],
+        [0.96270164, 0.97668977],
+        [0.55449277, 0.77070831],
+        [0.28710556, 0.73200141]],
 
-       [[0.25538174, 0.84256162],
-        [0.9970699 , 0.09432808],
-        [0.64583387, 0.40571695],
-        [0.41764126, 0.84014534]],
+       [[0.44538043, 0.77126885],
+        [0.59730941, 0.19711573],
+        [0.91275834, 0.13696086],
+        [0.76976245, 0.39675733]],
 
-       [[0.26273526, 0.21346332],
-        [0.47446693, 0.83992715],
-        [0.02342417, 0.30660547],
-        [0.86351121, 0.78964632]]])
+       [[0.35505269, 0.13163628],
+        [0.17910052, 0.26942855],
+        [0.41517859, 0.04758719],
+        [0.47265587, 0.03648798]]])
 </pre></div>
 </div>
 </div>
@@ -1131,10 +1133,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 3, 2, 9],
-       [2, 8, 8, 2],
-       [4, 2, 7, 2],
-       [9, 1, 0, 3]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[8, 4, 2, 3],
+       [0, 5, 3, 9],
+       [5, 8, 2, 1],
+       [5, 1, 9, 5]])
 </pre></div>
 </div>
 </div>

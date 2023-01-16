@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2-2: Markdown &#8212; Automation for Geospatial Modeling and Analysis</title>
+    <title>Introduction to Markdown &#8212; Automation for Geospatial Modeling and Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,12 +51,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2-3: Data Types" href="2-3.Data_Types.html" />
-    <link rel="prev" title="2-1: Jupyter Notebook" href="2-1.Python_Notebook.html" />
+    <link rel="next" title="Basic Python Data Types" href="2-3.Data_Types.html" />
+    <link rel="prev" title="Basics of Jupyter Notebook" href="2-1.Python_Notebook.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -131,7 +133,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="2-0.Python_Landing.html">
+  <a class="reference internal" href="2-0.Intro_to_Python.html">
    Introduction to Python Programming
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -142,22 +144,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="2-1.Python_Notebook.html">
-     2-1: Jupyter Notebook
+     Basics of Jupyter Notebook
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2-2: Markdown
+     Introduction to Markdown
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2-3.Data_Types.html">
-     2-3: Data Types
+     Basic Python Data Types
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2-4.Control_Structure.html">
-     2-4: Control (Flow) Structure
+     2-4. Control (Flow) Structure
     </a>
    </li>
   </ul>
@@ -562,49 +564,20 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   2-2: Markdown
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-syntax-of-markdown">
+   Basic Syntax of Markdown
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#basic-syntax-of-markdown">
-     1. Basic Syntax of Markdown
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#an-example">
-     2. An Example
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-quick-tour-of-arcpy">
-   A quick tour of ArcPy
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-example-of-markdown">
+   An example of Markdown
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#running-a-tool">
-     Running a tool
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#working-with-modules">
-     Working with modules
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#related-topics">
-     Related topics
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#support-of-latex">
-     3. Support of LaTeX
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#support-of-latex">
+   Support of LaTeX
+  </a>
  </li>
 </ul>
 
@@ -615,7 +588,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>2-2: Markdown</h1>
+                <h1>Introduction to Markdown</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -625,49 +598,20 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   2-2: Markdown
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-syntax-of-markdown">
+   Basic Syntax of Markdown
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#basic-syntax-of-markdown">
-     1. Basic Syntax of Markdown
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#an-example">
-     2. An Example
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-quick-tour-of-arcpy">
-   A quick tour of ArcPy
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-example-of-markdown">
+   An example of Markdown
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#running-a-tool">
-     Running a tool
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#working-with-modules">
-     Working with modules
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#related-topics">
-     Related topics
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#support-of-latex">
-     3. Support of LaTeX
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#support-of-latex">
+   Support of LaTeX
+  </a>
  </li>
 </ul>
 
@@ -679,16 +623,17 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="markdown">
-<h1>2-2: Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">#</a></h1>
-<p><img alt="markdown-mark" src="../_images/Markdown-mark.svg" /></p>
-<p>Markdown is a <em>lightweight</em> <strong>markup language</strong> for creating formatted text using a
-plain-text editor.</p>
-<p>Jupyter notebook has built-in support for the Markdown language.</p>
-<p>Besides staying inside a notebook file (.ipynb), markdown codes can also exists in
-its own file (more commonly) with an file extension (*.md).</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-markdown">
+<h1>Introduction to Markdown<a class="headerlink" href="#introduction-to-markdown" title="Permalink to this headline">#</a></h1>
+<a class="shadow reference internal image-reference" href="../_images/Markdown-mark.svg"><img alt="markdown-mark" class="shadow align-right" height="83" src="../_images/Markdown-mark.svg" width="135" /></a>
+<p>Markdown is a <em>lightweight</em> <strong>markup language</strong> for creating formatted text using a plain text editor. Jupyter Notebook has built-in support for Markdown. Inside a (Jupyter) notebook, markdown cells well complement the Python codes to allowing further explanations. You can also use Markdown to <strong>organize the content</strong> of a notebook to form a better structure.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Beside staying inside a notebook file (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>), <em>Markdown</em> codes can also exist in
+its own file (more commonly) with an file extension (<code class="docutils literal notranslate"><span class="pre">.md</span></code>).</p>
+</div>
 <section id="basic-syntax-of-markdown">
-<h2>1. Basic Syntax of Markdown<a class="headerlink" href="#basic-syntax-of-markdown" title="Permalink to this headline">#</a></h2>
+<h2>Basic Syntax of Markdown<a class="headerlink" href="#basic-syntax-of-markdown" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>Header</p>
 <ul class="simple">
@@ -700,7 +645,7 @@ its own file (more commonly) with an file extension (*.md).</p>
 <ul class="simple">
 <li><p>Italic: <code class="docutils literal notranslate"><span class="pre">_</span></code></p></li>
 <li><p>Bold: <code class="docutils literal notranslate"><span class="pre">**</span></code></p></li>
-<li><p>Italic and Bold</p></li>
+<li><p>Italic and Bold: <code class="docutils literal notranslate"><span class="pre">**_</span></code></p></li>
 </ul>
 </li>
 <li><p>List</p>
@@ -713,20 +658,22 @@ its own file (more commonly) with an file extension (*.md).</p>
 </li>
 <li><p>Link</p>
 <ul class="simple">
-<li><p>Website: <code class="docutils literal notranslate"><span class="pre">[name</span> <span class="pre">of</span> <span class="pre">link](url)</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">[Markdown</span> <span class="pre">Cheatsheet](https://en.support.wordpress.com/markdown-quick-reference/)</span></code></p></li>
+<li><p>Website: <code class="docutils literal notranslate"><span class="pre">[name</span> <span class="pre">of</span> <span class="pre">link](url)</span></code> e.g., <code class="docutils literal notranslate"><span class="pre">[UFL](www.ufl.edu)</span></code></p></li>
 <li><p>Image: <code class="docutils literal notranslate"><span class="pre">![alttext](path</span> <span class="pre">to</span> <span class="pre">image)</span></code></p></li>
 </ul>
 </li>
 </ol>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Checkout the <a href="https://en.support.wordpress.com/markdown-quick-reference/" target="_blank">Markdown Cheatsheet</a>.</p>
+</div>
 </section>
-<section id="an-example">
-<h2>2. An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">#</a></h2>
-<div class="admonition-markdown admonition">
-<p class="admonition-title">Markdown</p>
+<section id="an-example-of-markdown">
+<h2>An example of Markdown<a class="headerlink" href="#an-example-of-markdown" title="Permalink to this headline">#</a></h2>
+<p>Use Markdown to create <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/a-quick-tour-of-arcpy.htm">this</a> webpage.</p>
 <details>
-  <summary><strong>Show Raw Text</strong></summary>
-<p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/a-quick-tour-of-arcpy.htm">link</a>
-A quick tour of ArcPy
+  <summary><strong>show raw text</strong></summary>
+<p>A quick tour of ArcPy
 ArcPy is a Python site package that provides a useful and productive way to perform geographic data analysis, data conversion, data management, and map automation with Python.
 Running a tool
 arcpy.Buffer_analysis(“c:/data/Portland.gdb/streets”, “c:/data/Portland.gdb/steets_buffer”, “500 METERS”)
@@ -743,48 +690,17 @@ Sharing module (arcpy.sharing)
 Spatial Analyst module (<a class="reference external" href="http://arcpy.sa">arcpy.sa</a>)
 Workflow Manager (Classic) module (arcpy.wmx)
 Related topics
-What is ArcPy?
-Essential ArcPy vocabulary
-Install ArcPy
-Importing ArcPy</p>
-</details>
+What is ArcPy?(<a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/what-is-arcpy-.htm">https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/what-is-arcpy-.htm</a>)
+Essential ArcPy vocabulary(<a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/essential-arcpy-vocabulary.htm">https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/essential-arcpy-vocabulary.htm</a>)
+Install ArcPy(<a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/installing-arcpy.htm">https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/installing-arcpy.htm</a>)
+Importing ArcPy(<a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/importing-arcpy.htm">https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/importing-arcpy.htm</a>)</p>
+</details><div class="tip toggle admonition">
+<p class="admonition-title">Rendered Markdown Output</p>
+<img src="../_static/images/md_rendered.png" class="border m-1" alt="md-rendered">
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="a-quick-tour-of-arcpy">
-<h1>A quick tour of ArcPy<a class="headerlink" href="#a-quick-tour-of-arcpy" title="Permalink to this headline">#</a></h1>
-<p>ArcPy is a Python site package that provides a useful and productive way to perform geographic data analysis, data conversion, data management, and map automation with Python.</p>
-<section id="running-a-tool">
-<h2>Running a tool<a class="headerlink" href="#running-a-tool" title="Permalink to this headline">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">arcpy.Buffer_analysis(&quot;c:/data/Portland.gdb/streets&quot;,</span> <span class="pre">&quot;c:/data/Portland.gdb/steets_buffer&quot;,</span> <span class="pre">&quot;500</span> <span class="pre">METERS&quot;)</span></code></p>
-</section>
-<section id="working-with-modules">
-<h2>Working with modules<a class="headerlink" href="#working-with-modules" title="Permalink to this headline">#</a></h2>
-<p>ArcPy includes modules covering other areas of ArcGIS. ArcPy is supported by a series of modules, including the following:</p>
-<ul class="simple">
-<li><p>Charts module (<strong>arcpy.charts</strong>)</p></li>
-<li><p>Data Access module (<strong>arcpy.da</strong>)</p></li>
-<li><p>Geocoding module (<strong>arcpy.geocoding</strong>)</p></li>
-<li><p>Image Analysis module (<strong>arcpy.ia</strong>)</p></li>
-<li><p>Mapping module (<strong><a class="reference external" href="http://arcpy.mp">arcpy.mp</a></strong>)</p></li>
-<li><p>Metadata module (<strong>arcpy.metadata</strong>)</p></li>
-<li><p>Network Analyst modules (<strong>arcpy.nax</strong> and <strong><a class="reference external" href="http://arcpy.na">arcpy.na</a></strong>)</p></li>
-<li><p>Sharing module (<strong>arcpy.sharing</strong>)</p></li>
-<li><p>Spatial Analyst module (<strong><a class="reference external" href="http://arcpy.sa">arcpy.sa</a></strong>)</p></li>
-<li><p>Workflow Manager (Classic) module (<strong>arcpy.wmx</strong>)</p></li>
-</ul>
-</section>
-<section id="related-topics">
-<h2>Related topics<a class="headerlink" href="#related-topics" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/what-is-arcpy-.htm">What is ArcPy?</a></p></li>
-<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/essential-arcpy-vocabulary.htm">Essential ArcPy vocabulary</a></p></li>
-<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/installing-arcpy.htm">Install ArcPy</a></p></li>
-<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/importing-arcpy.htm">Importing ArcPy</a></p></li>
-</ul>
-</section>
 <section id="support-of-latex">
-<h2>3. Support of LaTeX<a class="headerlink" href="#support-of-latex" title="Permalink to this headline">#</a></h2>
+<h2>Support of LaTeX<a class="headerlink" href="#support-of-latex" title="Permalink to this headline">#</a></h2>
 <p><strong>What is LaTeX</strong></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.latex-project.org/">LaTeX</a> is a software system for document preparation.
@@ -839,13 +755,13 @@ When writing equation in LaTeX, simply enclose the equation with <code class="do
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">2-1: Jupyter Notebook</p>
+            <p class="prev-next-title">Basics of Jupyter Notebook</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="2-3.Data_Types.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2-3: Data Types</p>
+        <p class="prev-next-title">Basic Python Data Types</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
