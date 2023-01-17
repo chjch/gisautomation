@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Homework 4" href="homework4.html" />
@@ -128,7 +130,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../modules/2-0.Python_Landing.html">
+  <a class="reference internal" href="../modules/2-0.Intro_to_Python.html">
    Introduction to Python Programming
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -139,22 +141,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../modules/2-1.Python_Notebook.html">
-     2-1: Jupyter Notebook
+     Basics of Jupyter Notebook
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../modules/2-2.Markdown.html">
-     2-2: Markdown
+     Introduction to Markdown
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../modules/2-3.Data_Types.html">
-     2-3: Data Types
+     Basic Python Data Types
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../modules/2-4.Control_Structure.html">
-     2-4: Control (Flow) Structure
+     2-4. Control (Flow) Structure
     </a>
    </li>
   </ul>
@@ -404,35 +406,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/homework/homework5.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -455,7 +428,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://chjch.github.io/gisautomation/"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -472,7 +445,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fhomework/homework5.html&body=Your%20issue%20content%20here."
+        <a href="https://chjch.github.io/gisautomation//issues/new?title=Issue%20on%20page%20%2Fhomework/homework5.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1084,10 +1057,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.27691405, 0.23318989, 0.75672415, 0.73340643],
-       [0.10848924, 0.86339157, 0.75106847, 0.35560602],
-       [0.2008731 , 0.34722754, 0.6866082 , 0.80832248],
-       [0.15824386, 0.61415939, 0.81399048, 0.83761842]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.03444725, 0.88631876, 0.2305932 , 0.1640059 ],
+       [0.90432331, 0.25600268, 0.43707843, 0.15679429],
+       [0.07442567, 0.63002352, 0.61819748, 0.8485979 ],
+       [0.58521001, 0.45358489, 0.31282754, 0.45535231]])
 </pre></div>
 </div>
 </div>
@@ -1099,25 +1072,25 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.07480658, 0.73537377],
-        [0.68399185, 0.485634  ],
-        [0.74647624, 0.41928081],
-        [0.52407404, 0.3696662 ]],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.58405306, 0.2893383 ],
+        [0.60987603, 0.00316733],
+        [0.06419333, 0.54002271],
+        [0.79723869, 0.29605613]],
 
-       [[0.17359503, 0.67298358],
-        [0.13542914, 0.56429447],
-        [0.50428839, 0.02161889],
-        [0.30092789, 0.28032377]],
+       [[0.02243133, 0.91704789],
+        [0.4471936 , 0.75704246],
+        [0.85869244, 0.87487034],
+        [0.93498186, 0.42070004]],
 
-       [[0.25538174, 0.84256162],
-        [0.9970699 , 0.09432808],
-        [0.64583387, 0.40571695],
-        [0.41764126, 0.84014534]],
+       [[0.76931237, 0.15156171],
+        [0.97081864, 0.6048023 ],
+        [0.69570745, 0.70238841],
+        [0.43049609, 0.96834176]],
 
-       [[0.26273526, 0.21346332],
-        [0.47446693, 0.83992715],
-        [0.02342417, 0.30660547],
-        [0.86351121, 0.78964632]]])
+       [[0.52968448, 0.93582315],
+        [0.4378278 , 0.69691066],
+        [0.99367139, 0.84036025],
+        [0.51127117, 0.91286391]]])
 </pre></div>
 </div>
 </div>
@@ -1131,10 +1104,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 3, 2, 9],
-       [2, 8, 8, 2],
-       [4, 2, 7, 2],
-       [9, 1, 0, 3]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[6, 3, 5, 3],
+       [0, 4, 3, 1],
+       [5, 7, 0, 3],
+       [8, 2, 1, 4]])
 </pre></div>
 </div>
 </div>

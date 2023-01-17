@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Data Vizualization in Python" href="6-0.Visualization_Landing.html" />
@@ -129,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="2-0.Python_Landing.html">
+  <a class="reference internal" href="2-0.Intro_to_Python.html">
    Introduction to Python Programming
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -140,22 +142,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="2-1.Python_Notebook.html">
-     2-1: Jupyter Notebook
+     Basics of Jupyter Notebook
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2-2.Markdown.html">
-     2-2: Markdown
+     Introduction to Markdown
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2-3.Data_Types.html">
-     2-3: Data Types
+     Basic Python Data Types
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2-4.Control_Structure.html">
-     2-4: Control (Flow) Structure
+     2-4. Control (Flow) Structure
     </a>
    </li>
   </ul>
@@ -405,35 +407,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/modules/5-2.Intro_to_Pandas.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -456,7 +429,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://chjch.github.io/gisautomation/"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -473,7 +446,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmodules/5-2.Intro_to_Pandas.html&body=Your%20issue%20content%20here."
+        <a href="https://chjch.github.io/gisautomation//issues/new?title=Issue%20on%20page%20%2Fmodules/5-2.Intro_to_Pandas.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1297,63 +1270,12 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;OBJECTID_1&#39;,
- &#39;Shape&#39;,
- &#39;OBJECTID&#39;,
- &#39;STATUS&#39;,
- &#39;SCORE&#39;,
- &#39;SIDE&#39;,
- &#39;MATCH_ADDR&#39;,
- &#39;FEDERAL_ID&#39;,
- &#39;STATE_ID&#39;,
- &#39;SCHOOL_ID&#39;,
- &#39;NAME&#39;,
- &#39;ADDRESS&#39;,
- &#39;CITY&#39;,
- &#39;ZIPCODE&#39;,
- &#39;PHONE&#39;,
- &#39;COUNTY&#39;,
- &#39;OPERATING&#39;,
- &#39;OP_CLASS&#39;,
- &#39;ENROLLMENT&#39;,
- &#39;PROGRAMS&#39;,
- &#39;COMMON_USE&#39;,
- &#39;USE&#39;,
- &#39;TYPE&#39;,
- &#39;ACTIVITY&#39;,
- &#39;GRADES&#39;,
- &#39;LOW_GRADE&#39;,
- &#39;HIGH_GRADE&#39;,
- &#39;PRINCIPAL&#39;,
- &#39;TEACHERS&#39;,
- &#39;STDTCH_RT&#39;,
- &#39;MIGRNT_STD&#39;,
- &#39;TITLE1SCHO&#39;,
- &#39;MAGNETINFO&#39;,
- &#39;FREE_LUNCH&#39;,
- &#39;REDUCED_LU&#39;,
- &#39;FISH_FAC1&#39;,
- &#39;FISH_FAC2&#39;,
- &#39;COMMENTS&#39;,
- &#39;BBSERVICE&#39;,
- &#39;BBPROVIDER&#39;,
- &#39;BBSPEED&#39;,
- &#39;DSTREAMSPD&#39;,
- &#39;YR_BUILT&#39;,
- &#39;PARCEL_ID&#39;,
- &#39;LAT_DD&#39;,
- &#39;LONG_DD&#39;,
- &#39;USNG_FL_1K&#39;,
- &#39;FDOE_MSID&#39;,
- &#39;NCES_PUB&#39;,
- &#39;NCES_PRIV&#39;,
- &#39;FDOE_PRV&#39;,
- &#39;SOURCE&#39;,
- &#39;DESCRIPT&#39;,
- &#39;FLAG&#39;,
- &#39;UPDATE_DAY&#39;,
- &#39;FGDLAQDATE&#39;,
- &#39;AUTOID&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="mi">2090</span><span class="n">ab3788ee</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_arr</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">names</span>
+
+<span class="ne">NameError</span>: name &#39;school_arr&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1368,124 +1290,18 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">25</span><span class="o">-</span><span class="mf">6e16</span><span class="n">e9116641</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;NAME&quot;</span><span class="p">,</span> <span class="s1">&#39;OP_CLASS&#39;</span><span class="p">,</span> <span class="s1">&#39;ENROLLMENT&#39;</span><span class="p">,</span> <span class="s1">&#39;TYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;TEACHERS&#39;</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">school_arr</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">da</span><span class="o">.</span><span class="n">FeatureClassToNumPyArray</span><span class="p">(</span><span class="n">school_fc</span><span class="p">,</span> <span class="n">columns</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">school_arr</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span> <span class="c1"># first columns and second columns</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>NAME</th>
-      <th>OP_CLASS</th>
-      <th>ENROLLMENT</th>
-      <th>TYPE</th>
-      <th>TEACHERS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>GRACE CHRISTIAN SCHOOL OF ALACHUA CO.</td>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>FAMILY LIFE ACADEMY</td>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>FOREST GROVE CHRISTIAN ACADEMY</td>
-      <td>PRIVATE</td>
-      <td>53.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>9.4</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>VAISHNAVA ACADEMY FOR GIRLS</td>
-      <td>PRIVATE</td>
-      <td>19.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>BHAKTIVEDANTA ACADEMY</td>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>107</th>
-      <td>SANTA FE COLLEGE - CHARLES L BLOUNT DOWNTOWN C...</td>
-      <td>PUBLIC</td>
-      <td>0.0</td>
-      <td>COLLEGE/UNIVERSITY</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>108</th>
-      <td>SANTA FE COLLEGE - KIRKPATRICK CENTER</td>
-      <td>PUBLIC</td>
-      <td>0.0</td>
-      <td>COLLEGE/UNIVERSITY</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>109</th>
-      <td>ALACHUA COUNTY JAIL</td>
-      <td>PUBLIC</td>
-      <td>0.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>110</th>
-      <td>ALACHUA  COUNTY STUDENT SERVICES/ MIGRANT/ VIR...</td>
-      <td>PUBLIC</td>
-      <td>0.0</td>
-      <td>MIGRANT EDUCATION PROGRAM</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>111</th>
-      <td>OAK HALL LOWER SCHOOL</td>
-      <td>PRIVATE</td>
-      <td>365.0</td>
-      <td>ELEMENTARY</td>
-      <td>16.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>112 rows × 5 columns</p>
-</div></div></div>
+<span class="ne">RuntimeError</span>: cannot open &#39;schools&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="preview-the-head-and-tail-of-a-dataframe">
@@ -1498,75 +1314,16 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">26</span><span class="o">-</span><span class="n">ff8e49981d43</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">school_arr</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">school_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>NAME</th>
-      <th>OP_CLASS</th>
-      <th>ENROLLMENT</th>
-      <th>TYPE</th>
-      <th>TEACHERS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>GRACE CHRISTIAN SCHOOL OF ALACHUA CO.</td>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>FAMILY LIFE ACADEMY</td>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>FOREST GROVE CHRISTIAN ACADEMY</td>
-      <td>PRIVATE</td>
-      <td>53.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>9.4</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>VAISHNAVA ACADEMY FOR GIRLS</td>
-      <td>PRIVATE</td>
-      <td>19.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>BHAKTIVEDANTA ACADEMY</td>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;school_arr&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1575,75 +1332,15 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">27</span><span class="o">-</span><span class="n">e9c859303b57</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>NAME</th>
-      <th>OP_CLASS</th>
-      <th>ENROLLMENT</th>
-      <th>TYPE</th>
-      <th>TEACHERS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>107</th>
-      <td>SANTA FE COLLEGE - CHARLES L BLOUNT DOWNTOWN C...</td>
-      <td>PUBLIC</td>
-      <td>0.0</td>
-      <td>COLLEGE/UNIVERSITY</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>108</th>
-      <td>SANTA FE COLLEGE - KIRKPATRICK CENTER</td>
-      <td>PUBLIC</td>
-      <td>0.0</td>
-      <td>COLLEGE/UNIVERSITY</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>109</th>
-      <td>ALACHUA COUNTY JAIL</td>
-      <td>PUBLIC</td>
-      <td>0.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>110</th>
-      <td>ALACHUA  COUNTY STUDENT SERVICES/ MIGRANT/ VIR...</td>
-      <td>PUBLIC</td>
-      <td>0.0</td>
-      <td>MIGRANT EDUCATION PROGRAM</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>111</th>
-      <td>OAK HALL LOWER SCHOOL</td>
-      <td>PRIVATE</td>
-      <td>365.0</td>
-      <td>ELEMENTARY</td>
-      <td>16.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1652,115 +1349,15 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="n">a39556607b0a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>NAME</th>
-      <th>OP_CLASS</th>
-      <th>ENROLLMENT</th>
-      <th>TYPE</th>
-      <th>TEACHERS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>GRACE CHRISTIAN SCHOOL OF ALACHUA CO.</td>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>FAMILY LIFE ACADEMY</td>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>FOREST GROVE CHRISTIAN ACADEMY</td>
-      <td>PRIVATE</td>
-      <td>53.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>9.4</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>VAISHNAVA ACADEMY FOR GIRLS</td>
-      <td>PRIVATE</td>
-      <td>19.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>BHAKTIVEDANTA ACADEMY</td>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>DESTINY CHRISTIAN ACADEMY</td>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>INCAF MONTESSORI SCHOOL</td>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>ELEMENTARY</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>GREAT AMERICAN VISIONS ENTERPRISES,INC</td>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>JORDAN GLEN SCHOOL INC.</td>
-      <td>PRIVATE</td>
-      <td>115.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>14.5</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>QUEEN OF PEACE CATHOLIC ACADEMY</td>
-      <td>PRIVATE</td>
-      <td>358.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>28.4</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="indexing-and-slicing">
@@ -1773,18 +1370,12 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0                  GRACE CHRISTIAN SCHOOL OF ALACHUA CO.
-1                                    FAMILY LIFE ACADEMY
-2                         FOREST GROVE CHRISTIAN ACADEMY
-3                            VAISHNAVA ACADEMY FOR GIRLS
-4                                  BHAKTIVEDANTA ACADEMY
-                             ...                        
-107    SANTA FE COLLEGE - CHARLES L BLOUNT DOWNTOWN C...
-108                SANTA FE COLLEGE - KIRKPATRICK CENTER
-109                                  ALACHUA COUNTY JAIL
-110    ALACHUA  COUNTY STUDENT SERVICES/ MIGRANT/ VIR...
-111                                OAK HALL LOWER SCHOOL
-Name: NAME, Length: 112, dtype: object
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">29</span><span class="o">-</span><span class="n">b98f90c29882</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;NAME&quot;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1797,88 +1388,15 @@ Name: NAME, Length: 112, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">30</span><span class="o">-</span><span class="mi">2985</span><span class="n">cd1389f4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="p">[[</span><span class="s2">&quot;NAME&quot;</span><span class="p">,</span> <span class="s2">&quot;ENROLLMENT&quot;</span><span class="p">]]</span> <span class="c1"># multiple columns supplied as a list</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>NAME</th>
-      <th>ENROLLMENT</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>GRACE CHRISTIAN SCHOOL OF ALACHUA CO.</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>FAMILY LIFE ACADEMY</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>FOREST GROVE CHRISTIAN ACADEMY</td>
-      <td>53.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>VAISHNAVA ACADEMY FOR GIRLS</td>
-      <td>19.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>BHAKTIVEDANTA ACADEMY</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>107</th>
-      <td>SANTA FE COLLEGE - CHARLES L BLOUNT DOWNTOWN C...</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>108</th>
-      <td>SANTA FE COLLEGE - KIRKPATRICK CENTER</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>109</th>
-      <td>ALACHUA COUNTY JAIL</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>110</th>
-      <td>ALACHUA  COUNTY STUDENT SERVICES/ MIGRANT/ VIR...</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>111</th>
-      <td>OAK HALL LOWER SCHOOL</td>
-      <td>365.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>112 rows × 2 columns</p>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <p>Select row using the <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> function (<strong>label/index-based</strong>)</p>
 <div class="cell docutils container">
@@ -1888,12 +1406,12 @@ Name: NAME, Length: 112, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NAME              FOREST GROVE CHRISTIAN ACADEMY
-OP_CLASS                                 PRIVATE
-ENROLLMENT                                  53.0
-TYPE          COMBINATION ELEMENTARY &amp; SECONDARY
-TEACHERS                                     9.4
-Name: 2, dtype: object
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">31</span><span class="o">-</span><span class="mi">63</span><span class="n">c49a1afed5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># note that .loc followed by square brackets not parentheses</span>
+
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1906,12 +1424,12 @@ Name: 2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NAME              FOREST GROVE CHRISTIAN ACADEMY
-OP_CLASS                                 PRIVATE
-ENROLLMENT                                  53.0
-TYPE          COMBINATION ELEMENTARY &amp; SECONDARY
-TEACHERS                                     9.4
-Name: 2, dtype: object
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">32</span><span class="o">-</span><span class="n">e00b91ace62d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1928,76 +1446,15 @@ Name: 2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">33</span><span class="o">-</span><span class="mi">692</span><span class="n">d01d4471a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;NAME&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>OP_CLASS</th>
-      <th>ENROLLMENT</th>
-      <th>TYPE</th>
-      <th>TEACHERS</th>
-    </tr>
-    <tr>
-      <th>NAME</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>GRACE CHRISTIAN SCHOOL OF ALACHUA CO.</th>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>FAMILY LIFE ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>FOREST GROVE CHRISTIAN ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>53.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>9.4</td>
-    </tr>
-    <tr>
-      <th>VAISHNAVA ACADEMY FOR GIRLS</th>
-      <td>PRIVATE</td>
-      <td>19.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>BHAKTIVEDANTA ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2006,75 +1463,15 @@ Name: 2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">34</span><span class="o">-</span><span class="mi">63</span><span class="n">ab5638e8fe</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>NAME</th>
-      <th>OP_CLASS</th>
-      <th>ENROLLMENT</th>
-      <th>TYPE</th>
-      <th>TEACHERS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>GRACE CHRISTIAN SCHOOL OF ALACHUA CO.</td>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>FAMILY LIFE ACADEMY</td>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>FOREST GROVE CHRISTIAN ACADEMY</td>
-      <td>PRIVATE</td>
-      <td>53.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>9.4</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>VAISHNAVA ACADEMY FOR GIRLS</td>
-      <td>PRIVATE</td>
-      <td>19.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>BHAKTIVEDANTA ACADEMY</td>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2083,6 +1480,17 @@ Name: 2, dtype: object
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="mi">888</span><span class="n">a4c5d088b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># or</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># school_df = school_df.set_index(&#39;NAME&#39;)</span>
+
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2091,76 +1499,15 @@ Name: 2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">36</span><span class="o">-</span><span class="mi">63</span><span class="n">ab5638e8fe</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>OP_CLASS</th>
-      <th>ENROLLMENT</th>
-      <th>TYPE</th>
-      <th>TEACHERS</th>
-    </tr>
-    <tr>
-      <th>NAME</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>GRACE CHRISTIAN SCHOOL OF ALACHUA CO.</th>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>FAMILY LIFE ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>FOREST GROVE CHRISTIAN ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>53.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>9.4</td>
-    </tr>
-    <tr>
-      <th>VAISHNAVA ACADEMY FOR GIRLS</th>
-      <td>PRIVATE</td>
-      <td>19.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>BHAKTIVEDANTA ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>0.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2169,11 +1516,12 @@ Name: 2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OP_CLASS                                 PRIVATE
-ENROLLMENT                                  53.0
-TYPE          COMBINATION ELEMENTARY &amp; SECONDARY
-TEACHERS                                     9.4
-Name: FOREST GROVE CHRISTIAN ACADEMY, dtype: object
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">37</span><span class="o">-</span><span class="mi">1</span><span class="n">b6603a41051</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;FOREST GROVE CHRISTIAN ACADEMY&#39;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2185,19 +1533,12 @@ Name: FOREST GROVE CHRISTIAN ACADEMY, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NAME
-GRACE CHRISTIAN SCHOOL OF ALACHUA CO.                                                                 0.0
-FAMILY LIFE ACADEMY                                                                                   0.0
-FOREST GROVE CHRISTIAN ACADEMY                                                                       53.0
-VAISHNAVA ACADEMY FOR GIRLS                                                                          19.0
-BHAKTIVEDANTA ACADEMY                                                                                 0.0
-                                                                                                    ...  
-SANTA FE COLLEGE - CHARLES L BLOUNT DOWNTOWN CENTER                                                   0.0
-SANTA FE COLLEGE - KIRKPATRICK CENTER                                                                 0.0
-ALACHUA COUNTY JAIL                                                                                   0.0
-ALACHUA  COUNTY STUDENT SERVICES/ MIGRANT/ VIRTUAL PROGRAM/ MCKAY SCHOLARSHIP/ HOMEBOUND PROGRAM      0.0
-OAK HALL LOWER SCHOOL                                                                               365.0
-Name: ENROLLMENT, Length: 112, dtype: float64
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">38</span><span class="o">-</span><span class="mi">3</span><span class="n">dcf2d59450e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;ENROLLMENT&#39;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2209,99 +1550,15 @@ Name: ENROLLMENT, Length: 112, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">39</span><span class="o">-</span><span class="mi">533</span><span class="n">abf90fa79</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ENROLLMENT</th>
-      <th>TYPE</th>
-      <th>TEACHERS</th>
-    </tr>
-    <tr>
-      <th>NAME</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>THE ROCK SCHOOL</th>
-      <td>207.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>17.9</td>
-    </tr>
-    <tr>
-      <th>CHRISTIAN LIFE ACADEMY</th>
-      <td>52.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>5.9</td>
-    </tr>
-    <tr>
-      <th>SAINT FRANCIS CATHOLIC HIGH SCHOOL</th>
-      <td>260.0</td>
-      <td>SENIOR HIGH</td>
-      <td>19.8</td>
-    </tr>
-    <tr>
-      <th>COUNTRYSIDE CHRISTIAN SCHOOL</th>
-      <td>106.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>6.5</td>
-    </tr>
-    <tr>
-      <th>TRILOGY SCHOOL OF LEARNING ALTERNATIVE</th>
-      <td>84.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>11.5</td>
-    </tr>
-    <tr>
-      <th>MILLHOPPER MONTESSORI SCHOOL</th>
-      <td>209.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>19.1</td>
-    </tr>
-    <tr>
-      <th>BNAI ISRAEL DAY SCHOOL</th>
-      <td>22.0</td>
-      <td>ELEMENTARY</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>GAINESVILLE CONDUCTIVE EDUCATION ACADEMY</th>
-      <td>0.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>BRENTWOOD SCHOOL</th>
-      <td>246.0</td>
-      <td>ELEMENTARY</td>
-      <td>10.8</td>
-    </tr>
-    <tr>
-      <th>CORNERSTONE ACADEMY</th>
-      <td>216.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>24.8</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2310,7 +1567,12 @@ Name: ENROLLMENT, Length: 112, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>207.0
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">40</span><span class="o">-</span><span class="mi">239</span><span class="n">ff3a4c2b7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;THE ROCK SCHOOL&#39;</span><span class="p">,</span> <span class="s1">&#39;ENROLLMENT&#39;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2327,19 +1589,12 @@ Name: ENROLLMENT, Length: 112, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NAME
-GRACE CHRISTIAN SCHOOL OF ALACHUA CO.                                                               False
-FAMILY LIFE ACADEMY                                                                                 False
-FOREST GROVE CHRISTIAN ACADEMY                                                                       True
-VAISHNAVA ACADEMY FOR GIRLS                                                                          True
-BHAKTIVEDANTA ACADEMY                                                                               False
-                                                                                                    ...  
-SANTA FE COLLEGE - CHARLES L BLOUNT DOWNTOWN CENTER                                                 False
-SANTA FE COLLEGE - KIRKPATRICK CENTER                                                               False
-ALACHUA COUNTY JAIL                                                                                 False
-ALACHUA  COUNTY STUDENT SERVICES/ MIGRANT/ VIRTUAL PROGRAM/ MCKAY SCHOLARSHIP/ HOMEBOUND PROGRAM    False
-OAK HALL LOWER SCHOOL                                                                                True
-Name: ENROLLMENT, Length: 112, dtype: bool
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">41</span><span class="o">-</span><span class="mi">800449</span><span class="n">bc7f6b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;ENROLLMENT&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2351,13 +1606,12 @@ Name: ENROLLMENT, Length: 112, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NAME
-GRACE CHRISTIAN SCHOOL OF ALACHUA CO.     0.0
-FAMILY LIFE ACADEMY                       0.0
-FOREST GROVE CHRISTIAN ACADEMY           53.0
-VAISHNAVA ACADEMY FOR GIRLS              19.0
-BHAKTIVEDANTA ACADEMY                     0.0
-Name: ENROLLMENT, dtype: float64
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">42</span><span class="o">-</span><span class="n">d7f028a3e9a9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">ENROLLMENT</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2369,7 +1623,12 @@ Name: ENROLLMENT, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">43</span><span class="o">-</span><span class="n">f966ce0df5a7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">ENROLLMENT</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">school_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span>
+
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2381,79 +1640,12 @@ Name: ENROLLMENT, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;GRACE CHRISTIAN SCHOOL OF ALACHUA CO.&#39;, &#39;FAMILY LIFE ACADEMY&#39;,
-       &#39;FOREST GROVE CHRISTIAN ACADEMY&#39;, &#39;VAISHNAVA ACADEMY FOR GIRLS&#39;,
-       &#39;BHAKTIVEDANTA ACADEMY&#39;, &#39;DESTINY CHRISTIAN ACADEMY&#39;,
-       &#39;INCAF MONTESSORI SCHOOL&#39;,
-       &#39;GREAT AMERICAN VISIONS ENTERPRISES,INC&#39;,
-       &#39;JORDAN GLEN SCHOOL INC.&#39;, &#39;QUEEN OF PEACE CATHOLIC ACADEMY&#39;,
-       &#39;THE ROCK SCHOOL&#39;, &#39;CHRISTIAN LIFE ACADEMY&#39;,
-       &#39;SAINT FRANCIS CATHOLIC HIGH SCHOOL&#39;,
-       &#39;COUNTRYSIDE CHRISTIAN SCHOOL&#39;,
-       &#39;TRILOGY SCHOOL OF LEARNING ALTERNATIVE&#39;,
-       &#39;MILLHOPPER MONTESSORI SCHOOL&#39;, &#39;BNAI ISRAEL DAY SCHOOL&#39;,
-       &#39;GAINESVILLE CONDUCTIVE EDUCATION ACADEMY&#39;, &#39;BRENTWOOD SCHOOL&#39;,
-       &#39;CORNERSTONE ACADEMY&#39;, &#39;WESTWOOD HILLS CHRISTIAN SCHOOL&#39;,
-       &#39;FLOWERS MONTESSORI SCHOOL&#39;, &#39;Z.L. SUNG S.D.A. SCHOOL&#39;,
-       &#39;GAINESVILLE CONDUCTIVE EDUCATION ACADEMY&#39;,
-       &#39;KIDS N ALL CHRISTIAN ACADEMY&#39;, &#39;OAK HALL SCHOOL&#39;,
-       &#39;FREEDOM CHRISTIAN ACADEMY&#39;, &#39;GAINESVILLE COUNTRY DAY SCHOOL&#39;,
-       &#39;FAITH TABERNACLE OF PRAISE SCHOOL OF MINISTRY&#39;,
-       &quot;THE CHILDREN&#39;S CENTER&quot;, &#39;CITY COLLEGE&#39;,
-       &#39;SAINT PATRICK INTERPARISH SCHOOL&#39;,
-       &#39;STAR CHRISTIAN CENTER AND ACADEMY&#39;,
-       &#39;COMPASSIONATE OUTREACH MINISTRIES&#39;, &#39;WINDSOR CHRISTIAN ACADEMY&#39;,
-       &#39;OAK HILL COMMUNITY PRIVATE SCHOOL SYSTEM&#39;,
-       &#39;NORTH FLORIDA SDA ELEMENTARY&#39;,
-       &#39;MICANOPY AREA COOPERATIVE SCHOOL, INC.&#39;,
-       &#39;ARCHER COMMUNITY SCHOOL&#39;, &#39;SANTA FE COLLEGE - DAVIS CENTER&#39;,
-       &#39;MICANOPY MIDDLE SCHOOL, INC.&#39;, &#39;OAK VIEW MIDDLE SCHOOL&#39;,
-       &#39;NEWBERRY ELEMENTARY SCHOOL&#39;, &#39;NEWBERRY HIGH SCHOOL&#39;,
-       &#39;HIGH SPRINGS COMMUNITY - ELEMENTARY AND MIDDLE SCHOOL&#39;,
-       &#39;UNIVERSITY OF FLORIDA - COMPARITIVE MEDICINE&#39;,
-       &#39;NORTH AMERICAN FAMILY INSTITUTE ALACHUA ACADEMY&#39;, &#39;PACE&#39;,
-       &#39;HOSPITAL HOMEBOUND&#39;, &#39;SWEETWATER BRANCH ACADEMY&#39;,
-       &#39;PROFESSIONAL ACADEMY MAGNET AT LOFTEN HIGH SCHOOL&#39;,
-       &#39;SANTA FE HIGH SCHOOL&#39;, &#39;MEBANE MIDDLE SCHOOL&#39;,
-       &#39;ALACHUA LEARNING CENTER - PUBLIC CHARTER SCHOOL&#39;,
-       &#39;IRBY ELEMENTARY SCHOOL&#39;, &#39;ALACHUA ELEMENTARY SCHOOL&#39;,
-       &#39;UNIVERSITY OF FLORIDA&#39;, &#39;UNIVERSITY OF FLORIDA - AGRONOMY LAB&#39;,
-       &#39;SANTA FE COLLEGE - NORTHWEST CAMPUS&#39;, &#39;BUCHHOLZ HIGH SCHOOL&#39;,
-       &#39;FINLEY ELEMENTARY SCHOOL&#39;,
-       &#39;P.K. YONGE DEVELOPMENTAL RESEARCH SCHOOL&#39;,
-       &#39;CHILES ELEMENTARY SCHOOL&#39;, &#39;FT CLARKE MIDDLE SCHOOL&#39;,
-       &#39;HIDDEN OAK ELEMENTARY SCHOOL&#39;, &#39;TERWILLIGER ELEMENTARY SCHOOL&#39;,
-       &#39;TALBOT ELEMENTARY SCHOOL&#39;, &#39;NORTON ELEMENTARY SCHOOL&#39;,
-       &#39;LITTLEWOOD ELEMENTARY SCHOOL&#39;, &#39;WESTWOOD MIDDLE SCHOOL&#39;,
-       &#39;HEALTHY LEARNING ACADEMY CHARTER SCHOOL&#39;,
-       &#39;GLEN SPRINGS ELEMENTARY SCHOOL&#39;, &#39;GAINESVILLE HIGH SCHOOL&#39;,
-       &#39;FOSTER ELEMENTARY SCHOOL&#39;, &#39;GENESIS PREPARATORY SCHOOL&#39;,
-       &#39;LANIER CENTER &amp; ANCHOR CENTER&#39;, &#39;UNIVERSITY OF FLORIDA&#39;,
-       &#39;A. QUINN JONES CENTER&#39;, &#39;CHARACTER COUNTS CENTER&#39;,
-       &#39;SANTA FE COMMUNITY COLLEGE&#39;, &#39;KANAPAHA MIDDLE SCHOOL&#39;,
-       &#39;WILES ELEMENTARY SCHOOL&#39;,
-       &#39;FAMILY PROGRESS CENTER - WILES HEAD START&#39;,
-       &#39;EINSTEIN MONTESSORI SCHOOL&#39;,
-       &#39;IDYLWILD ELEMENTARY SCHOOL AND MULTI-COUNTY MIGRANT PROGRAM&#39;,
-       &#39;EXPRESSIONS LEARNING ARTS ACADEMY&#39;,
-       &#39;GAINESVILLE WILDERNESS INSTITUTE&#39;,
-       &#39;CARING &amp; SHARING LEARNING SCHOOL&#39;,
-       &#39;PRAIRIE VIEW ELEMENTARY SCHOOL&#39;, &#39;LINCOLN MIDDLE SCHOOL&#39;,
-       &#39;WILLIAMS ELEMENTARY SCHOOL&#39;,
-       &#39;ALACHUA COUNTY SUPERINTENDENT OFFICE - KIRBY-SMITH CENTER&#39;,
-       &#39;DUVAL ELEMENTARY SCHOOL&#39;, &#39;BISHOP MIDDLE SCHOOL&#39;,
-       &#39;METCALFE ELEMENTARY SCHOOL&#39;, &#39;THE ONE ROOM SCHOOL HOUSE PROJECT&#39;,
-       &#39;RAWLINGS ELEMENTARY SCHOOL&#39;,
-       &#39;FEARNSIDE FAMILY SERVICES CENTER AND HEAD START / PREK E I CENTER&#39;,
-       &#39;HOGGETOWNE MIDDLE SCHOOL&#39;, &#39;HORIZON CENTER. ALTERNATIVE SCHOOL&#39;,
-       &#39;LAKE FOREST ELEMENTARY SCHOOL&#39;, &#39;EASTSIDE HIGH SCHOOL&#39;,
-       &#39;FLORIDA SIATECH AT GAINESVILLE,INC.&#39;, &#39;SHELL ELEMENTARY SCHOOL&#39;,
-       &#39;HAWTHORNE JR/SR HIGH SCHOOL&#39;, &#39;WALDO COMMUNITY SCHOOL&#39;,
-       &#39;UNIVERSITY OF FLORIDA&#39;,
-       &#39;SANTA FE COLLEGE - CHARLES L BLOUNT DOWNTOWN CENTER&#39;,
-       &#39;SANTA FE COLLEGE - KIRKPATRICK CENTER&#39;, &#39;ALACHUA COUNTY JAIL&#39;,
-       &#39;ALACHUA  COUNTY STUDENT SERVICES/ MIGRANT/ VIRTUAL PROGRAM/ MCKAY SCHOLARSHIP/ HOMEBOUND PROGRAM&#39;,
-       &#39;OAK HALL LOWER SCHOOL&#39;], dtype=object)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">44</span><span class="o">-</span><span class="mi">0</span><span class="n">ce7626e8cf2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2465,119 +1657,15 @@ Name: ENROLLMENT, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">45</span><span class="o">-</span><span class="mi">26298337953</span><span class="n">e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;ENROLLMENT&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># with loc (recommeneded)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>OP_CLASS</th>
-      <th>ENROLLMENT</th>
-      <th>TYPE</th>
-      <th>TEACHERS</th>
-    </tr>
-    <tr>
-      <th>NAME</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>FOREST GROVE CHRISTIAN ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>53.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>9.4</td>
-    </tr>
-    <tr>
-      <th>VAISHNAVA ACADEMY FOR GIRLS</th>
-      <td>PRIVATE</td>
-      <td>19.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>JORDAN GLEN SCHOOL INC.</th>
-      <td>PRIVATE</td>
-      <td>115.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>14.5</td>
-    </tr>
-    <tr>
-      <th>QUEEN OF PEACE CATHOLIC ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>358.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>28.4</td>
-    </tr>
-    <tr>
-      <th>THE ROCK SCHOOL</th>
-      <td>PRIVATE</td>
-      <td>207.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>17.9</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>FLORIDA SIATECH AT GAINESVILLE,INC.</th>
-      <td>PUBLIC</td>
-      <td>202.0</td>
-      <td>SENIOR HIGH</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>SHELL ELEMENTARY SCHOOL</th>
-      <td>PUBLIC</td>
-      <td>193.0</td>
-      <td>ELEMENTARY</td>
-      <td>16.0</td>
-    </tr>
-    <tr>
-      <th>HAWTHORNE JR/SR HIGH SCHOOL</th>
-      <td>PUBLIC</td>
-      <td>395.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>23.0</td>
-    </tr>
-    <tr>
-      <th>WALDO COMMUNITY SCHOOL</th>
-      <td>PUBLIC</td>
-      <td>215.0</td>
-      <td>ELEMENTARY</td>
-      <td>17.0</td>
-    </tr>
-    <tr>
-      <th>OAK HALL LOWER SCHOOL</th>
-      <td>PRIVATE</td>
-      <td>365.0</td>
-      <td>ELEMENTARY</td>
-      <td>16.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>84 rows × 4 columns</p>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2586,119 +1674,15 @@ Name: ENROLLMENT, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">46</span><span class="o">-</span><span class="n">ea0c41efed67</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="p">[</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;ENROLLMENT&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># without loc</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>OP_CLASS</th>
-      <th>ENROLLMENT</th>
-      <th>TYPE</th>
-      <th>TEACHERS</th>
-    </tr>
-    <tr>
-      <th>NAME</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>FOREST GROVE CHRISTIAN ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>53.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>9.4</td>
-    </tr>
-    <tr>
-      <th>VAISHNAVA ACADEMY FOR GIRLS</th>
-      <td>PRIVATE</td>
-      <td>19.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>JORDAN GLEN SCHOOL INC.</th>
-      <td>PRIVATE</td>
-      <td>115.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>14.5</td>
-    </tr>
-    <tr>
-      <th>QUEEN OF PEACE CATHOLIC ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>358.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>28.4</td>
-    </tr>
-    <tr>
-      <th>THE ROCK SCHOOL</th>
-      <td>PRIVATE</td>
-      <td>207.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>17.9</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>FLORIDA SIATECH AT GAINESVILLE,INC.</th>
-      <td>PUBLIC</td>
-      <td>202.0</td>
-      <td>SENIOR HIGH</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>SHELL ELEMENTARY SCHOOL</th>
-      <td>PUBLIC</td>
-      <td>193.0</td>
-      <td>ELEMENTARY</td>
-      <td>16.0</td>
-    </tr>
-    <tr>
-      <th>HAWTHORNE JR/SR HIGH SCHOOL</th>
-      <td>PUBLIC</td>
-      <td>395.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>23.0</td>
-    </tr>
-    <tr>
-      <th>WALDO COMMUNITY SCHOOL</th>
-      <td>PUBLIC</td>
-      <td>215.0</td>
-      <td>ELEMENTARY</td>
-      <td>17.0</td>
-    </tr>
-    <tr>
-      <th>OAK HALL LOWER SCHOOL</th>
-      <td>PRIVATE</td>
-      <td>365.0</td>
-      <td>ELEMENTARY</td>
-      <td>16.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>84 rows × 4 columns</p>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <p>For multiple conditions, use <strong>parentheses</strong> to enclose each criterion</p>
 <ul class="simple">
@@ -2712,119 +1696,15 @@ Name: ENROLLMENT, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">47</span><span class="o">-</span><span class="mi">21</span><span class="n">fab5d3b195</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="p">[(</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;ENROLLMENT&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;TEACHERS&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)]</span> <span class="c1"># positive enrollment and positive # teachers</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>OP_CLASS</th>
-      <th>ENROLLMENT</th>
-      <th>TYPE</th>
-      <th>TEACHERS</th>
-    </tr>
-    <tr>
-      <th>NAME</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>FOREST GROVE CHRISTIAN ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>53.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>9.4</td>
-    </tr>
-    <tr>
-      <th>JORDAN GLEN SCHOOL INC.</th>
-      <td>PRIVATE</td>
-      <td>115.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>14.5</td>
-    </tr>
-    <tr>
-      <th>QUEEN OF PEACE CATHOLIC ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>358.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>28.4</td>
-    </tr>
-    <tr>
-      <th>THE ROCK SCHOOL</th>
-      <td>PRIVATE</td>
-      <td>207.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>17.9</td>
-    </tr>
-    <tr>
-      <th>CHRISTIAN LIFE ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>52.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>5.9</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>FLORIDA SIATECH AT GAINESVILLE,INC.</th>
-      <td>PUBLIC</td>
-      <td>202.0</td>
-      <td>SENIOR HIGH</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>SHELL ELEMENTARY SCHOOL</th>
-      <td>PUBLIC</td>
-      <td>193.0</td>
-      <td>ELEMENTARY</td>
-      <td>16.0</td>
-    </tr>
-    <tr>
-      <th>HAWTHORNE JR/SR HIGH SCHOOL</th>
-      <td>PUBLIC</td>
-      <td>395.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>23.0</td>
-    </tr>
-    <tr>
-      <th>WALDO COMMUNITY SCHOOL</th>
-      <td>PUBLIC</td>
-      <td>215.0</td>
-      <td>ELEMENTARY</td>
-      <td>17.0</td>
-    </tr>
-    <tr>
-      <th>OAK HALL LOWER SCHOOL</th>
-      <td>PRIVATE</td>
-      <td>365.0</td>
-      <td>ELEMENTARY</td>
-      <td>16.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>76 rows × 4 columns</p>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2833,119 +1713,15 @@ Name: ENROLLMENT, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">48</span><span class="o">-</span><span class="n">bcaec4d7b31b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="p">[(</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;ENROLLMENT&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;TEACHERS&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)]</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>OP_CLASS</th>
-      <th>ENROLLMENT</th>
-      <th>TYPE</th>
-      <th>TEACHERS</th>
-    </tr>
-    <tr>
-      <th>NAME</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>FOREST GROVE CHRISTIAN ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>53.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>9.4</td>
-    </tr>
-    <tr>
-      <th>VAISHNAVA ACADEMY FOR GIRLS</th>
-      <td>PRIVATE</td>
-      <td>19.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>JORDAN GLEN SCHOOL INC.</th>
-      <td>PRIVATE</td>
-      <td>115.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>14.5</td>
-    </tr>
-    <tr>
-      <th>QUEEN OF PEACE CATHOLIC ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>358.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>28.4</td>
-    </tr>
-    <tr>
-      <th>THE ROCK SCHOOL</th>
-      <td>PRIVATE</td>
-      <td>207.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>17.9</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>SHELL ELEMENTARY SCHOOL</th>
-      <td>PUBLIC</td>
-      <td>193.0</td>
-      <td>ELEMENTARY</td>
-      <td>16.0</td>
-    </tr>
-    <tr>
-      <th>HAWTHORNE JR/SR HIGH SCHOOL</th>
-      <td>PUBLIC</td>
-      <td>395.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>23.0</td>
-    </tr>
-    <tr>
-      <th>WALDO COMMUNITY SCHOOL</th>
-      <td>PUBLIC</td>
-      <td>215.0</td>
-      <td>ELEMENTARY</td>
-      <td>17.0</td>
-    </tr>
-    <tr>
-      <th>ALACHUA  COUNTY STUDENT SERVICES/ MIGRANT/ VIRTUAL PROGRAM/ MCKAY SCHOLARSHIP/ HOMEBOUND PROGRAM</th>
-      <td>PUBLIC</td>
-      <td>0.0</td>
-      <td>MIGRANT EDUCATION PROGRAM</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>OAK HALL LOWER SCHOOL</th>
-      <td>PRIVATE</td>
-      <td>365.0</td>
-      <td>ELEMENTARY</td>
-      <td>16.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>86 rows × 4 columns</p>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="groupby-function">
@@ -2959,6 +1735,16 @@ Name: ENROLLMENT, dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">49</span><span class="o">-</span><span class="mi">80</span><span class="n">f9266e61ad</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span> <span class="o">=</span> <span class="n">school_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;ENROLLMENT&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;TEACHERS&quot;</span><span class="p">])]</span>
+
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2967,7 +1753,12 @@ Name: ENROLLMENT, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x00000254D961C8B0&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">50</span><span class="o">-</span><span class="n">fdf71ebcf69e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;TYPE&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2980,77 +1771,16 @@ Name: ENROLLMENT, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">51</span><span class="o">-</span><span class="mi">3</span><span class="n">dfb556594b4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">by_type</span> <span class="o">=</span> <span class="n">school_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;TYPE&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">by_type</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ENROLLMENT</th>
-      <th>TEACHERS</th>
-    </tr>
-    <tr>
-      <th>TYPE</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>COMBINATION ELEMENTARY &amp; MIDDLE</th>
-      <td>2664.0</td>
-      <td>176.0</td>
-    </tr>
-    <tr>
-      <th>COMBINATION ELEMENTARY &amp; SECONDARY</th>
-      <td>3094.0</td>
-      <td>323.3</td>
-    </tr>
-    <tr>
-      <th>COMBINATION JR. HIGH &amp; SENIOR HIGH</th>
-      <td>768.0</td>
-      <td>63.0</td>
-    </tr>
-    <tr>
-      <th>ELEMENTARY</th>
-      <td>13231.0</td>
-      <td>961.3</td>
-    </tr>
-    <tr>
-      <th>MIDDLE/JR. HIGH</th>
-      <td>4844.0</td>
-      <td>286.0</td>
-    </tr>
-    <tr>
-      <th>PRE-KINDERGARTEN</th>
-      <td>163.0</td>
-      <td>20.0</td>
-    </tr>
-    <tr>
-      <th>PRE-KINDERGARTEN-KINDERGARTEN</th>
-      <td>45.0</td>
-      <td>6.1</td>
-    </tr>
-    <tr>
-      <th>SENIOR HIGH</th>
-      <td>7885.0</td>
-      <td>390.8</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <br><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3059,87 +1789,15 @@ Name: ENROLLMENT, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">52</span><span class="o">-</span><span class="mi">1</span><span class="n">baf50c454b5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">by_type</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>OP_CLASS</th>
-      <th>ENROLLMENT</th>
-      <th>TEACHERS</th>
-    </tr>
-    <tr>
-      <th>TYPE</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>COMBINATION ELEMENTARY &amp; MIDDLE</th>
-      <td>PUBLIC</td>
-      <td>938.0</td>
-      <td>54.0</td>
-    </tr>
-    <tr>
-      <th>COMBINATION ELEMENTARY &amp; SECONDARY</th>
-      <td>PUBLIC</td>
-      <td>1139.0</td>
-      <td>122.0</td>
-    </tr>
-    <tr>
-      <th>COMBINATION JR. HIGH &amp; SENIOR HIGH</th>
-      <td>PUBLIC</td>
-      <td>395.0</td>
-      <td>23.0</td>
-    </tr>
-    <tr>
-      <th>ELEMENTARY</th>
-      <td>PUBLIC</td>
-      <td>836.0</td>
-      <td>56.0</td>
-    </tr>
-    <tr>
-      <th>MIDDLE/JR. HIGH</th>
-      <td>PUBLIC</td>
-      <td>1047.0</td>
-      <td>62.0</td>
-    </tr>
-    <tr>
-      <th>PRE-KINDERGARTEN</th>
-      <td>PUBLIC</td>
-      <td>100.0</td>
-      <td>15.0</td>
-    </tr>
-    <tr>
-      <th>PRE-KINDERGARTEN-KINDERGARTEN</th>
-      <td>PRIVATE</td>
-      <td>45.0</td>
-      <td>6.1</td>
-    </tr>
-    <tr>
-      <th>SENIOR HIGH</th>
-      <td>PUBLIC</td>
-      <td>2221.0</td>
-      <td>100.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;by_type&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <br><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3148,77 +1806,15 @@ Name: ENROLLMENT, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">53</span><span class="o">-</span><span class="mi">857</span><span class="n">f9c61df40</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;TYPE&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ENROLLMENT</th>
-      <th>TEACHERS</th>
-    </tr>
-    <tr>
-      <th>TYPE</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>COMBINATION ELEMENTARY &amp; MIDDLE</th>
-      <td>333.000000</td>
-      <td>22.000000</td>
-    </tr>
-    <tr>
-      <th>COMBINATION ELEMENTARY &amp; SECONDARY</th>
-      <td>238.000000</td>
-      <td>24.869231</td>
-    </tr>
-    <tr>
-      <th>COMBINATION JR. HIGH &amp; SENIOR HIGH</th>
-      <td>192.000000</td>
-      <td>15.750000</td>
-    </tr>
-    <tr>
-      <th>ELEMENTARY</th>
-      <td>400.939394</td>
-      <td>29.130303</td>
-    </tr>
-    <tr>
-      <th>MIDDLE/JR. HIGH</th>
-      <td>605.500000</td>
-      <td>35.750000</td>
-    </tr>
-    <tr>
-      <th>PRE-KINDERGARTEN</th>
-      <td>81.500000</td>
-      <td>10.000000</td>
-    </tr>
-    <tr>
-      <th>PRE-KINDERGARTEN-KINDERGARTEN</th>
-      <td>45.000000</td>
-      <td>6.100000</td>
-    </tr>
-    <tr>
-      <th>SENIOR HIGH</th>
-      <td>1126.428571</td>
-      <td>55.828571</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;school_df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <br><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3227,87 +1823,15 @@ Name: ENROLLMENT, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">54</span><span class="o">-</span><span class="mi">96</span><span class="n">f4f852ed91</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">by_type</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;ENROLLMENT&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">,</span> <span class="s1">&#39;TEACHERS&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="s1">&#39;OP_CLASS&#39;</span><span class="p">:</span> <span class="s1">&#39;count&#39;</span><span class="p">})</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ENROLLMENT</th>
-      <th>TEACHERS</th>
-      <th>OP_CLASS</th>
-    </tr>
-    <tr>
-      <th>TYPE</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>COMBINATION ELEMENTARY &amp; MIDDLE</th>
-      <td>2664.0</td>
-      <td>22.000000</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>COMBINATION ELEMENTARY &amp; SECONDARY</th>
-      <td>3094.0</td>
-      <td>24.869231</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <th>COMBINATION JR. HIGH &amp; SENIOR HIGH</th>
-      <td>768.0</td>
-      <td>15.750000</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>ELEMENTARY</th>
-      <td>13231.0</td>
-      <td>29.130303</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>MIDDLE/JR. HIGH</th>
-      <td>4844.0</td>
-      <td>35.750000</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>PRE-KINDERGARTEN</th>
-      <td>163.0</td>
-      <td>10.000000</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>PRE-KINDERGARTEN-KINDERGARTEN</th>
-      <td>45.0</td>
-      <td>6.100000</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>SENIOR HIGH</th>
-      <td>7885.0</td>
-      <td>55.828571</td>
-      <td>7</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;by_type&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>

@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="4-4: Selection in ArcPy" href="4-4.Using_ArcPy_to_Select.html" />
@@ -129,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="2-0.Python_Landing.html">
+  <a class="reference internal" href="2-0.Intro_to_Python.html">
    Introduction to Python Programming
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -140,22 +142,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="2-1.Python_Notebook.html">
-     2-1: Jupyter Notebook
+     Basics of Jupyter Notebook
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2-2.Markdown.html">
-     2-2: Markdown
+     Introduction to Markdown
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2-3.Data_Types.html">
-     2-3: Data Types
+     Basic Python Data Types
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2-4.Control_Structure.html">
-     2-4: Control (Flow) Structure
+     2-4. Control (Flow) Structure
     </a>
    </li>
   </ul>
@@ -405,35 +407,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/modules/4-3.Running_ArcPy_functions.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -456,7 +429,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://chjch.github.io/gisautomation/"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -473,7 +446,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmodules/4-3.Running_ArcPy_functions.html&body=Your%20issue%20content%20here."
+        <a href="https://chjch.github.io/gisautomation//issues/new?title=Issue%20on%20page%20%2Fmodules/4-3.Running_ArcPy_functions.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -939,7 +912,41 @@ further filtered by specifying <strong><em>name</em></strong>, <strong><em>featu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div class='gpresult'><h2>Messages</h2><div id='messages' data-messages='["Start Time: Thursday, January 27, 2022 11:13:00 PM","Analyzing input features...","Dissolving clip features...","Clipping input features...","Succeeded at Thursday, January 27, 2022 11:13:01 PM (Elapsed Time: 0.77 seconds)"]' data-show='true'><div id = 'default' /></div></div></div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ExecuteError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">644</span><span class="n">c4a73d813</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">school</span> <span class="o">=</span> <span class="s2">&quot;schools&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">school_2mile_I75</span> <span class="o">=</span> <span class="s2">&quot;schools_2mile_I75&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">Clip</span><span class="p">(</span><span class="n">school</span><span class="p">,</span> <span class="n">I75_buff</span><span class="p">,</span> <span class="n">school_2mile_I75</span><span class="p">)</span>
+
+<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py</span> in <span class="ni">Clip</span><span class="nt">(in_features, clip_features, out_feature_class, cluster_tolerance)</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>         <span class="k">return</span> <span class="n">retval</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">110</span>         <span class="k">raise</span> <span class="n">e</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span> 
+<span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="nd">@gptooldoc</span><span class="p">(</span><span class="s1">&#39;Select_analysis&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py</span> in <span class="ni">Clip</span><span class="nt">(in_features, clip_features, out_feature_class, cluster_tolerance)</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>     <span class="kn">from</span> <span class="nn">arcpy.arcobjects.arcobjectconversion</span> <span class="kn">import</span> <span class="n">convertArcObjectToPythonObject</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">107</span>         <span class="n">retval</span> <span class="o">=</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">Clip_analysis</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">((</span><span class="n">in_features</span><span class="p">,</span> <span class="n">clip_features</span><span class="p">,</span> <span class="n">out_feature_class</span><span class="p">,</span> <span class="n">cluster_tolerance</span><span class="p">),</span> <span class="kc">True</span><span class="p">)))</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>         <span class="k">return</span> <span class="n">retval</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(*args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">512</span>             <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">val</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">513</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span>             <span class="k">return</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+<span class="ne">ExecuteError</span>: Failed to execute. Parameters are not valid.
+<span class="n">ERROR</span> <span class="mi">000732</span><span class="p">:</span> <span class="n">Input</span> <span class="n">Features</span> <span class="ow">or</span> <span class="n">Dataset</span><span class="p">:</span> <span class="n">Dataset</span> <span class="n">schools</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span> <span class="ow">or</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">supported</span>
+<span class="n">ERROR</span> <span class="mi">000732</span><span class="p">:</span> <span class="n">Clip</span> <span class="n">Features</span><span class="p">:</span> <span class="n">Dataset</span> <span class="n">I75_2mile_buff</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span> <span class="ow">or</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">supported</span>
+<span class="n">Failed</span> <span class="n">to</span> <span class="n">execute</span> <span class="p">(</span><span class="n">Clip</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="spatial-join">
@@ -953,7 +960,41 @@ further filtered by specifying <strong><em>name</em></strong>, <strong><em>featu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div class='gpresult'><h2>Messages</h2><div id='messages' data-messages='["Start Time: Thursday, January 27, 2022 11:14:01 PM","Succeeded at Thursday, January 27, 2022 11:14:03 PM (Elapsed Time: 1.49 seconds)"]' data-show='true'><div id = 'default' /></div></div></div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ExecuteError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="mi">0807</span><span class="n">cd9f405d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">blkgrp</span> <span class="o">=</span> <span class="s2">&quot;blockgroups&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">bg_school_spjoin</span> <span class="o">=</span> <span class="s2">&quot;blockgroups_school_spjoin&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">SpatialJoin_analysis</span><span class="p">(</span><span class="n">blkgrp</span><span class="p">,</span> <span class="n">school_2mile_I75</span><span class="p">,</span> <span class="n">bg_school_spjoin</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;KEEP_COMMON&quot;</span><span class="p">)</span> <span class="c1"># keep common as the join type</span>
+
+<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py</span> in <span class="ni">SpatialJoin</span><span class="nt">(target_features, join_features, out_feature_class, join_operation, join_type, field_mapping, match_option, search_radius, distance_field_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">791</span>         <span class="k">return</span> <span class="n">retval</span>
+<span class="g g-Whitespace">    </span><span class="mi">792</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">793</span>         <span class="k">raise</span> <span class="n">e</span>
+<span class="g g-Whitespace">    </span><span class="mi">794</span> 
+<span class="g g-Whitespace">    </span><span class="mi">795</span> <span class="nd">@gptooldoc</span><span class="p">(</span><span class="s1">&#39;SymDiff_analysis&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py</span> in <span class="ni">SpatialJoin</span><span class="nt">(target_features, join_features, out_feature_class, join_operation, join_type, field_mapping, match_option, search_radius, distance_field_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">788</span>     <span class="kn">from</span> <span class="nn">arcpy.arcobjects.arcobjectconversion</span> <span class="kn">import</span> <span class="n">convertArcObjectToPythonObject</span>
+<span class="g g-Whitespace">    </span><span class="mi">789</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">790</span>         <span class="n">retval</span> <span class="o">=</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">SpatialJoin_analysis</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">((</span><span class="n">target_features</span><span class="p">,</span> <span class="n">join_features</span><span class="p">,</span> <span class="n">out_feature_class</span><span class="p">,</span> <span class="n">join_operation</span><span class="p">,</span> <span class="n">join_type</span><span class="p">,</span> <span class="n">field_mapping</span><span class="p">,</span> <span class="n">match_option</span><span class="p">,</span> <span class="n">search_radius</span><span class="p">,</span> <span class="n">distance_field_name</span><span class="p">),</span> <span class="kc">True</span><span class="p">)))</span>
+<span class="g g-Whitespace">    </span><span class="mi">791</span>         <span class="k">return</span> <span class="n">retval</span>
+<span class="g g-Whitespace">    </span><span class="mi">792</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(*args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">512</span>             <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">val</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">513</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span>             <span class="k">return</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+<span class="ne">ExecuteError</span>: Failed to execute. Parameters are not valid.
+<span class="n">ERROR</span> <span class="mi">000732</span><span class="p">:</span> <span class="n">Target</span> <span class="n">Features</span><span class="p">:</span> <span class="n">Dataset</span> <span class="n">blockgroups</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span> <span class="ow">or</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">supported</span>
+<span class="n">ERROR</span> <span class="mi">000732</span><span class="p">:</span> <span class="n">Join</span> <span class="n">Features</span><span class="p">:</span> <span class="n">Dataset</span> <span class="n">schools_2mile_I75</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span> <span class="ow">or</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">supported</span>
+<span class="n">Failed</span> <span class="n">to</span> <span class="n">execute</span> <span class="p">(</span><span class="n">SpatialJoin</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -963,7 +1004,36 @@ further filtered by specifying <strong><em>name</em></strong>, <strong><em>featu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ExecuteError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">08</span><span class="n">aaa8e5dd98</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># count number of census block groups that match critieria</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">arcpy</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="n">bg_school_spjoin</span><span class="p">))</span>
+
+<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\management.py</span> in <span class="ni">GetCount</span><span class="nt">(in_rows)</span>
+<span class="g g-Whitespace">  </span><span class="mi">22755</span>         <span class="k">return</span> <span class="n">retval</span>
+<span class="g g-Whitespace">  </span><span class="mi">22756</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">&gt; </span><span class="mi">22757</span>         <span class="k">raise</span> <span class="n">e</span>
+<span class="g g-Whitespace">  </span><span class="mi">22758</span> 
+<span class="g g-Whitespace">  </span><span class="mi">22759</span> <span class="nd">@gptooldoc</span><span class="p">(</span><span class="s1">&#39;PivotTable_management&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\management.py</span> in <span class="ni">GetCount</span><span class="nt">(in_rows)</span>
+<span class="g g-Whitespace">  </span><span class="mi">22752</span>     <span class="kn">from</span> <span class="nn">arcpy.arcobjects.arcobjectconversion</span> <span class="kn">import</span> <span class="n">convertArcObjectToPythonObject</span>
+<span class="g g-Whitespace">  </span><span class="mi">22753</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">&gt; </span><span class="mi">22754</span>         <span class="n">retval</span> <span class="o">=</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">((</span><span class="n">in_rows</span><span class="p">,),</span> <span class="kc">True</span><span class="p">)))</span>
+<span class="g g-Whitespace">  </span><span class="mi">22755</span>         <span class="k">return</span> <span class="n">retval</span>
+<span class="g g-Whitespace">  </span><span class="mi">22756</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(*args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">512</span>             <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">val</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">513</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span>             <span class="k">return</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+<span class="ne">ExecuteError</span>: Failed to execute. Parameters are not valid.
+<span class="n">ERROR</span> <span class="mi">000732</span><span class="p">:</span> <span class="n">Input</span> <span class="n">Rows</span><span class="p">:</span> <span class="n">Dataset</span> <span class="n">blockgroups_school_spjoin</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span> <span class="ow">or</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">supported</span>
+<span class="n">Failed</span> <span class="n">to</span> <span class="n">execute</span> <span class="p">(</span><span class="n">GetCount</span><span class="p">)</span><span class="o">.</span>
 </pre></div>
 </div>
 </div>
@@ -991,7 +1061,8 @@ further filtered by specifying <strong><em>name</em></strong>, <strong><em>featu
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error: Failed to execute. Parameters are not valid.
-ERROR 000725: Output Feature Class: Dataset D:\Dropbox (UFL)\URP6271\urp6271_spring2022\class_data.gdb\blockgroups_school_spjoin already exists.
+ERROR 000732: Target Features: Dataset blockgroups does not exist or is not supported
+ERROR 000732: Join Features: Dataset schools_2mile_I75 does not exist or is not supported
 Failed to execute (SpatialJoin).
 </pre></div>
 </div>
@@ -1020,9 +1091,10 @@ class first, if already exists, use <code class="docutils literal notranslate"><
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A feature class with the name blockgroups_school_spjoin already exists
-However, arcpy helped you deleted blockgroups_school_spjoin.
-succeed, output 19 features
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error: Failed to execute. Parameters are not valid.
+ERROR 000732: Target Features: Dataset blockgroups does not exist or is not supported
+ERROR 000732: Join Features: Dataset schools_2mile_I75 does not exist or is not supported
+Failed to execute (SpatialJoin).
 </pre></div>
 </div>
 </div>
@@ -1049,8 +1121,10 @@ current feature class to write output feature class.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Yes, blockgroups_school_spjoin exists
-succeed, output 19 features
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error: Failed to execute. Parameters are not valid.
+ERROR 000732: Target Features: Dataset blockgroups does not exist or is not supported
+ERROR 000732: Join Features: Dataset schools_2mile_I75 does not exist or is not supported
+Failed to execute (SpatialJoin).
 </pre></div>
 </div>
 </div>

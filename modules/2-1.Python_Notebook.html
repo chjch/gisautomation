@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2-1: Jupyter Notebook &#8212; Automation for Geospatial Modeling and Analysis</title>
+    <title>Basics of Jupyter Notebook &#8212; Automation for Geospatial Modeling and Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,10 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2-2: Markdown" href="2-2.Markdown.html" />
-    <link rel="prev" title="Introduction to Python Programming" href="2-0.Python_Landing.html" />
+    <link rel="next" title="Introduction to Markdown" href="2-2.Markdown.html" />
+    <link rel="prev" title="Introduction to Python Programming" href="2-0.Intro_to_Python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -129,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="2-0.Python_Landing.html">
+  <a class="reference internal" href="2-0.Intro_to_Python.html">
    Introduction to Python Programming
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -140,22 +142,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2-1: Jupyter Notebook
+     Basics of Jupyter Notebook
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2-2.Markdown.html">
-     2-2: Markdown
+     Introduction to Markdown
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2-3.Data_Types.html">
-     2-3: Data Types
+     Basic Python Data Types
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2-4.Control_Structure.html">
-     2-4: Control (Flow) Structure
+     2-4. Control (Flow) Structure
     </a>
    </li>
   </ul>
@@ -405,35 +407,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/modules/2-1.Python_Notebook.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -456,7 +429,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://chjch.github.io/gisautomation/"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -473,7 +446,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmodules/2-1.Python_Notebook.html&body=Your%20issue%20content%20here."
+        <a href="https://chjch.github.io/gisautomation//issues/new?title=Issue%20on%20page%20%2Fmodules/2-1.Python_Notebook.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -562,30 +535,33 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-jupyter-notebook">
-   What is Jupyter Notebook?
+   What is Jupyter Notebook
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-use-jupyter-notebook-in-arcgis-pro">
-   How to use Jupyter Notebook in ArcGIS Pro?
+  <a class="reference internal nav-link" href="#how-to-create-a-new-python-notebook">
+   How to create a new Python Notebook
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#two-modes">
-     Two modes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#two-cell-types">
-     Two cell types
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#useful-shortcuts-only-when-in-command-mode">
-     Useful shortcuts (only when in command mode)
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-run-codes-in-a-cell">
+   How to run codes in a cell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#two-types-of-cell">
+   Two types of cell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#two-cell-modes">
+   Two cell modes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#useful-shortcuts-only-when-in-command-mode">
+   Useful shortcuts (only when in command mode)
+  </a>
  </li>
 </ul>
 
@@ -596,7 +572,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>2-1: Jupyter Notebook</h1>
+                <h1>Basics of Jupyter Notebook</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -608,30 +584,33 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-jupyter-notebook">
-   What is Jupyter Notebook?
+   What is Jupyter Notebook
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-use-jupyter-notebook-in-arcgis-pro">
-   How to use Jupyter Notebook in ArcGIS Pro?
+  <a class="reference internal nav-link" href="#how-to-create-a-new-python-notebook">
+   How to create a new Python Notebook
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#two-modes">
-     Two modes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#two-cell-types">
-     Two cell types
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#useful-shortcuts-only-when-in-command-mode">
-     Useful shortcuts (only when in command mode)
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-run-codes-in-a-cell">
+   How to run codes in a cell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#two-types-of-cell">
+   Two types of cell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#two-cell-modes">
+   Two cell modes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#useful-shortcuts-only-when-in-command-mode">
+   Useful shortcuts (only when in command mode)
+  </a>
  </li>
 </ul>
 
@@ -643,79 +622,64 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="jupyter-notebook">
-<h1>2-1: Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="basics-of-jupyter-notebook">
+<h1>Basics of Jupyter Notebook<a class="headerlink" href="#basics-of-jupyter-notebook" title="Permalink to this headline">#</a></h1>
 <section id="what-is-jupyter-notebook">
-<h2>What is Jupyter Notebook?<a class="headerlink" href="#what-is-jupyter-notebook" title="Permalink to this headline">#</a></h2>
+<h2>What is Jupyter Notebook<a class="headerlink" href="#what-is-jupyter-notebook" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>An Integrated Development Environment (<strong>IDE</strong>) embedded in web browser.</p></li>
-<li><p>Experiment with your codes dynamicly (run your codes CELL BY CELL).</p></li>
-<li><p>A light-weight application.</p></li>
+<li><p>Experiment with your codes dynamically (run your codes CELL BY CELL).</p></li>
+<li><p>A light-weight application runs inside ArcGIS Pro or a <strong><em>web browser</em></strong>.</p></li>
 <li><p>Powerful in sharing, visualizing, and presenting ideas and results of analysis.</p></li>
 </ol>
+<img alt="new_py_nb" class="shadow mb-1 border" src="../_images/new_py_nb.png" />
 </section>
-<section id="how-to-use-jupyter-notebook-in-arcgis-pro">
-<h2>How to use Jupyter Notebook in ArcGIS Pro?<a class="headerlink" href="#how-to-use-jupyter-notebook-in-arcgis-pro" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Start ArcGIS Pro -&gt; Analysis (tab) -&gt; Geoprocessing (group) -&gt; Python Notebook.</p></li>
-<li><p>Save the notebook. View and rename the notebook (*.ipynb) in the <strong>Catalog Pane</strong>.</p></li>
-<li><p>Run cells:</p>
+<section id="how-to-create-a-new-python-notebook">
+<h2>How to create a new Python Notebook<a class="headerlink" href="#how-to-create-a-new-python-notebook" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p><strong>Analysis</strong> (<em>tab</em>) -&gt; <strong>Geoprocessing</strong> (<em>group</em>) -&gt; <strong>Python Notebook</strong>.</p>
+<a class="shadow mb-2 border reference internal image-reference" href="../_images/py_nb_menubar.png"><img alt="py_nb_menubar" class="shadow mb-2 border" src="../_images/py_nb_menubar.png" style="width: 303.0px; height: 223.0px;" /></a>
+</li>
+<li><p><strong>Save</strong> the notebook.</p>
+<a class="shadow mb-2 border reference internal image-reference" href="../_images/save_py_nb.png"><img alt="save_py_nb" class="shadow mb-2 border" src="../_images/save_py_nb.png" style="width: 190.0px; height: 97.0px;" /></a>
+</li>
+<li><p><strong>Rename</strong> the notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) in the <strong>Catalog Pane</strong>.</p></li>
+</ul>
+</section>
+<section id="how-to-run-codes-in-a-cell">
+<h2>How to run codes in a cell<a class="headerlink" href="#how-to-run-codes-in-a-cell" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Ctrl+Enter</span></code>: run a cell and stay focus on the current cell.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code>: run a cell and move selection to the next cell.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Alt+Enter</span></code>: run a cell and insert a new cell below the current cell.</p></li>
 </ol>
+</section>
+<section id="two-types-of-cell">
+<h2>Two types of cell<a class="headerlink" href="#two-types-of-cell" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p><strong>Code</strong> cell: contains <em>Python</em> codes ready to run, indicated by <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[</span> <span class="pre">]</span></code>.</p>
+<img alt="code_cell" class="shadow mb-2 border" src="../_images/code_cell.png" />
+</li>
+<li><p><strong>Markdown</strong> cell: contains <em>Markdown</em> codes, without <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[</span> <span class="pre">]</span></code>.</p>
+<img alt="md_cell_before" class="shadow mb-2 border" src="../_images/md_cell_before.png" />
+<img alt="md_cell_after" class="shadow mb-2 border" src="../_images/md_cell_after.png" />
 </li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Welcome to URP 6271&quot;</span>
-</pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Follow the same way mentioned above to <strong>run</strong> both <em>Markdown</em> cell and <em>Code</em> cell.</p>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Welcome to URP 6271&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;today is saturday&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="two-modes">
-<h3>Two modes<a class="headerlink" href="#two-modes" title="Permalink to this headline">#</a></h3>
-<p>After a notebook is opened, it can be in either one of the two modes:</p>
-<ul class="simple">
-<li><p><strong>Command mode</strong>: indicated by a <span style="color:blue"><em>blue</em></span> vertical bar; press <strong>Esc</strong> key to enable.</p></li>
-<li><p><strong>Edit mode</strong>: indicated by a <span style="color:green"><em>green</em></span> vertical bar; press <strong>Enter</strong> to enable or simply click the cell.</p></li>
-</ul>
 </section>
-<section id="two-cell-types">
-<h3>Two cell types<a class="headerlink" href="#two-cell-types" title="Permalink to this headline">#</a></h3>
+<section id="two-cell-modes">
+<h2>Two cell modes<a class="headerlink" href="#two-cell-modes" title="Permalink to this headline">#</a></h2>
+<p>Cells in Jupyter Notebook can be in either one of two modes:</p>
 <ul class="simple">
-<li><p><strong>Code</strong> cell: contains Python codes ready to run, indicated by <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[</span> <span class="pre">]</span></code>.</p></li>
-<li><p><strong>Markdown</strong> cell: contains markdown codes to complement the Python code, without <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[</span> <span class="pre">]</span></code>.</p></li>
+<li><p><strong>Command</strong> mode: indicated by a <b><span style="color:dodgerblue"><em>blue</em></span></b> vertical bar; press <code class="docutils literal notranslate"><span class="pre">Esc</span></code> key to enable.</p></li>
+<li><p><strong>Edit</strong> mode: indicated by a <b><span style="color:forestgreen"><em>green</em></span></b> vertical bar; press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to enable or simply click the cell.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;This is a code cell.&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;This is a code cell.&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p>This is a markdown cell.</p>
 </section>
 <section id="useful-shortcuts-only-when-in-command-mode">
-<h3>Useful shortcuts (only when in command mode)<a class="headerlink" href="#useful-shortcuts-only-when-in-command-mode" title="Permalink to this headline">#</a></h3>
+<h2>Useful shortcuts (only when in command mode)<a class="headerlink" href="#useful-shortcuts-only-when-in-command-mode" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">A</span></code>/<code class="docutils literal notranslate"><span class="pre">B</span></code>: Create a new cell above/below the current cell.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">UP</span></code>/<code class="docutils literal notranslate"><span class="pre">DOWN</span></code>: Arrow key to navigate between cells.</p></li>
@@ -726,16 +690,16 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: Find and replace text in markdown.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">H</span></code>: Show all keyboard shortcuts.</p></li>
 </ol>
-<div class="tip admonition">
-<p class="admonition-title">Tip:</p>
-<p>Multi-cursor support in Jupyter Notebook</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Multi-cursor support</strong> in Jupyter Notebook</p>
 <ul class="simple">
-<li><p>Ctrl + mouse click</p></li>
-<li><p>Alt + mouse click</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + mouse click</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Alt</span></code> + mouse click</p></li>
 <li><p><a class="reference external" href="https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/">Helpful tricks in Jupyter Notebook</a></p></li>
 </ul>
 </div>
-<p><strong><center><a class="reference external" href="https://en.wikipedia.org/wiki/List_of_largest_cities">Top 20</a> largest city in the world]</center></strong></p>
+<p><strong><center><a class="reference external" href="https://en.wikipedia.org/wiki/List_of_largest_cities">Top 20</a> largest city in the world</center></strong></p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
@@ -870,7 +834,6 @@ title="Print to PDF"
 </table>
 </section>
 </section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -899,7 +862,7 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="2-0.Python_Landing.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="2-0.Intro_to_Python.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
@@ -909,7 +872,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="2-2.Markdown.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2-2: Markdown</p>
+        <p class="prev-next-title">Introduction to Markdown</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
