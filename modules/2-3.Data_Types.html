@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2-4. Control (Flow) Structure" href="2-4.Control_Structure.html" />
+    <link rel="next" title="Control Flow Structure" href="2-4.Control_Structure.html" />
     <link rel="prev" title="Introduction to Markdown" href="2-2.Markdown.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -155,7 +155,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2-4.Control_Structure.html">
-     2-4. Control (Flow) Structure
+     Control Flow Structure
     </a>
    </li>
   </ul>
@@ -613,18 +613,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#boolean">
    5. Boolean
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#logical-operator">
-     5.1 Logical Operator
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#comparison-operator">
-     5.2 Comparison Operator
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#list">
@@ -703,18 +691,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#boolean">
    5. Boolean
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#logical-operator">
-     5.1 Logical Operator
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#comparison-operator">
-     5.2 Comparison Operator
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#list">
@@ -1186,6 +1162,10 @@ Gainesville
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">=</span></code> is the <strong>assignment</strong> operator. You use it to assign a value to a variable. However, <code class="docutils literal notranslate"><span class="pre">==</span></code> is a <strong>comparison</strong> operator. You use it to compare whether two values are <strong>equal</strong> or not.</p>
 </div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://www.w3schools.com/python/python_operators.asp">Python Operators</a></p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">11</span> <span class="o">&gt;</span> <span class="mi">7</span>
@@ -1222,122 +1202,28 @@ Gainesville
 </div>
 </div>
 </div>
-<p>Python codes that compares are called <strong>conditions</strong>.</p>
-<section id="logical-operator">
-<h3>5.1 Logical Operator<a class="headerlink" href="#logical-operator" title="Permalink to this headline">#</a></h3>
-<p>Here, we introduce 3 logical operators: <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code>. Logical operators are used to combine <strong>conditions</strong>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span>  <span class="c1"># Returns True if one of the statements is true</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span>  <span class="c1"># Returns True if both statements are true</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>You can directly use <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> in your code or assign them to a variable. You can then update the variable’s value later.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="kc">True</span>  <span class="c1"># Reverse the result</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="comparison-operator">
-<h3>5.2 Comparison Operator<a class="headerlink" href="#comparison-operator" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code>: greater than</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code>: less than</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code>: equal to</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code>: <strong>not</strong> equal to</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>: greater than or equal to</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>: less than or equal to</p></li>
-</ul>
+<p>Python statements that make comparisons are called
+<strong><a class="reference external" href="./2-4.Control_Structure.html#conditional-statement">conditions</a></strong>
+because they will result in a <strong>Boolean</strong> value indicating whether
+a condition is met (<code class="docutils literal notranslate"><span class="pre">True</span></code>) or not (<code class="docutils literal notranslate"><span class="pre">False</span></code>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In Python, <code class="docutils literal notranslate"><span class="pre">True</span></code> equals to 1 and <code class="docutils literal notranslate"><span class="pre">False</span></code> equals to 0, internally.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">==</span> <span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="o">==</span> <span class="kc">False</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">&gt;</span> <span class="mi">3</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># % modulus operator: return the remainder of a division</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference external" href="https://www.w3schools.com/python/python_operators.asp">Python Operators</a></p>
-</div>
-</section>
 </section>
 <section id="list">
 <h2>6. List<a class="headerlink" href="#list" title="Permalink to this headline">#</a></h2>
@@ -1479,7 +1365,7 @@ Tampa
     <a class='right-next' id="next-link" href="2-4.Control_Structure.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2-4. Control (Flow) Structure</p>
+        <p class="prev-next-title">Control Flow Structure</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

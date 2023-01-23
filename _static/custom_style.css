@@ -6,3 +6,7 @@ div.cell_output table {
     font-size: 10pt;
     table-layout: fixed;
 }
+
+td {
+    font-size: 11pt
+}
