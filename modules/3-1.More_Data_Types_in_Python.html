@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3-2: More Control Flow and Python Exceptions" href="3-2.Control_Flow_and_Exception.html" />
@@ -155,7 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="2-4.Control_Structure.html">
-     2-4. Control (Flow) Structure
+     Control Flow Structure
     </a>
    </li>
   </ul>
@@ -943,12 +945,12 @@ I like Tampa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I like Orlando
-I like Tampa
-I like Boca Raton
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I like Tampa
 I like Gainesville
-I like Jacksonville
 I like Miami
+I like Jacksonville
+I like Boca Raton
+I like Orlando
 </pre></div>
 </div>
 </div>
@@ -1248,7 +1250,7 @@ Tampa
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Changjie Chen<br/>
+    By <a href="https://chjch.github.io/">Changjie Chen</a><br/>
   
       &copy; Copyright 2023.<br/>
 </p>

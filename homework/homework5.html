@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Homework 4" href="homework4.html" />
@@ -154,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../modules/2-4.Control_Structure.html">
-     2-4. Control (Flow) Structure
+     Control Flow Structure
     </a>
    </li>
   </ul>
@@ -1084,10 +1086,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.03444725, 0.88631876, 0.2305932 , 0.1640059 ],
-       [0.90432331, 0.25600268, 0.43707843, 0.15679429],
-       [0.07442567, 0.63002352, 0.61819748, 0.8485979 ],
-       [0.58521001, 0.45358489, 0.31282754, 0.45535231]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.83060213, 0.63189259, 0.29889237, 0.87095243],
+       [0.84606947, 0.30126837, 0.08652471, 0.57676993],
+       [0.88014258, 0.93905989, 0.41572745, 0.85442875],
+       [0.52581241, 0.06987415, 0.21825803, 0.48115143]])
 </pre></div>
 </div>
 </div>
@@ -1099,25 +1101,25 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.58405306, 0.2893383 ],
-        [0.60987603, 0.00316733],
-        [0.06419333, 0.54002271],
-        [0.79723869, 0.29605613]],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.22346809, 0.41986742],
+        [0.76423007, 0.84225491],
+        [0.92159898, 0.53728259],
+        [0.98803294, 0.94479594]],
 
-       [[0.02243133, 0.91704789],
-        [0.4471936 , 0.75704246],
-        [0.85869244, 0.87487034],
-        [0.93498186, 0.42070004]],
+       [[0.31452356, 0.4794109 ],
+        [0.77607976, 0.40307147],
+        [0.44870941, 0.78447561],
+        [0.22766569, 0.37321959]],
 
-       [[0.76931237, 0.15156171],
-        [0.97081864, 0.6048023 ],
-        [0.69570745, 0.70238841],
-        [0.43049609, 0.96834176]],
+       [[0.74173801, 0.10128035],
+        [0.23548802, 0.18835268],
+        [0.16441033, 0.83924521],
+        [0.50799105, 0.01177874]],
 
-       [[0.52968448, 0.93582315],
-        [0.4378278 , 0.69691066],
-        [0.99367139, 0.84036025],
-        [0.51127117, 0.91286391]]])
+       [[0.58790116, 0.83614548],
+        [0.85290441, 0.23189726],
+        [0.45364288, 0.61132791],
+        [0.7002531 , 0.78760647]]])
 </pre></div>
 </div>
 </div>
@@ -1131,10 +1133,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[6, 3, 5, 3],
-       [0, 4, 3, 1],
-       [5, 7, 0, 3],
-       [8, 2, 1, 4]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4, 2, 1, 7],
+       [6, 9, 6, 7],
+       [5, 6, 4, 3],
+       [5, 6, 6, 6]])
 </pre></div>
 </div>
 </div>
@@ -3244,7 +3246,7 @@ Name: Fatalities, dtype: float64
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Changjie Chen<br/>
+    By <a href="https://chjch.github.io/">Changjie Chen</a><br/>
   
       &copy; Copyright 2023.<br/>
 </p>

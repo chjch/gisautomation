@@ -904,7 +904,7 @@ This is used mostly in those cases when you have to justify more than two result
 Then, use the inserted values to carry out the rest of statements.
 The <strong>type of values inserted</strong> by <code class="docutils literal notranslate"><span class="pre">input</span></code> is <strong>string</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>).</p>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter first number: &quot;</span><span class="p">))</span>
 <span class="n">num_2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter second number: &quot;</span><span class="p">))</span>
@@ -915,27 +915,6 @@ The <strong>type of values inserted</strong> by <code class="docutils literal no
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num_1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; is smaller than &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num_2</span><span class="p">))</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num_1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; is equal to &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num_2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">690</span><span class="n">befd61270</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">num_1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter first number: &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">num_2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter second number: &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">if</span> <span class="n">num_1</span> <span class="o">&gt;</span> <span class="n">num_2</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num_1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; is greater than &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num_2</span><span class="p">))</span>
-
-<span class="nn">~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\ipykernel\kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">855</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">856</span><span class="s2">         if not self._allow_stdin:</span>
-<span class="ne">--&gt; </span><span class="mi">857</span><span class="s2">             raise StdinNotImplementedError(</span>
-<span class="g g-Whitespace">    </span><span class="mi">858</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">859</span><span class="s2">             )</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>
@@ -1034,7 +1013,7 @@ a <strong>Boolean value</strong>.</p>
 </div>
 </div>
 <p>Now let’s see how we can extend the example of comparing two numbers by adding compound conditions.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter first number: &quot;</span><span class="p">))</span>
 
@@ -1046,27 +1025,6 @@ a <strong>Boolean value</strong>.</p>
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num_1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; is smaller or equal to 5 but greater than 0.&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num_1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; is negative.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mi">2</span><span class="n">ac011d028fc</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">num_1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter first number: &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">if</span> <span class="n">num_1</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num_1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; is greater than 10.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">elif</span> <span class="n">num_1</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">num_1</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
-
-<span class="nn">~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\ipykernel\kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">855</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">856</span><span class="s2">         if not self._allow_stdin:</span>
-<span class="ne">--&gt; </span><span class="mi">857</span><span class="s2">             raise StdinNotImplementedError(</span>
-<span class="g g-Whitespace">    </span><span class="mi">858</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">859</span><span class="s2">             )</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>
@@ -1238,7 +1196,7 @@ Because of how the two types of loops operate, <code class="docutils literal not
 <p>The difference between for and while loops is whether the number of iteration is known.
 In for loops, you can pre-define a sequence over which the iteration loops through.</p>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_bool</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="k">while</span> <span class="n">my_bool</span><span class="p">:</span>
@@ -1246,27 +1204,6 @@ In for loops, you can pre-define a sequence over which the iteration loops throu
     <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
         <span class="n">my_bool</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;program finished.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">22</span><span class="o">-</span><span class="n">cd6ee4734b78</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">my_bool</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">while</span> <span class="n">my_bool</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter a number: &quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="n">my_bool</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="nn">~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\ipykernel\kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">855</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">856</span><span class="s2">         if not self._allow_stdin:</span>
-<span class="ne">--&gt; </span><span class="mi">857</span><span class="s2">             raise StdinNotImplementedError(</span>
-<span class="g g-Whitespace">    </span><span class="mi">858</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">859</span><span class="s2">             )</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>
@@ -1297,7 +1234,7 @@ of the <a class="reference external" href="https://docs.python.org/3/library/bui
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
@@ -1306,6 +1243,13 @@ of the <a class="reference external" href="https://docs.python.org/3/library/bui
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">randint</span></code> is a method belongs to the <code class="docutils literal notranslate"><span class="pre">random</span></code> module.</p>
 <p>Unlike the <code class="docutils literal notranslate"><span class="pre">range</span></code> object, it includes both ends.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tab</span></code> to <strong>auto</strong>complete code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">tab</span></code> to view the documentation.</p></li>
+</ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1390,7 +1334,7 @@ of the <a class="reference external" href="https://docs.python.org/3/library/bui
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Changjie Chen<br/>
+    By <a href="https://chjch.github.io/">Changjie Chen</a><br/>
   
       &copy; Copyright 2023.<br/>
 </p>
