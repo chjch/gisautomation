@@ -51,6 +51,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Basics of Jupyter Notebook" href="2-1.Python_Notebook.html" />
@@ -161,7 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="3-0.Data_Types_Landing.html">
+  <a class="reference internal" href="3-0.Intro_Python_2.html">
    Additional Data Types and Function
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -171,18 +175,23 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-1.More_Data_Types_in_Python.html">
-     3-1: More Data Types
+    <a class="reference internal" href="3-1.More_Data_Types.html">
+     More Python Data Types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-2.Control_Flow_and_Exception.html">
-     3-2: More Control Flow and Python Exceptions
+    <a class="reference internal" href="3-2.More_Control_Flow.html">
+     More Statements for Control Flow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-3.Python_Function.html">
-     3-3: Create Python Functions
+    <a class="reference internal" href="3-3.Exceptions.html">
+     Exceptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-4.Python_Function.html">
+     Variable and Function
     </a>
    </li>
   </ul>
@@ -663,7 +672,7 @@ title="Print to PDF"
   
     By <a href="https://chjch.github.io/">Changjie Chen</a><br/>
   
-      &copy; Copyright 2023.<br/>
+      &copy; Copyright 2022-2023.<br/>
 </p>
         </footer>
     </div>

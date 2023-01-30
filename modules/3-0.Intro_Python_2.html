@@ -53,9 +53,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3-1: More Data Types" href="3-1.More_Data_Types_in_Python.html" />
+    <link rel="next" title="More Python Data Types" href="3-1.More_Data_Types.html" />
     <link rel="prev" title="Control Flow Structure" href="2-4.Control_Structure.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -173,18 +175,23 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-1.More_Data_Types_in_Python.html">
-     3-1: More Data Types
+    <a class="reference internal" href="3-1.More_Data_Types.html">
+     More Python Data Types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-2.Control_Flow_and_Exception.html">
-     3-2: More Control Flow and Python Exceptions
+    <a class="reference internal" href="3-2.More_Control_Flow.html">
+     More Statements for Control Flow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-3.Python_Function.html">
-     3-3: Create Python Functions
+    <a class="reference internal" href="3-3.Exceptions.html">
+     Exceptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-4.Python_Function.html">
+     Variable and Function
     </a>
    </li>
   </ul>
@@ -407,35 +414,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/3-0.Data_Types_Landing.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -475,7 +453,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/3-0.Data_Types_Landing.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/3-0.Intro_Python_2.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -503,7 +481,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/modules/3-0.Data_Types_Landing.ipynb"
+        <a href="../_sources/modules/3-0.Intro_Python_2.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -514,7 +492,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="headerbtn__text-container">.md</span>
 </a>
 
       </li>
@@ -568,8 +546,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-steps">
-   Learning Steps
+  <a class="reference internal nav-link" href="#assignment">
+   Assignment
   </a>
  </li>
 </ul>
@@ -597,8 +575,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-steps">
-   Learning Steps
+  <a class="reference internal nav-link" href="#assignment">
+   Assignment
   </a>
  </li>
 </ul>
@@ -618,17 +596,17 @@ title="Print to PDF"
 <p>Upon completion of this module, you should be able to:</p>
 <ul class="simple">
 <li><p>Learn more tools to do control flow in Python</p></li>
-<li><p>Additional Data Types: tuple, set, dictionary, list comprehension</p></li>
+<li><p>Additional Data Types: <em>tuple</em>, <em>set</em>, <em>dictionary</em>, and <em>list comprehension</em></p></li>
 <li><p>Create and use Python functions</p></li>
-<li><p>Understand various types of exceptions in Python</p></li>
+<li><p>Understand various types of <strong>exceptions</strong> in Python</p></li>
 <li><p>Know how to deal with exceptions</p></li>
 </ul>
 </section>
-<section id="learning-steps">
-<h2>Learning Steps<a class="headerlink" href="#learning-steps" title="Permalink to this headline">#</a></h2>
+<section id="assignment">
+<h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Work on Homework #3 Assignment</p></li>
-<li><p>Submit Assignment by Date</p></li>
+<li><p>Work on Homework 3</p></li>
+<li><p>Submit Assignment (see syllabus for due date)</p></li>
 </ul>
 </section>
 <div class="toctree-wrapper compound">
@@ -669,10 +647,10 @@ title="Print to PDF"
             <p class="prev-next-title">Control Flow Structure</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="3-1.More_Data_Types_in_Python.html" title="next page">
+    <a class='right-next' id="next-link" href="3-1.More_Data_Types.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">3-1: More Data Types</p>
+        <p class="prev-next-title">More Python Data Types</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -685,7 +663,7 @@ title="Print to PDF"
   
     By <a href="https://chjch.github.io/">Changjie Chen</a><br/>
   
-      &copy; Copyright 2023.<br/>
+      &copy; Copyright 2022-2023.<br/>
 </p>
         </footer>
     </div>

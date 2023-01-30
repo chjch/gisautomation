@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5-2: Using Pandas for ArcGIS" href="5-2.Intro_to_Pandas.html" />
@@ -163,7 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="3-0.Data_Types_Landing.html">
+  <a class="reference internal" href="3-0.Intro_Python_2.html">
    Additional Data Types and Function
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -173,18 +175,23 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-1.More_Data_Types_in_Python.html">
-     3-1: More Data Types
+    <a class="reference internal" href="3-1.More_Data_Types.html">
+     More Python Data Types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-2.Control_Flow_and_Exception.html">
-     3-2: More Control Flow and Python Exceptions
+    <a class="reference internal" href="3-2.More_Control_Flow.html">
+     More Statements for Control Flow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-3.Python_Function.html">
-     3-3: Create Python Functions
+    <a class="reference internal" href="3-3.Exceptions.html">
+     Exceptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-4.Python_Function.html">
+     Variable and Function
     </a>
    </li>
   </ul>
@@ -1028,7 +1035,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
 </pre></div>
 </div>
 </div>
@@ -1040,7 +1047,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
 </pre></div>
 </div>
 </div>
@@ -1052,7 +1059,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([9, 4, 5, 1, 9, 3, 2, 1, 7, 2, 8, 4, 7, 1, 6, 8, 6, 6, 5, 8])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([8, 9, 2, 8, 6, 4, 0, 8, 0, 7, 6, 7, 0, 5, 6, 9, 7, 3, 3, 0])
 </pre></div>
 </div>
 </div>
@@ -1064,9 +1071,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.75798785, 0.42704345],
-       [0.16164082, 0.01332493],
-       [0.15046323, 0.08582908]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.41657838, 0.93398663],
+       [0.05111567, 0.27263538],
+       [0.54807512, 0.47156084]])
 </pre></div>
 </div>
 </div>
@@ -1836,7 +1843,7 @@ title="Print to PDF"
   
     By <a href="https://chjch.github.io/">Changjie Chen</a><br/>
   
-      &copy; Copyright 2023.<br/>
+      &copy; Copyright 2022-2023.<br/>
 </p>
         </footer>
     </div>

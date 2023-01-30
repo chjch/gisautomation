@@ -51,9 +51,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Additional Data Types and Function" href="3-0.Data_Types_Landing.html" />
+    <link rel="next" title="Additional Data Types and Function" href="3-0.Intro_Python_2.html" />
     <link rel="prev" title="Basic Python Data Types" href="2-3.Data_Types.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -161,7 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="3-0.Data_Types_Landing.html">
+  <a class="reference internal" href="3-0.Intro_Python_2.html">
    Additional Data Types and Function
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -171,18 +175,23 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-1.More_Data_Types_in_Python.html">
-     3-1: More Data Types
+    <a class="reference internal" href="3-1.More_Data_Types.html">
+     More Python Data Types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-2.Control_Flow_and_Exception.html">
-     3-2: More Control Flow and Python Exceptions
+    <a class="reference internal" href="3-2.More_Control_Flow.html">
+     More Statements for Control Flow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-3.Python_Function.html">
-     3-3: Create Python Functions
+    <a class="reference internal" href="3-3.Exceptions.html">
+     Exceptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-4.Python_Function.html">
+     Variable and Function
     </a>
    </li>
   </ul>
@@ -1234,7 +1243,7 @@ of the <a class="reference external" href="https://docs.python.org/3/library/bui
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -1320,7 +1329,7 @@ of the <a class="reference external" href="https://docs.python.org/3/library/bui
             <p class="prev-next-title">Basic Python Data Types</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="3-0.Data_Types_Landing.html" title="next page">
+    <a class='right-next' id="next-link" href="3-0.Intro_Python_2.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Additional Data Types and Function</p>
@@ -1336,7 +1345,7 @@ of the <a class="reference external" href="https://docs.python.org/3/library/bui
   
     By <a href="https://chjch.github.io/">Changjie Chen</a><br/>
   
-      &copy; Copyright 2023.<br/>
+      &copy; Copyright 2022-2023.<br/>
 </p>
         </footer>
     </div>

@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Control Flow Structure" href="2-4.Control_Structure.html" />
@@ -163,7 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="3-0.Data_Types_Landing.html">
+  <a class="reference internal" href="3-0.Intro_Python_2.html">
    Additional Data Types and Function
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -173,18 +175,23 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-1.More_Data_Types_in_Python.html">
-     3-1: More Data Types
+    <a class="reference internal" href="3-1.More_Data_Types.html">
+     More Python Data Types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-2.Control_Flow_and_Exception.html">
-     3-2: More Control Flow and Python Exceptions
+    <a class="reference internal" href="3-2.More_Control_Flow.html">
+     More Statements for Control Flow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-3.Python_Function.html">
-     3-3: Create Python Functions
+    <a class="reference internal" href="3-3.Exceptions.html">
+     Exceptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-4.Python_Function.html">
+     Variable and Function
     </a>
    </li>
   </ul>
@@ -595,30 +602,13 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-and-use-of-variables">
-   4. Create and Use of Variables
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#declare-a-variable">
-     4.1 Declare a variable
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#declare-multiple-variables-simultaneously">
-     4.2 Declare Multiple Variables Simultaneously
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#boolean">
-   5. Boolean
+   4. Boolean
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#list">
-   6. List
+   5. List
   </a>
  </li>
 </ul>
@@ -673,30 +663,13 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-and-use-of-variables">
-   4. Create and Use of Variables
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#declare-a-variable">
-     4.1 Declare a variable
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#declare-multiple-variables-simultaneously">
-     4.2 Declare Multiple Variables Simultaneously
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#boolean">
-   5. Boolean
+   4. Boolean
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#list">
-   6. List
+   5. List
   </a>
  </li>
 </ul>
@@ -991,6 +964,9 @@ customization
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ABCDEFGHIJKLMNOPQRSTUVWXYZ
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1044,109 +1020,8 @@ customization
 </div>
 </section>
 </section>
-<section id="create-and-use-of-variables">
-<h2>4. Create and Use of Variables<a class="headerlink" href="#create-and-use-of-variables" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Variable is a container of data.</p></li>
-<li><p>Unlike other programming languages, Python has <strong>no explicit command</strong> for declaring a variable and no need to specify the variable’s type.</p></li>
-<li><p>A variable is created the moment you first assign a value to it.</p></li>
-<li><p>After the creation of a variable, it can be <em>referenced</em>, <em>modified</em> and <em>deleted</em>.</p></li>
-</ul>
-<div class="admonition-naming-rules admonition">
-<p class="admonition-title">Naming Rules</p>
-<ul class="simple">
-<li><p>A variable name must start with a letter or the underscore character, but <strong>cannot start with a number</strong>;</p></li>
-<li><p>A variable name can only contain alpha-numeric characters and underscores, i.e., <code class="docutils literal notranslate"><span class="pre">A-z</span></code>, <code class="docutils literal notranslate"><span class="pre">0-9</span></code>, and <code class="docutils literal notranslate"><span class="pre">_</span></code>;</p></li>
-<li><p>Variable names are case-sensitive (<strong><em>age</em></strong>, <strong><em>Age</em></strong> and <strong><em>AGE</em></strong> are <u>3 <em>completely</em> different variables</u>);</p></li>
-<li><p>Avoid using Python reserved words as a variable’s name, such as <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>.</p></li>
-</ul>
-</div>
-<section id="declare-a-variable">
-<h3>4.1 Declare a variable<a class="headerlink" href="#declare-a-variable" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># valid names</span>
-<span class="n">my_name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>
-<span class="n">_my_name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>
-<span class="n">__my__name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>
-<span class="n">myName</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>
-<span class="n">MyName</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># invalid names</span>
-<span class="n">my</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>  <span class="c1"># space is invalid</span>
-<span class="n">my</span><span class="o">-</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>  <span class="c1"># dash is invalid (all special characters)</span>
-<span class="mi">1</span><span class="n">st_name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>  <span class="c1"># starting with a number is invalid</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-24-eff5102ed3c7&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
-    <span class="n">my</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>  <span class="c1"># space is invalid</span>
-       <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Good naming strategy</strong>:</p>
-<ul class="simple">
-<li><p>Choose meaningful name instead of short name. <code class="docutils literal notranslate"><span class="pre">num_course</span></code> is better than <code class="docutils literal notranslate"><span class="pre">nc</span></code>.</p></li>
-<li><p>Maintain the length of a variable name. <code class="docutils literal notranslate"><span class="pre">number_of_courses_in_spring2020</span></code> is too long.</p></li>
-<li><p>Be consistent; <code class="docutils literal notranslate"><span class="pre">num_course</span></code> or <code class="docutils literal notranslate"><span class="pre">numCourse</span></code> or <code class="docutils literal notranslate"><span class="pre">NumCourse</span></code>.</p></li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>A variable can have a short name (like x and y) or a more descriptive name (age, carname, total_volume). Name variables in a more descriptive fashion is always preferable.</p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8 – Style Guide for Python Code</a></p>
-</div>
-</section>
-<section id="declare-multiple-variables-simultaneously">
-<h3>4.2 Declare Multiple Variables Simultaneously<a class="headerlink" href="#declare-multiple-variables-simultaneously" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;Orlando&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Gainesville&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Orlando
-2
-Gainesville
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
-100
-100
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
 <section id="boolean">
-<h2>5. Boolean<a class="headerlink" href="#boolean" title="Permalink to this headline">#</a></h2>
+<h2>4. Boolean<a class="headerlink" href="#boolean" title="Permalink to this headline">#</a></h2>
 <p>Booleans represent one of two values: <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. In programming, you often need to know if an expression is <strong>true</strong> or <strong>false</strong>. You can evaluate any expression in Python, and get one of two answers, <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. When you compare two values, the expression is evaluated and Python returns the Boolean answer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1155,7 +1030,7 @@ Gainesville
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -1228,7 +1103,7 @@ True
 </div>
 </section>
 <section id="list">
-<h2>6. List<a class="headerlink" href="#list" title="Permalink to this headline">#</a></h2>
+<h2>5. List<a class="headerlink" href="#list" title="Permalink to this headline">#</a></h2>
 <p>Lists are used to store multiple items in a single variable. Lists are created using <strong>square brackets</strong>, i.e., <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1380,7 +1255,7 @@ Tampa
   
     By <a href="https://chjch.github.io/">Changjie Chen</a><br/>
   
-      &copy; Copyright 2023.<br/>
+      &copy; Copyright 2022-2023.<br/>
 </p>
         </footer>
     </div>

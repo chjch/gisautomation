@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>8-2: Create a Script Tool &#8212; Automation for Geospatial Modeling and Analysis</title>
+    <title>More Statements for Control Flow &#8212; Automation for Geospatial Modeling and Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -57,8 +57,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8-3: Add Additional Features to the Script Tool" href="8-3.additional_features_for_script_tool.html" />
-    <link rel="prev" title="8-1: The Basics of a Script Tool" href="8-1.develop_a_script_file.html" />
+    <link rel="next" title="Exceptions" href="3-3.Exceptions.html" />
+    <link rel="prev" title="More Python Data Types" href="3-1.More_Data_Types.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -164,23 +164,23 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="3-0.Intro_Python_2.html">
    Additional Data Types and Function
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="3-1.More_Data_Types.html">
      More Python Data Types
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="3-2.More_Control_Flow.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      More Statements for Control Flow
     </a>
    </li>
@@ -294,23 +294,23 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="8-0.Tool_Landing.html">
    Building a script tool in ArcGIS Pro
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="8-1.develop_a_script_file.html">
      8-1: The Basics of a Script Tool
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="8-2.setup_for_a_script_tool.html">
      8-2: Create a Script Tool
     </a>
    </li>
@@ -422,7 +422,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/8-2.setup_for_a_script_tool.ipynb"
+        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/3-2.More_Control_Flow.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -482,7 +482,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/8-2.setup_for_a_script_tool.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/3-2.More_Control_Flow.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -510,7 +510,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/modules/8-2.setup_for_a_script_tool.ipynb"
+        <a href="../_sources/modules/3-2.More_Control_Flow.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -570,16 +570,37 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-setup-process">
-   1. The setup process
+  <a class="reference internal nav-link" href="#break-statement">
+   1.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     break
+    </span>
+   </code>
+   statement
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-5-modify-the-script-py-to-access-values-of-parameters-from-the-tool">
-     Step 5. Modify the script (.py) to access values of parameters from the tool
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continue-statement">
+   2.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     continue
+    </span>
+   </code>
+   statement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pass-statement">
+   3.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pass
+    </span>
+   </code>
+   statement
+  </a>
  </li>
 </ul>
 
@@ -590,7 +611,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>8-2: Create a Script Tool</h1>
+                <h1>More Statements for Control Flow</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -601,16 +622,37 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-setup-process">
-   1. The setup process
+  <a class="reference internal nav-link" href="#break-statement">
+   1.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     break
+    </span>
+   </code>
+   statement
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-5-modify-the-script-py-to-access-values-of-parameters-from-the-tool">
-     Step 5. Modify the script (.py) to access values of parameters from the tool
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continue-statement">
+   2.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     continue
+    </span>
+   </code>
+   statement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pass-statement">
+   3.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pass
+    </span>
+   </code>
+   statement
+  </a>
  </li>
 </ul>
 
@@ -622,120 +664,196 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="create-a-script-tool">
-<h1>8-2: Create a Script Tool<a class="headerlink" href="#create-a-script-tool" title="Permalink to this headline">#</a></h1>
-<img src="https://live.staticflickr.com/65535/51944863831_b009a5046f_o.png" width="473" height="492" alt="create_script" style="float:right">
-<section id="the-setup-process">
-<h2>1. The setup process<a class="headerlink" href="#the-setup-process" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="more-statements-for-control-flow">
+<h1>More Statements for Control Flow<a class="headerlink" href="#more-statements-for-control-flow" title="Permalink to this headline">#</a></h1>
+<p>Using loops in Python automates and repeats the tasks in an efficient manner.
+But sometimes, there may arise a condition where you want to (1) <em>exit the loop completely</em>,
+(2) skip an iteration, or (3) ignore that condition.
+These can be done by <strong>loop control statements</strong>.</p>
+<p>Loop control statements change execution from its normal sequence.
+In Python, these statements include:</p>
 <ul class="simple">
-<li><p>Step 1. Pick a toolbox to host the tool</p></li>
-<li><p>Step 2. Create a new script tool</p></li>
-<li><p>Step 3. Setup the “General” tab</p>
-<ul>
-<li><p>Name: for operation (alphanumeric only and no spaces)</p></li>
-<li><p>Label: for display (all characters allowed)</p></li>
-<li><p>Link the .py script to the tool</p></li>
-</ul>
-</li>
-<li><p>Step 4. Setup the “Parameter” tab</p>
-<ul>
-<li><p>Name and label for each parameter</p></li>
-<li><p>Data Type: Feature Class, Field, String, Number (short, long, double), Boolean, and <a class="reference external" href="https://desktop.arcgis.com/en/arcmap/10.3/tools/supplement/pdf/Geoprocessing_data_types.pdf">other</a></p></li>
-<li><p>Type: Required or Optional</p></li>
-<li><p>Direction: Input (in most situation) or Output</p></li>
-</ul>
-</li>
-</ul>
-<p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/arcpy/geoprocessing_and_python/setting-script-tool-parameters.htm#GUID-852D5C7F-B0EE-41A2-B6F8-1A86CD1DE3E7">Official Document</a></p>
-<div style="padding: 10px;margin-bottom: 20px;border: thin solid #3F48CC;border-left-width: 25px;background-color: #fff">
-<p><em>Step 3</em></p>
-<img src="https://live.staticflickr.com/65535/51945181259_f8f27d4b2e_o.png" width="800" height="400" alt="wizard_general">
-</div><div style="padding: 10px;margin-bottom: 20px;border: thin solid #3F48CC;border-left-width: 25px;background-color: #fff">
-<p><em>Step 4</em></p>
-<img src="https://live.staticflickr.com/65535/51945473950_de9c5bffce_o.png" width="800" height="400" alt="wizard_parameter">
-</div><section id="step-5-modify-the-script-py-to-access-values-of-parameters-from-the-tool">
-<h3>Step 5. Modify the script (.py) to access values of parameters from the tool<a class="headerlink" href="#step-5-modify-the-script-py-to-access-values-of-parameters-from-the-tool" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">arcpy.GetParameterAsText()</span></code></p></li>
-<li><p>access by position of the parameter, e.g., <code class="docutils literal notranslate"><span class="pre">arcpy.GetParameterAsText(0)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">break</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">continue</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define hard-coded parameter</span>
-<span class="n">I75_fc</span> <span class="o">=</span> <span class="s2">&quot;I75&quot;</span>
-<span class="n">blkgrp_fc</span> <span class="o">=</span> <span class="s2">&quot;blockgroups&quot;</span>
-<span class="n">cntbnd_fc</span> <span class="o">=</span> <span class="s2">&quot;county_boundary&quot;</span>
-<span class="n">lawenforce_fc</span> <span class="o">=</span> <span class="s2">&quot;law_enforcement&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<section id="break-statement">
+<h2>1. <code class="docutils literal notranslate"><span class="pre">break</span></code> statement<a class="headerlink" href="#break-statement" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is used to <strong>terminate the loop</strong> or statement in which it is present.
+After that, the control will pass to the statements that are present after the break statement, if available.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example of break statement (same script from last module)</span>
+<span class="n">num_guess</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">while</span> <span class="n">num_guess</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number between 1 and 6: &quot;</span><span class="p">))</span>
+    <span class="n">num_guess</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">guess</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try larger.&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">guess</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try smaller.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bingo!&quot;</span><span class="p">)</span>
+        <span class="k">break</span>  <span class="c1"># using break to terminate the loop although num_guess &gt; 0</span>
+        
+    <span class="k">if</span> <span class="n">num_guess</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num_guess</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; more guesses left.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, no more guesses.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When execution leaves a scope, all automatic objects that were created in that scope are destroyed.</p>
+</div>
+<p>If the break statement is present in the nested loop, then it terminates
+only those loops which contains <code class="docutils literal notranslate"><span class="pre">break</span></code> statement.</p>
+<a class="shadow mb-3 reference internal image-reference" href="../_images/tictactoe.png"><img alt="tictactoe" class="shadow mb-3 align-center" src="../_images/tictactoe.png" style="width: 210.0px; height: 210.0px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access soft-coded parameter</span>
-<span class="n">I75</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">blkgrp</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">cntbnd</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">lawenforce</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">42</span><span class="n">be1f54d328</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Access soft-coded parameter</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">I75</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">blkgrp</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">cntbnd</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">lawenforce</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;arcpy&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 0
+0 1
+0 2
+1 0
+1 1
+1 2
+2 0
+2 1
+2 2
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<p>The following code will skip row 2 (<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">1</span></code>) completely.
+When x is equal to 1, the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement terminate the inner <code class="docutils literal notranslate"><span class="pre">for</span></code> loop,
+but the outer <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is <strong>not affected</strong>.</p>
+<script>mermaid.initialize({
+    theme: "forest",
+    mermaid: {
+        flowchart: {useMaxWidth: true}
+    }
+});
+</script>
+<div align="center" class="mermaid align-center">
+            flowchart TD
+    A[outer loop] --&gt;|enter| B[inner loop]
+    B --&gt;|enter| C{condition?}
+    C --&gt;|True| D[`break` statement]
+    C --&gt;|False| B
+    D --&gt;|loop\ninner\nterminate| A
+        </div>
+        <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_gdb</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">blkgrp_select</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">ba58398facf6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">output_gdb</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">blkgrp_select</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;arcpy&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># intermediate output</span>
-<span class="n">I75_buff</span> <span class="o">=</span> <span class="n">output_gdb</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;I75_Buff&quot;</span>
-<span class="n">blkgrp_law</span> <span class="o">=</span> <span class="n">output_gdb</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;blkgrp_law&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">c70e045379af</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># intermediate output</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">I75_buff</span> <span class="o">=</span> <span class="n">output_gdb</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;I75_Buff&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">blkgrp_law</span> <span class="o">=</span> <span class="n">output_gdb</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;blkgrp_law&quot;</span>
-
-<span class="ne">NameError</span>: name &#39;output_gdb&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 0
+0 1
+0 2
+2 0
+2 1
+2 2
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+<section id="continue-statement">
+<h2>2. <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement<a class="headerlink" href="#continue-statement" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">continue</span></code> statement is opposite to that of <code class="docutils literal notranslate"><span class="pre">break</span></code> statement, instead of
+terminating the loop, it forces to execute the next iteration of the loop.</p>
+<p>The following example allows us to <strong>validate the input</strong> before evaluate the value of the input number.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_guess</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">while</span> <span class="n">num_guess</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number between 1 and 6: &quot;</span><span class="p">))</span>
+    
+    <span class="k">if</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="mi">6</span> <span class="ow">or</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your input is out of range&quot;</span><span class="p">)</span>
+        <span class="k">continue</span>
+    
+    <span class="n">num_guess</span> <span class="o">-=</span> <span class="mi">1</span>
+    
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">guess</span><span class="p">:</span>
+        <span class="n">hint</span> <span class="o">=</span> <span class="s2">&quot;Try larger. &quot;</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">guess</span><span class="p">:</span>
+        <span class="n">hint</span> <span class="o">=</span> <span class="s2">&quot;Try smaller. &quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bingo!&quot;</span><span class="p">)</span>
+        <span class="k">break</span>      
+        
+    <span class="k">if</span> <span class="n">num_guess</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">hint</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num_guess</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; more guesses left.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You guessed wrong, no more guesses.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pass-statement">
+<h2>3. <code class="docutils literal notranslate"><span class="pre">pass</span></code> statement<a class="headerlink" href="#pass-statement" title="Permalink to this headline">#</a></h2>
+<p>The pass statement does nothing. It can be used when a statement is required syntactically but the program requires no action.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_guess</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">while</span> <span class="n">num_guess</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number between 1 and 6: &quot;</span><span class="p">))</span>
+    <span class="n">num_guess</span> <span class="o">-=</span> <span class="mi">1</span>
+    
+    <span class="k">if</span> <span class="n">guess</span> <span class="o">&gt;</span> <span class="mi">6</span> <span class="ow">or</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your input is out of range&quot;</span><span class="p">)</span>
+        <span class="k">continue</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">guess</span><span class="p">:</span>
+            <span class="n">hint</span> <span class="o">=</span> <span class="s2">&quot;Try larger. &quot;</span>
+        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">guess</span><span class="p">:</span>
+            <span class="n">hint</span> <span class="o">=</span> <span class="s2">&quot;Try smaller. &quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bingo!&quot;</span><span class="p">)</span>
+            <span class="k">break</span>      
+        
+    <span class="k">if</span> <span class="n">num_guess</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">hint</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num_guess</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; more guesses left.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">pass</span>
+    
+<span class="k">else</span><span class="p">:</span> <span class="c1"># else on exhaustion of loop</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You guessed wrong, no more guesses.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note the last <code class="docutils literal notranslate"><span class="pre">else</span></code> statement is in the same indentation level as the <code class="docutils literal notranslate"><span class="pre">while</span></code> statement.
+This means that the <code class="docutils literal notranslate"><span class="pre">else</span></code> is only get executed after <code class="docutils literal notranslate"><span class="pre">while</span></code> loop exhausted.</p>
+</div>
 </section>
 </section>
 
@@ -766,17 +884,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="8-1.develop_a_script_file.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="3-1.More_Data_Types.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">8-1: The Basics of a Script Tool</p>
+            <p class="prev-next-title">More Python Data Types</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="8-3.additional_features_for_script_tool.html" title="next page">
+    <a class='right-next' id="next-link" href="3-3.Exceptions.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">8-3:  Add Additional Features to the Script Tool</p>
+        <p class="prev-next-title">Exceptions</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3-1: More Data Types &#8212; Automation for Geospatial Modeling and Analysis</title>
+    <title>More Python Data Types &#8212; Automation for Geospatial Modeling and Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,10 +53,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3-2: More Control Flow and Python Exceptions" href="3-2.Control_Flow_and_Exception.html" />
-    <link rel="prev" title="Additional Data Types and Function" href="3-0.Data_Types_Landing.html" />
+    <link rel="next" title="More Statements for Control Flow" href="3-2.More_Control_Flow.html" />
+    <link rel="prev" title="Additional Data Types and Function" href="3-0.Intro_Python_2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -163,7 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="3-0.Data_Types_Landing.html">
+  <a class="reference internal" href="3-0.Intro_Python_2.html">
    Additional Data Types and Function
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -174,17 +176,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3-1: More Data Types
+     More Python Data Types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-2.Control_Flow_and_Exception.html">
-     3-2: More Control Flow and Python Exceptions
+    <a class="reference internal" href="3-2.More_Control_Flow.html">
+     More Statements for Control Flow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-3.Python_Function.html">
-     3-3: Create Python Functions
+    <a class="reference internal" href="3-3.Exceptions.html">
+     Exceptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-4.Python_Function.html">
+     Variable and Function
     </a>
    </li>
   </ul>
@@ -415,7 +422,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/3-1.More_Data_Types_in_Python.ipynb"
+        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/3-1.More_Data_Types.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -475,7 +482,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/3-1.More_Data_Types_in_Python.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/3-1.More_Data_Types.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -503,7 +510,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/modules/3-1.More_Data_Types_in_Python.ipynb"
+        <a href="../_sources/modules/3-1.More_Data_Types.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -573,13 +580,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#convert-tuple-to-list">
-     1.2 Convert tuple to list
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tuple-is-immutable">
-     1.3 Tuple is immutable
+    <a class="reference internal nav-link" href="#conversion-between-tuple-and-list">
+     1.2 Conversion between tuple and list
     </a>
    </li>
   </ul>
@@ -595,8 +597,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#indexing-and-selecting">
-     3.1 Indexing and selecting
+    <a class="reference internal nav-link" href="#indexing-on-dictionary">
+     3.1 Indexing on Dictionary
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -605,18 +607,18 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dict-with-a-list-value">
-     3.3 Dict with a list value
+    <a class="reference internal nav-link" href="#dictionary-with-values-of-list">
+     3.3 Dictionary with values of list
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#format-function">
-   4.
+  <a class="reference internal nav-link" href="#string-format-function">
+   4. String
    <code class="docutils literal notranslate">
     <span class="pre">
-     format
+     format()
     </span>
    </code>
    function
@@ -636,7 +638,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>3-1: More Data Types</h1>
+                <h1>More Python Data Types</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -657,13 +659,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#convert-tuple-to-list">
-     1.2 Convert tuple to list
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tuple-is-immutable">
-     1.3 Tuple is immutable
+    <a class="reference internal nav-link" href="#conversion-between-tuple-and-list">
+     1.2 Conversion between tuple and list
     </a>
    </li>
   </ul>
@@ -679,8 +676,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#indexing-and-selecting">
-     3.1 Indexing and selecting
+    <a class="reference internal nav-link" href="#indexing-on-dictionary">
+     3.1 Indexing on Dictionary
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -689,18 +686,18 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dict-with-a-list-value">
-     3.3 Dict with a list value
+    <a class="reference internal nav-link" href="#dictionary-with-values-of-list">
+     3.3 Dictionary with values of list
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#format-function">
-   4.
+  <a class="reference internal nav-link" href="#string-format-function">
+   4. String
    <code class="docutils literal notranslate">
     <span class="pre">
-     format
+     format()
     </span>
    </code>
    function
@@ -721,10 +718,17 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="more-data-types">
-<h1>3-1: More Data Types<a class="headerlink" href="#more-data-types" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="more-python-data-types">
+<h1>More Python Data Types<a class="headerlink" href="#more-python-data-types" title="Permalink to this headline">#</a></h1>
+<p>So far, we have seen some basic data types of Python, e.g., String (<code class="docutils literal notranslate"><span class="pre">str</span></code>), Integer (<code class="docutils literal notranslate"><span class="pre">int</span></code>), List (<code class="docutils literal notranslate"><span class="pre">list</span></code>), and Boolean (<code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>).
+Now, we are going to take a look at some additional data types.</p>
 <section id="tuple">
 <h2>1. Tuple<a class="headerlink" href="#tuple" title="Permalink to this headline">#</a></h2>
+<p><strong><em>Tuples</em></strong> are defined by <strong>parentheses</strong>, e.g., <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
+<p>Tuples are used to store multiple items in a single variable.
+In other words, <em>tuple</em> is another kind of <strong>sequence</strong>.
+So, you can perform indexing and slicing on tuples following the
+same way we discussed on <em>lists</em> and <em>strings</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -744,8 +748,23 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Tuple is <strong>immutable</strong>, meaning you can not change values of its elements after the tuple is defined.
+The following code will produce a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> as we try to modify
+an element of a tuple.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
 <section id="tuple-unpacking">
 <h3>1.1 Tuple unpacking<a class="headerlink" href="#tuple-unpacking" title="Permalink to this headline">#</a></h3>
+<p>As the example above, when we create a <em>tuple</em>, we normally assign values to it.
+This is called <strong>packing</strong> a tuple.
+In Python, we are also allowed to extract the values back into variables.
+This is called tuple <strong><em>unpacking</em></strong> which allows us to define <strong>multiple
+variables</strong> in one line.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -768,8 +787,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="convert-tuple-to-list">
-<h3>1.2 Convert tuple to list<a class="headerlink" href="#convert-tuple-to-list" title="Permalink to this headline">#</a></h3>
+<section id="conversion-between-tuple-and-list">
+<h3>1.2 Conversion between tuple and list<a class="headerlink" href="#conversion-between-tuple-and-list" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fl_city_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Gainesville&quot;</span><span class="p">,</span> <span class="s2">&quot;Orlando&quot;</span><span class="p">,</span> <span class="s2">&quot;Tampa&quot;</span><span class="p">]</span>
@@ -808,27 +827,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="tuple-is-immutable">
-<h3>1.3 Tuple is immutable<a class="headerlink" href="#tuple-is-immutable" title="Permalink to this headline">#</a></h3>
-<p>Unlike list, once a tuple is created it cannot be changed</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">c53026d12066</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
-
-<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
-</pre></div>
-</div>
-</div>
-</div>
+<p>Note that, if we want to add another element to the end of a list, we can use
+the function <code class="docutils literal notranslate"><span class="pre">append</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fl_city_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Jacksonville&#39;</span><span class="p">)</span>
@@ -842,65 +842,67 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fl_city_tuple</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Jacksonville&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">5</span><span class="n">b4cde593a2f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fl_city_tuple</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Jacksonville&#39;</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;tuple&#39; object has no attribute &#39;append&#39;
-</pre></div>
-</div>
-</div>
-</div>
+<p>However, since tuple is immutable, it doesn’t have this capability to add an
+additional element either once it’s defined.</p>
 </section>
 </section>
 <section id="set">
 <h2>2. Set<a class="headerlink" href="#set" title="Permalink to this headline">#</a></h2>
-<p>Unique collection of elements</p>
+<p><strong><em>Sets</em></strong> are defined by <strong>curly brackets</strong>, e.g., <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
+<p>In Python, set is <strong>uniquely</strong> indexed. Thus, there’s no duplicates in
+a set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>You can create a set with <code class="docutils literal notranslate"><span class="pre">set</span></code> constructor.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># (1, 2, 3) is a tuple</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="n">c9c96910e542</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</div>
+<p>Similar to <em>list</em>, we can mix multiple data types in a <em>set</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mixed_set</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;URP&#39;</span><span class="p">,</span> <span class="mi">6271</span><span class="p">,</span> <span class="kc">True</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Since <em>set</em> is <strong>unordered</strong>, unlike other “collections” of Python,
+e.g., <em>list</em>, <em>string</em>, <em>tuple</em>, set is <strong>not subscripable</strong>, meaning we can’t
+perform indexing and slicing on it.
+The following codes will produce an <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>, as we attempt to grab the
+first element of the set.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">more_cities</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Gainesville&#39;</span><span class="p">,</span> <span class="s1">&#39;Tampa&#39;</span><span class="p">,</span> <span class="s1">&#39;Fort Myers&#39;</span><span class="p">,</span> 
+               <span class="s1">&#39;St. Augustine&#39;</span><span class="p">,</span> <span class="s1">&#39;Orlando&#39;</span><span class="p">]</span>
 
-<span class="ne">TypeError</span>: &#39;set&#39; object is not subscriptable
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">fl_city</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Miami&#39;</span><span class="p">,</span> <span class="s1">&#39;Orlando&#39;</span><span class="p">,</span> <span class="s1">&#39;Boca Raton&#39;</span><span class="p">,</span> <span class="s1">&#39;Tampa&#39;</span><span class="p">]:</span>
+<span class="k">for</span> <span class="n">fl_city</span> <span class="ow">in</span> <span class="n">more_cities</span><span class="p">:</span>
     <span class="n">fl_city_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fl_city</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">fl_city_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Gainesville&#39;, &#39;Orlando&#39;, &#39;Tampa&#39;, &#39;Jacksonville&#39;, &#39;Miami&#39;]
-[&#39;Gainesville&#39;, &#39;Orlando&#39;, &#39;Tampa&#39;, &#39;Jacksonville&#39;, &#39;Miami&#39;, &#39;Orlando&#39;]
-[&#39;Gainesville&#39;, &#39;Orlando&#39;, &#39;Tampa&#39;, &#39;Jacksonville&#39;, &#39;Miami&#39;, &#39;Orlando&#39;, &#39;Boca Raton&#39;]
-[&#39;Gainesville&#39;, &#39;Orlando&#39;, &#39;Tampa&#39;, &#39;Jacksonville&#39;, &#39;Miami&#39;, &#39;Orlando&#39;, &#39;Boca Raton&#39;, &#39;Tampa&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Gainesville&#39;, &#39;Orlando&#39;, &#39;Tampa&#39;, &#39;Jacksonville&#39;, &#39;Gainesville&#39;]
+[&#39;Gainesville&#39;, &#39;Orlando&#39;, &#39;Tampa&#39;, &#39;Jacksonville&#39;, &#39;Gainesville&#39;, &#39;Tampa&#39;]
+[&#39;Gainesville&#39;, &#39;Orlando&#39;, &#39;Tampa&#39;, &#39;Jacksonville&#39;, &#39;Gainesville&#39;, &#39;Tampa&#39;, &#39;Fort Myers&#39;]
+[&#39;Gainesville&#39;, &#39;Orlando&#39;, &#39;Tampa&#39;, &#39;Jacksonville&#39;, &#39;Gainesville&#39;, &#39;Tampa&#39;, &#39;Fort Myers&#39;, &#39;St. Augustine&#39;]
+[&#39;Gainesville&#39;, &#39;Orlando&#39;, &#39;Tampa&#39;, &#39;Jacksonville&#39;, &#39;Gainesville&#39;, &#39;Tampa&#39;, &#39;Fort Myers&#39;, &#39;St. Augustine&#39;, &#39;Orlando&#39;]
 </pre></div>
 </div>
 </div>
@@ -912,27 +914,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Boca Raton&#39;, &#39;Gainesville&#39;, &#39;Jacksonville&#39;, &#39;Miami&#39;, &#39;Orlando&#39;, &#39;Tampa&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">fl_city_list</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I like &#39;</span> <span class="o">+</span> <span class="n">city</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I like Gainesville
-I like Orlando
-I like Tampa
-I like Jacksonville
-I like Miami
-I like Orlando
-I like Boca Raton
-I like Tampa
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Fort Myers&#39;,
+ &#39;Gainesville&#39;,
+ &#39;Jacksonville&#39;,
+ &#39;Orlando&#39;,
+ &#39;St. Augustine&#39;,
+ &#39;Tampa&#39;}
 </pre></div>
 </div>
 </div>
@@ -945,12 +932,12 @@ I like Tampa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I like Tampa
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I like Jacksonville
 I like Gainesville
-I like Miami
-I like Jacksonville
-I like Boca Raton
+I like St. Augustine
 I like Orlando
+I like Fort Myers
+I like Tampa
 </pre></div>
 </div>
 </div>
@@ -958,12 +945,12 @@ I like Orlando
 </section>
 <section id="dictionary">
 <h2>3. Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">#</a></h2>
-<p>Consists of a collection of <code class="docutils literal notranslate"><span class="pre">{key:</span> <span class="pre">value}</span></code> pairs wrapped around by curly brackets.</p>
+<p>Consists of a collection of <code class="docutils literal notranslate"><span class="pre">{&lt;key&gt;:</span> <span class="pre">&lt;value&gt;}</span></code> pairs wrapped around by curly brackets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;institution&#39;</span><span class="p">:</span> <span class="s1">&#39;University of Florida&#39;</span><span class="p">,</span>
            <span class="s1">&#39;college&#39;</span><span class="p">:</span> <span class="s1">&#39;Design, Construction, and Planning&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;enrollment year&#39;</span><span class="p">:</span> <span class="mi">2022</span><span class="p">,</span> 
+           <span class="s1">&#39;enrollment year&#39;</span><span class="p">:</span> <span class="mi">2023</span><span class="p">,</span> 
            <span class="s1">&#39;graduate&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
 <span class="n">my_dict</span>
 </pre></div>
@@ -972,40 +959,41 @@ I like Orlando
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;institution&#39;: &#39;University of Florida&#39;,
  &#39;college&#39;: &#39;Design, Construction, and Planning&#39;,
- &#39;enrollment year&#39;: 2022,
+ &#39;enrollment year&#39;: 2023,
  &#39;graduate&#39;: True}
 </pre></div>
 </div>
 </div>
 </div>
-<section id="indexing-and-selecting">
-<h3>3.1 Indexing and selecting<a class="headerlink" href="#indexing-and-selecting" title="Permalink to this headline">#</a></h3>
+<section id="indexing-on-dictionary">
+<h3>3.1 Indexing on Dictionary<a class="headerlink" href="#indexing-on-dictionary" title="Permalink to this headline">#</a></h3>
+<p>You can access a dictionary’s value(s) by its corresponding key(s).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;college&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;college&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Design, Construction, and Planning&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Design, Construction, and Planning
 </pre></div>
 </div>
 </div>
 </div>
-<div class="admonition-note admonition">
-<p class="admonition-title">Note:</p>
-<p>For dictionaries, you cannot use position for indexing purpose.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For dictionaries, you cannot use positional index.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="mi">24</span><span class="n">be3c2cdf16</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mf">2e042</span><span class="n">f7087f7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_dict</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="ne">KeyError</span>: 0
@@ -1016,6 +1004,8 @@ I like Orlando
 </section>
 <section id="keys-and-values">
 <h3>3.2 Keys and values<a class="headerlink" href="#keys-and-values" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">keys()</span></code> and <code class="docutils literal notranslate"><span class="pre">values()</span></code> functions return an iterable of all keys and values.
+Therefore, you can iterate over them using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
@@ -1035,7 +1025,7 @@ I like Orlando
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;University of Florida&#39;, &#39;Design, Construction, and Planning&#39;, 2022, True])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;University of Florida&#39;, &#39;Design, Construction, and Planning&#39;, 2023, True])
 </pre></div>
 </div>
 </div>
@@ -1050,16 +1040,18 @@ I like Orlando
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>University of Florida
 Design, Construction, and Planning
-2022
+2023
 True
 </pre></div>
 </div>
 </div>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">items()</span></code> return a tuple of <code class="docutils literal notranslate"><span class="pre">(&lt;key&gt;,</span> <span class="pre">&lt;value&gt;)</span></code> pair.
+We can use tuple unpacking technique to assign values to two variables at the same time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the value of &#39;</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;is &#39;</span> <span class="o">+</span> <span class="n">value</span><span class="p">)</span> <span class="c1"># what is the problem and how to fix it</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the value of &#39;</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;is &#39;</span> <span class="o">+</span> <span class="n">value</span><span class="p">)</span>  <span class="c1"># what&#39;s wrong here</span>
 </pre></div>
 </div>
 </div>
@@ -1070,9 +1062,9 @@ the value of collegeis Design, Construction, and Planning
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="mi">0333</span><span class="n">d31fdfb5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="n">ebcc74a0ea9b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the value of &#39;</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;is &#39;</span> <span class="o">+</span> <span class="n">value</span><span class="p">)</span> <span class="c1"># what is the problem and how to fix it</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the value of &#39;</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;is &#39;</span> <span class="o">+</span> <span class="n">value</span><span class="p">)</span>  <span class="c1"># what&#39;s wrong here</span>
 
 <span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
 </pre></div>
@@ -1080,8 +1072,9 @@ the value of collegeis Design, Construction, and Planning
 </div>
 </div>
 </section>
-<section id="dict-with-a-list-value">
-<h3>3.3 Dict with a list value<a class="headerlink" href="#dict-with-a-list-value" title="Permalink to this headline">#</a></h3>
+<section id="dictionary-with-values-of-list">
+<h3>3.3 Dictionary with values of list<a class="headerlink" href="#dictionary-with-values-of-list" title="Permalink to this headline">#</a></h3>
+<p>Note how we can access elements of individual lists.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;FL&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Gainesville&quot;</span><span class="p">,</span> <span class="s2">&quot;Orlando&quot;</span><span class="p">,</span> <span class="s2">&quot;Tampa&quot;</span><span class="p">],</span>
@@ -1105,8 +1098,24 @@ the value of collegeis Design, Construction, and Planning
 </div>
 </section>
 </section>
-<section id="format-function">
-<h2>4. <code class="docutils literal notranslate"><span class="pre">format</span></code> function<a class="headerlink" href="#format-function" title="Permalink to this headline">#</a></h2>
+<section id="string-format-function">
+<h2>4. String <code class="docutils literal notranslate"><span class="pre">format()</span></code> function<a class="headerlink" href="#string-format-function" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">format()</span></code> function is capable of handling complex string formatting more efficiently.
+Sometimes we want to make <strong>generalized print statements or string definitions</strong>
+in that case instead of writing it differently every time we use the concept of <strong>formatting</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m from the College of </span><span class="si">{}</span><span class="s2"> at the </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">my_dict</span><span class="p">[</span><span class="s2">&quot;college&quot;</span><span class="p">],</span>
+                                                     <span class="n">my_dict</span><span class="p">[</span><span class="s2">&quot;institution&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I&#39;m from the College of Design, Construction, and Planning at the University of Florida.
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -1117,7 +1126,7 @@ the value of collegeis Design, Construction, and Planning
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the value of institution is University of Florida
 the value of college is Design, Construction, and Planning
-the value of enrollment year is 2022
+the value of enrollment year is 2023
 the value of graduate is True
 </pre></div>
 </div>
@@ -1133,7 +1142,7 @@ the value of graduate is True
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the value of INSTITUTION is University of Florida
 the value of COLLEGE is Design, Construction, and Planning
-the value of ENROLLMENT YEAR is 2022
+the value of ENROLLMENT YEAR is 2023
 the value of GRADUATE is True
 </pre></div>
 </div>
@@ -1142,7 +1151,9 @@ the value of GRADUATE is True
 </section>
 <section id="list-comprehension">
 <h2>5. List comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this headline">#</a></h2>
-<p>An elegant way to iterate through a list</p>
+<p>List comprehension offers a <strong>shorter syntax</strong> when you want to create
+a new list based on the values of an existing list.
+You can also use it to very neatly iterate through a list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">city</span><span class="p">)</span> <span class="k">for</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">fl_city_list</span><span class="p">]</span>
@@ -1154,13 +1165,14 @@ the value of GRADUATE is True
 Orlando
 Tampa
 Jacksonville
-Miami
-Orlando
-Boca Raton
+Gainesville
 Tampa
+Fort Myers
+St. Augustine
+Orlando
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[None, None, None, None, None, None, None, None]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[None, None, None, None, None, None, None, None, None]
 </pre></div>
 </div>
 </div>
@@ -1229,17 +1241,17 @@ Tampa
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="3-0.Data_Types_Landing.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="3-0.Intro_Python_2.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Additional Data Types and Function</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="3-2.Control_Flow_and_Exception.html" title="next page">
+    <a class='right-next' id="next-link" href="3-2.More_Control_Flow.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">3-2: More Control Flow and Python Exceptions</p>
+        <p class="prev-next-title">More Statements for Control Flow</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -1252,7 +1264,7 @@ Tampa
   
     By <a href="https://chjch.github.io/">Changjie Chen</a><br/>
   
-      &copy; Copyright 2023.<br/>
+      &copy; Copyright 2022-2023.<br/>
 </p>
         </footer>
     </div>

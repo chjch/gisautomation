@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3-3: Create Python Functions &#8212; Automation for Geospatial Modeling and Analysis</title>
+    <title>Variable and Function &#8212; Automation for Geospatial Modeling and Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,10 +53,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Introduction to ArcPy" href="4-0.ArcPy_Landing.html" />
-    <link rel="prev" title="3-2: More Control Flow and Python Exceptions" href="3-2.Control_Flow_and_Exception.html" />
+    <link rel="prev" title="Exceptions" href="3-3.Exceptions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -163,7 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="3-0.Data_Types_Landing.html">
+  <a class="reference internal" href="3-0.Intro_Python_2.html">
    Additional Data Types and Function
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -173,18 +175,23 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="3-1.More_Data_Types_in_Python.html">
-     3-1: More Data Types
+    <a class="reference internal" href="3-1.More_Data_Types.html">
+     More Python Data Types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-2.Control_Flow_and_Exception.html">
-     3-2: More Control Flow and Python Exceptions
+    <a class="reference internal" href="3-2.More_Control_Flow.html">
+     More Statements for Control Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-3.Exceptions.html">
+     Exceptions
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3-3: Create Python Functions
+     Variable and Function
     </a>
    </li>
   </ul>
@@ -415,7 +422,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/3-3.Python_Function.ipynb"
+        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/3-4.Python_Function.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -475,7 +482,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/3-3.Python_Function.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/3-4.Python_Function.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -503,7 +510,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/modules/3-3.Python_Function.ipynb"
+        <a href="../_sources/modules/3-4.Python_Function.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -563,52 +570,69 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-a-function-in-python">
-   1. What is a function in Python
+  <a class="reference internal nav-link" href="#create-and-use-of-variables">
+   1. Create and Use of Variables
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#define-a-function">
-     1.1 Define a function
+    <a class="reference internal nav-link" href="#declare-a-variable">
+     1.1 Declare a variable
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#run-call-a-function">
-     1.2 Run (call) a function
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#function-with-arguments">
-     1.3 Function with arguments
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#function-returns-an-output">
-     1.4 Function returns an  output
+    <a class="reference internal nav-link" href="#declare-multiple-variables-simultaneously">
+     1.2 Declare Multiple Variables Simultaneously
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-example-of-a-more-pratical-function">
-   2. An Example of a more Pratical Function
+  <a class="reference internal nav-link" href="#what-is-a-function-in-python">
+   2. What is a function in Python
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#convert-lat-lon-from-degrees-minutes-seconds-dms-to-decimal-degrees-dd">
-     2.1 Convert lat/lon from Degrees Minutes Seconds(DMS) to Decimal Degrees(DD)
+    <a class="reference internal nav-link" href="#define-a-function">
+     2.1 Define a function
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-to-go-from-dd-to-dms">
-     2.2 How to go from DD to DMS
+    <a class="reference internal nav-link" href="#run-call-a-function">
+     2.2 Run (call) a function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#function-with-arguments">
+     2.3 Function with arguments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#function-returns-an-output">
+     2.4 Function returns an  output
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-example-function">
+   3. An Example Function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#from-dms-to-dd">
+     3.1 From DMS to DD
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#from-dd-to-dms">
+     3.2 From DD to DMS
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-a-function-from-another-module">
-   3. Import a function from another module
+   4. Import a function from another module
   </a>
  </li>
 </ul>
@@ -620,7 +644,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>3-3: Create Python Functions</h1>
+                <h1>Variable and Function</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -631,52 +655,69 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-a-function-in-python">
-   1. What is a function in Python
+  <a class="reference internal nav-link" href="#create-and-use-of-variables">
+   1. Create and Use of Variables
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#define-a-function">
-     1.1 Define a function
+    <a class="reference internal nav-link" href="#declare-a-variable">
+     1.1 Declare a variable
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#run-call-a-function">
-     1.2 Run (call) a function
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#function-with-arguments">
-     1.3 Function with arguments
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#function-returns-an-output">
-     1.4 Function returns an  output
+    <a class="reference internal nav-link" href="#declare-multiple-variables-simultaneously">
+     1.2 Declare Multiple Variables Simultaneously
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-example-of-a-more-pratical-function">
-   2. An Example of a more Pratical Function
+  <a class="reference internal nav-link" href="#what-is-a-function-in-python">
+   2. What is a function in Python
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#convert-lat-lon-from-degrees-minutes-seconds-dms-to-decimal-degrees-dd">
-     2.1 Convert lat/lon from Degrees Minutes Seconds(DMS) to Decimal Degrees(DD)
+    <a class="reference internal nav-link" href="#define-a-function">
+     2.1 Define a function
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-to-go-from-dd-to-dms">
-     2.2 How to go from DD to DMS
+    <a class="reference internal nav-link" href="#run-call-a-function">
+     2.2 Run (call) a function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#function-with-arguments">
+     2.3 Function with arguments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#function-returns-an-output">
+     2.4 Function returns an  output
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-example-function">
+   3. An Example Function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#from-dms-to-dd">
+     3.1 From DMS to DD
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#from-dd-to-dms">
+     3.2 From DD to DMS
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-a-function-from-another-module">
-   3. Import a function from another module
+   4. Import a function from another module
   </a>
  </li>
 </ul>
@@ -689,10 +730,111 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="create-python-functions">
-<h1>3-3: Create Python Functions<a class="headerlink" href="#create-python-functions" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="variable-and-function">
+<h1>Variable and Function<a class="headerlink" href="#variable-and-function" title="Permalink to this headline">#</a></h1>
+<section id="create-and-use-of-variables">
+<h2>1. Create and Use of Variables<a class="headerlink" href="#create-and-use-of-variables" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Variable is a container of data.</p></li>
+<li><p>Unlike other programming languages, Python has <strong>no explicit command</strong> for declaring a variable and no need to specify the variable’s type.</p></li>
+<li><p>A variable is created the moment you first assign a value to it.</p></li>
+<li><p>After the creation of a variable, it can be <em>referenced</em>, <em>modified</em> and <em>deleted</em>.</p></li>
+</ul>
+<div class="admonition-naming-rules admonition">
+<p class="admonition-title">Naming Rules</p>
+<ul class="simple">
+<li><p>A variable name must start with a letter or the underscore character, but <strong>cannot start with a number</strong>;</p></li>
+<li><p>A variable name can only contain alpha-numeric characters and underscores, i.e., <code class="docutils literal notranslate"><span class="pre">A-z</span></code>, <code class="docutils literal notranslate"><span class="pre">0-9</span></code>, and <code class="docutils literal notranslate"><span class="pre">_</span></code>;</p></li>
+<li><p>Variable names are case-sensitive (<strong><em>age</em></strong>, <strong><em>Age</em></strong> and <strong><em>AGE</em></strong> are <u>3 <em>completely</em> different variables</u>);</p></li>
+<li><p>Avoid using Python reserved words as a variable’s name, such as <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>.</p></li>
+</ul>
+</div>
+<section id="declare-a-variable">
+<h3>1.1 Declare a variable<a class="headerlink" href="#declare-a-variable" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># valid names</span>
+<span class="n">my_name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>
+<span class="n">_my_name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>
+<span class="n">__my__name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>
+<span class="n">myName</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>
+<span class="n">MyName</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># invalid names</span>
+<span class="n">my</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>  <span class="c1"># space is invalid</span>
+<span class="n">my</span><span class="o">-</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>  <span class="c1"># dash is invalid (all special characters)</span>
+<span class="mi">1</span><span class="n">st_name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>  <span class="c1"># starting with a number is invalid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-2-eff5102ed3c7&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+    <span class="n">my</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>  <span class="c1"># space is invalid</span>
+       <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Good naming strategy</strong>:</p>
+<ul class="simple">
+<li><p>Choose meaningful name instead of short name. <code class="docutils literal notranslate"><span class="pre">num_course</span></code> is better than <code class="docutils literal notranslate"><span class="pre">nc</span></code>.</p></li>
+<li><p>Maintain the length of a variable name. <code class="docutils literal notranslate"><span class="pre">number_of_courses_in_spring2020</span></code> is too long.</p></li>
+<li><p>Be consistent; <code class="docutils literal notranslate"><span class="pre">num_course</span></code> or <code class="docutils literal notranslate"><span class="pre">numCourse</span></code> or <code class="docutils literal notranslate"><span class="pre">NumCourse</span></code>.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>A variable can have a short name (like x and y) or a more descriptive name (age, carname, total_volume). Name variables in a more descriptive fashion is always preferable.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8 – Style Guide for Python Code</a></p>
+</div>
+</section>
+<section id="declare-multiple-variables-simultaneously">
+<h3>1.2 Declare Multiple Variables Simultaneously<a class="headerlink" href="#declare-multiple-variables-simultaneously" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;Orlando&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Gainesville&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Orlando
+2
+Gainesville
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
+100
+100
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 <section id="what-is-a-function-in-python">
-<h2>1. What is a function in Python<a class="headerlink" href="#what-is-a-function-in-python" title="Permalink to this headline">#</a></h2>
+<h2>2. What is a function in Python<a class="headerlink" href="#what-is-a-function-in-python" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>a block of code which only runs when it is called</p></li>
 <li><p>use the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword</p></li>
@@ -700,7 +842,7 @@ title="Print to PDF"
 <li><p>return a result after a series of operations</p></li>
 </ul>
 <section id="define-a-function">
-<h3>1.1 Define a function<a class="headerlink" href="#define-a-function" title="Permalink to this headline">#</a></h3>
+<h3>2.1 Define a function<a class="headerlink" href="#define-a-function" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
@@ -731,7 +873,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="run-call-a-function">
-<h3>1.2 Run (call) a function<a class="headerlink" href="#run-call-a-function" title="Permalink to this headline">#</a></h3>
+<h3>2.2 Run (call) a function<a class="headerlink" href="#run-call-a-function" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hello_world</span>
@@ -744,6 +886,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>You need to include a pair of parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code> to execute a function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hello_world</span><span class="p">()</span>
@@ -758,10 +901,10 @@ title="Print to PDF"
 </div>
 </section>
 <section id="function-with-arguments">
-<h3>1.3 Function with arguments<a class="headerlink" href="#function-with-arguments" title="Permalink to this headline">#</a></h3>
+<h3>2.3 Function with arguments<a class="headerlink" href="#function-with-arguments" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_func2</span><span class="p">(</span><span class="n">pet_name</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pet_favor</span><span class="p">(</span><span class="n">pet_name</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I like &quot;</span> <span class="o">+</span> <span class="n">pet_name</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -769,7 +912,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_func2</span><span class="p">(</span><span class="s2">&quot;dog&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pet_favor</span><span class="p">(</span><span class="s2">&quot;dog&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -779,9 +922,13 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In general, we should follow the same naming strategy for functions as described above for variables.</p>
+</div>
 </section>
 <section id="function-returns-an-output">
-<h3>1.4 Function returns an  output<a class="headerlink" href="#function-returns-an-output" title="Permalink to this headline">#</a></h3>
+<h3>2.4 Function returns an  output<a class="headerlink" href="#function-returns-an-output" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -818,10 +965,13 @@ title="Print to PDF"
 </div>
 </section>
 </section>
-<section id="an-example-of-a-more-pratical-function">
-<h2>2. An Example of a more Pratical Function<a class="headerlink" href="#an-example-of-a-more-pratical-function" title="Permalink to this headline">#</a></h2>
-<section id="convert-lat-lon-from-degrees-minutes-seconds-dms-to-decimal-degrees-dd">
-<h3>2.1 Convert lat/lon from Degrees Minutes Seconds(DMS) to Decimal Degrees(DD)<a class="headerlink" href="#convert-lat-lon-from-degrees-minutes-seconds-dms-to-decimal-degrees-dd" title="Permalink to this headline">#</a></h3>
+<section id="an-example-function">
+<h2>3. An Example Function<a class="headerlink" href="#an-example-function" title="Permalink to this headline">#</a></h2>
+<p>Here, we look at two examples of relatively more practical functions.
+The first one will convert lat/lon coordinates from Degrees Minutes and Seconds (DMS) to Decimal Degrees (DD).
+The second function will do the conversion in the opposite direction.</p>
+<section id="from-dms-to-dd">
+<h3>3.1 From DMS to DD<a class="headerlink" href="#from-dms-to-dd" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>University of Florida</p>
 <ul>
@@ -853,7 +1003,12 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;latitude is </span><span class="si">{}</span><span class="s2">, and latitude is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dms_dd</span><span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mf">34.98</span><span class="p">),</span> <span class="o">-</span><span class="n">dms_dd</span><span class="p">(</span><span class="mi">82</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mf">16.74</span><span class="p">)))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;latitude is </span><span class="si">{}</span><span class="s2">, and latitude is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">dms_dd</span><span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mf">34.98</span><span class="p">),</span>
+        <span class="o">-</span><span class="n">dms_dd</span><span class="p">(</span><span class="mi">82</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mf">16.74</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -864,8 +1019,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="how-to-go-from-dd-to-dms">
-<h3>2.2 How to go from DD to DMS<a class="headerlink" href="#how-to-go-from-dd-to-dms" title="Permalink to this headline">#</a></h3>
+<section id="from-dd-to-dms">
+<h3>3.2 From DD to DMS<a class="headerlink" href="#from-dd-to-dms" title="Permalink to this headline">#</a></h3>
 <p>Three things to learn:</p>
 <ol class="simple">
 <li><p>Be aware of the precision issue when dealing with floating points</p>
@@ -953,7 +1108,7 @@ longitude: 82°21&#39;16.47&quot; W.
 </section>
 </section>
 <section id="import-a-function-from-another-module">
-<h2>3. Import a function from another module<a class="headerlink" href="#import-a-function-from-another-module" title="Permalink to this headline">#</a></h2>
+<h2>4. Import a function from another module<a class="headerlink" href="#import-a-function-from-another-module" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>module: any python code saved in a file (.py)</p></li>
 <li><p>we can store our own Python function in a .py file</p></li>
@@ -971,19 +1126,9 @@ longitude: 82°21&#39;16.47&quot; W.
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">test_code</span> <span class="kn">import</span> <span class="n">dd_dms</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="mi">6352</span><span class="n">aa9d4543</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">test_code</span> <span class="kn">import</span> <span class="n">dd_dms</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;test_code&#39;
 </pre></div>
 </div>
 </div>
@@ -1018,11 +1163,11 @@ longitude: 82°21&#39;16.47&quot; W.
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="3-2.Control_Flow_and_Exception.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="3-3.Exceptions.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">3-2: More Control Flow and Python Exceptions</p>
+            <p class="prev-next-title">Exceptions</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="4-0.ArcPy_Landing.html" title="next page">
@@ -1041,7 +1186,7 @@ longitude: 82°21&#39;16.47&quot; W.
   
     By <a href="https://chjch.github.io/">Changjie Chen</a><br/>
   
-      &copy; Copyright 2023.<br/>
+      &copy; Copyright 2022-2023.<br/>
 </p>
         </footer>
     </div>
