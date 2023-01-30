@@ -3,7 +3,7 @@
 
 title: Automation for Geospatial Modeling and Analysis
 author: <a href="https://chjch.github.io/">Changjie Chen</a>
-copyright: "2023"
+copyright: "2022-2023"
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -33,3 +33,10 @@ html:
   use_issues_button: true
   use_repository_button: true
   google_analytics_id: G-55C2BQ9HQX
+
+sphinx:
+  extra_extensions:
+    - sphinxcontrib.mermaid
+  recursive_update: true
+  config:
+    mermaid_params: ['--theme', 'forest']
