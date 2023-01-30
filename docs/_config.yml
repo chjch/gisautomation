@@ -37,6 +37,3 @@ html:
 sphinx:
   extra_extensions:
     - sphinxcontrib.mermaid
-  recursive_update: true
-  config:
-    mermaid_params: ['--theme', 'forest']
