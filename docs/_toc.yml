@@ -10,11 +10,12 @@ chapters:
       - file: modules/2-2.Markdown
       - file: modules/2-3.Data_Types
       - file: modules/2-4.Control_Structure
-  - file: modules/3-0.Data_Types_Landing
+  - file: modules/3-0.Intro_Python_2
     sections:
-      - file: modules/3-1.More_Data_Types_in_Python
-      - file: modules/3-2.Control_Flow_and_Exception
-      - file: modules/3-3.Python_Function
+      - file: modules/3-1.More_Data_Types
+      - file: modules/3-2.More_Control_Flow
+      - file: modules/3-3.Exceptions
+      - file: modules/3-4.Python_Function
   - file: modules/4-0.ArcPy_Landing
     sections:
       - file: modules/4-1.Open_Notebook_from_Browser
