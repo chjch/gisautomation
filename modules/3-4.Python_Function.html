@@ -771,7 +771,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-2-eff5102ed3c7&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
     <span class="n">my</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>  <span class="c1"># space is invalid</span>
        <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -970,13 +970,10 @@ The first one will convert lat/lon coordinates from Degrees Minutes and Seconds 
 The second function will do the conversion in the opposite direction.</p>
 <section id="from-dms-to-dd">
 <h3>3.1 From DMS to DD<a class="headerlink" href="#from-dms-to-dd" title="Permalink to this headline">#</a></h3>
+<p>Coordinates of the University of Florida:</p>
 <ul class="simple">
-<li><p>University of Florida</p>
-<ul>
 <li><p>latitude = 29°38’34.98” N</p></li>
 <li><p>longitude = 82°21’16.47” W</p></li>
-</ul>
-</li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1117,18 +1114,35 @@ longitude: 82°21&#39;16.47&quot; W.
 <li><p>Save the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file to a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file</p></li>
 <li><p>Import the function from the module</p></li>
 </ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">dd_dms</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>We can import the module (<code class="docutils literal notranslate"><span class="pre">.py</span></code> file) first, and then use <code class="docutils literal notranslate"><span class="pre">.</span></code> to access the function defined in the module.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">test_code</span> <span class="kn">import</span> <span class="n">dd_dms</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">latlonconv</span>
+
+<span class="n">latlonconv</span><span class="o">.</span><span class="n">dd_dms</span><span class="p">(</span><span class="mf">29.64305</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+<p>Or, we can directly import the function itself, using the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">&lt;module&gt;</span> <span class="pre">import</span> <span class="pre">&lt;function&gt;</span></code> method.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">latlonconv</span> <span class="kn">import</span> <span class="n">dd_dms</span>
+
+<span class="n">dd_dms</span><span class="p">(</span><span class="mf">29.64305</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Fix for Importing error</p>
+<p>When running <em>Python Notebook</em> inside ArcGIS Pro, there’s a chance that
+the current path of the notebook isn’t added to the <strong>system paths</strong>.
+To fix that, you can manually insert the path containing your <code class="docutils literal notranslate"><span class="pre">.py</span></code> file to
+the system paths.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;your\own\path&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
