@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -654,19 +652,19 @@ title="Print to PDF"
 <p>The module script should contain <strong>8</strong> functions, one for each of the conversions above. e.g., the function to convert feet to miles could be called <code class="docutils literal notranslate"><span class="pre">feet2miles</span></code>.
 It should take one numeric parameter (assumed to be the amount in feet) and should return the corresponding amount converted to miles. e.g., if we pass <strong>5280</strong> to the <code class="docutils literal notranslate"><span class="pre">feet2miles</span></code> function, it should return <strong>1</strong>.</p>
 <p>When the main script runs, it should prompt the user to enter a numeric amount in the interactive window, as below.</p>
-<img src="https://live.staticflickr.com/65535/51833408835_e5c1fa67bc_z.jpg">
+<img src="../_static/images/hw3_value.png">
 <ol class="simple">
 <li><p>Make sure that the amount entered is a <strong>positive</strong> <u>valid number</u>, which can be either an integer or floating-point number.</p></li>
 <li><p>Once the number is entered and validated, prompt the user with a list of conversion options (see below).</p></li>
 <li><p>Check to make sure that the user chose one of the numbers between 1 and 8 (since 8 conversions are offered).</p></li>
 <li><p>Any other character should not be accepted, and the user should be asked to try again and enter a valid number between 1 and 8.</p></li>
 </ol>
-<img src="https://live.staticflickr.com/65535/51833029594_58ac65499c_o.png" alt="urp6271_hw3_img2">
+<img src="../_static/images/hw3_convchoice.png" alt="hw3_convchoice">
 <p>Once the conversion option is chosen, you should display the results as follows: <code class="docutils literal notranslate"><span class="pre">xx</span> <span class="pre">input_unit</span> <span class="pre">=</span> <span class="pre">yy</span></code> output_unit e.g. <code class="docutils literal notranslate"><span class="pre">5280</span> <span class="pre">Feet</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">Mile</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">Square</span> <span class="pre">Mile</span> <span class="pre">=</span> <span class="pre">640</span> <span class="pre">Acres</span></code>.</p>
 <p>Last, prompt the user if they would like to <strong>continue or not</strong>.
 If they choose to continue, prompt them again to enter a numeric value.
 This should continue until the user chooses to stop.</p>
-<img src="https://live.staticflickr.com/65535/51833029584_7734eee5aa_o.png" width="587" height="228" alt="urp6271_hw3_img3"></section>
+<img src="../_static/images/hw3_result.png" alt="hw3_result"></section>
 <section id="error-handling">
 <h2>Error Handling:<a class="headerlink" href="#error-handling" title="Permalink to this headline">#</a></h2>
 <p>Make sure anticipate input errors e.g., if a user enters an amount that’s not a valid number e.g. <strong>80a2g</strong> or negative value <strong>-50</strong>.</p>
