@@ -3,6 +3,10 @@
 format: jb-book
 root: intro
 chapters:
+  - file: software_0
+    sections:
+      - file: software_1
+      - file: software_2
   - file: modules/1-1.Intro_to_ModelBuilder
   - file: modules/2-0.Intro_to_Python
     sections:
@@ -16,12 +20,11 @@ chapters:
       - file: modules/3-2.More_Control_Flow
       - file: modules/3-3.Exceptions
       - file: modules/3-4.Python_Function
-  - file: modules/4-0.ArcPy_Landing
+  - file: modules/4-0.intro_arcpy
     sections:
-      - file: modules/4-1.Open_Notebook_from_Browser
-      - file: modules/4-2.ArcPy_Basics
-      - file: modules/4-3.Running_ArcPy_functions
-      - file: modules/4-4.Using_ArcPy_to_Select
+      - file: modules/4-1.ArcPy_Basics
+      - file: modules/4-2.Run_ArcPy_functions
+      - file: modules/4-3.ArcPy_selection
   - file: modules/5-0.SciPy_Landing
     sections:
       - file: modules/5-1.Intro_to_NumPy
