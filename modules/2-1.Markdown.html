@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction to ArcPy &#8212; Automation for Geospatial Modeling and Analysis</title>
+    <title>Introduction to Markdown &#8212; Automation for Geospatial Modeling and Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,12 +51,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4-1: Open Notebook from Your Web browser" href="4-1.Open_Notebook_from_Browser.html" />
-    <link rel="prev" title="Variable and Function" href="3-4.Python_Function.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -124,7 +126,29 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../software_0.html">
+   Software
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_1.html">
+     Basics of Jupyter Notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_2.html">
+     Use Notebook in a Browser
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1-1.Intro_to_ModelBuilder.html">
    Introduction to ModelBuilder
@@ -134,40 +158,20 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="2-0.Intro_to_Python.html">
    Introduction to Python Programming
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-1.Python_Notebook.html">
-     Basics of Jupyter Notebook
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-2.Markdown.html">
-     Introduction to Markdown
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-3.Data_Types.html">
-     Basic Python Data Types
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-4.Control_Structure.html">
-     Control Flow Structure
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="3-0.Intro_Python_2.html">
    Additional Data Types and Function
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -194,34 +198,29 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="4-0.intro_arcpy.html">
    Introduction to ArcPy
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-1.Open_Notebook_from_Browser.html">
-     4-1: Open Notebook from Your Web browser
+    <a class="reference internal" href="4-1.ArcPy_Basics.html">
+     The basics of ArcPy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-2.ArcPy_Basics.html">
-     4-2: Introduction to ArcPy
+    <a class="reference internal" href="4-2.Run_ArcPy_functions.html">
+     Run ArcPy Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-3.Running_ArcPy_functions.html">
-     4-3: Run ArcPy Functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="4-4.Using_ArcPy_to_Select.html">
-     4-4: Selection in ArcPy
+    <a class="reference internal" href="4-3.ArcPy_selection.html">
+     Querying with ArcPy
     </a>
    </li>
   </ul>
@@ -230,8 +229,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="5-0.SciPy_Landing.html">
    Introduction to the Scientific Python Ecosystem
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -252,8 +251,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="6-0.Visualization_Landing.html">
    Data Vizualization in Python
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -274,8 +273,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="7-0.Raster_Landing.html">
    Raster Data Analysis using ArcPy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -296,8 +295,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="8-0.Tool_Landing.html">
    Building a script tool in ArcGIS Pro
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -328,8 +327,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../homework/homework_problems.html">
    Homework Problems
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -420,7 +419,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/4-0.ArcPy_Landing.ipynb"
+        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/2-1.Markdown.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -480,7 +479,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/4-0.ArcPy_Landing.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/2-1.Markdown.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -508,7 +507,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/modules/4-0.ArcPy_Landing.ipynb"
+        <a href="../_sources/modules/2-1.Markdown.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -568,13 +567,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning Objectives
+  <a class="reference internal nav-link" href="#basic-syntax-of-markdown">
+   Basic Syntax of Markdown
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-steps">
-   Learning Steps
+  <a class="reference internal nav-link" href="#an-example-of-markdown">
+   An example of Markdown
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#support-of-latex">
+   Support of LaTeX
   </a>
  </li>
 </ul>
@@ -586,7 +590,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction to ArcPy</h1>
+                <h1>Introduction to Markdown</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -597,13 +601,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning Objectives
+  <a class="reference internal nav-link" href="#basic-syntax-of-markdown">
+   Basic Syntax of Markdown
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-steps">
-   Learning Steps
+  <a class="reference internal nav-link" href="#an-example-of-markdown">
+   An example of Markdown
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#support-of-latex">
+   Support of LaTeX
   </a>
  </li>
 </ul>
@@ -616,31 +625,105 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-arcpy">
-<h1>Introduction to ArcPy<a class="headerlink" href="#introduction-to-arcpy" title="Permalink to this headline">#</a></h1>
-<section id="learning-objectives">
-<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
-<p>Upon completion of this module, you should be able to:</p>
-<ul class="simple">
-<li><p>Know how to work with file path in Python</p></li>
-<li><p>Setup ArcPy workspace and other environment parameters</p></li>
-<li><p>Use escape sequence in Python strings</p></li>
-<li><p>Understand naming convention of ArcPy functions</p></li>
-<li><p>Review documentation of ArcPy functions</p></li>
-<li><p>Use ArcPy functions to solve problems which were dealt with using ModelBuilder in previous lectures</p></li>
-<li><p>Build SQL query in ArcGIS</p></li>
-<li><p>Perform select by location and select by attributes in ArcPy</p></li>
-</ul>
-</section>
-<section id="learning-steps">
-<h2>Learning Steps<a class="headerlink" href="#learning-steps" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Work on Homework #4 Assignment</p></li>
-<li><p>Submit Assignment by Date</p></li>
-</ul>
-</section>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-markdown">
+<h1>Introduction to Markdown<a class="headerlink" href="#introduction-to-markdown" title="Permalink to this headline">#</a></h1>
+<a class="shadow reference internal image-reference" href="../_images/Markdown-mark.svg"><img alt="markdown-mark" class="shadow align-right" height="83" src="../_images/Markdown-mark.svg" width="135" /></a>
+<p>Markdown is a <em>lightweight</em> <strong>markup language</strong> for creating formatted text using a plain text editor. Jupyter Notebook has built-in support for Markdown. Inside a (Jupyter) notebook, markdown cells well complement the Python codes to allowing further explanations. You can also use Markdown to <strong>organize the content</strong> of a notebook to form a better structure.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Beside staying inside a notebook file (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>), <em>Markdown</em> codes can also exist in
+its own file (more commonly) with an file extension (<code class="docutils literal notranslate"><span class="pre">.md</span></code>).</p>
 </div>
+<section id="basic-syntax-of-markdown">
+<h2>Basic Syntax of Markdown<a class="headerlink" href="#basic-syntax-of-markdown" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Header</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">H1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">H2</span></code></p></li>
+</ul>
+</li>
+<li><p>Emphasize</p>
+<ul class="simple">
+<li><p>Italic: <code class="docutils literal notranslate"><span class="pre">_</span></code></p></li>
+<li><p>Bold: <code class="docutils literal notranslate"><span class="pre">**</span></code></p></li>
+<li><p>Italic and Bold: <code class="docutils literal notranslate"><span class="pre">**_</span></code></p></li>
+</ul>
+</li>
+<li><p>List</p>
+<ul class="simple">
+<li><p>Unordered list: <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
+<li><p>Ordered list: <code class="docutils literal notranslate"><span class="pre">1.</span></code>, <code class="docutils literal notranslate"><span class="pre">2.</span></code>, <code class="docutils literal notranslate"><span class="pre">3.</span></code></p></li>
+<li><p>Nested list</p></li>
+<li><p>To do list</p></li>
+</ul>
+</li>
+<li><p>Link</p>
+<ul class="simple">
+<li><p>Website: <code class="docutils literal notranslate"><span class="pre">[name</span> <span class="pre">of</span> <span class="pre">link](url)</span></code> e.g., <code class="docutils literal notranslate"><span class="pre">[UFL](www.ufl.edu)</span></code></p></li>
+<li><p>Image: <code class="docutils literal notranslate"><span class="pre">![alttext](path</span> <span class="pre">to</span> <span class="pre">image)</span></code></p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Checkout the <a href="https://en.support.wordpress.com/markdown-quick-reference/" target="_blank">Markdown Cheatsheet</a>.</p>
+</div>
+</section>
+<section id="an-example-of-markdown">
+<h2>An example of Markdown<a class="headerlink" href="#an-example-of-markdown" title="Permalink to this headline">#</a></h2>
+<p>Use Markdown to create <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/a-quick-tour-of-arcpy.htm">this</a> webpage.</p>
+<details>
+  <summary><strong>show raw text</strong></summary>
+<p>A quick tour of ArcPy
+ArcPy is a Python site package that provides a useful and productive way to perform geographic data analysis, data conversion, data management, and map automation with Python.
+Running a tool
+arcpy.Buffer_analysis(“c:/data/Portland.gdb/streets”, “c:/data/Portland.gdb/steets_buffer”, “500 METERS”)
+Working with modules
+ArcPy includes modules covering other areas of ArcGIS. ArcPy is supported by a series of modules, including the following:
+Charts module (arcpy.charts)
+Data Access module (arcpy.da)
+Geocoding module (arcpy.geocoding)
+Image Analysis module (arcpy.ia)
+Mapping module (<a class="reference external" href="http://arcpy.mp">arcpy.mp</a>)
+Metadata module (arcpy.metadata)
+Network Analyst modules (arcpy.nax and <a class="reference external" href="http://arcpy.na">arcpy.na</a>)
+Sharing module (arcpy.sharing)
+Spatial Analyst module (<a class="reference external" href="http://arcpy.sa">arcpy.sa</a>)
+Workflow Manager (Classic) module (arcpy.wmx)
+Related topics
+What is ArcPy?(<a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/what-is-arcpy-.htm">https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/what-is-arcpy-.htm</a>)
+Essential ArcPy vocabulary(<a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/essential-arcpy-vocabulary.htm">https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/essential-arcpy-vocabulary.htm</a>)
+Install ArcPy(<a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/installing-arcpy.htm">https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/installing-arcpy.htm</a>)
+Importing ArcPy(<a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/importing-arcpy.htm">https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/importing-arcpy.htm</a>)</p>
+</details><div class="tip toggle admonition">
+<p class="admonition-title">Rendered Markdown Output</p>
+<img src="../_static/images/md_rendered.png" class="border m-1" alt="md-rendered">
+</div>
+</section>
+<section id="support-of-latex">
+<h2>Support of LaTeX<a class="headerlink" href="#support-of-latex" title="Permalink to this headline">#</a></h2>
+<p><strong>What is LaTeX</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.latex-project.org/">LaTeX</a> is a software system for document preparation.
+When writing, the writer uses plain text as opposed to the formatted text found in
+“What You See Is What You Get” word processors, such as <em>Microsoft Word</em>.</p></li>
+<li><p>LaTeX started as a writing tool for mathematicians and computer scientists, but even
+from early in its development, it has also been taken up by scholars who needed to
+write documents that include <strong>complex math expressions</strong>.</p></li>
+</ul>
+<p>Jupyter Notebook has built-in support for LaTeX, which makes it even more appealing
+for presentation and instruction purposes.
+When writing equation in LaTeX, simply enclose the equation with <code class="docutils literal notranslate"><span class="pre">$</span></code>.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<p>To work with LaTeX in Jupyter, the cell must be a <strong>markdown</strong> cell.</p>
+</div>
+<p>As an example, let’s write some euqation on the
+<a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-average-nearest-neighbor-distance-spatial-st.htm">ArcGIS Documentation</a>.</p>
+<div class="math notranslate nohighlight">
+\[SE=\frac{0.26136}{\sqrt{n^2/A}}\]</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -670,20 +753,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="3-4.Python_Function.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Variable and Function</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="4-1.Open_Notebook_from_Browser.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">4-1: Open Notebook from Your Web browser</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

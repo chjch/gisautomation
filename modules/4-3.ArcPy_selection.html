@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>4-4: Selection in ArcPy &#8212; Automation for Geospatial Modeling and Analysis</title>
+    <title>Querying with ArcPy &#8212; Automation for Geospatial Modeling and Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,12 +51,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Introduction to the Scientific Python Ecosystem" href="5-0.SciPy_Landing.html" />
-    <link rel="prev" title="4-3: Run ArcPy Functions" href="4-3.Running_ArcPy_functions.html" />
+    <link rel="prev" title="Run ArcPy Functions" href="4-2.Run_ArcPy_functions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -125,6 +127,28 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../software_0.html">
+   Software
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_1.html">
+     Basics of Jupyter Notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_2.html">
+     Use Notebook in a Browser
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1-1.Intro_to_ModelBuilder.html">
    Introduction to ModelBuilder
@@ -134,40 +158,20 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="2-0.Intro_to_Python.html">
    Introduction to Python Programming
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-1.Python_Notebook.html">
-     Basics of Jupyter Notebook
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-2.Markdown.html">
-     Introduction to Markdown
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-3.Data_Types.html">
-     Basic Python Data Types
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-4.Control_Structure.html">
-     Control Flow Structure
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="3-0.Intro_Python_2.html">
    Additional Data Types and Function
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -195,33 +199,28 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="4-0.ArcPy_Landing.html">
+  <a class="reference internal" href="4-0.intro_arcpy.html">
    Introduction to ArcPy
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="4-1.Open_Notebook_from_Browser.html">
-     4-1: Open Notebook from Your Web browser
+    <a class="reference internal" href="4-1.ArcPy_Basics.html">
+     The basics of ArcPy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-2.ArcPy_Basics.html">
-     4-2: Introduction to ArcPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="4-3.Running_ArcPy_functions.html">
-     4-3: Run ArcPy Functions
+    <a class="reference internal" href="4-2.Run_ArcPy_functions.html">
+     Run ArcPy Functions
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4-4: Selection in ArcPy
+     Querying with ArcPy
     </a>
    </li>
   </ul>
@@ -230,8 +229,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="5-0.SciPy_Landing.html">
    Introduction to the Scientific Python Ecosystem
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -252,8 +251,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="6-0.Visualization_Landing.html">
    Data Vizualization in Python
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -274,8 +273,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="7-0.Raster_Landing.html">
    Raster Data Analysis using ArcPy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -296,8 +295,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="8-0.Tool_Landing.html">
    Building a script tool in ArcGIS Pro
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -328,8 +327,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../homework/homework_problems.html">
    Homework Problems
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -420,7 +419,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/4-4.Using_ArcPy_to_Select.ipynb"
+        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/4-3.ArcPy_selection.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -480,7 +479,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/4-4.Using_ArcPy_to_Select.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/4-3.ArcPy_selection.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -508,7 +507,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/modules/4-4.Using_ArcPy_to_Select.ipynb"
+        <a href="../_sources/modules/4-3.ArcPy_selection.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -640,7 +639,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>4-4: Selection in ArcPy</h1>
+                <h1>Querying with ArcPy</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -724,8 +723,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="selection-in-arcpy">
-<h1>4-4: Selection in ArcPy<a class="headerlink" href="#selection-in-arcpy" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="querying-with-arcpy">
+<h1>Querying with ArcPy<a class="headerlink" href="#querying-with-arcpy" title="Permalink to this headline">#</a></h1>
 <section id="selection-query">
 <h2>1. Selection Query<a class="headerlink" href="#selection-query" title="Permalink to this headline">#</a></h2>
 <section id="sql-structured-query-language-expression">
@@ -934,40 +933,7 @@ them in an output feature class, i.e., saves on the drive.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ExecuteError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="n">a87d43a5811f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">query_numeric</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&quot;POP2010&quot; &gt; 10000&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">zip_output</span> <span class="o">=</span> <span class="s2">&quot;zipbnd_q1&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">Select_analysis</span><span class="p">(</span><span class="n">zip_fc</span><span class="p">,</span> <span class="n">zip_output</span><span class="p">,</span> <span class="n">query_numeric</span><span class="p">)</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py</span> in <span class="ni">Select</span><span class="nt">(in_features, out_feature_class, where_clause)</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span>         <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">138</span>         <span class="k">raise</span> <span class="n">e</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span> 
-<span class="g g-Whitespace">    </span><span class="mi">140</span> <span class="nd">@gptooldoc</span><span class="p">(</span><span class="s1">&#39;Split_analysis&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py</span> in <span class="ni">Select</span><span class="nt">(in_features, out_feature_class, where_clause)</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="kn">from</span> <span class="nn">arcpy.arcobjects.arcobjectconversion</span> <span class="kn">import</span> <span class="n">convertArcObjectToPythonObject</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">135</span>         <span class="n">retval</span> <span class="o">=</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">Select_analysis</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">((</span><span class="n">in_features</span><span class="p">,</span> <span class="n">out_feature_class</span><span class="p">,</span> <span class="n">where_clause</span><span class="p">),</span> <span class="kc">True</span><span class="p">)))</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span>         <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(*args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">512</span>             <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">val</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">513</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span>             <span class="k">return</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-
-<span class="ne">ExecuteError</span>: Failed to execute. Parameters are not valid.
-<span class="n">ERROR</span> <span class="mi">000732</span><span class="p">:</span> <span class="n">Input</span> <span class="n">Features</span><span class="p">:</span> <span class="n">Dataset</span> <span class="n">zip_boundaries</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span> <span class="ow">or</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">supported</span>
-<span class="n">Failed</span> <span class="n">to</span> <span class="n">execute</span> <span class="p">(</span><span class="n">Select</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><div class='gpresult'><h2>Messages</h2><div id='messages' data-messages='["Start Time: Monday, February 6, 2023 4:26:58 PM","Succeeded at Monday, February 6, 2023 4:26:59 PM (Elapsed Time: 0.77 seconds)"]' data-show='true'><div id = 'default' /></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -978,40 +944,7 @@ them in an output feature class, i.e., saves on the drive.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ExecuteError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mi">552</span><span class="n">a7e234746</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">query_text</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">PO_NAME</span><span class="se">\&quot;</span><span class="s2"> = </span><span class="se">\&#39;</span><span class="s2">GAINESVILLE</span><span class="se">\&#39;</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">zip_output</span> <span class="o">=</span> <span class="s2">&quot;zipbnd_q2&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">zip_fc</span><span class="p">,</span> <span class="n">zip_output</span><span class="p">,</span> <span class="n">query_text</span><span class="p">)</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py</span> in <span class="ni">Select</span><span class="nt">(in_features, out_feature_class, where_clause)</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span>         <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">138</span>         <span class="k">raise</span> <span class="n">e</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span> 
-<span class="g g-Whitespace">    </span><span class="mi">140</span> <span class="nd">@gptooldoc</span><span class="p">(</span><span class="s1">&#39;Split_analysis&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py</span> in <span class="ni">Select</span><span class="nt">(in_features, out_feature_class, where_clause)</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="kn">from</span> <span class="nn">arcpy.arcobjects.arcobjectconversion</span> <span class="kn">import</span> <span class="n">convertArcObjectToPythonObject</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">135</span>         <span class="n">retval</span> <span class="o">=</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">Select_analysis</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">((</span><span class="n">in_features</span><span class="p">,</span> <span class="n">out_feature_class</span><span class="p">,</span> <span class="n">where_clause</span><span class="p">),</span> <span class="kc">True</span><span class="p">)))</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span>         <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(*args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">512</span>             <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">val</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">513</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span>             <span class="k">return</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-
-<span class="ne">ExecuteError</span>: Failed to execute. Parameters are not valid.
-<span class="n">ERROR</span> <span class="mi">000732</span><span class="p">:</span> <span class="n">Input</span> <span class="n">Features</span><span class="p">:</span> <span class="n">Dataset</span> <span class="n">zip_boundaries</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span> <span class="ow">or</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">supported</span>
-<span class="n">Failed</span> <span class="n">to</span> <span class="n">execute</span> <span class="p">(</span><span class="n">Select</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><div class='gpresult'><h2>Messages</h2><div id='messages' data-messages='["Start Time: Monday, February 6, 2023 4:26:59 PM","Succeeded at Monday, February 6, 2023 4:27:00 PM (Elapsed Time: 0.80 seconds)"]' data-show='true'><div id = 'default' /></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1025,34 +958,32 @@ them in an output feature class, i.e., saves on the drive.</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ExecuteError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="n">d431264a97d9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">query_comp</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &gt; </span><span class="si">{}</span><span class="s2"> AND </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;&quot;POP2010&quot;&#39;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="s1">&#39;&quot;PO_NAME&quot;&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;GAINESVILLE&#39;&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">zip_output</span> <span class="o">=</span> <span class="s2">&quot;zipbnd_q2&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">zip_fc</span><span class="p">,</span> <span class="n">zip_output</span><span class="p">,</span> <span class="n">query_comp</span><span class="p">)</span>
 
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py</span> in <span class="ni">Select</span><span class="nt">(in_features, out_feature_class, where_clause)</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span>         <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">138</span>         <span class="k">raise</span> <span class="n">e</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span> 
-<span class="g g-Whitespace">    </span><span class="mi">140</span> <span class="nd">@gptooldoc</span><span class="p">(</span><span class="s1">&#39;Split_analysis&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="nn">File C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py:138,</span> in <span class="ni">Select</span><span class="nt">(in_features, out_feature_class, where_clause)</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>     <span class="k">return</span> <span class="n">retval</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">138</span>     <span class="k">raise</span> <span class="n">e</span>
 
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py</span> in <span class="ni">Select</span><span class="nt">(in_features, out_feature_class, where_clause)</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="kn">from</span> <span class="nn">arcpy.arcobjects.arcobjectconversion</span> <span class="kn">import</span> <span class="n">convertArcObjectToPythonObject</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">135</span>         <span class="n">retval</span> <span class="o">=</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">Select_analysis</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">((</span><span class="n">in_features</span><span class="p">,</span> <span class="n">out_feature_class</span><span class="p">,</span> <span class="n">where_clause</span><span class="p">),</span> <span class="kc">True</span><span class="p">)))</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span>         <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="nn">File C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py:135,</span> in <span class="ni">Select</span><span class="nt">(in_features, out_feature_class, where_clause)</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span> <span class="kn">from</span> <span class="nn">arcpy.arcobjects.arcobjectconversion</span> <span class="kn">import</span> <span class="n">convertArcObjectToPythonObject</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">135</span>     <span class="n">retval</span> <span class="o">=</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">Select_analysis</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">((</span><span class="n">in_features</span><span class="p">,</span> <span class="n">out_feature_class</span><span class="p">,</span> <span class="n">where_clause</span><span class="p">),</span> <span class="kc">True</span><span class="p">)))</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>     <span class="k">return</span> <span class="n">retval</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(*args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">512</span>             <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">val</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">513</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span>             <span class="k">return</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<span class="nn">File C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py:512,</span> in <span class="ni">Geoprocessor.__getattr__.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">(*args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span> <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span> <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">512</span>     <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">val</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">513</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span>     <span class="k">return</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
 
 <span class="ne">ExecuteError</span>: Failed to execute. Parameters are not valid.
-<span class="n">ERROR</span> <span class="mi">000732</span><span class="p">:</span> <span class="n">Input</span> <span class="n">Features</span><span class="p">:</span> <span class="n">Dataset</span> <span class="n">zip_boundaries</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span> <span class="ow">or</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">supported</span>
+<span class="n">ERROR</span> <span class="mi">000725</span><span class="p">:</span> <span class="n">Output</span> <span class="n">Feature</span> <span class="n">Class</span><span class="p">:</span> <span class="n">Dataset</span> <span class="o">..</span>\<span class="n">data</span>\<span class="n">class_data</span><span class="o">.</span><span class="n">gdb</span>\<span class="n">zipbnd_q2</span> <span class="n">already</span> <span class="n">exists</span><span class="o">.</span>
 <span class="n">Failed</span> <span class="n">to</span> <span class="n">execute</span> <span class="p">(</span><span class="n">Select</span><span class="p">)</span><span class="o">.</span>
 </pre></div>
 </div>
@@ -1069,41 +1000,6 @@ them in an output feature class, i.e., saves on the drive.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ExecuteError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="mi">030</span><span class="n">a0e1a3be5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">zip_fc</span> <span class="o">=</span> <span class="s2">&quot;zip_boundaries&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">query_numeric</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&quot;POP2010&quot; &gt; 10000&quot;&quot;&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">zip_lyr</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">SelectLayerByAttribute</span><span class="p">(</span><span class="n">zip_fc</span><span class="p">,</span> <span class="s2">&quot;NEW_SELECTION&quot;</span><span class="p">,</span> <span class="n">query_numeric</span><span class="p">)</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\management.py</span> in <span class="ni">SelectLayerByAttribute</span><span class="nt">(in_layer_or_view, selection_type, where_clause, invert_where_clause)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10778</span>         <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">  </span><span class="mi">10779</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="ne">&gt; </span><span class="mi">10780</span>         <span class="k">raise</span> <span class="n">e</span>
-<span class="g g-Whitespace">  </span><span class="mi">10781</span> 
-<span class="g g-Whitespace">  </span><span class="mi">10782</span> <span class="nd">@gptooldoc</span><span class="p">(</span><span class="s1">&#39;SelectLayerByLocation_management&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\management.py</span> in <span class="ni">SelectLayerByAttribute</span><span class="nt">(in_layer_or_view, selection_type, where_clause, invert_where_clause)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10775</span>     <span class="kn">from</span> <span class="nn">arcpy.arcobjects.arcobjectconversion</span> <span class="kn">import</span> <span class="n">convertArcObjectToPythonObject</span>
-<span class="g g-Whitespace">  </span><span class="mi">10776</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">&gt; </span><span class="mi">10777</span>         <span class="n">retval</span> <span class="o">=</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">SelectLayerByAttribute_management</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">((</span><span class="n">in_layer_or_view</span><span class="p">,</span> <span class="n">selection_type</span><span class="p">,</span> <span class="n">where_clause</span><span class="p">,</span> <span class="n">invert_where_clause</span><span class="p">),</span> <span class="kc">True</span><span class="p">)))</span>
-<span class="g g-Whitespace">  </span><span class="mi">10778</span>         <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">  </span><span class="mi">10779</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(*args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">512</span>             <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">val</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">513</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span>             <span class="k">return</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-
-<span class="ne">ExecuteError</span>: Failed to execute. Parameters are not valid.
-<span class="n">ERROR</span> <span class="mi">000732</span><span class="p">:</span> <span class="n">Layer</span> <span class="n">Name</span> <span class="ow">or</span> <span class="n">Table</span> <span class="n">View</span><span class="p">:</span> <span class="n">Dataset</span> <span class="n">zip_boundaries</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span> <span class="ow">or</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">supported</span>
-<span class="n">Failed</span> <span class="n">to</span> <span class="n">execute</span> <span class="p">(</span><span class="n">SelectLayerByAttribute</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1112,12 +1008,7 @@ them in an output feature class, i.e., saves on the drive.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">2</span><span class="n">df7247bd088</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">arcpy</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="n">zip_lyr</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;zip_lyr&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
 </pre></div>
 </div>
 </div>
@@ -1141,42 +1032,6 @@ reference the selection later in the codes.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ExecuteError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="mf">47e5</span><span class="n">c7bd9881</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">blkgrp_fc</span> <span class="o">=</span> <span class="s2">&quot;blockgroups&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">cntbnd_fc</span> <span class="o">=</span> <span class="s2">&quot;county_boundary&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">blkgrp_lyr</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">SelectLayerByLocation</span><span class="p">(</span><span class="n">blkgrp_fc</span><span class="p">,</span> <span class="s2">&quot;WITHIN&quot;</span><span class="p">,</span> <span class="n">cntbnd_fc</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\management.py</span> in <span class="ni">SelectLayerByLocation</span><span class="nt">(in_layer, overlap_type, select_features, search_distance, selection_type, invert_spatial_relationship)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10930</span>         <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">  </span><span class="mi">10931</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="ne">&gt; </span><span class="mi">10932</span>         <span class="k">raise</span> <span class="n">e</span>
-<span class="g g-Whitespace">  </span><span class="mi">10933</span> 
-<span class="g g-Whitespace">  </span><span class="mi">10934</span> 
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\management.py</span> in <span class="ni">SelectLayerByLocation</span><span class="nt">(in_layer, overlap_type, select_features, search_distance, selection_type, invert_spatial_relationship)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10927</span>     <span class="kn">from</span> <span class="nn">arcpy.arcobjects.arcobjectconversion</span> <span class="kn">import</span> <span class="n">convertArcObjectToPythonObject</span>
-<span class="g g-Whitespace">  </span><span class="mi">10928</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">&gt; </span><span class="mi">10929</span>         <span class="n">retval</span> <span class="o">=</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">SelectLayerByLocation_management</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">((</span><span class="n">in_layer</span><span class="p">,</span> <span class="n">overlap_type</span><span class="p">,</span> <span class="n">select_features</span><span class="p">,</span> <span class="n">search_distance</span><span class="p">,</span> <span class="n">selection_type</span><span class="p">,</span> <span class="n">invert_spatial_relationship</span><span class="p">),</span> <span class="kc">True</span><span class="p">)))</span>
-<span class="g g-Whitespace">  </span><span class="mi">10930</span>         <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">  </span><span class="mi">10931</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(*args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">512</span>             <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">val</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">513</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span>             <span class="k">return</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-
-<span class="ne">ExecuteError</span>: Failed to execute. Parameters are not valid.
-<span class="n">ERROR</span> <span class="mi">000368</span><span class="p">:</span> <span class="n">Invalid</span> <span class="nb">input</span> <span class="n">data</span><span class="o">.</span>
-<span class="n">ERROR</span> <span class="mi">000732</span><span class="p">:</span> <span class="n">Selecting</span> <span class="n">Features</span><span class="p">:</span> <span class="n">Dataset</span> <span class="n">county_boundary</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span> <span class="ow">or</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">supported</span>
-<span class="n">Failed</span> <span class="n">to</span> <span class="n">execute</span> <span class="p">(</span><span class="n">SelectLayerByLocation</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1185,35 +1040,7 @@ reference the selection later in the codes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ExecuteError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="mi">48</span><span class="n">cfb12f2f53</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">arcpy</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">GetCount</span><span class="p">(</span><span class="n">blkgrp_fc</span><span class="p">))</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\management.py</span> in <span class="ni">GetCount</span><span class="nt">(in_rows)</span>
-<span class="g g-Whitespace">  </span><span class="mi">22755</span>         <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">  </span><span class="mi">22756</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="ne">&gt; </span><span class="mi">22757</span>         <span class="k">raise</span> <span class="n">e</span>
-<span class="g g-Whitespace">  </span><span class="mi">22758</span> 
-<span class="g g-Whitespace">  </span><span class="mi">22759</span> <span class="nd">@gptooldoc</span><span class="p">(</span><span class="s1">&#39;PivotTable_management&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\management.py</span> in <span class="ni">GetCount</span><span class="nt">(in_rows)</span>
-<span class="g g-Whitespace">  </span><span class="mi">22752</span>     <span class="kn">from</span> <span class="nn">arcpy.arcobjects.arcobjectconversion</span> <span class="kn">import</span> <span class="n">convertArcObjectToPythonObject</span>
-<span class="g g-Whitespace">  </span><span class="mi">22753</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">&gt; </span><span class="mi">22754</span>         <span class="n">retval</span> <span class="o">=</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">((</span><span class="n">in_rows</span><span class="p">,),</span> <span class="kc">True</span><span class="p">)))</span>
-<span class="g g-Whitespace">  </span><span class="mi">22755</span>         <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">  </span><span class="mi">22756</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(*args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">512</span>             <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">val</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">513</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span>             <span class="k">return</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-
-<span class="ne">ExecuteError</span>: Failed to execute. Parameters are not valid.
-<span class="n">ERROR</span> <span class="mi">000732</span><span class="p">:</span> <span class="n">Input</span> <span class="n">Rows</span><span class="p">:</span> <span class="n">Dataset</span> <span class="n">blockgroups</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span> <span class="ow">or</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">supported</span>
-<span class="n">Failed</span> <span class="n">to</span> <span class="n">execute</span> <span class="p">(</span><span class="n">GetCount</span><span class="p">)</span><span class="o">.</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>178
 </pre></div>
 </div>
 </div>
@@ -1225,12 +1052,7 @@ reference the selection later in the codes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="mi">017</span><span class="n">b62388c8e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">arcpy</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="n">blkgrp_lyr</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_lyr&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>142
 </pre></div>
 </div>
 </div>
@@ -1271,15 +1093,7 @@ of the method.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">22</span><span class="o">-</span><span class="n">a24a64e14a38</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">conversion</span><span class="o">.</span><span class="n">FeatureClassToFeatureClass</span><span class="p">(</span><span class="n">blkgrp_lyr</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">output_fc</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_lyr&#39; is not defined
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><div class='gpresult'><h2>Messages</h2><div id='messages' data-messages='["Start Time: Monday, February 6, 2023 4:27:02 PM","Succeeded at Monday, February 6, 2023 4:27:03 PM (Elapsed Time: 1.06 seconds)"]' data-show='true'><div id = 'default' /></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1289,16 +1103,7 @@ of the method.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="mi">14919364</span><span class="n">b564</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># ouptut not specified</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">CopyFeatures</span><span class="p">(</span><span class="n">blkgrp_lyr</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_lyr&#39; is not defined
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><div class='gpresult'><h2>Messages</h2><div id='messages' data-messages='["Start Time: Monday, February 6, 2023 4:27:03 PM","Succeeded at Monday, February 6, 2023 4:27:04 PM (Elapsed Time: 1.12 seconds)"]' data-show='true'><div id = 'default' /></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1363,11 +1168,11 @@ of the method.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="4-3.Running_ArcPy_functions.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="4-2.Run_ArcPy_functions.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">4-3: Run ArcPy Functions</p>
+            <p class="prev-next-title">Run ArcPy Functions</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="5-0.SciPy_Landing.html" title="next page">

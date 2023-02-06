@@ -9,54 +9,56 @@
     <title>Basics of Jupyter Notebook &#8212; Automation for Geospatial Modeling and Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom_style.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction to Markdown" href="2-2.Markdown.html" />
-    <link rel="prev" title="Introduction to Python Programming" href="2-0.Intro_to_Python.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Use Notebook in a Browser" href="software_2.html" />
+    <link rel="prev" title="Software" href="software_0.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -99,19 +101,19 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+    <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="../_static/logo.png" class="logo" alt="logo">
+      <img src="_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Automation for Geospatial Modeling and Analysis</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -119,20 +121,15 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
+                <a class="reference internal" href="intro.html">
                     Welcome to Automation of GIS
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1-1.Intro_to_ModelBuilder.html">
-   Introduction to ModelBuilder
-  </a>
- </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="2-0.Intro_to_Python.html">
-   Introduction to Python Programming
+  <a class="reference internal" href="software_0.html">
+   Software
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -146,57 +143,32 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="2-2.Markdown.html">
-     Introduction to Markdown
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-3.Data_Types.html">
-     Basic Python Data Types
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-4.Control_Structure.html">
-     Control Flow Structure
+    <a class="reference internal" href="software_2.html">
+     Use Notebook in a Browser
     </a>
    </li>
   </ul>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/1-1.Intro_to_ModelBuilder.html">
+   Introduction to ModelBuilder
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="3-0.Intro_Python_2.html">
-   Additional Data Types and Function
+  <a class="reference internal" href="modules/2-0.Intro_to_Python.html">
+   Introduction to Python Programming
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="3-1.More_Data_Types.html">
-     More Python Data Types
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="3-2.More_Control_Flow.html">
-     More Statements for Control Flow
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="3-3.Exceptions.html">
-     Exceptions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="3-4.Python_Function.html">
-     Variable and Function
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="4-0.ArcPy_Landing.html">
-   Introduction to ArcPy
+  <a class="reference internal" href="modules/3-0.Intro_Python_2.html">
+   Additional Data Types and Function
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -205,30 +177,30 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-1.Open_Notebook_from_Browser.html">
-     4-1: Open Notebook from Your Web browser
+    <a class="reference internal" href="modules/3-1.More_Data_Types.html">
+     More Python Data Types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-2.ArcPy_Basics.html">
-     4-2: Introduction to ArcPy
+    <a class="reference internal" href="modules/3-2.More_Control_Flow.html">
+     More Statements for Control Flow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-3.Running_ArcPy_functions.html">
-     4-3: Run ArcPy Functions
+    <a class="reference internal" href="modules/3-3.Exceptions.html">
+     Exceptions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-4.Using_ArcPy_to_Select.html">
-     4-4: Selection in ArcPy
+    <a class="reference internal" href="modules/3-4.Python_Function.html">
+     Variable and Function
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="5-0.SciPy_Landing.html">
-   Introduction to the Scientific Python Ecosystem
+  <a class="reference internal" href="modules/4-0.intro_arcpy.html">
+   Introduction to ArcPy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -237,20 +209,25 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="5-1.Intro_to_NumPy.html">
-     5-1: Using NumPy for ArcGIS
+    <a class="reference internal" href="modules/4-1.ArcPy_Basics.html">
+     The basics of ArcPy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="5-2.Intro_to_Pandas.html">
-     5-2: Using Pandas for ArcGIS
+    <a class="reference internal" href="modules/4-2.Run_ArcPy_functions.html">
+     Run ArcPy Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules/4-3.ArcPy_selection.html">
+     Querying with ArcPy
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="6-0.Visualization_Landing.html">
-   Data Vizualization in Python
+  <a class="reference internal" href="modules/5-0.SciPy_Landing.html">
+   Introduction to the Scientific Python Ecosystem
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -259,20 +236,20 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="6-1.Intro_to_Matplotlib.html">
-     6-1: Visualize tabular (aspatial) data using Matplotlib
+    <a class="reference internal" href="modules/5-1.Intro_to_NumPy.html">
+     5-1: Using NumPy for ArcGIS
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="6-2.Intro_to_ArcGIS_API_for_Python.html">
-     6-2: Visualizing Spatial Data using ArcGIS API for Python
+    <a class="reference internal" href="modules/5-2.Intro_to_Pandas.html">
+     5-2: Using Pandas for ArcGIS
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="7-0.Raster_Landing.html">
-   Raster Data Analysis using ArcPy
+  <a class="reference internal" href="modules/6-0.Visualization_Landing.html">
+   Data Vizualization in Python
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -281,20 +258,20 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="7-1.Raster_Analysis_Basics.html">
-     7-1: Raster Analysis Basics
+    <a class="reference internal" href="modules/6-1.Intro_to_Matplotlib.html">
+     6-1: Visualize tabular (aspatial) data using Matplotlib
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="7-2.ArcPy_Raster.html">
-     7-2: Run Raster Geoprocessing using ArcPy
+    <a class="reference internal" href="modules/6-2.Intro_to_ArcGIS_API_for_Python.html">
+     6-2: Visualizing Spatial Data using ArcGIS API for Python
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="8-0.Tool_Landing.html">
-   Building a script tool in ArcGIS Pro
+  <a class="reference internal" href="modules/7-0.Raster_Landing.html">
+   Raster Data Analysis using ArcPy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -303,30 +280,20 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="8-1.develop_a_script_file.html">
-     8-1: The Basics of a Script Tool
+    <a class="reference internal" href="modules/7-1.Raster_Analysis_Basics.html">
+     7-1: Raster Analysis Basics
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="8-2.setup_for_a_script_tool.html">
-     8-2: Create a Script Tool
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="8-3.additional_features_for_script_tool.html">
-     8-3:  Add Additional Features to the Script Tool
+    <a class="reference internal" href="modules/7-2.ArcPy_Raster.html">
+     7-2: Run Raster Geoprocessing using ArcPy
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="9.Problem_Solving_in_Python_and_GIS.html">
-   A Journey of Solving a GIS Automation Problem: from Google to Settle
-  </a>
- </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../homework/homework_problems.html">
-   Homework Problems
+  <a class="reference internal" href="modules/8-0.Tool_Landing.html">
+   Building a script tool in ArcGIS Pro
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -335,27 +302,59 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../homework/homework1.html">
+    <a class="reference internal" href="modules/8-1.develop_a_script_file.html">
+     8-1: The Basics of a Script Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules/8-2.setup_for_a_script_tool.html">
+     8-2: Create a Script Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules/8-3.additional_features_for_script_tool.html">
+     8-3:  Add Additional Features to the Script Tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/9.Problem_Solving_in_Python_and_GIS.html">
+   A Journey of Solving a GIS Automation Problem: from Google to Settle
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="homework/homework_problems.html">
+   Homework Problems
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="homework/homework1.html">
      Homework 1
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../homework/homework2.html">
+    <a class="reference internal" href="homework/homework2.html">
      Homework 2
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../homework/homework3.html">
+    <a class="reference internal" href="homework/homework3.html">
      Homework 3
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../homework/homework4.html">
+    <a class="reference internal" href="homework/homework4.html">
      Homework 4
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../homework/homework5.html">
+    <a class="reference internal" href="homework/homework5.html">
      Homework 5
     </a>
    </li>
@@ -412,35 +411,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/2-1.Python_Notebook.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -480,7 +450,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/2-1.Python_Notebook.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fsoftware_1.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -508,7 +478,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/modules/2-1.Python_Notebook.ipynb"
+        <a href="_sources/software_1.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -519,7 +489,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="headerbtn__text-container">.md</span>
 </a>
 
       </li>
@@ -666,16 +636,16 @@ title="Print to PDF"
 <li><p>A light-weight application runs inside ArcGIS Pro or a <strong><em>web browser</em></strong>.</p></li>
 <li><p>Powerful in sharing, visualizing, and presenting ideas and results of analysis.</p></li>
 </ol>
-<img alt="new_py_nb" class="shadow mb-1 border" src="../_images/new_py_nb.png" />
+<img alt="new_py_nb" class="shadow mb-1 border" src="_images/new_py_nb.png" />
 </section>
 <section id="how-to-create-a-new-python-notebook">
 <h2>How to create a new Python Notebook<a class="headerlink" href="#how-to-create-a-new-python-notebook" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p><strong>Analysis</strong> (<em>tab</em>) -&gt; <strong>Geoprocessing</strong> (<em>group</em>) -&gt; <strong>Python Notebook</strong>.</p>
-<a class="shadow mb-2 border reference internal image-reference" href="../_images/py_nb_menubar.png"><img alt="py_nb_menubar" class="shadow mb-2 border" src="../_images/py_nb_menubar.png" style="width: 303.0px; height: 223.0px;" /></a>
+<a class="shadow mb-2 border reference internal image-reference" href="_images/py_nb_menubar.png"><img alt="py_nb_menubar" class="shadow mb-2 border" src="_images/py_nb_menubar.png" style="width: 303.0px; height: 223.0px;" /></a>
 </li>
 <li><p><strong>Save</strong> the notebook.</p>
-<a class="shadow mb-2 border reference internal image-reference" href="../_images/save_py_nb.png"><img alt="save_py_nb" class="shadow mb-2 border" src="../_images/save_py_nb.png" style="width: 190.0px; height: 97.0px;" /></a>
+<a class="shadow mb-2 border reference internal image-reference" href="_images/save_py_nb.png"><img alt="save_py_nb" class="shadow mb-2 border" src="_images/save_py_nb.png" style="width: 190.0px; height: 97.0px;" /></a>
 </li>
 <li><p><strong>Rename</strong> the notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) in the <strong>Catalog Pane</strong>.</p></li>
 </ul>
@@ -692,11 +662,11 @@ title="Print to PDF"
 <h2>Two types of cell<a class="headerlink" href="#two-types-of-cell" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p><strong>Code</strong> cell: contains <em>Python</em> codes ready to run, indicated by <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[</span> <span class="pre">]</span></code>.</p>
-<img alt="code_cell" class="shadow mb-2 border" src="../_images/code_cell.png" />
+<img alt="code_cell" class="shadow mb-2 border" src="_images/code_cell.png" />
 </li>
 <li><p><strong>Markdown</strong> cell: contains <em>Markdown</em> codes, without <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[</span> <span class="pre">]</span></code>.</p>
-<img alt="md_cell_before" class="shadow mb-2 border" src="../_images/md_cell_before.png" />
-<img alt="md_cell_after" class="shadow mb-2 border" src="../_images/md_cell_after.png" />
+<img alt="md_cell_before" class="shadow mb-2 border" src="_images/md_cell_before.png" />
+<img alt="md_cell_after" class="shadow mb-2 border" src="_images/md_cell_after.png" />
 </li>
 </ul>
 <div class="admonition tip">
@@ -882,7 +852,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./modules"
+            path: "./."
         },
         predefinedOutput: true
     }
@@ -896,17 +866,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="2-0.Intro_to_Python.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="software_0.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Introduction to Python Programming</p>
+            <p class="prev-next-title">Software</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="2-2.Markdown.html" title="next page">
+    <a class='right-next' id="next-link" href="software_2.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to Markdown</p>
+        <p class="prev-next-title">Use Notebook in a Browser</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -931,7 +901,7 @@ title="Print to PDF"
     </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
 
   </body>

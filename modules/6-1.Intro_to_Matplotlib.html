@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -125,6 +127,28 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../software_0.html">
+   Software
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_1.html">
+     Basics of Jupyter Notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_2.html">
+     Use Notebook in a Browser
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1-1.Intro_to_ModelBuilder.html">
    Introduction to ModelBuilder
@@ -134,40 +158,20 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="2-0.Intro_to_Python.html">
    Introduction to Python Programming
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-1.Python_Notebook.html">
-     Basics of Jupyter Notebook
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-2.Markdown.html">
-     Introduction to Markdown
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-3.Data_Types.html">
-     Basic Python Data Types
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-4.Control_Structure.html">
-     Control Flow Structure
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="3-0.Intro_Python_2.html">
    Additional Data Types and Function
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -195,33 +199,28 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="4-0.ArcPy_Landing.html">
+  <a class="reference internal" href="4-0.intro_arcpy.html">
    Introduction to ArcPy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-1.Open_Notebook_from_Browser.html">
-     4-1: Open Notebook from Your Web browser
+    <a class="reference internal" href="4-1.ArcPy_Basics.html">
+     The basics of ArcPy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-2.ArcPy_Basics.html">
-     4-2: Introduction to ArcPy
+    <a class="reference internal" href="4-2.Run_ArcPy_functions.html">
+     Run ArcPy Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-3.Running_ArcPy_functions.html">
-     4-3: Run ArcPy Functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="4-4.Using_ArcPy_to_Select.html">
-     4-4: Selection in ArcPy
+    <a class="reference internal" href="4-3.ArcPy_selection.html">
+     Querying with ArcPy
     </a>
    </li>
   </ul>
@@ -230,8 +229,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="5-0.SciPy_Landing.html">
    Introduction to the Scientific Python Ecosystem
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -252,8 +251,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="6-0.Visualization_Landing.html">
    Data Vizualization in Python
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -274,8 +273,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="7-0.Raster_Landing.html">
    Raster Data Analysis using ArcPy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -296,8 +295,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="8-0.Tool_Landing.html">
    Building a script tool in ArcGIS Pro
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -328,8 +327,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../homework/homework_problems.html">
    Homework Problems
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -764,36 +763,172 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">0</span><span class="n">a8773224bc3</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">blkgrp_df</span> <span class="o">=</span> <span class="n">fc_to_df</span><span class="p">(</span><span class="n">blkgrp_fc</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">blkgrp_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">&lt;ipython-input-3-82cbfbedf196&gt;</span> in <span class="ni">fc_to_df</span><span class="nt">(fc)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">fc_to_df</span><span class="p">(</span><span class="n">fc</span><span class="p">):</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">ListFields</span><span class="p">(</span><span class="n">fc</span><span class="p">)]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">arr</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">da</span><span class="o">.</span><span class="n">FeatureClassToNumPyArray</span><span class="p">(</span><span class="n">fc</span><span class="p">,</span> <span class="n">fields</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">fields</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\__init__.py</span> in <span class="ni">ListFields</span><span class="nt">(dataset, wild_card, field_type)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1152</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1153</span>         <span class="o">*</span> <span class="n">String</span><span class="p">:</span>   <span class="n">Only</span> <span class="n">field</span> <span class="n">types</span> <span class="n">of</span> <span class="n">String</span> <span class="n">are</span> <span class="n">returned</span><span class="o">.</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1154</span><span class="s2">     return gp.listFields(dataset, wild_card, field_type)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1155</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1156</span><span class="s2"> @_gptooldoc(None, [[[&quot;FeatureLayer&quot;, &quot;Table&quot;, &quot;TableView&quot;, &quot;Dataset&quot;, &quot;FeatureDataset&quot;], &quot;&quot;, &quot;&quot;, &quot;&quot;]])</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py</span> in <span class="ni">listFields</span><span class="nt">(self, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">352</span><span class="s2">         from arcpy.arcobjects.arcobjectconversion import convertArcObjectToPythonObject</span>
-<span class="g g-Whitespace">    </span><span class="mi">353</span><span class="s2">         return convertArcObjectToPythonObject(</span>
-<span class="ne">--&gt; </span><span class="mi">354</span><span class="s2">                     self._gp.ListFields(*gp_fixargs(args, True)))</span>
-<span class="g g-Whitespace">    </span><span class="mi">355</span><span class="s2">     def listIndexes(self, *args):</span>
-<span class="g g-Whitespace">    </span><span class="mi">356</span><span class="s2">         &quot;&quot;&quot;</span><span class="n">GP</span> <span class="n">function</span> <span class="n">ListIndexes</span><span class="s2">&quot;&quot;&quot;</span>
-
-<span class="ne">OSError</span>: &quot;blockgroups&quot; does not exist
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>STATEFP10</th>
+      <th>COUNTYFP10</th>
+      <th>TRACTCE10</th>
+      <th>BLKGRPCE10</th>
+      <th>GEOID10</th>
+      <th>NAMELSAD10</th>
+      <th>MTFCC10</th>
+      <th>FUNCSTAT10</th>
+      <th>ALAND10</th>
+      <th>AWATER10</th>
+      <th>...</th>
+      <th>DEN_NOTATA</th>
+      <th>PCT_OWN5</th>
+      <th>PCT_RENT5</th>
+      <th>PCT_BACHLR</th>
+      <th>PCT_POV</th>
+      <th>PCT_RU1</th>
+      <th>DATAYEAR</th>
+      <th>DESCRIPT</th>
+      <th>Shape_Length</th>
+      <th>Shape_Area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>12</td>
+      <td>023</td>
+      <td>110903</td>
+      <td>2</td>
+      <td>120231109032</td>
+      <td>Block Group 2</td>
+      <td>G5030</td>
+      <td>S</td>
+      <td>57546992.0</td>
+      <td>57286.0</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>17.225951</td>
+      <td>62.878788</td>
+      <td>9.922481</td>
+      <td>23.488372</td>
+      <td>23.488372</td>
+      <td>REDISTRICTING, SF1, ACS 2010</td>
+      <td>120231109032</td>
+      <td>33859.041797</td>
+      <td>5.760426e+07</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>12</td>
+      <td>023</td>
+      <td>110904</td>
+      <td>1</td>
+      <td>120231109041</td>
+      <td>Block Group 1</td>
+      <td>G5030</td>
+      <td>S</td>
+      <td>85591551.0</td>
+      <td>490327.0</td>
+      <td>...</td>
+      <td>0.000329</td>
+      <td>26.212320</td>
+      <td>58.015267</td>
+      <td>5.456656</td>
+      <td>4.102167</td>
+      <td>4.102167</td>
+      <td>REDISTRICTING, SF1, ACS 2010</td>
+      <td>120231109041</td>
+      <td>57228.368002</td>
+      <td>8.608197e+07</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>12</td>
+      <td>007</td>
+      <td>000300</td>
+      <td>5</td>
+      <td>120070003005</td>
+      <td>Block Group 5</td>
+      <td>G5030</td>
+      <td>S</td>
+      <td>196424609.0</td>
+      <td>217862.0</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>13.270142</td>
+      <td>68.181818</td>
+      <td>1.254613</td>
+      <td>10.701107</td>
+      <td>10.701107</td>
+      <td>REDISTRICTING, SF1, ACS 2010</td>
+      <td>120070003005</td>
+      <td>75108.291194</td>
+      <td>1.966427e+08</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>12</td>
+      <td>007</td>
+      <td>000300</td>
+      <td>4</td>
+      <td>120070003004</td>
+      <td>Block Group 4</td>
+      <td>G5030</td>
+      <td>S</td>
+      <td>16339411.0</td>
+      <td>725167.0</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>18.924731</td>
+      <td>73.711340</td>
+      <td>12.617839</td>
+      <td>14.902103</td>
+      <td>14.902103</td>
+      <td>REDISTRICTING, SF1, ACS 2010</td>
+      <td>120070003004</td>
+      <td>25941.067880</td>
+      <td>1.706462e+07</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>12</td>
+      <td>007</td>
+      <td>000300</td>
+      <td>1</td>
+      <td>120070003001</td>
+      <td>Block Group 1</td>
+      <td>G5030</td>
+      <td>S</td>
+      <td>57089369.0</td>
+      <td>3362134.0</td>
+      <td>...</td>
+      <td>0.001138</td>
+      <td>22.957198</td>
+      <td>43.333333</td>
+      <td>1.134021</td>
+      <td>21.161826</td>
+      <td>21.161826</td>
+      <td>REDISTRICTING, SF1, ACS 2010</td>
+      <td>120070003001</td>
+      <td>37132.065396</td>
+      <td>6.045165e+07</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 202 columns</p>
+</div></div></div>
 </div>
 </section>
 <section id="setup-a-plot-figure-and-axis">
@@ -833,12 +968,46 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">691</span><span class="n">a58081898</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">blkgrp_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;STATEFP10&#39;, &#39;COUNTYFP10&#39;, &#39;TRACTCE10&#39;, &#39;BLKGRPCE10&#39;, &#39;GEOID10&#39;,
+       &#39;NAMELSAD10&#39;, &#39;MTFCC10&#39;, &#39;FUNCSTAT10&#39;, &#39;ALAND10&#39;, &#39;AWATER10&#39;,
+       &#39;INTPTLAT10&#39;, &#39;INTPTLON10&#39;, &#39;SUMLEV&#39;, &#39;STATE&#39;, &#39;COUNTY&#39;, &#39;TRACT&#39;,
+       &#39;BLKGRP&#39;, &#39;ACRES&#39;, &#39;TOTALPOP&#39;, &#39;WHITE&#39;, &#39;BLACK&#39;, &#39;AMERI_ES&#39;,
+       &#39;HAWN_PI&#39;, &#39;ASIAN&#39;, &#39;OTHER&#39;, &#39;MULT_RACE&#39;, &#39;HISPANIC&#39;, &#39;NOT_HISP&#39;,
+       &#39;POP18&#39;, &#39;HSE_UNITS&#39;, &#39;OCCUPIED&#39;, &#39;VACANT&#39;, &#39;PCT_WHITE&#39;,
+       &#39;PCT_BLACK&#39;, &#39;PCT_AMERI&#39;, &#39;PCT_ASIAN&#39;, &#39;PCT_HAWN&#39;, &#39;PCT_OTHER&#39;,
+       &#39;PCT_MULTI&#39;, &#39;PCT_HISP&#39;, &#39;PCT_OVER18&#39;, &#39;PCT_OCC&#39;, &#39;PCT_VACANT&#39;,
+       &#39;DEN_POP&#39;, &#39;DEN_WHITE&#39;, &#39;DEN_BLACK&#39;, &#39;DEN_AMERI&#39;, &#39;DEN_HAWN&#39;,
+       &#39;DEN_ASIAN&#39;, &#39;DEN_OTHER&#39;, &#39;DEN_MULTI&#39;, &#39;DEN_HISP&#39;, &#39;DEN_OVER18&#39;,
+       &#39;HS_PER_AC&#39;, &#39;POPUNDER18&#39;, &#39;PCTUNDER18&#39;, &#39;DENUNDER18&#39;, &#39;WHITE_NH&#39;,
+       &#39;MINORITY&#39;, &#39;PCT_MNRTY&#39;, &#39;DEN_MNRTY&#39;, &#39;AGE_UNDER5&#39;, &#39;AGE_5_17&#39;,
+       &#39;AGE_18_21&#39;, &#39;AGE_22_29&#39;, &#39;AGE_30_39&#39;, &#39;AGE_40_49&#39;, &#39;AGE_50_64&#39;,
+       &#39;AGE_65_UP&#39;, &#39;AGE_65_74&#39;, &#39;AGE_75_84&#39;, &#39;AGE_85_UP&#39;, &#39;MED_AGE&#39;,
+       &#39;PCT_65ABV&#39;, &#39;MED_AGE_M&#39;, &#39;MED_AGE_F&#39;, &#39;MALE&#39;, &#39;FEMALE&#39;,
+       &#39;AVE_HH_SZ&#39;, &#39;OWNER&#39;, &#39;RENTER&#39;, &#39;AVE_FAM_SZ&#39;, &#39;FAMILIES&#39;,
+       &#39;HOUSEHOLDS&#39;, &#39;FGDLAQDATE&#39;, &#39;LOGRECNO&#39;, &#39;PH_TOTAL&#39;, &#39;PH_FAM&#39;,
+       &#39;PH_NONFAM&#39;, &#39;FAM_HH&#39;, &#39;HABVBELOW&#39;, &#39;HBELOW_POV&#39;, &#39;HABOVE_POV&#39;,
+       &#39;ABVE_BELW&#39;, &#39;ABOVE_POV&#39;, &#39;BELOW_POV&#39;, &#39;ED_TOTAL&#39;, &#39;ED_LESS9TH&#39;,
+       &#39;ED_12NODIP&#39;, &#39;HSGRAD&#39;, &#39;ED_SOMECOL&#39;, &#39;ED_COLLEGE&#39;, &#39;BACHELORS&#39;,
+       &#39;TRAN_TOTAL&#39;, &#39;TRAN_CAR&#39;, &#39;TRAN_MOTO&#39;, &#39;TRAN_BIKE&#39;, &#39;TRAN_PUB&#39;,
+       &#39;TRAN_WALK&#39;, &#39;TRAN_OTHER&#39;, &#39;TRAN_HOME&#39;, &#39;ENROLLED&#39;, &#39;NOT_ENROLD&#39;,
+       &#39;LESS_10K&#39;, &#39;I10K_14K&#39;, &#39;I15K_19K&#39;, &#39;I20K_24K&#39;, &#39;I25K_29K&#39;,
+       &#39;I30K_34K&#39;, &#39;I35K_39K&#39;, &#39;I40K_44K&#39;, &#39;I45K_49K&#39;, &#39;I50K_59K&#39;,
+       &#39;I60K_74K&#39;, &#39;I75K_99K&#39;, &#39;I100K_124K&#39;, &#39;I125K_149K&#39;, &#39;I150K_199K&#39;,
+       &#39;I200KMORE&#39;, &#39;MEDHHINC&#39;, &#39;MEDFINCOME&#39;, &#39;HH_NOPUBA&#39;, &#39;HH_PUBA&#39;,
+       &#39;MEDOOHVAL&#39;, &#39;H1ATTACH&#39;, &#39;H1DETACH&#39;, &#39;H2UNIT&#39;, &#39;H3_4UNIT&#39;,
+       &#39;H5_9UNIT&#39;, &#39;H10_19UNIT&#39;, &#39;H20_49UNIT&#39;, &#39;H50MORE&#39;, &#39;MOBILE&#39;,
+       &#39;OTHERHOUSE&#39;, &#39;H_SF&#39;, &#39;H_MF&#39;, &#39;OWN05_10&#39;, &#39;RENT05_10&#39;, &#39;B05_10&#39;,
+       &#39;B00_04&#39;, &#39;B90_99&#39;, &#39;B80_89&#39;, &#39;B70_79&#39;, &#39;B60_69&#39;, &#39;B50_59&#39;,
+       &#39;B40_49&#39;, &#39;BEFORE39&#39;, &#39;M05_10&#39;, &#39;M00_04&#39;, &#39;M90_99&#39;, &#39;M80_89&#39;,
+       &#39;M70_79&#39;, &#39;M69BEFORE&#39;, &#39;VEHICLE_0&#39;, &#39;VEHICLE_1&#39;, &#39;VEHICLE_2&#39;,
+       &#39;VEHICLE_3&#39;, &#39;VEHICLE_4&#39;, &#39;VEHICLE5G&#39;, &#39;S_TOTAL&#39;, &#39;S_VERYWELL&#39;,
+       &#39;S_WELL&#39;, &#39;S_NOTWELL&#39;, &#39;S_NOTATALL&#39;, &#39;S_ENGLISH&#39;, &#39;S_SPANISH&#39;,
+       &#39;S_EUROPE&#39;, &#39;S_ASIAN&#39;, &#39;S_OTHER&#39;, &#39;LABOR_CIV&#39;, &#39;RTOTAL&#39;, &#39;RU50&#39;,
+       &#39;R50_99&#39;, &#39;R1_124&#39;, &#39;R125ABV&#39;, &#39;RU1&#39;, &#39;PCT_RU50&#39;, &#39;PCT_R50_9&#39;,
+       &#39;PCT_R125AB&#39;, &#39;PCT_NOTWEL&#39;, &#39;PCT_NOTATA&#39;, &#39;DEN_NOTWEL&#39;,
+       &#39;DEN_NOTATA&#39;, &#39;PCT_OWN5&#39;, &#39;PCT_RENT5&#39;, &#39;PCT_BACHLR&#39;, &#39;PCT_POV&#39;,
+       &#39;PCT_RU1&#39;, &#39;DATAYEAR&#39;, &#39;DESCRIPT&#39;, &#39;Shape_Length&#39;, &#39;Shape_Area&#39;],
+      dtype=object)
 </pre></div>
 </div>
 </div>
@@ -853,13 +1022,7 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">4004</span><span class="n">ea4c6c42</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axis</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;HOUSEHOLDS&quot;</span><span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x19617a36160&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_12_1.png" src="../_images/6-1.Intro_to_Matplotlib_12_1.png" />
@@ -880,13 +1043,7 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">6</span><span class="n">f458599b135</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axis</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;HOUSEHOLDS&quot;</span><span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x19615e40c40&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_14_1.png" src="../_images/6-1.Intro_to_Matplotlib_14_1.png" />
@@ -911,16 +1068,7 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mf">763e17</span><span class="n">f64271</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axis</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;HOUSEHOLDS&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">axis</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;total population&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">axis</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;number of households&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">axis</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;2010 Alachua County Census Block Group&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;2010 Alachua County Census Block Group&#39;)
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_16_1.png" src="../_images/6-1.Intro_to_Matplotlib_16_1.png" />
@@ -941,13 +1089,7 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">87</span><span class="n">ecb0420f17</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axis</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;HOUSEHOLDS&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x19617bbe550&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_18_1.png" src="../_images/6-1.Intro_to_Matplotlib_18_1.png" />
@@ -963,13 +1105,7 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">54</span><span class="n">eb09b3be3b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axis</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;HOUSEHOLDS&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;darkgreen&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x19617e60490&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_20_1.png" src="../_images/6-1.Intro_to_Matplotlib_20_1.png" />
@@ -985,14 +1121,7 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="mi">1076</span><span class="n">a55259ce</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axis</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;PCT_POV&quot;</span><span class="p">],</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;MEDHHINC&quot;</span><span class="p">],</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span>              <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s1">&#39;TOTALPOP&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x196184e3400&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_22_1.png" src="../_images/6-1.Intro_to_Matplotlib_22_1.png" />
@@ -1016,16 +1145,7 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="n">e6b3789c67d5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>   <span class="c1"># tuple unpacking</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;FEMALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span>          <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;MALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span>          <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 10 artists&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_24_1.png" src="../_images/6-1.Intro_to_Matplotlib_24_1.png" />
@@ -1042,16 +1162,7 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">15411</span><span class="n">cc74299</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>   <span class="c1"># tuple unpacking</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;FEMALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span>          <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">+</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;MALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span>          <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 10 artists&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_25_1.png" src="../_images/6-1.Intro_to_Matplotlib_25_1.png" />
@@ -1076,16 +1187,7 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="n">e413a80a65fe</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>   <span class="c1"># tuple unpacking</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;FEMALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span>          <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;WOMAN&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">+</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;MALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span>          <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MAN&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1961810e040&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_27_1.png" src="../_images/6-1.Intro_to_Matplotlib_27_1.png" />
@@ -1103,16 +1205,7 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">88</span><span class="n">a0ba6a6df3</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>   <span class="c1"># tuple unpacking</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;WHITE&quot;</span><span class="p">][:</span><span class="mi">20</span><span class="p">],</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span>          <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;WHITE&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">+</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;BLACK&quot;</span><span class="p">][:</span><span class="mi">20</span><span class="p">],</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span>          <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;BLACK&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1960d41ed90&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_28_1.png" src="../_images/6-1.Intro_to_Matplotlib_28_1.png" />
@@ -1133,13 +1226,10 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="mi">3441182</span><span class="n">d1337</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axis</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([11., 55., 45., 35., 18.,  7.,  4.,  1.,  1.,  1.]),
+ array([ 163. ,  686.5, 1210. , 1733.5, 2257. , 2780.5, 3304. , 3827.5,
+        4351. , 4874.5, 5398. ]),
+ &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_30_1.png" src="../_images/6-1.Intro_to_Matplotlib_30_1.png" />
@@ -1153,13 +1243,11 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="mi">2</span><span class="n">d90ea79aaed</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axis</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3., 26., 37., 32., 27., 21., 12.,  9.,  4.,  4.,  1.,  0.,  0.,
+         1.,  1.]),
+ array([ 163.,  512.,  861., 1210., 1559., 1908., 2257., 2606., 2955.,
+        3304., 3653., 4002., 4351., 4700., 5049., 5398.]),
+ &lt;BarContainer object of 15 artists&gt;)
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_31_1.png" src="../_images/6-1.Intro_to_Matplotlib_31_1.png" />
@@ -1173,13 +1261,11 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="mi">73</span><span class="n">bd9b8d2f65</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axis</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3., 26., 37., 32., 27., 21., 12.,  9.,  4.,  4.,  1.,  0.,  0.,
+         1.,  1.]),
+ array([ 163.,  512.,  861., 1210., 1559., 1908., 2257., 2606., 2955.,
+        3304., 3653., 4002., 4351., 4700., 5049., 5398.]),
+ &lt;BarContainer object of 15 artists&gt;)
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_32_1.png" src="../_images/6-1.Intro_to_Matplotlib_32_1.png" />
@@ -1193,13 +1279,11 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="mi">483229</span><span class="n">b40634</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axis</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;teal&quot;</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3., 26., 37., 32., 27., 21., 12.,  9.,  4.,  4.,  1.,  0.,  0.,
+         1.,  1.]),
+ array([ 163.,  512.,  861., 1210., 1559., 1908., 2257., 2606., 2955.,
+        3304., 3653., 4002., 4351., 4700., 5049., 5398.]),
+ &lt;BarContainer object of 15 artists&gt;)
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_33_1.png" src="../_images/6-1.Intro_to_Matplotlib_33_1.png" />
@@ -1213,13 +1297,11 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">22</span><span class="o">-</span><span class="mi">9</span><span class="n">b401605c971</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axis</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3., 26., 37., 32., 27., 21., 12.,  9.,  4.,  4.,  1.,  0.,  0.,
+         1.,  1.]),
+ array([ 163.,  512.,  861., 1210., 1559., 1908., 2257., 2606., 2955.,
+        3304., 3653., 4002., 4351., 4700., 5049., 5398.]),
+ [&lt;matplotlib.patches.Polygon at 0x196189a7fa0&gt;])
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_34_1.png" src="../_images/6-1.Intro_to_Matplotlib_34_1.png" />
@@ -1238,14 +1320,10 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="n">aa7bcaafe496</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TRAN_BIKE&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TRAN_CAR&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;teal&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([26., 44., 57., 24., 13.,  7.,  5.,  1.,  0.,  1.]),
+ array([  27. ,  264.4,  501.8,  739.2,  976.6, 1214. , 1451.4, 1688.8,
+        1926.2, 2163.6, 2401. ]),
+ &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_36_1.png" src="../_images/6-1.Intro_to_Matplotlib_36_1.png" />
@@ -1261,18 +1339,7 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="mi">2</span><span class="n">bd7af2baf55</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TRAN_CAR&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TRAN_BIKE&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;teal&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_df&#39; is not defined
-</pre></div>
-</div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_37_1.png" src="../_images/6-1.Intro_to_Matplotlib_37_1.png" />
+<img alt="../_images/6-1.Intro_to_Matplotlib_37_0.png" src="../_images/6-1.Intro_to_Matplotlib_37_0.png" />
 </div>
 </div>
 </section>

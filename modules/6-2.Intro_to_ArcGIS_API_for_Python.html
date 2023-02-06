@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -125,6 +127,28 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../software_0.html">
+   Software
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_1.html">
+     Basics of Jupyter Notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_2.html">
+     Use Notebook in a Browser
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1-1.Intro_to_ModelBuilder.html">
    Introduction to ModelBuilder
@@ -134,40 +158,20 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="2-0.Intro_to_Python.html">
    Introduction to Python Programming
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-1.Python_Notebook.html">
-     Basics of Jupyter Notebook
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-2.Markdown.html">
-     Introduction to Markdown
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-3.Data_Types.html">
-     Basic Python Data Types
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-4.Control_Structure.html">
-     Control Flow Structure
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="3-0.Intro_Python_2.html">
    Additional Data Types and Function
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -195,33 +199,28 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="4-0.ArcPy_Landing.html">
+  <a class="reference internal" href="4-0.intro_arcpy.html">
    Introduction to ArcPy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-1.Open_Notebook_from_Browser.html">
-     4-1: Open Notebook from Your Web browser
+    <a class="reference internal" href="4-1.ArcPy_Basics.html">
+     The basics of ArcPy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-2.ArcPy_Basics.html">
-     4-2: Introduction to ArcPy
+    <a class="reference internal" href="4-2.Run_ArcPy_functions.html">
+     Run ArcPy Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-3.Running_ArcPy_functions.html">
-     4-3: Run ArcPy Functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="4-4.Using_ArcPy_to_Select.html">
-     4-4: Selection in ArcPy
+    <a class="reference internal" href="4-3.ArcPy_selection.html">
+     Querying with ArcPy
     </a>
    </li>
   </ul>
@@ -230,8 +229,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="5-0.SciPy_Landing.html">
    Introduction to the Scientific Python Ecosystem
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -252,8 +251,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="6-0.Visualization_Landing.html">
    Data Vizualization in Python
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -274,8 +273,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="7-0.Raster_Landing.html">
    Raster Data Analysis using ArcPy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -296,8 +295,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="8-0.Tool_Landing.html">
    Building a script tool in ArcGIS Pro
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -328,8 +327,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../homework/homework_problems.html">
    Homework Problems
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -860,54 +859,172 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\arcgis\features\geo\_io\fileops.py</span> in <span class="ni">from_featureclass</span><span class="nt">(filename, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">579</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">580</span>             <span class="n">desc</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">da</span><span class="o">.</span><span class="n">Describe</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">581</span>             <span class="n">area_field</span> <span class="o">=</span> <span class="n">desc</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;areaFieldName&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ValueError</span>: Object: Error in accessing describe
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">6</span><span class="n">baa35b38315</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">blkgrp_sedf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">from_featureclass</span><span class="p">(</span><span class="n">blkgrp_fc</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">blkgrp_sedf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-
-<span class="nn">~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\arcgis\features\geo\_accessor.py</span> in <span class="ni">from_featureclass</span><span class="nt">(location, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2731</span>             <span class="n">A</span> <span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">DataFrame</span> <span class="nb">object</span>
-<span class="g g-Whitespace">   </span><span class="mi">2732</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">2733</span><span class="sd">         return from_featureclass(filename=location, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2734</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">2735</span><span class="sd">     # ----------------------------------------------------------------------</span>
-
-<span class="nn">~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\arcgis\features\geo\_io\fileops.py</span> in <span class="ni">from_featureclass</span><span class="nt">(filename, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">582</span><span class="sd">             length_field = desc.pop(&quot;lengthFieldName&quot;, None)</span>
-<span class="g g-Whitespace">    </span><span class="mi">583</span><span class="sd">         except:  # for older versions of arcpy</span>
-<span class="ne">--&gt; </span><span class="mi">584</span><span class="sd">             desc = arcpy.Describe(filename)</span>
-<span class="g g-Whitespace">    </span><span class="mi">585</span><span class="sd">             desc = {&quot;fields&quot;: desc.fields, &quot;shapeType&quot;: desc.shapeType}</span>
-<span class="g g-Whitespace">    </span><span class="mi">586</span><span class="sd">             area_field = getattr(desc, &quot;areaFieldName&quot;, None)</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\__init__.py</span> in <span class="ni">Describe</span><span class="nt">(value, data_type)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1273</span><span class="sd">        class with the same name. In this case, the data type is used to clarify</span>
-<span class="g g-Whitespace">   </span><span class="mi">1274</span><span class="sd">        which dataset you want to describe.&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1275</span>     <span class="k">return</span> <span class="n">gp</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">data_type</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1276</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1277</span> <span class="k">def</span> <span class="nf">CreateObject</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py</span> in <span class="ni">describe</span><span class="nt">(self, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">382</span>         <span class="kn">from</span> <span class="nn">arcpy.arcobjects.arcobjectconversion</span> <span class="kn">import</span> <span class="n">convertArcObjectToPythonObject</span>
-<span class="g g-Whitespace">    </span><span class="mi">383</span>         <span class="k">return</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">384</span>                     <span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="o">.</span><span class="n">Describe</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">True</span><span class="p">)))</span>
-<span class="g g-Whitespace">    </span><span class="mi">385</span>     <span class="k">def</span> <span class="nf">createObject</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">386</span>         <span class="sd">&quot;&quot;&quot;GP function CreateObject&quot;&quot;&quot;</span>
-
-<span class="ne">OSError</span>: &quot;blockgroups&quot; does not exist
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>OBJECTID</th>
+      <th>STATEFP10</th>
+      <th>COUNTYFP10</th>
+      <th>TRACTCE10</th>
+      <th>BLKGRPCE10</th>
+      <th>GEOID10</th>
+      <th>NAMELSAD10</th>
+      <th>MTFCC10</th>
+      <th>FUNCSTAT10</th>
+      <th>ALAND10</th>
+      <th>...</th>
+      <th>DEN_NOTWEL</th>
+      <th>DEN_NOTATA</th>
+      <th>PCT_OWN5</th>
+      <th>PCT_RENT5</th>
+      <th>PCT_BACHLR</th>
+      <th>PCT_POV</th>
+      <th>PCT_RU1</th>
+      <th>DATAYEAR</th>
+      <th>DESCRIPT</th>
+      <th>SHAPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>12</td>
+      <td>023</td>
+      <td>110903</td>
+      <td>2</td>
+      <td>120231109032</td>
+      <td>Block Group 2</td>
+      <td>G5030</td>
+      <td>S</td>
+      <td>57546992.0</td>
+      <td>...</td>
+      <td>0.004918</td>
+      <td>0.000000</td>
+      <td>17.225951</td>
+      <td>62.878788</td>
+      <td>9.922481</td>
+      <td>23.488372</td>
+      <td>23.488372</td>
+      <td>REDISTRICTING, SF1, ACS 2010</td>
+      <td>120231109032</td>
+      <td>{"rings": [[[530441.2199999988, 651631.75], [5...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>12</td>
+      <td>023</td>
+      <td>110904</td>
+      <td>1</td>
+      <td>120231109041</td>
+      <td>Block Group 1</td>
+      <td>G5030</td>
+      <td>S</td>
+      <td>85591551.0</td>
+      <td>...</td>
+      <td>0.000329</td>
+      <td>0.000329</td>
+      <td>26.212320</td>
+      <td>58.015267</td>
+      <td>5.456656</td>
+      <td>4.102167</td>
+      <td>4.102167</td>
+      <td>REDISTRICTING, SF1, ACS 2010</td>
+      <td>120231109041</td>
+      <td>{"rings": [[[534712.1700000018, 663369.54], [5...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>12</td>
+      <td>007</td>
+      <td>000300</td>
+      <td>5</td>
+      <td>120070003005</td>
+      <td>Block Group 5</td>
+      <td>G5030</td>
+      <td>S</td>
+      <td>196424609.0</td>
+      <td>...</td>
+      <td>0.000021</td>
+      <td>0.000000</td>
+      <td>13.270142</td>
+      <td>68.181818</td>
+      <td>1.254613</td>
+      <td>10.701107</td>
+      <td>10.701107</td>
+      <td>REDISTRICTING, SF1, ACS 2010</td>
+      <td>120070003005</td>
+      <td>{"rings": [[[567924.9299999997, 665800.79], [5...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>12</td>
+      <td>007</td>
+      <td>000300</td>
+      <td>4</td>
+      <td>120070003004</td>
+      <td>Block Group 4</td>
+      <td>G5030</td>
+      <td>S</td>
+      <td>16339411.0</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>18.924731</td>
+      <td>73.711340</td>
+      <td>12.617839</td>
+      <td>14.902103</td>
+      <td>14.902103</td>
+      <td>REDISTRICTING, SF1, ACS 2010</td>
+      <td>120070003004</td>
+      <td>{"rings": [[[588576.3599999994, 644359.46], [5...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>12</td>
+      <td>007</td>
+      <td>000300</td>
+      <td>1</td>
+      <td>120070003001</td>
+      <td>Block Group 1</td>
+      <td>G5030</td>
+      <td>S</td>
+      <td>57089369.0</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.001138</td>
+      <td>22.957198</td>
+      <td>43.333333</td>
+      <td>1.134021</td>
+      <td>21.161826</td>
+      <td>21.161826</td>
+      <td>REDISTRICTING, SF1, ACS 2010</td>
+      <td>120070003001</td>
+      <td>{"rings": [[[576256.1799999997, 656541.8300000...</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 202 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -916,12 +1033,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="n">ec81e3b3d950</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">len</span><span class="p">(</span><span class="n">blkgrp_sedf</span><span class="p">)</span>  <span class="c1"># recall</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_sedf&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>178
 </pre></div>
 </div>
 </div>
@@ -933,12 +1045,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">d22f18792332</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">blkgrp_sedf</span><span class="o">.</span><span class="n">shape</span>  <span class="c1"># recall</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_sedf&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(178, 202)
 </pre></div>
 </div>
 </div>
@@ -950,12 +1057,23 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">8</span><span class="n">c9f1dcae193</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">blkgrp_sedf</span><span class="p">[</span><span class="s1">&#39;TOTALPOP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-
-<span class="ne">NameError</span>: name &#39;blkgrp_sedf&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2094, 2269, 1305, 1991, 2056, 1410, 1890, 2510, 1150, 1856, 1455,
+       1905, 2703,  865, 1735, 2330,  979, 1169, 2186, 3172,  163, 2175,
+       2139, 2162,  999, 2124, 2278, 1600,  323, 2558, 2452, 1814, 4757,
+       3260,  710,  911, 1391,  866, 2755,  798, 1937, 1166, 1246, 2329,
+        924, 1779,  885,  665,  803,  844, 1418,  770, 1430,  568, 1193,
+       1440,  777, 1806,  821, 1627, 1347, 1058, 2112, 1391, 1502, 1232,
+       3088, 1077, 1174, 1155, 1582, 1130,  625, 1165, 1090, 1210, 2285,
+       2171, 1604, 1957,  620, 1091, 1196,  642, 3589, 1433, 2906, 1930,
+       5398, 1414, 1033,  993, 1345, 1482,  787, 1157, 1962, 1658, 1570,
+       1973, 3617, 1270, 2497, 1522, 1356, 2877, 1323, 1741,  682,  833,
+       1364,  895, 2482,  962,  838, 2136, 1567, 1255, 2030, 1269, 1154,
+       1488, 2180,  703, 1066, 1861, 1515, 2027, 1061, 1067, 1851, 1614,
+       1363, 1779, 1685, 1784,  696,  866, 1638, 1684, 3282, 1462,  386,
+       2040,  662, 3641, 1431,  718, 2888, 1846, 2559, 1619, 1538,  963,
+       2463,  696, 1070, 3415, 2034, 2613, 1138,  823, 3886, 2662, 2625,
+        823,  836,  978, 1091,  637,  921, 1342, 2680, 1211, 1788, 1723,
+       1189,  789], dtype=int64)
 </pre></div>
 </div>
 </div>
@@ -1017,55 +1135,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\arcgis\features\geo\_io\fileops.py</span> in <span class="ni">from_featureclass</span><span class="nt">(filename, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">579</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">580</span>             <span class="n">desc</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">da</span><span class="o">.</span><span class="n">Describe</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">581</span>             <span class="n">area_field</span> <span class="o">=</span> <span class="n">desc</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;areaFieldName&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-
-<span class="ne">ValueError</span>: Object: Error in accessing describe
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="mi">54</span><span class="n">b73c03f1af</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">blkgrp_sedf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">from_featureclass</span><span class="p">(</span><span class="n">blkgrp</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">schools_sedf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">from_featureclass</span><span class="p">(</span><span class="n">schools</span><span class="p">)</span>
-
-<span class="nn">~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\arcgis\features\geo\_accessor.py</span> in <span class="ni">from_featureclass</span><span class="nt">(location, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2731</span>             <span class="n">A</span> <span class="n">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">DataFrame</span> <span class="nb">object</span>
-<span class="g g-Whitespace">   </span><span class="mi">2732</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">2733</span><span class="sd">         return from_featureclass(filename=location, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2734</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">2735</span><span class="sd">     # ----------------------------------------------------------------------</span>
-
-<span class="nn">~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\arcgis\features\geo\_io\fileops.py</span> in <span class="ni">from_featureclass</span><span class="nt">(filename, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">582</span><span class="sd">             length_field = desc.pop(&quot;lengthFieldName&quot;, None)</span>
-<span class="g g-Whitespace">    </span><span class="mi">583</span><span class="sd">         except:  # for older versions of arcpy</span>
-<span class="ne">--&gt; </span><span class="mi">584</span><span class="sd">             desc = arcpy.Describe(filename)</span>
-<span class="g g-Whitespace">    </span><span class="mi">585</span><span class="sd">             desc = {&quot;fields&quot;: desc.fields, &quot;shapeType&quot;: desc.shapeType}</span>
-<span class="g g-Whitespace">    </span><span class="mi">586</span><span class="sd">             area_field = getattr(desc, &quot;areaFieldName&quot;, None)</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\__init__.py</span> in <span class="ni">Describe</span><span class="nt">(value, data_type)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1273</span><span class="sd">        class with the same name. In this case, the data type is used to clarify</span>
-<span class="g g-Whitespace">   </span><span class="mi">1274</span><span class="sd">        which dataset you want to describe.&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1275</span>     <span class="k">return</span> <span class="n">gp</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">data_type</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1276</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1277</span> <span class="k">def</span> <span class="nf">CreateObject</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py</span> in <span class="ni">describe</span><span class="nt">(self, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">382</span>         <span class="kn">from</span> <span class="nn">arcpy.arcobjects.arcobjectconversion</span> <span class="kn">import</span> <span class="n">convertArcObjectToPythonObject</span>
-<span class="g g-Whitespace">    </span><span class="mi">383</span>         <span class="k">return</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">384</span>                     <span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="o">.</span><span class="n">Describe</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">True</span><span class="p">)))</span>
-<span class="g g-Whitespace">    </span><span class="mi">385</span>     <span class="k">def</span> <span class="nf">createObject</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">386</span>         <span class="sd">&quot;&quot;&quot;GP function CreateObject&quot;&quot;&quot;</span>
-
-<span class="ne">OSError</span>: &quot;blockgroups&quot; does not exist
-</pre></div>
-</div>
-</div>
 </div>
 <ol class="simple">
 <li><p><strong><font color='royalblue'>Use the map widget from the <code class="docutils literal notranslate"><span class="pre">GIS</span></code> instance to create a map</font></strong></p></li>
@@ -1077,6 +1146,175 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># call the map() function from the GIS instance</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">my_map_in_my_gis</span> <span class="o">=</span> <span class="n">my_gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">29.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">82.3</span><span class="p">],</span> <span class="n">zoomlevel</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\arcgis\gis\__init__.py:1370,</span> in <span class="ni">GIS.map</span><span class="nt">(self, location, zoomlevel, mode, geocoder)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1368</span>     <span class="n">mapwidget</span> <span class="o">=</span> <span class="n">MapView</span><span class="p">(</span><span class="n">gis</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="n">location</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1369</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1370</span>     <span class="n">mapwidget</span> <span class="o">=</span> <span class="n">MapView</span><span class="p">(</span><span class="n">gis</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1372</span>     <span class="c1"># Geocode the location</span>
+<span class="g g-Whitespace">   </span><span class="mi">1373</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+
+<span class="nn">File ~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\arcgis\widgets\_mapview\_mapview.py:900,</span> in <span class="ni">MapView.__init__</span><span class="nt">(self, gis, item, mode, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">893</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;2D&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">894</span>     <span class="sd">&quot;&quot;&quot;Constructor of Map widget.</span>
+<span class="g g-Whitespace">    </span><span class="mi">895</span><span class="sd">     Accepts the following keyword arguments:</span>
+<span class="g g-Whitespace">    </span><span class="mi">896</span><span class="sd">     gis     The gis instance with which the map widget works, used for authentication, and adding secure layers and</span>
+<span class="g g-Whitespace">    </span><span class="mi">897</span><span class="sd">             private items from that GIS</span>
+<span class="g g-Whitespace">    </span><span class="mi">898</span><span class="sd">     item    web map item from portal with which to initialize the map widget</span>
+<span class="g g-Whitespace">    </span><span class="mi">899</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">900</span>     <span class="nb">super</span><span class="p">(</span><span class="n">MapView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">901</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_uuid</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid4</span><span class="p">())</span>
+<span class="g g-Whitespace">    </span><span class="mi">903</span>     <span class="c1"># Set up the visual display of the layout</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\ipywidgets\widgets\widget.py:505,</span> in <span class="ni">Widget.__init__</span><span class="nt">(self, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span> <span class="n">Widget</span><span class="o">.</span><span class="n">_call_widget_constructed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">505</span> <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\ipywidgets\widgets\widget.py:528,</span> in <span class="ni">Widget.open</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">525</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">526</span>     <span class="n">args</span><span class="p">[</span><span class="s1">&#39;comm_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model_id</span>
+<span class="ne">--&gt; </span><span class="mi">528</span> <span class="bp">self</span><span class="o">.</span><span class="n">comm</span> <span class="o">=</span> <span class="n">Comm</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\ipykernel\comm\comm.py:80,</span> in <span class="ni">Comm.__init__</span><span class="nt">(self, target_name, data, metadata, buffers, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span> <span class="k">if</span> <span class="n">target_name</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;target_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">target_name</span>
+<span class="ne">---&gt; </span><span class="mi">80</span> <span class="n">BaseComm</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span>     <span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span> <span class="n">buffers</span><span class="o">=</span><span class="n">buffers</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span> <span class="p">)</span>  <span class="c1"># type:ignore[call-arg]</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span> <span class="c1"># only re-add kernel if explicitly provided</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span> <span class="k">if</span> <span class="n">had_kernel</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\comm\base_comm.py:56,</span> in <span class="ni">BaseComm.__init__</span><span class="nt">(self, target_name, data, metadata, buffers, comm_id, primary, target_module, topic, _open_data, _close_data, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span> <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">primary</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="c1"># I am primary, open my peer.</span>
+<span class="ne">---&gt; </span><span class="mi">56</span>     <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span> <span class="n">buffers</span><span class="o">=</span><span class="n">buffers</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\comm\base_comm.py:80,</span> in <span class="ni">BaseComm.open</span><span class="nt">(self, data, metadata, buffers)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span> <span class="n">comm_manager</span><span class="o">.</span><span class="n">register_comm</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">80</span>     <span class="bp">self</span><span class="o">.</span><span class="n">publish_msg</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span>         <span class="s2">&quot;comm_open&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span>         <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span>         <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span>         <span class="n">buffers</span><span class="o">=</span><span class="n">buffers</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span>         <span class="n">target_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">target_name</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span>         <span class="n">target_module</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">target_module</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\ipykernel\comm\comm.py:35,</span> in <span class="ni">BaseComm.publish_msg</span><span class="nt">(self, msg_type, data, metadata, buffers, **keys)</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kernel</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>     <span class="bp">self</span><span class="o">.</span><span class="n">kernel</span> <span class="o">=</span> <span class="n">Kernel</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">35</span> <span class="bp">self</span><span class="o">.</span><span class="n">kernel</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">send</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="bp">self</span><span class="o">.</span><span class="n">kernel</span><span class="o">.</span><span class="n">iopub_socket</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>     <span class="n">msg_type</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span>     <span class="n">content</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>     <span class="n">metadata</span><span class="o">=</span><span class="n">json_clean</span><span class="p">(</span><span class="n">metadata</span><span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span>     <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">kernel</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span>     <span class="n">ident</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">topic</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>     <span class="n">buffers</span><span class="o">=</span><span class="n">buffers</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="p">)</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\jupyter_client\session.py:850,</span> in <span class="ni">Session.send</span><span class="nt">(self, stream, msg_or_type, content, parent, ident, buffers, track, header, metadata)</span>
+<span class="g g-Whitespace">    </span><span class="mi">848</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">adapt_version</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">849</span>     <span class="n">msg</span> <span class="o">=</span> <span class="n">adapt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">adapt_version</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">850</span> <span class="n">to_send</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">ident</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">851</span> <span class="n">to_send</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">buffers</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">852</span> <span class="n">longest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">to_send</span><span class="p">])</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\jupyter_client\session.py:719,</span> in <span class="ni">Session.serialize</span><span class="nt">(self, msg, ident)</span>
+<span class="g g-Whitespace">    </span><span class="mi">717</span>     <span class="n">content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">none</span>
+<span class="g g-Whitespace">    </span><span class="mi">718</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">719</span>     <span class="n">content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">720</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">721</span>     <span class="c1"># content is already packed, as in a relayed message</span>
+<span class="g g-Whitespace">    </span><span class="mi">722</span>     <span class="k">pass</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\jupyter_client\session.py:95,</span> in <span class="ni">json_packer</span><span class="nt">(obj)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span> <span class="sd">&quot;&quot;&quot;Convert a json object to a bytes.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">95</span>     <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span>         <span class="n">obj</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>         <span class="n">default</span><span class="o">=</span><span class="n">json_default</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>         <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span>         <span class="n">allow_nan</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>     <span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;surrogateescape&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span> <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>     <span class="c1"># Fallback to trying to clean the json before serializing</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span>     <span class="n">packed</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>         <span class="n">json_clean</span><span class="p">(</span><span class="n">obj</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>         <span class="n">default</span><span class="o">=</span><span class="n">json_default</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span>         <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span>         <span class="n">allow_nan</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>     <span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;surrogateescape&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\json\__init__.py:234,</span> in <span class="ni">dumps</span><span class="nt">(obj, skipkeys, ensure_ascii, check_circular, allow_nan, cls, indent, separators, default, sort_keys, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="bp">cls</span> <span class="o">=</span> <span class="n">JSONEncoder</span>
+<span class="ne">--&gt; </span><span class="mi">234</span> <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span>     <span class="n">skipkeys</span><span class="o">=</span><span class="n">skipkeys</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="n">ensure_ascii</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="n">check_circular</span><span class="o">=</span><span class="n">check_circular</span><span class="p">,</span> <span class="n">allow_nan</span><span class="o">=</span><span class="n">allow_nan</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="n">separators</span><span class="o">=</span><span class="n">separators</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">default</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="n">sort_keys</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="o">**</span><span class="n">kw</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\json\encoder.py:199,</span> in <span class="ni">JSONEncoder.encode</span><span class="nt">(self, o)</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span>         <span class="k">return</span> <span class="n">encode_basestring</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="c1"># This doesn&#39;t pass the iterator directly to &#39;&#39;.join() because the</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span> <span class="c1"># exceptions aren&#39;t as detailed.  The list call should be roughly</span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="c1"># equivalent to the PySequence_Fast that &#39;&#39;.join() would do.</span>
+<span class="ne">--&gt; </span><span class="mi">199</span> <span class="n">chunks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterencode</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">_one_shot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span>     <span class="n">chunks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\json\encoder.py:257,</span> in <span class="ni">JSONEncoder.iterencode</span><span class="nt">(self, o, _one_shot)</span>
+<span class="g g-Whitespace">    </span><span class="mi">252</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">253</span>     <span class="n">_iterencode</span> <span class="o">=</span> <span class="n">_make_iterencode</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">254</span>         <span class="n">markers</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="n">_encoder</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">indent</span><span class="p">,</span> <span class="n">floatstr</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">255</span>         <span class="bp">self</span><span class="o">.</span><span class="n">key_separator</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">item_separator</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_keys</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">256</span>         <span class="bp">self</span><span class="o">.</span><span class="n">skipkeys</span><span class="p">,</span> <span class="n">_one_shot</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">257</span> <span class="k">return</span> <span class="n">_iterencode</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\jupyter_client\jsonutil.py:111,</span> in <span class="ni">json_default</span><span class="nt">(obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span>     <span class="n">obj</span> <span class="o">=</span> <span class="n">_ensure_tzinfo</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">111</span>     <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;+00:00&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="k">return</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\dateutil\tz\tz.py:222,</span> in <span class="ni">tzlocal.utcoffset</span><span class="nt">(self, dt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span> <span class="k">if</span> <span class="n">dt</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hasdst</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">222</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_isdst</span><span class="p">(</span><span class="n">dt</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dst_offset</span>
+<span class="g g-Whitespace">    </span><span class="mi">224</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\dateutil\tz\tz.py:291,</span> in <span class="ni">tzlocal._isdst</span><span class="nt">(self, dt, fold_naive)</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span>     <span class="k">return</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span> <span class="c1"># Check for ambiguous times:</span>
+<span class="ne">--&gt; </span><span class="mi">291</span> <span class="n">dstval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_naive_is_dst</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span> <span class="n">fold</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="s1">&#39;fold&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_ambiguous</span><span class="p">(</span><span class="n">dt</span><span class="p">):</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\dateutil\tz\tz.py:260,</span> in <span class="ni">tzlocal._naive_is_dst</span><span class="nt">(self, dt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">258</span> <span class="k">def</span> <span class="nf">_naive_is_dst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">259</span>     <span class="n">timestamp</span> <span class="o">=</span> <span class="n">_datetime_to_timestamp</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">260</span>     <span class="k">return</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">(</span><span class="n">timestamp</span> <span class="o">+</span> <span class="n">time</span><span class="o">.</span><span class="n">timezone</span><span class="p">)</span><span class="o">.</span><span class="n">tm_isdst</span>
+
+<span class="ne">OSError</span>: [Errno 22] Invalid argument
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1085,9 +1323,15 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "411497745d474a318f0247ac3b36e1de"}
-</script><div class="output text_html"><div class="map-static-img-preview-3a38633f-f247-405a-ab58-ee4be55c26db"><img src=""></img></div></div><div class="output text_html"><div class="map-html-embed-preview-3a38633f-f247-405a-ab58-ee4be55c26db"></div></div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_map_in_my_gis</span>
+
+<span class="ne">NameError</span>: name &#39;my_map_in_my_gis&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <ol class="simple">
 <li><p><strong><font color='royalblue'>Load SEDFs into the map</font></strong></p></li>
@@ -1105,10 +1349,10 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="n">c1a84f5e1f30</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">blkgrp_sedf</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">map_widget</span><span class="o">=</span><span class="n">my_map_in_my_gis</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;blkgrp_sedf&#39; is not defined
+<span class="ne">NameError</span>: name &#39;my_map_in_my_gis&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1124,12 +1368,12 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="n">f916fa7639f3</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">schools_sedf</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">map_widget</span><span class="o">=</span><span class="n">my_map_in_my_gis</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                           <span class="n">col</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>                           <span class="n">col</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> 
 <span class="g g-Whitespace">      </span><span class="mi">3</span>                           <span class="n">renderer_type</span><span class="o">=</span><span class="s1">&#39;u&#39;</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;schools_sedf&#39; is not defined
+<span class="ne">NameError</span>: name &#39;my_map_in_my_gis&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1150,10 +1394,30 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_map_in_my_gis</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="s2">&quot;600px&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;my_map_in_my_gis&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_map_in_my_gis</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;600px&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;600px&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_map_in_my_gis</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;600px&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;600px&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;my_map_in_my_gis&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1165,9 +1429,15 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "411497745d474a318f0247ac3b36e1de"}
-</script><div class="output text_html"><div class="map-static-img-preview-3a38633f-f247-405a-ab58-ee4be55c26db"><img src=""></img></div></div><div class="output text_html"><div class="map-html-embed-preview-3a38633f-f247-405a-ab58-ee4be55c26db"></div></div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_map_in_my_gis</span>
+
+<span class="ne">NameError</span>: name &#39;my_map_in_my_gis&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="change-the-basemap">
@@ -1182,23 +1452,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;dark-gray&#39;,
- &#39;dark-gray-vector&#39;,
- &#39;gray&#39;,
- &#39;gray-vector&#39;,
- &#39;hybrid&#39;,
- &#39;national-geographic&#39;,
- &#39;oceans&#39;,
- &#39;osm&#39;,
- &#39;satellite&#39;,
- &#39;streets&#39;,
- &#39;streets-navigation-vector&#39;,
- &#39;streets-night-vector&#39;,
- &#39;streets-relief-vector&#39;,
- &#39;streets-vector&#39;,
- &#39;terrain&#39;,
- &#39;topo&#39;,
- &#39;topo-vector&#39;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_map_in_my_gis</span><span class="o">.</span><span class="n">basemaps</span>
+
+<span class="ne">NameError</span>: name &#39;my_map_in_my_gis&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1210,9 +1469,15 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "411497745d474a318f0247ac3b36e1de"}
-</script><div class="output text_html"><div class="map-static-img-preview-3a38633f-f247-405a-ab58-ee4be55c26db"><img src=""></img></div></div><div class="output text_html"><div class="map-html-embed-preview-3a38633f-f247-405a-ab58-ee4be55c26db"></div></div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_map_in_my_gis</span>
+
+<span class="ne">NameError</span>: name &#39;my_map_in_my_gis&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <ol class="simple">
 <li><p>Set basemap by assign a value in the list to the <code class="docutils literal notranslate"><span class="pre">basemap</span></code> attribut.</p></li>
@@ -1220,6 +1485,16 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_map_in_my_gis</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="s1">&#39;dark-gray&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_map_in_my_gis</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="s1">&#39;dark-gray&#39;</span>
+
+<span class="ne">NameError</span>: name &#39;my_map_in_my_gis&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1250,6 +1525,174 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">map2</span> <span class="o">=</span> <span class="n">my_gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">29.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">82.3</span><span class="p">],</span> <span class="n">zoomlevel</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\arcgis\gis\__init__.py:1370,</span> in <span class="ni">GIS.map</span><span class="nt">(self, location, zoomlevel, mode, geocoder)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1368</span>     <span class="n">mapwidget</span> <span class="o">=</span> <span class="n">MapView</span><span class="p">(</span><span class="n">gis</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="n">location</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1369</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1370</span>     <span class="n">mapwidget</span> <span class="o">=</span> <span class="n">MapView</span><span class="p">(</span><span class="n">gis</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1372</span>     <span class="c1"># Geocode the location</span>
+<span class="g g-Whitespace">   </span><span class="mi">1373</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+
+<span class="nn">File ~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\site-packages\arcgis\widgets\_mapview\_mapview.py:900,</span> in <span class="ni">MapView.__init__</span><span class="nt">(self, gis, item, mode, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">893</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;2D&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">894</span>     <span class="sd">&quot;&quot;&quot;Constructor of Map widget.</span>
+<span class="g g-Whitespace">    </span><span class="mi">895</span><span class="sd">     Accepts the following keyword arguments:</span>
+<span class="g g-Whitespace">    </span><span class="mi">896</span><span class="sd">     gis     The gis instance with which the map widget works, used for authentication, and adding secure layers and</span>
+<span class="g g-Whitespace">    </span><span class="mi">897</span><span class="sd">             private items from that GIS</span>
+<span class="g g-Whitespace">    </span><span class="mi">898</span><span class="sd">     item    web map item from portal with which to initialize the map widget</span>
+<span class="g g-Whitespace">    </span><span class="mi">899</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">900</span>     <span class="nb">super</span><span class="p">(</span><span class="n">MapView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">901</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_uuid</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid4</span><span class="p">())</span>
+<span class="g g-Whitespace">    </span><span class="mi">903</span>     <span class="c1"># Set up the visual display of the layout</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\ipywidgets\widgets\widget.py:505,</span> in <span class="ni">Widget.__init__</span><span class="nt">(self, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span> <span class="n">Widget</span><span class="o">.</span><span class="n">_call_widget_constructed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">505</span> <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\ipywidgets\widgets\widget.py:528,</span> in <span class="ni">Widget.open</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">525</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">526</span>     <span class="n">args</span><span class="p">[</span><span class="s1">&#39;comm_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model_id</span>
+<span class="ne">--&gt; </span><span class="mi">528</span> <span class="bp">self</span><span class="o">.</span><span class="n">comm</span> <span class="o">=</span> <span class="n">Comm</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\ipykernel\comm\comm.py:80,</span> in <span class="ni">Comm.__init__</span><span class="nt">(self, target_name, data, metadata, buffers, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span> <span class="k">if</span> <span class="n">target_name</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;target_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">target_name</span>
+<span class="ne">---&gt; </span><span class="mi">80</span> <span class="n">BaseComm</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span>     <span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span> <span class="n">buffers</span><span class="o">=</span><span class="n">buffers</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span> <span class="p">)</span>  <span class="c1"># type:ignore[call-arg]</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span> <span class="c1"># only re-add kernel if explicitly provided</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span> <span class="k">if</span> <span class="n">had_kernel</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\comm\base_comm.py:56,</span> in <span class="ni">BaseComm.__init__</span><span class="nt">(self, target_name, data, metadata, buffers, comm_id, primary, target_module, topic, _open_data, _close_data, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span> <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">primary</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="c1"># I am primary, open my peer.</span>
+<span class="ne">---&gt; </span><span class="mi">56</span>     <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span> <span class="n">buffers</span><span class="o">=</span><span class="n">buffers</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\comm\base_comm.py:80,</span> in <span class="ni">BaseComm.open</span><span class="nt">(self, data, metadata, buffers)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span> <span class="n">comm_manager</span><span class="o">.</span><span class="n">register_comm</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">80</span>     <span class="bp">self</span><span class="o">.</span><span class="n">publish_msg</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span>         <span class="s2">&quot;comm_open&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span>         <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span>         <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span>         <span class="n">buffers</span><span class="o">=</span><span class="n">buffers</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span>         <span class="n">target_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">target_name</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span>         <span class="n">target_module</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">target_module</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\ipykernel\comm\comm.py:35,</span> in <span class="ni">BaseComm.publish_msg</span><span class="nt">(self, msg_type, data, metadata, buffers, **keys)</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kernel</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>     <span class="bp">self</span><span class="o">.</span><span class="n">kernel</span> <span class="o">=</span> <span class="n">Kernel</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">35</span> <span class="bp">self</span><span class="o">.</span><span class="n">kernel</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">send</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="bp">self</span><span class="o">.</span><span class="n">kernel</span><span class="o">.</span><span class="n">iopub_socket</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>     <span class="n">msg_type</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span>     <span class="n">content</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>     <span class="n">metadata</span><span class="o">=</span><span class="n">json_clean</span><span class="p">(</span><span class="n">metadata</span><span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span>     <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">kernel</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span>     <span class="n">ident</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">topic</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>     <span class="n">buffers</span><span class="o">=</span><span class="n">buffers</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="p">)</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\jupyter_client\session.py:850,</span> in <span class="ni">Session.send</span><span class="nt">(self, stream, msg_or_type, content, parent, ident, buffers, track, header, metadata)</span>
+<span class="g g-Whitespace">    </span><span class="mi">848</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">adapt_version</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">849</span>     <span class="n">msg</span> <span class="o">=</span> <span class="n">adapt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">adapt_version</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">850</span> <span class="n">to_send</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">ident</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">851</span> <span class="n">to_send</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">buffers</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">852</span> <span class="n">longest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">to_send</span><span class="p">])</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\jupyter_client\session.py:719,</span> in <span class="ni">Session.serialize</span><span class="nt">(self, msg, ident)</span>
+<span class="g g-Whitespace">    </span><span class="mi">717</span>     <span class="n">content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">none</span>
+<span class="g g-Whitespace">    </span><span class="mi">718</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">719</span>     <span class="n">content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">720</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">721</span>     <span class="c1"># content is already packed, as in a relayed message</span>
+<span class="g g-Whitespace">    </span><span class="mi">722</span>     <span class="k">pass</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\jupyter_client\session.py:95,</span> in <span class="ni">json_packer</span><span class="nt">(obj)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span> <span class="sd">&quot;&quot;&quot;Convert a json object to a bytes.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">95</span>     <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span>         <span class="n">obj</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>         <span class="n">default</span><span class="o">=</span><span class="n">json_default</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>         <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span>         <span class="n">allow_nan</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>     <span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;surrogateescape&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span> <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>     <span class="c1"># Fallback to trying to clean the json before serializing</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span>     <span class="n">packed</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>         <span class="n">json_clean</span><span class="p">(</span><span class="n">obj</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>         <span class="n">default</span><span class="o">=</span><span class="n">json_default</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span>         <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span>         <span class="n">allow_nan</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>     <span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;surrogateescape&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\json\__init__.py:234,</span> in <span class="ni">dumps</span><span class="nt">(obj, skipkeys, ensure_ascii, check_circular, allow_nan, cls, indent, separators, default, sort_keys, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="bp">cls</span> <span class="o">=</span> <span class="n">JSONEncoder</span>
+<span class="ne">--&gt; </span><span class="mi">234</span> <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span>     <span class="n">skipkeys</span><span class="o">=</span><span class="n">skipkeys</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="n">ensure_ascii</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="n">check_circular</span><span class="o">=</span><span class="n">check_circular</span><span class="p">,</span> <span class="n">allow_nan</span><span class="o">=</span><span class="n">allow_nan</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="n">separators</span><span class="o">=</span><span class="n">separators</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">default</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="n">sort_keys</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="o">**</span><span class="n">kw</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\json\encoder.py:199,</span> in <span class="ni">JSONEncoder.encode</span><span class="nt">(self, o)</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span>         <span class="k">return</span> <span class="n">encode_basestring</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="c1"># This doesn&#39;t pass the iterator directly to &#39;&#39;.join() because the</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span> <span class="c1"># exceptions aren&#39;t as detailed.  The list call should be roughly</span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="c1"># equivalent to the PySequence_Fast that &#39;&#39;.join() would do.</span>
+<span class="ne">--&gt; </span><span class="mi">199</span> <span class="n">chunks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterencode</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">_one_shot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span>     <span class="n">chunks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\ESRI\conda\envs\arcpro-py3-clone\lib\json\encoder.py:257,</span> in <span class="ni">JSONEncoder.iterencode</span><span class="nt">(self, o, _one_shot)</span>
+<span class="g g-Whitespace">    </span><span class="mi">252</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">253</span>     <span class="n">_iterencode</span> <span class="o">=</span> <span class="n">_make_iterencode</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">254</span>         <span class="n">markers</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="n">_encoder</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">indent</span><span class="p">,</span> <span class="n">floatstr</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">255</span>         <span class="bp">self</span><span class="o">.</span><span class="n">key_separator</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">item_separator</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_keys</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">256</span>         <span class="bp">self</span><span class="o">.</span><span class="n">skipkeys</span><span class="p">,</span> <span class="n">_one_shot</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">257</span> <span class="k">return</span> <span class="n">_iterencode</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\jupyter_client\jsonutil.py:111,</span> in <span class="ni">json_default</span><span class="nt">(obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span>     <span class="n">obj</span> <span class="o">=</span> <span class="n">_ensure_tzinfo</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">111</span>     <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;+00:00&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="k">return</span> <span class="n">b2a_base64</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\dateutil\tz\tz.py:222,</span> in <span class="ni">tzlocal.utcoffset</span><span class="nt">(self, dt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span> <span class="k">if</span> <span class="n">dt</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hasdst</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">222</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_isdst</span><span class="p">(</span><span class="n">dt</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dst_offset</span>
+<span class="g g-Whitespace">    </span><span class="mi">224</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\dateutil\tz\tz.py:291,</span> in <span class="ni">tzlocal._isdst</span><span class="nt">(self, dt, fold_naive)</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span>     <span class="k">return</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span> <span class="c1"># Check for ambiguous times:</span>
+<span class="ne">--&gt; </span><span class="mi">291</span> <span class="n">dstval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_naive_is_dst</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span> <span class="n">fold</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="s1">&#39;fold&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_ambiguous</span><span class="p">(</span><span class="n">dt</span><span class="p">):</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\dateutil\tz\tz.py:260,</span> in <span class="ni">tzlocal._naive_is_dst</span><span class="nt">(self, dt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">258</span> <span class="k">def</span> <span class="nf">_naive_is_dst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">259</span>     <span class="n">timestamp</span> <span class="o">=</span> <span class="n">_datetime_to_timestamp</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">260</span>     <span class="k">return</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">(</span><span class="n">timestamp</span> <span class="o">+</span> <span class="n">time</span><span class="o">.</span><span class="n">timezone</span><span class="p">)</span><span class="o">.</span><span class="n">tm_isdst</span>
+
+<span class="ne">OSError</span>: [Errno 22] Invalid argument
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1263,13 +1706,13 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mf">4e462</span><span class="n">c64d2cc</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">blkgrp_sedf</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">map_widget</span><span class="o">=</span><span class="n">map2</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;YlGnBu&quot;</span><span class="p">,</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span>                          <span class="n">col</span><span class="o">=</span><span class="s1">&#39;TOTALPOP&#39;</span><span class="p">,</span> <span class="n">renderer_type</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>                          <span class="n">method</span><span class="o">=</span><span class="s1">&#39;esriClassifyNaturalBreaks&#39;</span><span class="p">,</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span>                          <span class="n">class_count</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;blkgrp_sedf&#39; is not defined
+<span class="ne">NameError</span>: name &#39;map2&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1281,6 +1724,17 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">Layout</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">map2</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="s2">&quot;700px&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;map2&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1289,9 +1743,15 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "35cc3ab77d0e4c5a9a33a4c68c43b948"}
-</script><div class="output text_html"><div class="map-static-img-preview-0db8894f-96a1-4273-bc8b-9923e97cc84c"><img src=""></img></div></div><div class="output text_html"><div class="map-html-embed-preview-0db8894f-96a1-4273-bc8b-9923e97cc84c"></div></div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">map2</span>
+
+<span class="ne">NameError</span>: name &#39;map2&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -1299,7 +1759,7 @@ title="Print to PDF"
 
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"a52e928d6ae44cf988ad54cf08c2884c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "400px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "411497745d474a318f0247ac3b36e1de": {"model_name": "ArcGISMapIPyWidgetModel", "model_module": "arcgis-map-ipywidget", "model_module_version": "2.0.1", "state": {"_add_this_graphic": {}, "_add_this_notype_layer": {}, "_auth_mode": "anonymous", "_basemap": "dark-gray", "_cell_output_screenshot_callback_resp": "", "_center": {}, "_center_long_lat": [-82.3, 29.7], "_custom_msg": "", "_dom_classes": [], "_draw_these_graphics_on_widget_load": [], "_draw_these_notype_layers_on_widget_load": [], "_extent": {}, "_file_output_screenshot_callback_resp": "", "_gallery_basemaps": {"default": {"baseMapLayers": [{"url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer", "layerType": "ArcGISTiledMapServiceLayer", "resourceInfo": {"currentVersion": 10.3, "mapName": "Layers", "supportsDynamicLayers": false, "layers": [{"id": 0, "name": "Citations", "parentLayerId": -1, "defaultVisibility": false, "subLayerIds": null, "minScale": 0, "maxScale": 0}], "tables": [], "spatialReference": {"wkid": 102100, "latestWkid": 3857}, "singleFusedMapCache": true, "tileInfo": {"rows": 256, "cols": 256, "dpi": 96, "format": "JPEG", "compressionQuality": 90, "origin": {"x": -20037508.342787, "y": 20037508.342787}, "spatialReference": {"wkid": 102100, "latestWkid": 3857}, "lods": [{"level": 0, "resolution": 156543.03392800014, "scale": 591657527.591555}, {"level": 1, "resolution": 78271.51696399994, "scale": 295828763.795777}, {"level": 2, "resolution": 39135.75848200009, "scale": 147914381.897889}, {"level": 3, "resolution": 19567.87924099992, "scale": 73957190.948944}, {"level": 4, "resolution": 9783.93962049996, "scale": 36978595.474472}, {"level": 5, "resolution": 4891.96981024998, "scale": 18489297.737236}, {"level": 6, "resolution": 2445.98490512499, "scale": 9244648.868618}, {"level": 7, "resolution": 1222.992452562495, "scale": 4622324.434309}, {"level": 8, "resolution": 611.4962262813797, "scale": 2311162.217155}, {"level": 9, "resolution": 305.74811314055756, "scale": 1155581.108577}, {"level": 10, "resolution": 152.87405657041106, "scale": 577790.554289}, {"level": 11, "resolution": 76.43702828507324, "scale": 288895.277144}, {"level": 12, "resolution": 38.21851414253662, "scale": 144447.638572}, {"level": 13, "resolution": 19.10925707126831, "scale": 72223.819286}, {"level": 14, "resolution": 9.554628535634155, "scale": 36111.909643}, {"level": 15, "resolution": 4.77731426794937, "scale": 18055.954822}, {"level": 16, "resolution": 2.388657133974685, "scale": 9027.977411}, {"level": 17, "resolution": 1.1943285668550503, "scale": 4513.988705}, {"level": 18, "resolution": 0.5971642835598172, "scale": 2256.994353}, {"level": 19, "resolution": 0.29858214164761665, "scale": 1128.497176}, {"level": 20, "resolution": 0.14929107082380833, "scale": 564.248588}, {"level": 21, "resolution": 0.07464553541190416, "scale": 282.124294}, {"level": 22, "resolution": 0.03732276770595208, "scale": 141.062147}, {"level": 23, "resolution": 0.01866138385297604, "scale": 70.5310735}]}, "initialExtent": {"xmin": -28848255.049479112, "ymin": -2077452.082122866, "xmax": 28848255.049479112, "ymax": 16430757.376790084, "spatialReference": {"wkid": 102100, "latestWkid": 3857}}, "fullExtent": {"xmin": -20037507.067161843, "ymin": -19971868.880408604, "xmax": 20037507.067161843, "ymax": 19971868.88040863, "spatialReference": {"wkid": 102100, "latestWkid": 3857}}, "minScale": 591657527.591555, "maxScale": 70.5310735, "units": "esriMeters", "supportedImageFormatTypes": "PNG32,PNG24,PNG,JPG,DIB,TIFF,EMF,PS,PDF,GIF,SVG,SVGZ,BMP", "capabilities": "Map,Tilemap,Query,Data", "supportedQueryFormats": "JSON, AMF", "exportTilesAllowed": false, "maxRecordCount": 100, "maxImageHeight": 4096, "maxImageWidth": 4096, "supportedExtensions": "KmlServer"}}], "title": "Topographic"}}, "_heading": 0.0, "_image_overlays_to_remove": [], "_js_cdn_override": "", "_layers_to_remove": [], "_link_writeonly_extent": {}, "_link_writeonly_heading": 0.0, "_link_writeonly_rotation": 0.0, "_link_writeonly_tilt": 0.0, "_model_module": "arcgis-map-ipywidget", "_model_module_version": "2.0.1", "_model_name": "ArcGISMapIPyWidgetModel", "_overlay_these_images_on_widget_load": [], "_overlay_this_image": {}, "_portal_sharing_rest_url": "https://www.arcgis.com/sharing/rest/", "_portal_token": "", "_portal_url": "https://www.arcgis.com/", "_preview_screenshot_callback_resp": "", "_readonly_center": {}, "_readonly_end_time": "", "_readonly_extent": {}, "_readonly_heading": 0.0, "_readonly_rotation": 0.0, "_readonly_scale": -1.0, "_readonly_start_time": "", "_readonly_tilt": 0.0, "_readonly_webmap_from_js": {}, "_readonly_zoom": -1.0, "_rotation": 0.0, "_scale": -1.0, "_snap_to_zoom": true, "_tilt": 0.0, "_time_info": {}, "_trigger_interactive_draw_mode_for": {}, "_trigger_new_jlab_window_with_args": {}, "_trigger_print_js_debug_info": "", "_trigger_screenshot_with_args": {}, "_trigger_webscene_save_to_this_portal_id": "", "_username": "None", "_uuid": "3a38633f-f247-405a-ab58-ee4be55c26db", "_view_count": null, "_view_module": "arcgis-map-ipywidget", "_view_module_version": "2.0.1", "_view_name": "ArcGISMapIPyWidgetView", "_webmap": {}, "_webscene": {}, "_writeonly_end_time": "1900-01-01T00:00:00.000000", "_writeonly_start_time": "1900-01-01T00:00:00.000000", "_zoom": 9.0, "hide_mode_switch": false, "jupyter_target": "", "layout": "IPY_MODEL_d5af1807a55948b59ddcef2708981979", "legend": false, "mode": "2D", "print_service_url": "", "ready": false, "tab_mode": "auto", "time_mode": "time-window", "time_slider": false}}, "f511239c94d14030924187551592a7e4": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "400px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "8bf8af05a18348458642e42a359dc07c": {"model_name": "ArcGISMapIPyWidgetModel", "model_module": "arcgis-map-ipywidget", "model_module_version": "2.0.1", "state": {"_add_this_graphic": {}, "_add_this_notype_layer": {}, "_auth_mode": "anonymous", "_basemap": "default", "_cell_output_screenshot_callback_resp": "", "_center": {}, "_center_long_lat": [], "_custom_msg": "", "_dom_classes": [], "_draw_these_graphics_on_widget_load": [], "_draw_these_notype_layers_on_widget_load": [], "_extent": {}, "_file_output_screenshot_callback_resp": "", "_gallery_basemaps": {"default": {"baseMapLayers": [{"url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer", "layerType": "ArcGISTiledMapServiceLayer", "resourceInfo": {"currentVersion": 10.3, "mapName": "Layers", "supportsDynamicLayers": false, "layers": [{"id": 0, "name": "Citations", "parentLayerId": -1, "defaultVisibility": false, "subLayerIds": null, "minScale": 0, "maxScale": 0}], "tables": [], "spatialReference": {"wkid": 102100, "latestWkid": 3857}, "singleFusedMapCache": true, "tileInfo": {"rows": 256, "cols": 256, "dpi": 96, "format": "JPEG", "compressionQuality": 90, "origin": {"x": -20037508.342787, "y": 20037508.342787}, "spatialReference": {"wkid": 102100, "latestWkid": 3857}, "lods": [{"level": 0, "resolution": 156543.03392800014, "scale": 591657527.591555}, {"level": 1, "resolution": 78271.51696399994, "scale": 295828763.795777}, {"level": 2, "resolution": 39135.75848200009, "scale": 147914381.897889}, {"level": 3, "resolution": 19567.87924099992, "scale": 73957190.948944}, {"level": 4, "resolution": 9783.93962049996, "scale": 36978595.474472}, {"level": 5, "resolution": 4891.96981024998, "scale": 18489297.737236}, {"level": 6, "resolution": 2445.98490512499, "scale": 9244648.868618}, {"level": 7, "resolution": 1222.992452562495, "scale": 4622324.434309}, {"level": 8, "resolution": 611.4962262813797, "scale": 2311162.217155}, {"level": 9, "resolution": 305.74811314055756, "scale": 1155581.108577}, {"level": 10, "resolution": 152.87405657041106, "scale": 577790.554289}, {"level": 11, "resolution": 76.43702828507324, "scale": 288895.277144}, {"level": 12, "resolution": 38.21851414253662, "scale": 144447.638572}, {"level": 13, "resolution": 19.10925707126831, "scale": 72223.819286}, {"level": 14, "resolution": 9.554628535634155, "scale": 36111.909643}, {"level": 15, "resolution": 4.77731426794937, "scale": 18055.954822}, {"level": 16, "resolution": 2.388657133974685, "scale": 9027.977411}, {"level": 17, "resolution": 1.1943285668550503, "scale": 4513.988705}, {"level": 18, "resolution": 0.5971642835598172, "scale": 2256.994353}, {"level": 19, "resolution": 0.29858214164761665, "scale": 1128.497176}, {"level": 20, "resolution": 0.14929107082380833, "scale": 564.248588}, {"level": 21, "resolution": 0.07464553541190416, "scale": 282.124294}, {"level": 22, "resolution": 0.03732276770595208, "scale": 141.062147}, {"level": 23, "resolution": 0.01866138385297604, "scale": 70.5310735}]}, "initialExtent": {"xmin": -28848255.049479112, "ymin": -2077452.082122866, "xmax": 28848255.049479112, "ymax": 16430757.376790084, "spatialReference": {"wkid": 102100, "latestWkid": 3857}}, "fullExtent": {"xmin": -20037507.067161843, "ymin": -19971868.880408604, "xmax": 20037507.067161843, "ymax": 19971868.88040863, "spatialReference": {"wkid": 102100, "latestWkid": 3857}}, "minScale": 591657527.591555, "maxScale": 70.5310735, "units": "esriMeters", "supportedImageFormatTypes": "PNG32,PNG24,PNG,JPG,DIB,TIFF,EMF,PS,PDF,GIF,SVG,SVGZ,BMP", "capabilities": "Map,Tilemap,Query,Data", "supportedQueryFormats": "JSON, AMF", "exportTilesAllowed": false, "maxRecordCount": 100, "maxImageHeight": 4096, "maxImageWidth": 4096, "supportedExtensions": "KmlServer"}}], "title": "Topographic"}}, "_heading": 0.0, "_image_overlays_to_remove": [], "_js_cdn_override": "", "_layers_to_remove": [], "_link_writeonly_extent": {}, "_link_writeonly_heading": 0.0, "_link_writeonly_rotation": 0.0, "_link_writeonly_tilt": 0.0, "_model_module": "arcgis-map-ipywidget", "_model_module_version": "2.0.1", "_model_name": "ArcGISMapIPyWidgetModel", "_overlay_these_images_on_widget_load": [], "_overlay_this_image": {}, "_portal_sharing_rest_url": "https://www.arcgis.com/sharing/rest/", "_portal_token": "", "_portal_url": "https://www.arcgis.com/", "_preview_screenshot_callback_resp": "", "_readonly_center": {}, "_readonly_end_time": "", "_readonly_extent": {}, "_readonly_heading": 0.0, "_readonly_rotation": 0.0, "_readonly_scale": -1.0, "_readonly_start_time": "", "_readonly_tilt": 0.0, "_readonly_webmap_from_js": {}, "_readonly_zoom": -1.0, "_rotation": 0.0, "_scale": -1.0, "_snap_to_zoom": true, "_tilt": 0.0, "_time_info": {}, "_trigger_interactive_draw_mode_for": {}, "_trigger_new_jlab_window_with_args": {}, "_trigger_print_js_debug_info": "", "_trigger_screenshot_with_args": {}, "_trigger_webscene_save_to_this_portal_id": "", "_username": "None", "_uuid": "865d5618-9608-4dc3-b714-b8264193e9d1", "_view_count": null, "_view_module": "arcgis-map-ipywidget", "_view_module_version": "2.0.1", "_view_name": "ArcGISMapIPyWidgetView", "_webmap": {"operationalLayers": [], "baseMap": {"baseMapLayers": [{"url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer", "layerType": "ArcGISTiledMapServiceLayer", "resourceInfo": {"currentVersion": 10.3, "mapName": "Layers", "supportsDynamicLayers": false, "layers": [{"id": 0, "name": "Citations", "parentLayerId": -1, "defaultVisibility": false, "subLayerIds": null, "minScale": 0, "maxScale": 0}], "tables": [], "spatialReference": {"wkid": 102100, "latestWkid": 3857}, "singleFusedMapCache": true, "tileInfo": {"rows": 256, "cols": 256, "dpi": 96, "format": "JPEG", "compressionQuality": 90, "origin": {"x": -20037508.342787, "y": 20037508.342787}, "spatialReference": {"wkid": 102100, "latestWkid": 3857}, "lods": [{"level": 0, "resolution": 156543.03392800014, "scale": 591657527.591555}, {"level": 1, "resolution": 78271.51696399994, "scale": 295828763.795777}, {"level": 2, "resolution": 39135.75848200009, "scale": 147914381.897889}, {"level": 3, "resolution": 19567.87924099992, "scale": 73957190.948944}, {"level": 4, "resolution": 9783.93962049996, "scale": 36978595.474472}, {"level": 5, "resolution": 4891.96981024998, "scale": 18489297.737236}, {"level": 6, "resolution": 2445.98490512499, "scale": 9244648.868618}, {"level": 7, "resolution": 1222.992452562495, "scale": 4622324.434309}, {"level": 8, "resolution": 611.4962262813797, "scale": 2311162.217155}, {"level": 9, "resolution": 305.74811314055756, "scale": 1155581.108577}, {"level": 10, "resolution": 152.87405657041106, "scale": 577790.554289}, {"level": 11, "resolution": 76.43702828507324, "scale": 288895.277144}, {"level": 12, "resolution": 38.21851414253662, "scale": 144447.638572}, {"level": 13, "resolution": 19.10925707126831, "scale": 72223.819286}, {"level": 14, "resolution": 9.554628535634155, "scale": 36111.909643}, {"level": 15, "resolution": 4.77731426794937, "scale": 18055.954822}, {"level": 16, "resolution": 2.388657133974685, "scale": 9027.977411}, {"level": 17, "resolution": 1.1943285668550503, "scale": 4513.988705}, {"level": 18, "resolution": 0.5971642835598172, "scale": 2256.994353}, {"level": 19, "resolution": 0.29858214164761665, "scale": 1128.497176}, {"level": 20, "resolution": 0.14929107082380833, "scale": 564.248588}, {"level": 21, "resolution": 0.07464553541190416, "scale": 282.124294}, {"level": 22, "resolution": 0.03732276770595208, "scale": 141.062147}, {"level": 23, "resolution": 0.01866138385297604, "scale": 70.5310735}]}, "initialExtent": {"xmin": -28848255.049479112, "ymin": -2077452.082122866, "xmax": 28848255.049479112, "ymax": 16430757.376790084, "spatialReference": {"wkid": 102100, "latestWkid": 3857}}, "fullExtent": {"xmin": -20037507.067161843, "ymin": -19971868.880408604, "xmax": 20037507.067161843, "ymax": 19971868.88040863, "spatialReference": {"wkid": 102100, "latestWkid": 3857}}, "minScale": 591657527.591555, "maxScale": 70.5310735, "units": "esriMeters", "supportedImageFormatTypes": "PNG32,PNG24,PNG,JPG,DIB,TIFF,EMF,PS,PDF,GIF,SVG,SVGZ,BMP", "capabilities": "Map,Tilemap,Query,Data", "supportedQueryFormats": "JSON, AMF", "exportTilesAllowed": false, "maxRecordCount": 100, "maxImageHeight": 4096, "maxImageWidth": 4096, "supportedExtensions": "KmlServer"}}], "title": "Topographic"}, "spatialReference": {"wkid": 102100, "latestWkid": 3857}, "version": "2.10", "authoringApp": "ArcGISPythonAPI", "authoringAppVersion": "2.0.1"}, "_webscene": {}, "_writeonly_end_time": "1900-01-01T00:00:00.000000", "_writeonly_start_time": "1900-01-01T00:00:00.000000", "_zoom": -1.0, "hide_mode_switch": true, "jupyter_target": "", "layout": "IPY_MODEL_f511239c94d14030924187551592a7e4", "legend": false, "mode": "2D", "print_service_url": "", "ready": false, "tab_mode": "auto", "time_mode": "time-window", "time_slider": false}}, "ad3971d8f3dd4755971d8cb3b8ecb32b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "600px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d5af1807a55948b59ddcef2708981979": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "600px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "600px"}}, "ed1245dd8ced4d0cae81472caa1652c6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "400px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "35cc3ab77d0e4c5a9a33a4c68c43b948": {"model_name": "ArcGISMapIPyWidgetModel", "model_module": "arcgis-map-ipywidget", "model_module_version": "2.0.1", "state": {"_add_this_graphic": {}, "_add_this_notype_layer": {}, "_auth_mode": "anonymous", "_basemap": "default", "_cell_output_screenshot_callback_resp": "", "_center": {}, "_center_long_lat": [-82.3, 29.7], "_custom_msg": "", "_dom_classes": [], "_draw_these_graphics_on_widget_load": [], "_draw_these_notype_layers_on_widget_load": [], "_extent": {}, "_file_output_screenshot_callback_resp": "", "_gallery_basemaps": {"default": {"baseMapLayers": [{"url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer", "layerType": "ArcGISTiledMapServiceLayer", "resourceInfo": {"currentVersion": 10.3, "mapName": "Layers", "supportsDynamicLayers": false, "layers": [{"id": 0, "name": "Citations", "parentLayerId": -1, "defaultVisibility": false, "subLayerIds": null, "minScale": 0, "maxScale": 0}], "tables": [], "spatialReference": {"wkid": 102100, "latestWkid": 3857}, "singleFusedMapCache": true, "tileInfo": {"rows": 256, "cols": 256, "dpi": 96, "format": "JPEG", "compressionQuality": 90, "origin": {"x": -20037508.342787, "y": 20037508.342787}, "spatialReference": {"wkid": 102100, "latestWkid": 3857}, "lods": [{"level": 0, "resolution": 156543.03392800014, "scale": 591657527.591555}, {"level": 1, "resolution": 78271.51696399994, "scale": 295828763.795777}, {"level": 2, "resolution": 39135.75848200009, "scale": 147914381.897889}, {"level": 3, "resolution": 19567.87924099992, "scale": 73957190.948944}, {"level": 4, "resolution": 9783.93962049996, "scale": 36978595.474472}, {"level": 5, "resolution": 4891.96981024998, "scale": 18489297.737236}, {"level": 6, "resolution": 2445.98490512499, "scale": 9244648.868618}, {"level": 7, "resolution": 1222.992452562495, "scale": 4622324.434309}, {"level": 8, "resolution": 611.4962262813797, "scale": 2311162.217155}, {"level": 9, "resolution": 305.74811314055756, "scale": 1155581.108577}, {"level": 10, "resolution": 152.87405657041106, "scale": 577790.554289}, {"level": 11, "resolution": 76.43702828507324, "scale": 288895.277144}, {"level": 12, "resolution": 38.21851414253662, "scale": 144447.638572}, {"level": 13, "resolution": 19.10925707126831, "scale": 72223.819286}, {"level": 14, "resolution": 9.554628535634155, "scale": 36111.909643}, {"level": 15, "resolution": 4.77731426794937, "scale": 18055.954822}, {"level": 16, "resolution": 2.388657133974685, "scale": 9027.977411}, {"level": 17, "resolution": 1.1943285668550503, "scale": 4513.988705}, {"level": 18, "resolution": 0.5971642835598172, "scale": 2256.994353}, {"level": 19, "resolution": 0.29858214164761665, "scale": 1128.497176}, {"level": 20, "resolution": 0.14929107082380833, "scale": 564.248588}, {"level": 21, "resolution": 0.07464553541190416, "scale": 282.124294}, {"level": 22, "resolution": 0.03732276770595208, "scale": 141.062147}, {"level": 23, "resolution": 0.01866138385297604, "scale": 70.5310735}]}, "initialExtent": {"xmin": -28848255.049479112, "ymin": -2077452.082122866, "xmax": 28848255.049479112, "ymax": 16430757.376790084, "spatialReference": {"wkid": 102100, "latestWkid": 3857}}, "fullExtent": {"xmin": -20037507.067161843, "ymin": -19971868.880408604, "xmax": 20037507.067161843, "ymax": 19971868.88040863, "spatialReference": {"wkid": 102100, "latestWkid": 3857}}, "minScale": 591657527.591555, "maxScale": 70.5310735, "units": "esriMeters", "supportedImageFormatTypes": "PNG32,PNG24,PNG,JPG,DIB,TIFF,EMF,PS,PDF,GIF,SVG,SVGZ,BMP", "capabilities": "Map,Tilemap,Query,Data", "supportedQueryFormats": "JSON, AMF", "exportTilesAllowed": false, "maxRecordCount": 100, "maxImageHeight": 4096, "maxImageWidth": 4096, "supportedExtensions": "KmlServer"}}], "title": "Topographic"}}, "_heading": 0.0, "_image_overlays_to_remove": [], "_js_cdn_override": "", "_layers_to_remove": [], "_link_writeonly_extent": {}, "_link_writeonly_heading": 0.0, "_link_writeonly_rotation": 0.0, "_link_writeonly_tilt": 0.0, "_model_module": "arcgis-map-ipywidget", "_model_module_version": "2.0.1", "_model_name": "ArcGISMapIPyWidgetModel", "_overlay_these_images_on_widget_load": [], "_overlay_this_image": {}, "_portal_sharing_rest_url": "https://www.arcgis.com/sharing/rest/", "_portal_token": "", "_portal_url": "https://www.arcgis.com/", "_preview_screenshot_callback_resp": "", "_readonly_center": {}, "_readonly_end_time": "", "_readonly_extent": {}, "_readonly_heading": 0.0, "_readonly_rotation": 0.0, "_readonly_scale": -1.0, "_readonly_start_time": "", "_readonly_tilt": 0.0, "_readonly_webmap_from_js": {}, "_readonly_zoom": -1.0, "_rotation": 0.0, "_scale": -1.0, "_snap_to_zoom": true, "_tilt": 0.0, "_time_info": {}, "_trigger_interactive_draw_mode_for": {}, "_trigger_new_jlab_window_with_args": {}, "_trigger_print_js_debug_info": "", "_trigger_screenshot_with_args": {}, "_trigger_webscene_save_to_this_portal_id": "", "_username": "None", "_uuid": "0db8894f-96a1-4273-bc8b-9923e97cc84c", "_view_count": null, "_view_module": "arcgis-map-ipywidget", "_view_module_version": "2.0.1", "_view_name": "ArcGISMapIPyWidgetView", "_webmap": {}, "_webscene": {}, "_writeonly_end_time": "1900-01-01T00:00:00.000000", "_writeonly_start_time": "1900-01-01T00:00:00.000000", "_zoom": 10.0, "hide_mode_switch": false, "jupyter_target": "", "layout": "IPY_MODEL_c3888350dcf1472b9cdba76164d0649a", "legend": false, "mode": "2D", "print_service_url": "", "ready": false, "tab_mode": "auto", "time_mode": "time-window", "time_slider": false}}, "16962924f0424c7a8314547eb5820d79": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "400px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "100%"}}, "8a179f20127247bbb12777a7ae3ce05d": {"model_name": "ArcGISMapIPyWidgetModel", "model_module": "arcgis-map-ipywidget", "model_module_version": "2.0.1", "state": {"_add_this_graphic": {}, "_add_this_notype_layer": {}, "_auth_mode": "anonymous", "_basemap": "default", "_cell_output_screenshot_callback_resp": "", "_center": {}, "_center_long_lat": [], "_custom_msg": "", "_dom_classes": [], "_draw_these_graphics_on_widget_load": [], "_draw_these_notype_layers_on_widget_load": [], "_extent": {}, "_file_output_screenshot_callback_resp": "", "_gallery_basemaps": {"default": {"baseMapLayers": [{"url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer", "layerType": "ArcGISTiledMapServiceLayer", "resourceInfo": {"currentVersion": 10.3, "mapName": "Layers", "supportsDynamicLayers": false, "layers": [{"id": 0, "name": "Citations", "parentLayerId": -1, "defaultVisibility": false, "subLayerIds": null, "minScale": 0, "maxScale": 0}], "tables": [], "spatialReference": {"wkid": 102100, "latestWkid": 3857}, "singleFusedMapCache": true, "tileInfo": {"rows": 256, "cols": 256, "dpi": 96, "format": "JPEG", "compressionQuality": 90, "origin": {"x": -20037508.342787, "y": 20037508.342787}, "spatialReference": {"wkid": 102100, "latestWkid": 3857}, "lods": [{"level": 0, "resolution": 156543.03392800014, "scale": 591657527.591555}, {"level": 1, "resolution": 78271.51696399994, "scale": 295828763.795777}, {"level": 2, "resolution": 39135.75848200009, "scale": 147914381.897889}, {"level": 3, "resolution": 19567.87924099992, "scale": 73957190.948944}, {"level": 4, "resolution": 9783.93962049996, "scale": 36978595.474472}, {"level": 5, "resolution": 4891.96981024998, "scale": 18489297.737236}, {"level": 6, "resolution": 2445.98490512499, "scale": 9244648.868618}, {"level": 7, "resolution": 1222.992452562495, "scale": 4622324.434309}, {"level": 8, "resolution": 611.4962262813797, "scale": 2311162.217155}, {"level": 9, "resolution": 305.74811314055756, "scale": 1155581.108577}, {"level": 10, "resolution": 152.87405657041106, "scale": 577790.554289}, {"level": 11, "resolution": 76.43702828507324, "scale": 288895.277144}, {"level": 12, "resolution": 38.21851414253662, "scale": 144447.638572}, {"level": 13, "resolution": 19.10925707126831, "scale": 72223.819286}, {"level": 14, "resolution": 9.554628535634155, "scale": 36111.909643}, {"level": 15, "resolution": 4.77731426794937, "scale": 18055.954822}, {"level": 16, "resolution": 2.388657133974685, "scale": 9027.977411}, {"level": 17, "resolution": 1.1943285668550503, "scale": 4513.988705}, {"level": 18, "resolution": 0.5971642835598172, "scale": 2256.994353}, {"level": 19, "resolution": 0.29858214164761665, "scale": 1128.497176}, {"level": 20, "resolution": 0.14929107082380833, "scale": 564.248588}, {"level": 21, "resolution": 0.07464553541190416, "scale": 282.124294}, {"level": 22, "resolution": 0.03732276770595208, "scale": 141.062147}, {"level": 23, "resolution": 0.01866138385297604, "scale": 70.5310735}]}, "initialExtent": {"xmin": -28848255.049479112, "ymin": -2077452.082122866, "xmax": 28848255.049479112, "ymax": 16430757.376790084, "spatialReference": {"wkid": 102100, "latestWkid": 3857}}, "fullExtent": {"xmin": -20037507.067161843, "ymin": -19971868.880408604, "xmax": 20037507.067161843, "ymax": 19971868.88040863, "spatialReference": {"wkid": 102100, "latestWkid": 3857}}, "minScale": 591657527.591555, "maxScale": 70.5310735, "units": "esriMeters", "supportedImageFormatTypes": "PNG32,PNG24,PNG,JPG,DIB,TIFF,EMF,PS,PDF,GIF,SVG,SVGZ,BMP", "capabilities": "Map,Tilemap,Query,Data", "supportedQueryFormats": "JSON, AMF", "exportTilesAllowed": false, "maxRecordCount": 100, "maxImageHeight": 4096, "maxImageWidth": 4096, "supportedExtensions": "KmlServer"}}], "title": "Topographic"}}, "_heading": 0.0, "_image_overlays_to_remove": [], "_js_cdn_override": "", "_layers_to_remove": [], "_link_writeonly_extent": {}, "_link_writeonly_heading": 0.0, "_link_writeonly_rotation": 0.0, "_link_writeonly_tilt": 0.0, "_model_module": "arcgis-map-ipywidget", "_model_module_version": "2.0.1", "_model_name": "ArcGISMapIPyWidgetModel", "_overlay_these_images_on_widget_load": [], "_overlay_this_image": {}, "_portal_sharing_rest_url": "https://www.arcgis.com/sharing/rest/", "_portal_token": "", "_portal_url": "https://www.arcgis.com/", "_preview_screenshot_callback_resp": "", "_readonly_center": {}, "_readonly_end_time": "", "_readonly_extent": {}, "_readonly_heading": 0.0, "_readonly_rotation": 0.0, "_readonly_scale": -1.0, "_readonly_start_time": "", "_readonly_tilt": 0.0, "_readonly_webmap_from_js": {}, "_readonly_zoom": -1.0, "_rotation": 0.0, "_scale": -1.0, "_snap_to_zoom": true, "_tilt": 0.0, "_time_info": {}, "_trigger_interactive_draw_mode_for": {}, "_trigger_new_jlab_window_with_args": {}, "_trigger_print_js_debug_info": "", "_trigger_screenshot_with_args": {}, "_trigger_webscene_save_to_this_portal_id": "", "_username": "None", "_uuid": "e09f82d7-64be-4e0f-acda-beb8d7afb7bc", "_view_count": null, "_view_module": "arcgis-map-ipywidget", "_view_module_version": "2.0.1", "_view_name": "ArcGISMapIPyWidgetView", "_webmap": {"operationalLayers": [], "baseMap": {"baseMapLayers": [{"url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer", "layerType": "ArcGISTiledMapServiceLayer", "resourceInfo": {"currentVersion": 10.3, "mapName": "Layers", "supportsDynamicLayers": false, "layers": [{"id": 0, "name": "Citations", "parentLayerId": -1, "defaultVisibility": false, "subLayerIds": null, "minScale": 0, "maxScale": 0}], "tables": [], "spatialReference": {"wkid": 102100, "latestWkid": 3857}, "singleFusedMapCache": true, "tileInfo": {"rows": 256, "cols": 256, "dpi": 96, "format": "JPEG", "compressionQuality": 90, "origin": {"x": -20037508.342787, "y": 20037508.342787}, "spatialReference": {"wkid": 102100, "latestWkid": 3857}, "lods": [{"level": 0, "resolution": 156543.03392800014, "scale": 591657527.591555}, {"level": 1, "resolution": 78271.51696399994, "scale": 295828763.795777}, {"level": 2, "resolution": 39135.75848200009, "scale": 147914381.897889}, {"level": 3, "resolution": 19567.87924099992, "scale": 73957190.948944}, {"level": 4, "resolution": 9783.93962049996, "scale": 36978595.474472}, {"level": 5, "resolution": 4891.96981024998, "scale": 18489297.737236}, {"level": 6, "resolution": 2445.98490512499, "scale": 9244648.868618}, {"level": 7, "resolution": 1222.992452562495, "scale": 4622324.434309}, {"level": 8, "resolution": 611.4962262813797, "scale": 2311162.217155}, {"level": 9, "resolution": 305.74811314055756, "scale": 1155581.108577}, {"level": 10, "resolution": 152.87405657041106, "scale": 577790.554289}, {"level": 11, "resolution": 76.43702828507324, "scale": 288895.277144}, {"level": 12, "resolution": 38.21851414253662, "scale": 144447.638572}, {"level": 13, "resolution": 19.10925707126831, "scale": 72223.819286}, {"level": 14, "resolution": 9.554628535634155, "scale": 36111.909643}, {"level": 15, "resolution": 4.77731426794937, "scale": 18055.954822}, {"level": 16, "resolution": 2.388657133974685, "scale": 9027.977411}, {"level": 17, "resolution": 1.1943285668550503, "scale": 4513.988705}, {"level": 18, "resolution": 0.5971642835598172, "scale": 2256.994353}, {"level": 19, "resolution": 0.29858214164761665, "scale": 1128.497176}, {"level": 20, "resolution": 0.14929107082380833, "scale": 564.248588}, {"level": 21, "resolution": 0.07464553541190416, "scale": 282.124294}, {"level": 22, "resolution": 0.03732276770595208, "scale": 141.062147}, {"level": 23, "resolution": 0.01866138385297604, "scale": 70.5310735}]}, "initialExtent": {"xmin": -28848255.049479112, "ymin": -2077452.082122866, "xmax": 28848255.049479112, "ymax": 16430757.376790084, "spatialReference": {"wkid": 102100, "latestWkid": 3857}}, "fullExtent": {"xmin": -20037507.067161843, "ymin": -19971868.880408604, "xmax": 20037507.067161843, "ymax": 19971868.88040863, "spatialReference": {"wkid": 102100, "latestWkid": 3857}}, "minScale": 591657527.591555, "maxScale": 70.5310735, "units": "esriMeters", "supportedImageFormatTypes": "PNG32,PNG24,PNG,JPG,DIB,TIFF,EMF,PS,PDF,GIF,SVG,SVGZ,BMP", "capabilities": "Map,Tilemap,Query,Data", "supportedQueryFormats": "JSON, AMF", "exportTilesAllowed": false, "maxRecordCount": 100, "maxImageHeight": 4096, "maxImageWidth": 4096, "supportedExtensions": "KmlServer"}}], "title": "Topographic"}, "spatialReference": {"wkid": 102100, "latestWkid": 3857}, "version": "2.10", "authoringApp": "ArcGISPythonAPI", "authoringAppVersion": "2.0.1"}, "_webscene": {}, "_writeonly_end_time": "1900-01-01T00:00:00.000000", "_writeonly_start_time": "1900-01-01T00:00:00.000000", "_zoom": -1.0, "hide_mode_switch": true, "jupyter_target": "", "layout": "IPY_MODEL_16962924f0424c7a8314547eb5820d79", "legend": false, "mode": "2D", "print_service_url": "", "ready": false, "tab_mode": "auto", "time_mode": "time-window", "time_slider": false}}, "c3888350dcf1472b9cdba76164d0649a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "700px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}}, "version_major": 2, "version_minor": 0}
+{"state": {"dc5f87c153484ef0834d00b7707ce827": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "9f77a1c319c14511b08c153fbf5a216f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "600px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "cfe15bba652a4e31a0c24820207cec0f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "600px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "600px"}}, "bf1c60ecf014495d8690d3fccff9a3fa": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "50438b74e35a4c8ebd4ed859830ed964": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "700px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}}, "version_major": 2, "version_minor": 0}
 </script>
 
 

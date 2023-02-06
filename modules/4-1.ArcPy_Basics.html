@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>4-2: Introduction to ArcPy &#8212; Automation for Geospatial Modeling and Analysis</title>
+    <title>The basics of ArcPy &#8212; Automation for Geospatial Modeling and Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,12 +51,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4-3: Run ArcPy Functions" href="4-3.Running_ArcPy_functions.html" />
-    <link rel="prev" title="4-1: Open Notebook from Your Web browser" href="4-1.Open_Notebook_from_Browser.html" />
+    <link rel="next" title="Run ArcPy Functions" href="4-2.Run_ArcPy_functions.html" />
+    <link rel="prev" title="Introduction to ArcPy" href="4-0.intro_arcpy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -125,6 +127,28 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../software_0.html">
+   Software
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_1.html">
+     Basics of Jupyter Notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_2.html">
+     Use Notebook in a Browser
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1-1.Intro_to_ModelBuilder.html">
    Introduction to ModelBuilder
@@ -134,40 +158,20 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="2-0.Intro_to_Python.html">
    Introduction to Python Programming
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-1.Python_Notebook.html">
-     Basics of Jupyter Notebook
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-2.Markdown.html">
-     Introduction to Markdown
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-3.Data_Types.html">
-     Basic Python Data Types
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-4.Control_Structure.html">
-     Control Flow Structure
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="3-0.Intro_Python_2.html">
    Additional Data Types and Function
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -195,33 +199,28 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="4-0.ArcPy_Landing.html">
+  <a class="reference internal" href="4-0.intro_arcpy.html">
    Introduction to ArcPy
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="4-1.Open_Notebook_from_Browser.html">
-     4-1: Open Notebook from Your Web browser
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4-2: Introduction to ArcPy
+     The basics of ArcPy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-3.Running_ArcPy_functions.html">
-     4-3: Run ArcPy Functions
+    <a class="reference internal" href="4-2.Run_ArcPy_functions.html">
+     Run ArcPy Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-4.Using_ArcPy_to_Select.html">
-     4-4: Selection in ArcPy
+    <a class="reference internal" href="4-3.ArcPy_selection.html">
+     Querying with ArcPy
     </a>
    </li>
   </ul>
@@ -230,8 +229,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="5-0.SciPy_Landing.html">
    Introduction to the Scientific Python Ecosystem
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -252,8 +251,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="6-0.Visualization_Landing.html">
    Data Vizualization in Python
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -274,8 +273,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="7-0.Raster_Landing.html">
    Raster Data Analysis using ArcPy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -296,8 +295,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="8-0.Tool_Landing.html">
    Building a script tool in ArcGIS Pro
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -328,8 +327,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../homework/homework_problems.html">
    Homework Problems
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -420,7 +419,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/4-2.ArcPy_Basics.ipynb"
+        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/4-1.ArcPy_Basics.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -480,7 +479,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/4-2.ArcPy_Basics.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/4-1.ArcPy_Basics.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -508,7 +507,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/modules/4-2.ArcPy_Basics.ipynb"
+        <a href="../_sources/modules/4-1.ArcPy_Basics.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -567,11 +566,6 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-arcpy-settings">
-   Part 1 - ArcPy Settings
-  </a>
- </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#arcpy-workspace">
    1. ArcPy Workspace
@@ -637,7 +631,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>4-2: Introduction to ArcPy</h1>
+                <h1>The basics of ArcPy</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -647,11 +641,6 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-arcpy-settings">
-   Part 1 - ArcPy Settings
-  </a>
- </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#arcpy-workspace">
    1. ArcPy Workspace
@@ -718,27 +707,26 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-arcpy">
-<h1>4-2: Introduction to ArcPy<a class="headerlink" href="#introduction-to-arcpy" title="Permalink to this headline">#</a></h1>
-<section id="part-1-arcpy-settings">
-<h2>Part 1 - ArcPy Settings<a class="headerlink" href="#part-1-arcpy-settings" title="Permalink to this headline">#</a></h2>
-<div class="admonition-what-is-arcpy admonition">
-<p class="admonition-title">What is ArcPy?</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-basics-of-arcpy">
+<h1>The basics of ArcPy<a class="headerlink" href="#the-basics-of-arcpy" title="Permalink to this headline">#</a></h1>
 <p>ArcPy is a Python site package that provides a useful and productive way to perform:</p>
 <ul class="simple">
 <li><p>geographic data analysis,</p></li>
 <li><p>data conversion,</p></li>
 <li><p>data management,and</p></li>
-<li><p>map automation</p></li>
+<li><p>map automation.</p></li>
 </ul>
-<p>with Python.</p>
-</div>
+<p>In ArcGIS Pro, most <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/analysis/geoprocessing/basics/what-is-geoprocessing-.htm">geoprocessing</a> functions can be accessed through ArcPy.</p>
+<p>Similar to <strong>ModelBuilder</strong> which offers a visually straightforward way to automate complex process,
+we can connect multiple ArcPy functions and <em>customize the workflow</em> as an alternative way to automate geoprocessing.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/2.8/arcpy/get-started/essential-arcpy-vocabulary.htm">Essential ArcPy Vocabulary</a></p></li>
 <li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/2.8/arcpy/get-started/a-quick-tour-of-arcpy.htm">A quick tour of ArcPy</a></p></li>
 <li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/2.8/arcpy/get-started/installing-python-for-arcgis-pro.htm">Python in ArcGIS Pro</a></p></li>
 </ul>
-</section>
+</div>
 <section id="arcpy-workspace">
 <h2>1. ArcPy Workspace<a class="headerlink" href="#arcpy-workspace" title="Permalink to this headline">#</a></h2>
 <section id="import-the-package">
@@ -755,13 +743,12 @@ title="Print to PDF"
 <h3>1.2 ArcGIS Workspace<a class="headerlink" href="#arcgis-workspace" title="Permalink to this headline">#</a></h3>
 <p>In ArcGIS, a workspace is a <strong>container</strong> for <strong><em>geographic data</em></strong>. A workspace can be a <em>folder</em> that contains shapefiles, a <em>geodatabase</em>, a <em>feature dataset</em>, or an <em>ArcInfo workspace</em>.</p>
 <p>To reference a workspace, one needs to specify the <strong>path to the directory</strong> where the workspace is located.</p>
-<div class="admonition-ways-to-quickly-grab-a-path admonition">
-<p class="admonition-title">✒️ Ways to quickly grab a path</p>
-<ol class="simple">
-<li><p>In File Explorer: <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">right</span> <span class="pre">click</span></code> -&gt; copy as path</p></li>
-<li><p>In ArcGIS Pro: Map Tab -&gt; Clipboard -&gt; Copy Path <img alt="copy path" src="https://pro.arcgis.com/en/pro-app/latest/help/projects/GUID-E1EBAAF8-8264-4357-98F1-35B9E6DEEC6C-web.png" />
-(Only works when a workspace/dataset is selected in <em>Catalog Pane</em>)</p></li>
-</ol>
+<div class="tip admonition">
+<p class="admonition-title">Methods to quickly grab a path</p>
+<p>In <strong>File Explorer</strong>: <code class="docutils literal notranslate"><span class="pre">right</span> <span class="pre">click</span></code> a folder then <strong>Copy as path</strong>, or <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">C</span></code>.</p>
+<p>In <strong>ArcGIS Pro</strong>: Map Tab -&gt; Clipboard -&gt; Copy Path, or <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">P</span></code>, this only
+works when a workspace or dataset is selected in the “Catalog Pane.”</p>
+<img src="../_static/images/arcpro_copypath.png" alt="arcpro_copypath" width="30%">
 </div>
 </section>
 <section id="working-with-paths">
@@ -777,61 +764,63 @@ between a parent folder and a sub-folder, which is in conflict with the
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;..</span><span class="se">\\</span><span class="s2">data</span><span class="se">\\</span><span class="s2">class_data.gdb&quot;</span><span class="p">)</span> <span class="c1"># double backslashes</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">chjch</span><span class="se">\\</span><span class="s2">Documents</span><span class="se">\\</span><span class="s2">class_data.gdb&quot;</span><span class="p">)</span> <span class="c1"># double backslashes</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>..\data\class_data.gdb
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\chjch\Documents\class_data.gdb
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;../data/class_data.gdb&quot;</span><span class="p">)</span> <span class="c1"># single forward slash</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C/Users/chjch/Documents/class_data.gdb&quot;</span><span class="p">)</span> <span class="c1"># single forward slash</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>../data/class_data.gdb
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C/Users/chjch/Documents/class_data.gdb
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;../data/class_data.gdb&quot;</span><span class="p">)</span> <span class="c1"># raw string</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C\Users\chjch\Documents\class_data.gdb&quot;</span><span class="p">)</span> <span class="c1"># raw string</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>../data/class_data.gdb
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C\Users\chjch\Documents\class_data.gdb
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C:\Albert Gator\URP6271\class_data.gdb\major_roads&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the following code will raise an SyntaxError</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C\Users\chjch\Documents\class_data.gdb&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-5-7d4c6a137953&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C:\Albert Gator\URP6271\class_data.gdb\major_roads&#39;</span><span class="p">)</span>
-                                                              <span class="o">^</span>
-<span class="ne">SyntaxError</span>: (unicode error) &#39;unicodeescape&#39; codec can&#39;t decode bytes in position 15-16: truncated \UXXXXXXXX escape
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C\Users\chjch\Documents\class_data.gdb&#39;</span><span class="p">)</span>
+                                                  <span class="o">^</span>
+<span class="ne">SyntaxError</span>: (unicode error) &#39;unicodeescape&#39; codec can&#39;t decode bytes in position 1-2: truncated \UXXXXXXXX escape
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Path names with spaces in them must be called with an ‘r’ and double qoutes</p>
+<p>Path names with spaces in them must be called with an ‘r’ and double quotes.</p>
 </div>
-<div class="admonition-escape-sequence-to-remember admonition">
-<p class="admonition-title">📝 <strong>Escape sequence to remember</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Some other escape sequence in Python</strong></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">\\</span></code> –&gt; backslash ()</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">\&quot;</span></code> –&gt; double quote</p></li>
@@ -839,13 +828,13 @@ between a parent folder and a sub-folder, which is in conflict with the
 <li><p><code class="docutils literal notranslate"><span class="pre">\n</span></code> –&gt; line feed (start a new line)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">\t</span></code> –&gt; a Tab (<strong>eight</strong> spaces by default in Python)</p></li>
 </ul>
-<p><a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html%5C#index-22">more escape sequence</a></p>
+<p><a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#index-23">more escape sequence</a></p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello</span><span class="se">\n</span><span class="s1">world&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">hello&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;        world&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;        world&#39;</span><span class="p">)</span>  <span class="c1"># eight white spaces</span>
 </pre></div>
 </div>
 </div>
@@ -869,9 +858,8 @@ world
 </div>
 </div>
 </div>
-<div class="admonition-note admonition">
-<p class="admonition-title">Note:</p>
-<p>🔔 <code class="docutils literal notranslate"><span class="pre">workspace</span></code> is an <strong>attribute</strong> of the <code class="docutils literal notranslate"><span class="pre">env</span></code> class in the <code class="docutils literal notranslate"><span class="pre">arcpy</span></code> package</p>
+<div class="highlight-{note}: notranslate"><div class="highlight"><pre><span></span>`workspace` is an **attribute** of the `env` class in the `arcpy` package
+</pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -977,47 +965,18 @@ The alias of the toolbox are all in lowercase.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">help(&lt;function&gt;)</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">?</span> <span class="pre">&lt;function&gt;</span></code></p></li>
 </ol>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">Buffer_analysis</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">Buffer</span><span class="p">()</span> 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ExecuteError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">8</span><span class="n">f3ae123683f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">Buffer_analysis</span><span class="p">()</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py</span> in <span class="ni">Buffer</span><span class="nt">(in_features, out_feature_class, buffer_distance_or_field, line_side, line_end_type, dissolve_option, dissolve_field, method)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1369</span>         <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">   </span><span class="mi">1370</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1371</span>         <span class="k">raise</span> <span class="n">e</span>
-<span class="g g-Whitespace">   </span><span class="mi">1372</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1373</span> <span class="nd">@gptooldoc</span><span class="p">(</span><span class="s1">&#39;CreateThiessenPolygons_analysis&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py</span> in <span class="ni">Buffer</span><span class="nt">(in_features, out_feature_class, buffer_distance_or_field, line_side, line_end_type, dissolve_option, dissolve_field, method)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1366</span>     <span class="kn">from</span> <span class="nn">arcpy.arcobjects.arcobjectconversion</span> <span class="kn">import</span> <span class="n">convertArcObjectToPythonObject</span>
-<span class="g g-Whitespace">   </span><span class="mi">1367</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1368</span>         <span class="n">retval</span> <span class="o">=</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">Buffer_analysis</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">((</span><span class="n">in_features</span><span class="p">,</span> <span class="n">out_feature_class</span><span class="p">,</span> <span class="n">buffer_distance_or_field</span><span class="p">,</span> <span class="n">line_side</span><span class="p">,</span> <span class="n">line_end_type</span><span class="p">,</span> <span class="n">dissolve_option</span><span class="p">,</span> <span class="n">dissolve_field</span><span class="p">,</span> <span class="n">method</span><span class="p">),</span> <span class="kc">True</span><span class="p">)))</span>
-<span class="g g-Whitespace">   </span><span class="mi">1369</span>         <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">   </span><span class="mi">1370</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(*args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">512</span>             <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">val</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">513</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span>             <span class="k">return</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-
-<span class="ne">ExecuteError</span>: Failed to execute. Parameters are not valid.
-<span class="n">ERROR</span> <span class="mi">000735</span><span class="p">:</span> <span class="n">Input</span> <span class="n">Features</span><span class="p">:</span> <span class="n">Value</span> <span class="ow">is</span> <span class="n">required</span>
-<span class="n">ERROR</span> <span class="mi">000735</span><span class="p">:</span> <span class="n">Output</span> <span class="n">Feature</span> <span class="n">Class</span><span class="p">:</span> <span class="n">Value</span> <span class="ow">is</span> <span class="n">required</span>
-<span class="n">ERROR</span> <span class="mi">000735</span><span class="p">:</span> <span class="n">Distance</span> <span class="p">[</span><span class="n">value</span> <span class="ow">or</span> <span class="n">field</span><span class="p">]:</span> <span class="n">Value</span> <span class="ow">is</span> <span class="n">required</span>
-<span class="n">Failed</span> <span class="n">to</span> <span class="n">execute</span> <span class="p">(</span><span class="n">Buffer</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
 </div>
-</div>
+<img alt="doc_popup" class="mb-3" src="../_images/doc_popup.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To bring documentation as you type, press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Tab</span></code> right after the
+function name. It only works after the module or package containing the function is imported.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1216,7 +1175,7 @@ Buffer(in_features=None, out_feature_class=None, buffer_distance_or_field=None, 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">?</span> arcpy.Buffer_analysis
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">?</span> arcpy.analysis.Buffer
 </pre></div>
 </div>
 </div>
@@ -1252,17 +1211,17 @@ Buffer(in_features=None, out_feature_class=None, buffer_distance_or_field=None, 
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="4-1.Open_Notebook_from_Browser.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="4-0.intro_arcpy.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">4-1: Open Notebook from Your Web browser</p>
+            <p class="prev-next-title">Introduction to ArcPy</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="4-3.Running_ArcPy_functions.html" title="next page">
+    <a class='right-next' id="next-link" href="4-2.Run_ArcPy_functions.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">4-3: Run ArcPy Functions</p>
+        <p class="prev-next-title">Run ArcPy Functions</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
