@@ -587,23 +587,18 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#import-the-package">
-     1.1 Import the package
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#arcgis-workspace">
-     1.2 ArcGIS Workspace
+    <a class="reference internal nav-link" href="#what-is-a-workspace">
+     1.1 What is a workspace
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#working-with-paths">
-     1.3 Working with paths
+     1.2 Working with paths
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#set-workspace-of-the-env-object">
-     1.4 Set
+     1.3 Set
      <code class="docutils literal notranslate">
       <span class="pre">
        workspace
@@ -631,8 +626,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#view-the-documentation-of-a-function">
-     2.2 View the documentation of a function
+    <a class="reference internal nav-link" href="#view-help-documentation">
+     2.2 View Help Documentation
     </a>
    </li>
   </ul>
@@ -662,23 +657,18 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#import-the-package">
-     1.1 Import the package
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#arcgis-workspace">
-     1.2 ArcGIS Workspace
+    <a class="reference internal nav-link" href="#what-is-a-workspace">
+     1.1 What is a workspace
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#working-with-paths">
-     1.3 Working with paths
+     1.2 Working with paths
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#set-workspace-of-the-env-object">
-     1.4 Set
+     1.3 Set
      <code class="docutils literal notranslate">
       <span class="pre">
        workspace
@@ -706,8 +696,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#view-the-documentation-of-a-function">
-     2.2 View the documentation of a function
+    <a class="reference internal nav-link" href="#view-help-documentation">
+     2.2 View Help Documentation
     </a>
    </li>
   </ul>
@@ -744,8 +734,8 @@ we can connect multiple ArcPy functions and <em>customize the workflow</em> as a
 </div>
 <section id="arcpy-workspace">
 <h2>1. ArcPy Workspace<a class="headerlink" href="#arcpy-workspace" title="Permalink to this headline">#</a></h2>
-<section id="import-the-package">
-<h3>1.1 Import the package<a class="headerlink" href="#import-the-package" title="Permalink to this headline">#</a></h3>
+<p>Similar to the <code class="docutils literal notranslate"><span class="pre">random</span></code> or <code class="docutils literal notranslate"><span class="pre">sys</span></code> module that we have used before, <code class="docutils literal notranslate"><span class="pre">arcpy</span></code> package
+has to be imported, i.e., <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">arcpy</span></code>, before we can access its functions and methods.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
@@ -753,9 +743,8 @@ we can connect multiple ArcPy functions and <em>customize the workflow</em> as a
 </div>
 </div>
 </div>
-</section>
-<section id="arcgis-workspace">
-<h3>1.2 ArcGIS Workspace<a class="headerlink" href="#arcgis-workspace" title="Permalink to this headline">#</a></h3>
+<section id="what-is-a-workspace">
+<h3>1.1 What is a workspace<a class="headerlink" href="#what-is-a-workspace" title="Permalink to this headline">#</a></h3>
 <p>In ArcGIS, a workspace is a <strong>container</strong> for <strong><em>geographic data</em></strong>. A workspace can be a <em>folder</em> that contains shapefiles, a <em>geodatabase</em>, a <em>feature dataset</em>, or an <em>ArcInfo workspace</em>.</p>
 <p>To reference a workspace, one needs to specify the <strong>path to the directory</strong> where the workspace is located.</p>
 <div class="tip admonition">
@@ -767,7 +756,7 @@ works when a workspace or dataset is selected in the “Catalog Pane.”</p>
 </div>
 </section>
 <section id="working-with-paths">
-<h3>1.3 Working with paths<a class="headerlink" href="#working-with-paths" title="Permalink to this headline">#</a></h3>
+<h3>1.2 Working with paths<a class="headerlink" href="#working-with-paths" title="Permalink to this headline">#</a></h3>
 <p>The above methods copy the path with a backslash, i.e., <code class="docutils literal notranslate"><span class="pre">\</span></code> as the delimiter
 between a parent folder and a sub-folder, which is in conflict with the
 <strong>escape character</strong> of Python.</p>
@@ -777,38 +766,19 @@ between a parent folder and a sub-folder, which is in conflict with the
 <li><p>Change the delimiter to be a single forwardslash, i.e., <code class="docutils literal notranslate"><span class="pre">/</span></code></p></li>
 <li><p>Change the string to a raw string with a <code class="docutils literal notranslate"><span class="pre">r</span></code> in front of the path.</p></li>
 </ol>
+<p>The following three strings are referring to the <strong>same path</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">chjch</span><span class="se">\\</span><span class="s2">Documents</span><span class="se">\\</span><span class="s2">class_data.gdb&quot;</span><span class="p">)</span> <span class="c1"># double backslashes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C/Users/chjch/Documents/class_data.gdb&quot;</span><span class="p">)</span> <span class="c1"># single forward slash</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C\Users\chjch\Documents\class_data.gdb&quot;</span><span class="p">)</span> <span class="c1"># raw string</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\chjch\Documents\class_data.gdb
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C/Users/chjch/Documents/class_data.gdb&quot;</span><span class="p">)</span> <span class="c1"># single forward slash</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C/Users/chjch/Documents/class_data.gdb
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C\Users\chjch\Documents\class_data.gdb&quot;</span><span class="p">)</span> <span class="c1"># raw string</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C\Users\chjch\Documents\class_data.gdb
+C/Users/chjch/Documents/class_data.gdb
+C\Users\chjch\Documents\class_data.gdb
 </pre></div>
 </div>
 </div>
@@ -816,12 +786,13 @@ between a parent folder and a sub-folder, which is in conflict with the
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the following code will raise an SyntaxError</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C\Users\chjch\Documents\class_data.gdb&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C\Users\chjch\Documents\class_data.gdb&#39;</span><span class="p">)</span>
                                                   <span class="o">^</span>
 <span class="ne">SyntaxError</span>: (unicode error) &#39;unicodeescape&#39; codec can&#39;t decode bytes in position 1-2: truncated \UXXXXXXXX escape
@@ -864,7 +835,7 @@ world
 </div>
 </section>
 <section id="set-workspace-of-the-env-object">
-<h3>1.4 Set <code class="docutils literal notranslate"><span class="pre">workspace</span></code> of the <code class="docutils literal notranslate"><span class="pre">env</span></code> object<a class="headerlink" href="#set-workspace-of-the-env-object" title="Permalink to this headline">#</a></h3>
+<h3>1.3 Set <code class="docutils literal notranslate"><span class="pre">workspace</span></code> of the <code class="docutils literal notranslate"><span class="pre">env</span></code> object<a class="headerlink" href="#set-workspace-of-the-env-object" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdb_worksp</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;..\data\class_data.gdb&quot;</span>
@@ -900,6 +871,7 @@ world
 </div>
 </div>
 </div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">dir</span></code> method to access all objects and methods with the <code class="docutils literal notranslate"><span class="pre">env</span></code> class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># view all attributes of the env class of ArcPy</span>
@@ -923,20 +895,20 @@ world
 the <strong>alias of the toolbox</strong> that the tool is contained.
 The first letter of every word in the tool name is capitalized.
 The alias of the toolbox are all in lowercase.</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">arcpy.&lt;ToolName&gt;_&lt;toolboxalias&gt;</span></code> (old way)</p>
 <ul class="simple">
-<li><p>Old: <code class="docutils literal notranslate"><span class="pre">arcpy.&lt;ToolName&gt;_&lt;toolboxalias&gt;</span></code></p>
-<ul>
 <li><p>Buffer: <code class="docutils literal notranslate"><span class="pre">arcpy.AddField_management</span></code></p></li>
 <li><p>Add Field: <code class="docutils literal notranslate"><span class="pre">arcpy.AddField_management</span></code></p></li>
 </ul>
 </li>
-<li><p>Modern: <code class="docutils literal notranslate"><span class="pre">arcpy.&lt;toolboxalias&gt;.&lt;ToolName&gt;</span></code></p>
-<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">arcpy.&lt;toolboxalias&gt;.&lt;ToolName&gt;</span></code> (modern way)</p>
+<ul class="simple">
 <li><p>Buffer: <code class="docutils literal notranslate"><span class="pre">arcpy.analysis.Buffer</span></code></p></li>
 <li><p>Add Field: <code class="docutils literal notranslate"><span class="pre">arcpy.management.AddField</span></code></p></li>
 </ul>
 </li>
-</ul>
+</ol>
 <p>Following are the aliases for some commonly used toolbox.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -972,10 +944,11 @@ The alias of the toolbox are all in lowercase.</p>
 </tbody>
 </table>
 </section>
-<section id="view-the-documentation-of-a-function">
-<h3>2.2 View the documentation of a function<a class="headerlink" href="#view-the-documentation-of-a-function" title="Permalink to this headline">#</a></h3>
+<section id="view-help-documentation">
+<h3>2.2 View Help Documentation<a class="headerlink" href="#view-help-documentation" title="Permalink to this headline">#</a></h3>
+<p>There are 4 methods to view the Help Documentation of a function.</p>
 <ol class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Tab</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Tab</span></code>: open a popup menu in place.</p></li>
 <li><p>use the function’s <code class="docutils literal notranslate"><span class="pre">.__doc__</span></code> attribute</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">help(&lt;function&gt;)</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">?</span> <span class="pre">&lt;function&gt;</span></code></p></li>

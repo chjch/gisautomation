@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -757,12 +755,9 @@ only those loops which contains <code class="docutils literal notranslate"><span
 <p>The following code will skip row 2 (<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">1</span></code>) completely.
 When x is equal to 1, the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement terminate the inner <code class="docutils literal notranslate"><span class="pre">for</span></code> loop,
 but the outer <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is <strong>not affected</strong>.</p>
-<script>mermaid.initialize({
-    theme: "forest",
-});
-</script>
 <div align="center" class="mermaid align-center">
-            flowchart TD
+            %%{init: {'theme':'forest'}}%%
+flowchart TD
     A[outer loop] --&gt;|enter| B[inner loop]
     B --&gt;|enter| C{condition?}
     C --&gt;|True| D[`break` statement]
