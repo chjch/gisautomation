@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Querying with ArcPy &#8212; Automation for Geospatial Modeling and Analysis</title>
+    <title>ArcPy Selection Functions &#8212; Automation for Geospatial Modeling and Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -235,7 +233,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Querying with ArcPy
+     ArcPy Selection Functions
     </a>
    </li>
   </ul>
@@ -587,41 +585,40 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sql-structured-query-language-expression">
-     1.1 SQL (structured query language) expression
+    <a class="reference internal nav-link" href="#writing-sql-expression-in-arcpy">
+     1.1 Writing SQL expression in ArcPy
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#build-sql-query-with-triple-quotes">
-     1.2 Build SQL query with triple quotes
+    <a class="reference internal nav-link" href="#expression-with-triple-quotes">
+     1.2 Expression with triple quotes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#build-sql-query-with-escape-character">
-     1.3 Build SQL query with escape character
+    <a class="reference internal nav-link" href="#expression-with-escape-character">
+     1.3 Expression with escape character
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#build-sql-query-with-format-string">
-     1.4 Build SQL query with
+    <a class="reference internal nav-link" href="#expression-with-format">
+     1.4 Expression with
      <code class="docutils literal notranslate">
       <span class="pre">
        .format
       </span>
      </code>
-     string
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-query-with-compound-criterion">
-     1.5 Create query with compound criterion
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-compound-criteria">
+   2. Define Compound Criteria
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#select-function">
-   2.
+   3.
    <code class="docutils literal notranslate">
     <span class="pre">
      Select
@@ -632,17 +629,17 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#select-by-attributes">
-   3. Select by Attributes
+   4. Select by Attributes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#select-by-location">
-   4. Select by Location
+   5. Select by Location
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#save-selection-to-a-feature-class">
-   5. Save Selection to a Feature Class
+  <a class="reference internal nav-link" href="#save-layer-selection-to-a-feature-class">
+   6. Save Layer Selection to a Feature Class
   </a>
  </li>
 </ul>
@@ -654,7 +651,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Querying with ArcPy</h1>
+                <h1>ArcPy Selection Functions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -670,41 +667,40 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sql-structured-query-language-expression">
-     1.1 SQL (structured query language) expression
+    <a class="reference internal nav-link" href="#writing-sql-expression-in-arcpy">
+     1.1 Writing SQL expression in ArcPy
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#build-sql-query-with-triple-quotes">
-     1.2 Build SQL query with triple quotes
+    <a class="reference internal nav-link" href="#expression-with-triple-quotes">
+     1.2 Expression with triple quotes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#build-sql-query-with-escape-character">
-     1.3 Build SQL query with escape character
+    <a class="reference internal nav-link" href="#expression-with-escape-character">
+     1.3 Expression with escape character
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#build-sql-query-with-format-string">
-     1.4 Build SQL query with
+    <a class="reference internal nav-link" href="#expression-with-format">
+     1.4 Expression with
      <code class="docutils literal notranslate">
       <span class="pre">
        .format
       </span>
      </code>
-     string
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-query-with-compound-criterion">
-     1.5 Create query with compound criterion
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-compound-criteria">
+   2. Define Compound Criteria
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#select-function">
-   2.
+   3.
    <code class="docutils literal notranslate">
     <span class="pre">
      Select
@@ -715,17 +711,17 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#select-by-attributes">
-   3. Select by Attributes
+   4. Select by Attributes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#select-by-location">
-   4. Select by Location
+   5. Select by Location
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#save-selection-to-a-feature-class">
-   5. Save Selection to a Feature Class
+  <a class="reference internal nav-link" href="#save-layer-selection-to-a-feature-class">
+   6. Save Layer Selection to a Feature Class
   </a>
  </li>
 </ul>
@@ -738,46 +734,70 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="querying-with-arcpy">
-<h1>Querying with ArcPy<a class="headerlink" href="#querying-with-arcpy" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="arcpy-selection-functions">
+<h1>ArcPy Selection Functions<a class="headerlink" href="#arcpy-selection-functions" title="Permalink to this headline">#</a></h1>
+<p>An essential task in GIS is to select a subset of a layer or feature class that
+matches certain criteria.</p>
+<p>The criteria could be based on the information carried
+within the data’s <strong>attributes</strong>, e.g., <em>block groups with more than 1000 population</em>,
+or based on <strong>locational</strong> traits, e.g., <em>within 2 miles of any school</em>.</p>
+<p>In this section, we will take a look at several functions that are used to selecting
+(or querying) features.</p>
 <section id="selection-query">
 <h2>1. Selection Query<a class="headerlink" href="#selection-query" title="Permalink to this headline">#</a></h2>
-<section id="sql-structured-query-language-expression">
-<h3>1.1 SQL (structured query language) expression<a class="headerlink" href="#sql-structured-query-language-expression" title="Permalink to this headline">#</a></h3>
-<p><strong>Expression</strong>: <code class="docutils literal notranslate"><span class="pre">&lt;field</span> <span class="pre">name&gt;</span> <span class="pre">&lt;logic</span> <span class="pre">operator&gt;</span> <span class="pre">&lt;value&gt;</span></code></p>
-<p><img alt="SQL exp" src="https://pro.arcgis.com/en/pro-app/latest/help/mapping/navigation/GUID-F131B6FC-4650-4EFD-B2BE-4C500E5E5A94-web.png" /></p>
-<p>Referenes:</p>
+<p>Structured Query Language (<strong>SQL</strong>) is a powerful language used to define one or more criteria that can consist of attributes, operators, and calculations.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>SQL reads as S-Q-L or “sequel” by many professional database developers.</p>
+</div>
+<p>Whether you’re aware or not, as users of ArcGIS Pro, you must have already used it.
+Perhaps, in the form of the following approach.</p>
+<a class="border mb-2 reference internal image-reference" href="../_images/selection_query.png"><img alt="selection query" class="border mb-2 align-center" src="../_images/selection_query.png" style="width: 418.00000000000006px; height: 121.00000000000001px;" /></a>
+<p>Query expressions in ArcGIS adhere to standard SQL expressions.
+Accordingly, if we turn the “switch” to <strong>SQL</strong>, we will see the
+following equivalent expression written in SQL.</p>
+<a class="border mb-2 reference internal image-reference" href="../_images/selection_query_SQL.png"><img alt="selection query SQL" class="border mb-2 align-center" src="../_images/selection_query_SQL.png" style="width: 421.3px; height: 143.0px;" /></a>
+<section id="writing-sql-expression-in-arcpy">
+<h3>1.1 Writing SQL expression in ArcPy<a class="headerlink" href="#writing-sql-expression-in-arcpy" title="Permalink to this headline">#</a></h3>
+<p>Without loss of generality, a single SQL expression can be written
+in the following pattern:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;field</span> <span class="pre">name&gt;</span> <span class="pre">&lt;logic</span> <span class="pre">operator&gt;</span> <span class="pre">&lt;value&gt;</span></code></p>
+<p>Rules to remember when writing SQL expression for ArcPy functions.</p>
+<ol class="simple">
+<li><p>Query in ArcPy functions is defined using Python <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/specifying-a-query.htm#GUID-98106084-6ECE-4647-A50D-50EF0B46EC25">Field delimiter</a>
+must be used to specify a <strong>field of an attribute</strong> table.
+For <em>shapefile</em> and <em>feature class</em> (in <em>file geodatabase</em>), the field delimiter
+is <strong>double quotes</strong>, i.e., <code class="docutils literal notranslate"><span class="pre">&quot;&lt;fieldname&gt;&quot;</span></code>.</p></li>
+<li><p><em>Text</em> values must always be enclosed by <strong>single quotes</strong> <code class="docutils literal notranslate"><span class="pre">'&lt;some</span> <span class="pre">text&gt;'</span></code>.</p></li>
+</ol>
+<div class="seealso admonition">
+<p class="admonition-title">History of Geodatabases</p>
+<p>Read this blog about <a class="reference external" href="https://www.esri.com/arcgis-blog/products/arcgis-pro/data-management/its-not-personal-its-mobile/">a brief history</a>
+of the geodatabase and why personal geodatabases are no longer supported in ArcGIS Pro. And, learn what is mobile geodatabase?</p>
 <ul class="simple">
-<li><p><a class="reference external" href="http://pro.arcgis.com/en/pro-app/help/mapping/navigation/sql-reference-for-elements-used-in-query-expressions.htm">SQL reference for query expressions used in ArcGIS</a></p></li>
-<li><p><a class="reference external" href="http://pro.arcgis.com/en/pro-app/arcpy/get-started/specifying-a-query.htm">Specifying a query in Python</a></p></li>
-</ul>
-<p>Let’s work on two examples using the <code class="docutils literal notranslate"><span class="pre">zip_bounaries</span></code> feature class:</p>
-<ul class="simple">
-<li><p>numeric value: <code class="docutils literal notranslate"><span class="pre">POP2010</span> <span class="pre">&gt;</span> <span class="pre">10000</span></code></p></li>
-<li><p>text value: <code class="docutils literal notranslate"><span class="pre">PO_NAME</span> <span class="pre">=</span> <span class="pre">Gainesville</span></code></p></li>
-</ul>
-<div class="admonition-notes-for-specifying-sql-with-arcpy admonition">
-<p class="admonition-title">📝 Notes for specifying SQL with ArcPy:</p>
-<ul class="simple">
-<li><p>Query in ArcPy functions is supplied as a <strong>Python string</strong>.</p></li>
-<li><p><strong>Field delimiter</strong> must be used to denote a field in the query.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;field&quot;</span></code>: a <em>shapefile</em> or a <em>feature class</em> in a <strong><em>file geodatabase</em></strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[field]</span></code>: a <em>feature class</em> in a <strong><em>personal geodatabase</em></strong></p></li>
-</ul>
-</li>
-<li><p><strong>Text value</strong> must always be enclosed in <u>single quotes</u>.</p></li>
+<li><p><a class="reference external" href="https://desktop.arcgis.com/en/arcmap/latest/manage-data/administer-file-gdbs/personal-geodatabases.htm">Personal geodatabase</a></p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/overview/types-of-geodatabases.htm">Types of geodatabases (ArcGIS Pro)</a></p></li>
 </ul>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot; &quot;</span>     <span class="c1"># double quote</span>
-<span class="s1">&#39; &#39;</span>     <span class="c1"># single quote</span>
-<span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span> <span class="c1"># triple quotes</span>
-<span class="s1">&#39;</span><span class="se">\&#39;</span><span class="s1">     # escape character</span>
-</pre></div>
-</div>
+<p>Since there are multiple rules to follow when writing SQL expressions,
+we must use a combination of methods that we have learned
+about defining Python strings, including <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> (double quotes), <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> (single quotes),
+<code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span> <span class="pre">&quot;&quot;&quot;</span></code> (triple quotes), and <code class="docutils literal notranslate"><span class="pre">\</span></code> (the escape character).</p>
+<p>Now, let’s work on two examples using the <em>zip_boundaries</em> feature class.
+Specifically, we will write SQL expressions (in Python) to query against
+a field containing <strong>numeric values</strong> and another field containing
+<strong>text values</strong>.</p>
+<ul class="simple">
+<li><p>numeric value: <code class="docutils literal notranslate"><span class="pre">POP2010</span> <span class="pre">&gt;</span> <span class="pre">10000</span></code>, (zip codes have more than 10,000 people)</p></li>
+<li><p>text value: <code class="docutils literal notranslate"><span class="pre">PO_NAME</span> <span class="pre">=</span> <span class="pre">Gainesville</span></code> (zip codes in the City of Gainesville)</p></li>
+</ul>
 </section>
-<section id="build-sql-query-with-triple-quotes">
-<h3>1.2 Build SQL query with triple quotes<a class="headerlink" href="#build-sql-query-with-triple-quotes" title="Permalink to this headline">#</a></h3>
+<section id="expression-with-triple-quotes">
+<h3>1.2 Expression with triple quotes<a class="headerlink" href="#expression-with-triple-quotes" title="Permalink to this headline">#</a></h3>
+<p>Strings defined by “triple quotes” is commonly used to define SQL
+expressions in ArcPy because this form can accommodate both double quotes
+and single quotes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># numeric value</span>
@@ -804,9 +824,18 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://pro.arcgis.com/en/pro-app/help/mapping/navigation/sql-reference-for-elements-used-in-query-expressions.htm">SQL reference for query expressions used in ArcGIS</a></p></li>
+<li><p><a class="reference external" href="http://pro.arcgis.com/en/pro-app/arcpy/get-started/specifying-a-query.htm">Specifying a query in Python</a></p></li>
+</ul>
+</div>
 </section>
-<section id="build-sql-query-with-escape-character">
-<h3>1.3 Build SQL query with escape character<a class="headerlink" href="#build-sql-query-with-escape-character" title="Permalink to this headline">#</a></h3>
+<section id="expression-with-escape-character">
+<h3>1.3 Expression with escape character<a class="headerlink" href="#expression-with-escape-character" title="Permalink to this headline">#</a></h3>
+<p>Remember that we can include double quote and single quote in string
+by using the escape character (<code class="docutils literal notranslate"><span class="pre">\</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -848,8 +877,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="build-sql-query-with-format-string">
-<h3>1.4 Build SQL query with <code class="docutils literal notranslate"><span class="pre">.format</span></code> string<a class="headerlink" href="#build-sql-query-with-format-string" title="Permalink to this headline">#</a></h3>
+<section id="expression-with-format">
+<h3>1.4 Expression with <code class="docutils literal notranslate"><span class="pre">.format</span></code><a class="headerlink" href="#expression-with-format" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_numeric</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &gt; </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;&quot;POP2010&quot;&#39;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
@@ -877,15 +906,22 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="create-query-with-compound-criterion">
-<h3>1.5 Create query with compound criterion<a class="headerlink" href="#create-query-with-compound-criterion" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="define-compound-criteria">
+<h2>2. Define Compound Criteria<a class="headerlink" href="#define-compound-criteria" title="Permalink to this headline">#</a></h2>
+<p>Consider the following compound criteria.</p>
 <ul class="simple">
-<li><p>population greater than 10,000 <strong>AND</strong> name equals to gainesville</p></li>
-<li><p>population greater than 10,000 <strong>OR</strong> name equals to gainesville</p></li>
+<li><p>population greater than 10,000 <strong>AND</strong> name equals to Gainesville</p></li>
+<li><p>population greater than 10,000 <strong>OR</strong> name equals to Gainesville</p></li>
 </ul>
+<p>We use <code class="docutils literal notranslate"><span class="pre">AND</span></code> and <code class="docutils literal notranslate"><span class="pre">OR</span></code> to connect two expressions together. Note that
+all letters in both words are <strong>capitalized</strong>.
+❓ Do you still remember how <em>logical operators</em> are written <strong>in Python</strong>?
+Are they upper case or lower case?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_comp</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &gt; </span><span class="si">{}</span><span class="s2"> AND </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;&quot;POP2010&quot;&#39;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="s1">&#39;&quot;PO_NAME&quot;&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;GAINESVILLE&#39;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_comp</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &gt; </span><span class="si">{}</span><span class="s2"> AND </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;&quot;POP2010&quot;&#39;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span>
+                                          <span class="s1">&#39;&quot;PO_NAME&quot;&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;GAINESVILLE&#39;&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">query_comp</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -898,7 +934,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_comp</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &gt; </span><span class="si">{}</span><span class="s2"> OR </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;&quot;POP2010&quot;&#39;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="s1">&#39;&quot;PO_NAME&quot;&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;GAINESVILLE&#39;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_comp</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &gt; </span><span class="si">{}</span><span class="s2"> OR </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;&quot;POP2010&quot;&#39;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span>
+                                         <span class="s1">&#39;&quot;PO_NAME&quot;&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;GAINESVILLE&#39;&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">query_comp</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -910,13 +947,13 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-</section>
 <section id="select-function">
-<h2>2. <code class="docutils literal notranslate"><span class="pre">Select</span></code> Function<a class="headerlink" href="#select-function" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/analysis/select.htm">This function</a>
-Extracts features from an input feature class or input feature layer, typically
-using a select or Structured Query Language (SQL) expression, and <strong>stores</strong>
-them in an output feature class, i.e., saves on the drive.</p>
+<h2>3. <code class="docutils literal notranslate"><span class="pre">Select</span></code> Function<a class="headerlink" href="#select-function" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/analysis/select.htm"><code class="docutils literal notranslate"><span class="pre">arcpy.analysis.Select</span></code></a>
+extracts features from an input feature class or input feature layer, typically
+using a SQL expression, and <strong>stores</strong>
+them in an output feature class, i.e., saves physically on the drive.</p>
+<p>Now, let’s apply what we have learned about SQL expressions in this function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
@@ -941,193 +978,211 @@ them in an output feature class, i.e., saves on the drive.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_numeric</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&quot;POP2010&quot; &gt; 10000&quot;&quot;&quot;</span>
-<span class="n">zip_output</span> <span class="o">=</span> <span class="s2">&quot;zipbnd_q1&quot;</span>
-<span class="n">arcpy</span><span class="o">.</span><span class="n">Select_analysis</span><span class="p">(</span><span class="n">zip_fc</span><span class="p">,</span> <span class="n">zip_output</span><span class="p">,</span> <span class="n">query_numeric</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pop_query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&quot;POP2010&quot; &gt; 10000&quot;&quot;&quot;</span>
+<span class="n">zip_output</span> <span class="o">=</span> <span class="s2">&quot;zip_q1_out&quot;</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">Select_analysis</span><span class="p">(</span><span class="n">zip_fc</span><span class="p">,</span> <span class="n">zip_output</span><span class="p">,</span> <span class="n">pop_query</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> zip codes selected.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arcpy</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="n">zip_output</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div class='gpresult'><h2>Messages</h2><div id='messages' data-messages='["Start Time: Tuesday, February 7, 2023 12:06:38 AM","Succeeded at Tuesday, February 7, 2023 12:06:38 AM (Elapsed Time: 0.75 seconds)"]' data-show='true'><div id = 'default' /></div></div></div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13 zip codes selected.
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_text</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">PO_NAME</span><span class="se">\&quot;</span><span class="s2"> = </span><span class="se">\&#39;</span><span class="s2">GAINESVILLE</span><span class="se">\&#39;</span><span class="s2">&quot;</span>
-<span class="n">zip_output</span> <span class="o">=</span> <span class="s2">&quot;zipbnd_q2&quot;</span>
-<span class="n">arcpy</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">zip_fc</span><span class="p">,</span> <span class="n">zip_output</span><span class="p">,</span> <span class="n">query_text</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city_query</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">PO_NAME</span><span class="se">\&quot;</span><span class="s2"> = </span><span class="se">\&#39;</span><span class="s2">GAINESVILLE</span><span class="se">\&#39;</span><span class="s2">&quot;</span>
+<span class="n">zip_output</span> <span class="o">=</span> <span class="s2">&quot;zip_q2_out&quot;</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">zip_fc</span><span class="p">,</span> <span class="n">zip_output</span><span class="p">,</span> <span class="n">city_query</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> zip codes selected.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arcpy</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="n">zip_output</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div class='gpresult'><h2>Messages</h2><div id='messages' data-messages='["Start Time: Tuesday, February 7, 2023 12:06:39 AM","Succeeded at Tuesday, February 7, 2023 12:06:40 AM (Elapsed Time: 0.84 seconds)"]' data-show='true'><div id = 'default' /></div></div></div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12 zip codes selected.
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># arcpy.env.overwriteOutput = True</span>
-<span class="n">query_comp</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &gt; </span><span class="si">{}</span><span class="s2"> AND </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;&quot;POP2010&quot;&#39;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="s1">&#39;&quot;PO_NAME&quot;&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;GAINESVILLE&#39;&quot;</span><span class="p">)</span>
-<span class="n">zip_output</span> <span class="o">=</span> <span class="s2">&quot;zipbnd_q2&quot;</span>
-<span class="n">arcpy</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">zip_fc</span><span class="p">,</span> <span class="n">zip_output</span><span class="p">,</span> <span class="n">query_comp</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comp_query</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &gt; </span><span class="si">{}</span><span class="s2"> AND </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;&quot;POP2010&quot;&#39;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span>
+                                          <span class="s1">&#39;&quot;PO_NAME&quot;&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;GAINESVILLE&#39;&quot;</span><span class="p">)</span>
+<span class="n">zip_output</span> <span class="o">=</span> <span class="s2">&quot;zipbnd_q3_out&quot;</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">zip_fc</span><span class="p">,</span> <span class="n">zip_output</span><span class="p">,</span> <span class="n">comp_query</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> zip codes selected.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arcpy</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="n">zip_output</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ExecuteError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">query_comp</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> &gt; </span><span class="si">{}</span><span class="s2"> AND </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;&quot;POP2010&quot;&#39;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="s1">&#39;&quot;PO_NAME&quot;&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;GAINESVILLE&#39;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">zip_output</span> <span class="o">=</span> <span class="s2">&quot;zipbnd_q2&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">zip_fc</span><span class="p">,</span> <span class="n">zip_output</span><span class="p">,</span> <span class="n">query_comp</span><span class="p">)</span>
-
-<span class="nn">File C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py:138,</span> in <span class="ni">Select</span><span class="nt">(in_features, out_feature_class, where_clause)</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span>     <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">138</span>     <span class="k">raise</span> <span class="n">e</span>
-
-<span class="nn">File C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py:135,</span> in <span class="ni">Select</span><span class="nt">(in_features, out_feature_class, where_clause)</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span> <span class="kn">from</span> <span class="nn">arcpy.arcobjects.arcobjectconversion</span> <span class="kn">import</span> <span class="n">convertArcObjectToPythonObject</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">135</span>     <span class="n">retval</span> <span class="o">=</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">Select_analysis</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">((</span><span class="n">in_features</span><span class="p">,</span> <span class="n">out_feature_class</span><span class="p">,</span> <span class="n">where_clause</span><span class="p">),</span> <span class="kc">True</span><span class="p">)))</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span>     <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">File C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py:512,</span> in <span class="ni">Geoprocessor.__getattr__.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">(*args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span> <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span> <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">512</span>     <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">val</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">513</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span>     <span class="k">return</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-
-<span class="ne">ExecuteError</span>: Failed to execute. Parameters are not valid.
-<span class="n">ERROR</span> <span class="mi">000725</span><span class="p">:</span> <span class="n">Output</span> <span class="n">Feature</span> <span class="n">Class</span><span class="p">:</span> <span class="n">Dataset</span> <span class="o">..</span>\<span class="n">data</span>\<span class="n">class_data</span><span class="o">.</span><span class="n">gdb</span>\<span class="n">zipbnd_q2</span> <span class="n">already</span> <span class="n">exists</span><span class="o">.</span>
-<span class="n">Failed</span> <span class="n">to</span> <span class="n">execute</span> <span class="p">(</span><span class="n">Select</span><span class="p">)</span><span class="o">.</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8 zip codes selected.
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="select-by-attributes">
-<h2>3. Select by Attributes<a class="headerlink" href="#select-by-attributes" title="Permalink to this headline">#</a></h2>
+<h2>4. Select by Attributes<a class="headerlink" href="#select-by-attributes" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/select-layer-by-attribute.htm"><code class="docutils literal notranslate"><span class="pre">arcpy.management.SelectLayerByAttribute()</span></code></a>
+adds, updates, or removes a selection based on an attribute query.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zip_fc</span> <span class="o">=</span> <span class="s2">&quot;zip_boundaries&quot;</span>
-<span class="n">query_numeric</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&quot;POP2010&quot; &gt; 10000&quot;&quot;&quot;</span>
-<span class="n">zip_lyr</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">SelectLayerByAttribute</span><span class="p">(</span><span class="n">zip_fc</span><span class="p">,</span> <span class="s2">&quot;NEW_SELECTION&quot;</span><span class="p">,</span> <span class="n">query_numeric</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">arcpy</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="n">zip_lyr</span><span class="p">))</span>
+<span class="n">pop_query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&quot;POP2010&quot; &gt; 10000&quot;&quot;&quot;</span>
+<span class="n">zip_lyr</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">SelectLayerByAttribute</span><span class="p">(</span><span class="n">zip_fc</span><span class="p">,</span>
+                                                  <span class="s2">&quot;NEW_SELECTION&quot;</span><span class="p">,</span>
+                                                  <span class="n">pop_query</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> records selected.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arcpy</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="n">zip_lyr</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13 records selected.
 </pre></div>
 </div>
 </div>
 </div>
-<div class="admonition-pro-tip admonition">
-<p class="admonition-title">🧭<strong>Pro Tip</strong>:</p>
-<p>Select by attribute and Select by location introduced later only <strong>temporarily</strong>
-select features out of the specified feature class, meaning they
-<strong>don’t physically save files</strong> on the hard disk of your computer.</p>
-<p>Therefore, it is a good idea to save the output as a variable to be able to
-reference the selection later in the codes.</p>
+<div class="warning admonition">
+<p class="admonition-title">Selection on layers</p>
+<p><strong>Select by attribute</strong> and <strong>Select by location</strong> introduced later only
+“temporarily” select features from a specified feature class or layer,meaning
+they <strong>DO NOT physically</strong> save files on the hard disk.
+See <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/creating-and-using-layer-selections.htm">creating and using layer selections</a>.</p>
+<p>It is a good idea to assign the output to <strong>a variable</strong>, just like the example
+above. Hence, we can reference that selection later in the script.</p>
 </div>
 </section>
 <section id="select-by-location">
-<h2>4. Select by Location<a class="headerlink" href="#select-by-location" title="Permalink to this headline">#</a></h2>
+<h2>5. Select by Location<a class="headerlink" href="#select-by-location" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/select-layer-by-location.htm"><code class="docutils literal notranslate"><span class="pre">arcpy.management.SelectLayerByLocation</span></code></a>
+selects features based on a spatial relationship to features in another dataset.</p>
+<p>Each feature in the Input Features parameter is evaluated against the features
+in the Selecting Features parameter.
+If the specified Relationship parameter value is met, the input feature is selected.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>All <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/select-by-location-graphical-examples.htm">spatial relationships</a>
+supported by ArcGIS Pro.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blkgrp_fc</span> <span class="o">=</span> <span class="s2">&quot;blockgroups&quot;</span>
 <span class="n">cntbnd_fc</span> <span class="o">=</span> <span class="s2">&quot;county_boundary&quot;</span>
-<span class="n">blkgrp_lyr</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">SelectLayerByLocation</span><span class="p">(</span><span class="n">blkgrp_fc</span><span class="p">,</span> <span class="s2">&quot;WITHIN&quot;</span><span class="p">,</span> <span class="n">cntbnd_fc</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">blkgrp_lyr</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">SelectLayerByLocation</span><span class="p">(</span>
+    <span class="n">blkgrp_fc</span><span class="p">,</span> <span class="s2">&quot;WITHIN&quot;</span><span class="p">,</span> <span class="n">cntbnd_fc</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note the difference between the two print statements below.
+The first one prints the number of features in the feature class.
+The second, on the other hand, prints the number of records get selected
+in the layer which references that same feature class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> features selected.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="n">arcpy</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">GetCount</span><span class="p">(</span><span class="n">blkgrp_fc</span><span class="p">))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>178 features selected.
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">arcpy</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">GetCount</span><span class="p">(</span><span class="n">blkgrp_fc</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> records selected.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="n">arcpy</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">GetCount</span><span class="p">(</span><span class="n">blkgrp_lyr</span><span class="p">))</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>178
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">arcpy</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="n">blkgrp_lyr</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>142
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>142 records selected.
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="save-selection-to-a-feature-class">
-<h2>5. Save Selection to a Feature Class<a class="headerlink" href="#save-selection-to-a-feature-class" title="Permalink to this headline">#</a></h2>
-<p>There are two options to save a “temporary” selection to an output layer.
-It is critical to understand how to set output <strong>path</strong> and <strong>name</strong> in each
-of the method.</p>
+<section id="save-layer-selection-to-a-feature-class">
+<h2>6. Save Layer Selection to a Feature Class<a class="headerlink" href="#save-layer-selection-to-a-feature-class" title="Permalink to this headline">#</a></h2>
+<p>There are two options to save a “temporary” selection to an output layer.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">arcpy.conversion.FeatureClassToFeatureClass(&lt;path&gt;,</span> <span class="pre">&lt;fc</span> <span class="pre">name&gt;)</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">arcpy.management.CopyFeatures()</span></code></p>
-<ul>
-<li><p>without a path: create feature class in current workspace</p></li>
-<li><p>with specified path:</p>
-<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">arcpy.management.CopyFeatures(&lt;full</span> <span class="pre">path&gt;)</span></code></p></li>
+</ul>
+<p>It is critical to understand how to set output <strong>path</strong> and <strong>name</strong> in each
+of the method.</p>
+<p>If path not set, the output feature class will be stored in current workspace.</p>
+<p>To specify a path use one of the following methods:</p>
+<ul class="simple">
 <li><p>use <code class="docutils literal notranslate"><span class="pre">&quot;\\&quot;</span></code> to concatenate path and name</p></li>
 <li><p>use <code class="docutils literal notranslate"><span class="pre">os.path.join()</span></code> function</p></li>
 <li><p>define the full path name altogether</p></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;..\data\class_data.gdb&quot;</span>
-<span class="n">output_fc</span> <span class="o">=</span> <span class="s2">&quot;blockgroups_I75_2mi&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;..\data\output_data.gdb&quot;</span>
+<span class="n">output_name</span> <span class="o">=</span> <span class="s2">&quot;bg_within_cnt&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">conversion</span><span class="o">.</span><span class="n">FeatureClassToFeatureClass</span><span class="p">(</span><span class="n">blkgrp_lyr</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">output_fc</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div class='gpresult'><h2>Messages</h2><div id='messages' data-messages='["Start Time: Tuesday, February 7, 2023 12:06:41 AM","Succeeded at Tuesday, February 7, 2023 12:06:42 AM (Elapsed Time: 1.00 seconds)"]' data-show='true'><div id = 'default' /></div></div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ouptut not specified</span>
-<span class="n">arcpy</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">CopyFeatures</span><span class="p">(</span><span class="n">blkgrp_lyr</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">conversion</span><span class="o">.</span><span class="n">FeatureClassToFeatureClass</span><span class="p">(</span>
+    <span class="n">blkgrp_lyr</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">output_name</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;output is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">getOutput</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div class='gpresult'><h2>Messages</h2><div id='messages' data-messages='["Start Time: Tuesday, February 7, 2023 12:06:43 AM","Succeeded at Tuesday, February 7, 2023 12:06:44 AM (Elapsed Time: 1.09 seconds)"]' data-show='true'><div id = 'default' /></div></div></div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>output is ..\data\output_data.gdb\bg_within_cnt
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_path</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">output_fc</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># path not specified</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">CopyFeatures</span><span class="p">(</span><span class="n">blkgrp_lyr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;output is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">getOutput</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;..\\data\\class_data.gdb\\blockgroups_I75_2mi&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>output is ..\data\class_data.gdb\blockgroups_Layer2_CopyFeatures1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note if path not specified, the output will have the name as the temporary layer
+which has a name automatically created by ArcGIS Pro.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Result</span></code> object is used to see the output locations.
+To learn more about it, see <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/result.htm">here</a>.</p>
+</div>
+<p>The output feature class can be defined using the following ways.
+Note that they result in the same value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_path</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">output_name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;..\\data\\output_data.gdb\\bg_within_cnt&#39;
 </pre></div>
 </div>
 </div>
@@ -1135,20 +1190,26 @@ of the method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">output_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">output_fc</span><span class="p">)</span>
+<span class="n">output_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">output_name</span><span class="p">)</span>
 <span class="n">output_name</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;..\\data\\class_data.gdb\\blockgroups_I75_2mi&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;..\\data\\output_data.gdb\\bg_within_cnt&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_name</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;..data\class_data.gdb\module1\FirstModelBuilder\FirstModelBuilder.gdb\blockgroups_I75_2mi&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_fc</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;..data\output_data.gdb\bg_within_cnt&#39;</span>
+<span class="n">output_fc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;..data\\output_data.gdb\\bg_within_cnt&#39;
 </pre></div>
 </div>
 </div>

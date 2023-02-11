@@ -51,13 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Querying with ArcPy" href="4-3.ArcPy_selection.html" />
+    <link rel="next" title="ArcPy Selection Functions" href="4-3.ArcPy_selection.html" />
     <link rel="prev" title="The basics of ArcPy" href="4-1.ArcPy_Basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -235,7 +233,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="4-3.ArcPy_selection.html">
-     Querying with ArcPy
+     ArcPy Selection Functions
     </a>
    </li>
   </ul>
@@ -592,8 +590,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#basic-setting">
-     1.1 Basic setting
+    <a class="reference internal nav-link" href="#basic-usage">
+     1.1 Basic usage
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -601,26 +599,36 @@ title="Print to PDF"
      1.2 Optional keyword arguments
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#supply-arguments-to-python-functions">
-     1.3 Supply arguments to Python functions
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#buffer">
-   2. Buffer
+   2.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Buffer
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#clip">
-   3. Clip
+   3.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Clip
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#spatial-join">
-   4. Spatial Join
+  <a class="reference internal nav-link" href="#spatialjoin">
+   4.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SpatialJoin
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -634,20 +642,13 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set-the-overwriteoutput-attribute-of-the-env-class">
-     5.2 Set the
+    <a class="reference internal nav-link" href="#set-overwriteoutput">
+     5.2 Set
      <code class="docutils literal notranslate">
       <span class="pre">
        OverwriteOutput
       </span>
      </code>
-     attribute of the
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       env
-      </span>
-     </code>
-     class
     </a>
    </li>
   </ul>
@@ -682,8 +683,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#basic-setting">
-     1.1 Basic setting
+    <a class="reference internal nav-link" href="#basic-usage">
+     1.1 Basic usage
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -691,26 +692,36 @@ title="Print to PDF"
      1.2 Optional keyword arguments
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#supply-arguments-to-python-functions">
-     1.3 Supply arguments to Python functions
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#buffer">
-   2. Buffer
+   2.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Buffer
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#clip">
-   3. Clip
+   3.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Clip
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#spatial-join">
-   4. Spatial Join
+  <a class="reference internal nav-link" href="#spatialjoin">
+   4.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SpatialJoin
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -724,20 +735,13 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set-the-overwriteoutput-attribute-of-the-env-class">
-     5.2 Set the
+    <a class="reference internal nav-link" href="#set-overwriteoutput">
+     5.2 Set
      <code class="docutils literal notranslate">
       <span class="pre">
        OverwriteOutput
       </span>
      </code>
-     attribute of the
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       env
-      </span>
-     </code>
-     class
     </a>
    </li>
   </ul>
@@ -754,14 +758,18 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="run-arcpy-functions">
 <h1>Run ArcPy Functions<a class="headerlink" href="#run-arcpy-functions" title="Permalink to this headline">#</a></h1>
+<p>Here, we will look at several <code class="docutils literal notranslate"><span class="pre">arcpy</span></code> functions, including <code class="docutils literal notranslate"><span class="pre">ListFeatureClasses</span></code>, <code class="docutils literal notranslate"><span class="pre">Buffer</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Clip</span></code>, and <code class="docutils literal notranslate"><span class="pre">SpatialJoin</span></code>. Before we discuss how to run these <code class="docutils literal notranslate"><span class="pre">arcpy</span></code> functions, consider
+the question “<em>which toolbox or toolboxes do they belong to</em>?” As mentioned earlier, the answer to this
+question will determine the name of the function.</p>
 <section id="listfeatureclasses">
 <h2>1. <code class="docutils literal notranslate"><span class="pre">ListFeatureClasses()</span></code><a class="headerlink" href="#listfeatureclasses" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/listfeatureclasses.htm">The function</a>
-returns a list of the feature classes in the current workspace, which can be
-further filtered by specifying <strong><em>name</em></strong>, <strong><em>feature type</em></strong>, and
-<strong><em>feature dataset</em></strong> as optional arguments.</p>
-<section id="basic-setting">
-<h3>1.1 Basic setting<a class="headerlink" href="#basic-setting" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/listfeatureclasses.htm"><code class="docutils literal notranslate"><span class="pre">ListFeatureClasses</span></code></a>
+returns a Python <code class="docutils literal notranslate"><span class="pre">list</span></code> consists of names of feature classes in the <strong>current workspace</strong> defined in the environment. It also supports additional parameters (arguments) to control which feature classes will
+be in the returned <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+<section id="basic-usage">
+<h3>1.1 Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">#</a></h3>
+<p>As usual, we need to <em>import</em> the <code class="docutils literal notranslate"><span class="pre">arcpy</span></code> package first.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
@@ -769,6 +777,7 @@ further filtered by specifying <strong><em>name</em></strong>, <strong><em>featu
 </div>
 </div>
 </div>
+<p>Then, we define the <strong>workspace</strong> and set it to be the <code class="docutils literal notranslate"><span class="pre">class_data.gdb</span></code> geodatabase.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdb_worksp</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;../data/class_data.gdb&quot;</span>
@@ -776,6 +785,10 @@ further filtered by specifying <strong><em>name</em></strong>, <strong><em>featu
 </pre></div>
 </div>
 </div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">workspace</span></code> environment (i.e., <code class="docutils literal notranslate"><span class="pre">arcpy.env</span></code> object) must be set before using <code class="docutils literal notranslate"><span class="pre">ListFeatureClasses</span></code>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -800,21 +813,19 @@ further filtered by specifying <strong><em>name</em></strong>, <strong><em>featu
 </div>
 </div>
 </div>
-<div class="admonition-note admonition">
-<p class="admonition-title">Note:</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">workspace</span></code> environment must be set before using the list function.</p>
-</div>
 </section>
 <section id="optional-keyword-arguments">
 <h3>1.2 Optional keyword arguments<a class="headerlink" href="#optional-keyword-arguments" title="Permalink to this headline">#</a></h3>
+<p>We can give additional arguments to the function to have more control over what feature classes are returned.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">wild_card</span></code>: a string with an asterisk</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">feature_type</span></code>: a string indicating feature type, i.e., <em>Point</em>, <em>Line</em>, <em>Polygon</em></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">feature_dataset</span></code>: a string that is the name of the feature dataset.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wild_card</span></code>: a string with an asterisk <code class="docutils literal notranslate"><span class="pre">*</span></code> specifying the <em>name pattern</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">feature_type</span></code>: a string specifying feature type, i.e., <em>Point</em>, <em>Line</em>, <em>Polygon</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">feature_dataset</span></code>: a string specifying the name of a particular <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/feature-datasets/feature-datasets-in-arcgis-pro.htm">feature dataset</a>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="s2">&quot;major*&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># return feature class whose name starts with &quot;major&quot;</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="s2">&quot;major*&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -826,7 +837,8 @@ further filtered by specifying <strong><em>name</em></strong>, <strong><em>featu
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="s2">&quot;*roads&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># return feature class whose name ends with &quot;roads&quot;</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="s2">&quot;*roads&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -836,25 +848,20 @@ further filtered by specifying <strong><em>name</em></strong>, <strong><em>featu
 </div>
 </div>
 </div>
-</section>
-<section id="supply-arguments-to-python-functions">
-<h3>1.3 Supply arguments to Python functions<a class="headerlink" href="#supply-arguments-to-python-functions" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>by order:</p>
-<ul>
-<li><p>skip the argument if using default by either <strong>empty string</strong> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-</ul>
-</li>
-<li><p>by keyword:</p>
-<ul>
-<li><p>the order of arguments doesn’t matter if using keyword</p></li>
-</ul>
-</li>
-</ul>
+<p>As shown in the two examples above, the position of the asterisk <code class="docutils literal notranslate"><span class="pre">*</span></code> determines the <strong>pattern of the wildcard</strong>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Supply arguments to functions</p>
+<p>Most of <code class="docutils literal notranslate"><span class="pre">arcpy</span></code> functions are defined with <strong>keyword arguments</strong>, i.e., the argument itself has a name.
+Therefore, when calling a function, we can specify the arguments in two ways:</p>
+<p>(1). by <em>position</em>: set arguments based on their positions in the function definition. If needed, skip an argument by either an <strong>empty string</strong> (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>) or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>(2). by <em>name</em>: set arguments <strong>explicitly</strong> based on their names. In this case, you don’t need to follow the same order as how they were defined in the original function.</p>
+</div>
+<p>The following examples call the same function <code class="docutils literal notranslate"><span class="pre">ListFeatureClasses</span></code> using positional arguments.
+Pay attention to the difference on how they skip the first argument, i.e., <code class="docutils literal notranslate"><span class="pre">wild_card</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># by order with empty string</span>
-<span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;Line&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># skipping using an empty string</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;Line&quot;</span><span class="p">)</span>  <span class="c1"># return line feature classes</span>
 </pre></div>
 </div>
 </div>
@@ -866,8 +873,8 @@ further filtered by specifying <strong><em>name</em></strong>, <strong><em>featu
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># by order with None object</span>
-<span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Point&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># skipping using None</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Point&quot;</span><span class="p">)</span>  <span class="c1"># return point feature classes</span>
 </pre></div>
 </div>
 </div>
@@ -877,25 +884,19 @@ further filtered by specifying <strong><em>name</em></strong>, <strong><em>featu
 </div>
 </div>
 </div>
-<div class="admonition-note admonition">
-<p class="admonition-title">Note:</p>
-<p><code class="docutils literal notranslate"><span class="pre">None</span></code> is a Python object not a string.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code> is a built-in Python type. Try run:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NoneType
-</pre></div>
-</div>
-</div>
-</div>
+<p>If no arguments are skipped, you need to set arguments based on their original definition.
+View the documentation (signature) of the function to know which arguments need to be
+defined and in what order. <strong>Recall</strong> the methods we introduced in the <a class="reference external" href="4-1.ArcPy_Basics.html#view-help-documentation">previous page</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># specifying both arguments by order</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># specifying both arguments by position</span>
 <span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="s2">&quot;*s&quot;</span><span class="p">,</span> <span class="s2">&quot;Point&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -906,35 +907,12 @@ further filtered by specifying <strong><em>name</em></strong>, <strong><em>featu
 </div>
 </div>
 </div>
+<p>Alternatively, we can set arguments using their names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># no space around the assignment operator when assign value to argument (PEP8)</span>
-<span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="n">feature_type</span><span class="o">=</span><span class="s2">&quot;Point&quot;</span><span class="p">)</span> <span class="c1"># skipped the first argument</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;hospitals&#39;, &#39;schools&#39;, &#39;law_enforcement&#39;, &#39;crash&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># no need to supply in sequence if using keyword</span>
-<span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="n">feature_type</span><span class="o">=</span><span class="s2">&quot;Point&quot;</span><span class="p">,</span> <span class="n">wild_card</span><span class="o">=</span><span class="s2">&quot;*s&quot;</span><span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;hospitals&#39;, &#39;schools&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="n">feature_type</span><span class="o">=</span><span class="s2">&quot;Polygon&quot;</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># skip the first argument with no empty string or None</span>
+
+<span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="n">feature_type</span><span class="o">=</span><span class="s2">&quot;Polygon&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -944,10 +922,35 @@ further filtered by specifying <strong><em>name</em></strong>, <strong><em>featu
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">According to PEP8</p>
+<p>Different than assigning values to variables, in the code above,
+there are <strong>NO</strong> <em>white spaces</em> around the assignment operator,
+i.e., <code class="docutils literal notranslate"><span class="pre">feature_type=&quot;Point&quot;</span></code>.</p>
+</div>
+<p>In a function call, if all arguments are named (i.e., <em>keyword</em> arguments),
+the order of the arguments can be ignored.
+For example, in the function below, we don’t need to follow the order
+in the definition, i.e., first set <code class="docutils literal notranslate"><span class="pre">wild_card</span></code>
+then set <code class="docutils literal notranslate"><span class="pre">feature_type</span></code>, because they are both keyword arguments.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># return empty list if no match found in the workspace</span>
-<span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="n">feature_dataset</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="n">feature_type</span><span class="o">=</span><span class="s2">&quot;Point&quot;</span><span class="p">,</span> <span class="n">wild_card</span><span class="o">=</span><span class="s2">&quot;*s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;hospitals&#39;, &#39;schools&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The return <code class="docutils literal notranslate"><span class="pre">list</span></code> will be empty if no feature classes match the setting.
+For example, there is no <em>feature dataset</em> named “test” in the class
+geodatabase.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="n">feature_dataset</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -957,56 +960,64 @@ further filtered by specifying <strong><em>name</em></strong>, <strong><em>featu
 </div>
 </div>
 </div>
+<p>Now, let’s look at some commonly used <em>geoprocessing</em> functions.
+We will revisit <a class="reference external" href="1-1.Intro_to_ModelBuilder.html#problem-1">an example</a>
+that we previously solved by <strong>ModelBuilder</strong>.</p>
+<p>We will reproduce the result of the following model using <code class="docutils literal notranslate"><span class="pre">arcpy</span></code> functions.</p>
+<p><img alt="select_bg_mb" src="../_images/select_bg_mb.png" /></p>
 </section>
 </section>
 <section id="buffer">
-<h2>2. Buffer<a class="headerlink" href="#buffer" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
+<h2>2. <code class="docutils literal notranslate"><span class="pre">Buffer</span></code><a class="headerlink" href="#buffer" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I75</span> <span class="o">=</span> <span class="s2">&quot;I75&quot;</span>
-<span class="n">I75_buff</span> <span class="o">=</span> <span class="s2">&quot;I75_2mile_buff&quot;</span>
-<span class="n">arcpy</span><span class="o">.</span><span class="n">Buffer_analysis</span><span class="p">(</span><span class="n">I75</span><span class="p">,</span> <span class="s2">&quot;I75_2mile_buff&quot;</span><span class="p">,</span> <span class="s2">&quot;2 Miles&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I75</span> <span class="o">=</span> <span class="s2">&quot;I75&quot;</span>                    <span class="c1"># input features</span>
+<span class="n">I75_2mi_buff</span> <span class="o">=</span> <span class="s2">&quot;I75_2mi_buff&quot;</span>  <span class="c1"># output feature class</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">Buffer_analysis</span><span class="p">(</span><span class="n">I75</span><span class="p">,</span> <span class="n">I75_2mi_buff</span><span class="p">,</span> <span class="s2">&quot;2 Miles&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div class='gpresult'><h2>Messages</h2><div id='messages' data-messages='["Start Time: Tuesday, February 7, 2023 12:06:18 AM","Succeeded at Tuesday, February 7, 2023 12:06:19 AM (Elapsed Time: 1.00 seconds)"]' data-show='true'><div id = 'default' /></div></div></div></div>
 </div>
-<div class="admonition-pro-tip admonition">
-<p class="admonition-title">Pro Tip:</p>
-<p>Create variables for <strong>arguments</strong>, especially for the <em>input</em> and <em>output</em> feature class.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Create variables to store values of <strong>arguments</strong>, especially for the <em>input</em> and <em>output</em> feature class.
+It is helpful for us reference them later. It is also a good practice from a data management perspective.</p>
 </div>
 </section>
 <section id="clip">
-<h2>3. Clip<a class="headerlink" href="#clip" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
+<h2>3. <code class="docutils literal notranslate"><span class="pre">Clip</span></code><a class="headerlink" href="#clip" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school</span> <span class="o">=</span> <span class="s2">&quot;schools&quot;</span>
-<span class="n">school_2mile_I75</span> <span class="o">=</span> <span class="s2">&quot;schools_2mile_I75&quot;</span>
-<span class="n">arcpy</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">Clip</span><span class="p">(</span><span class="n">school</span><span class="p">,</span> <span class="n">I75_buff</span><span class="p">,</span> <span class="n">school_2mile_I75</span><span class="p">)</span>
+<span class="n">school_2mi_I75</span> <span class="o">=</span> <span class="s2">&quot;schools_2mile_I75&quot;</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">Clip</span><span class="p">(</span><span class="n">school</span><span class="p">,</span>          <span class="c1"># input features</span>
+                    <span class="n">I75_2mi_buff</span><span class="p">,</span>    <span class="c1"># clipping features</span>
+                    <span class="n">school_2mi_I75</span><span class="p">)</span>  <span class="c1"># output feature class</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div class='gpresult'><h2>Messages</h2><div id='messages' data-messages='["Start Time: Tuesday, February 7, 2023 12:06:20 AM","Analyzing input features...","Dissolving clip features...","Clipping input features...","Succeeded at Tuesday, February 7, 2023 12:06:21 AM (Elapsed Time: 0.73 seconds)"]' data-show='true'><div id = 'default' /></div></div></div></div>
 </div>
 </section>
-<section id="spatial-join">
-<h2>4. Spatial Join<a class="headerlink" href="#spatial-join" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
+<section id="spatialjoin">
+<h2>4. <code class="docutils literal notranslate"><span class="pre">SpatialJoin</span></code><a class="headerlink" href="#spatialjoin" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blkgrp</span> <span class="o">=</span> <span class="s2">&quot;blockgroups&quot;</span>
-<span class="n">bg_school_spjoin</span> <span class="o">=</span> <span class="s2">&quot;blockgroups_school_spjoin&quot;</span>
-<span class="n">arcpy</span><span class="o">.</span><span class="n">SpatialJoin_analysis</span><span class="p">(</span><span class="n">blkgrp</span><span class="p">,</span> <span class="n">school_2mile_I75</span><span class="p">,</span> <span class="n">bg_school_spjoin</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;KEEP_COMMON&quot;</span><span class="p">)</span> <span class="c1"># keep common as the join type</span>
+<span class="n">bg_school_spjoin</span> <span class="o">=</span> <span class="s2">&quot;bg_school_spjoin&quot;</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">SpatialJoin_analysis</span><span class="p">(</span><span class="n">blkgrp</span><span class="p">,</span>            <span class="c1"># target features</span>
+                           <span class="n">school_2mi_I75</span><span class="p">,</span>    <span class="c1"># join features</span>
+                           <span class="n">bg_school_spjoin</span><span class="p">,</span>  <span class="c1"># output feature class</span>
+                           <span class="s2">&quot;&quot;</span><span class="p">,</span>                <span class="c1"># join operation</span>
+                           <span class="s2">&quot;KEEP_COMMON&quot;</span><span class="p">)</span>     <span class="c1"># join type</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div class='gpresult'><h2>Messages</h2><div id='messages' data-messages='["Start Time: Tuesday, February 7, 2023 12:06:21 AM","Succeeded at Tuesday, February 7, 2023 12:06:22 AM (Elapsed Time: 1.16 seconds)"]' data-show='true'><div id = 'default' /></div></div></div></div>
 </div>
+<p>To see how many output features are there, we can use the either <code class="docutils literal notranslate"><span class="pre">GetCount_management()</span></code>
+or <code class="docutils literal notranslate"><span class="pre">management.GetCount()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count number of census block groups that match critieria</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># number of block groups matching the criteria</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">arcpy</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="n">bg_school_spjoin</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -1030,18 +1041,25 @@ further filtered by specifying <strong><em>name</em></strong>, <strong><em>featu
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">blkgrp</span> <span class="o">=</span> <span class="s2">&quot;blockgroups&quot;</span>
-    <span class="n">bg_school_spjoin</span> <span class="o">=</span> <span class="s2">&quot;blockgroups_school_spjoin&quot;</span>
-    <span class="n">arcpy</span><span class="o">.</span><span class="n">SpatialJoin_analysis</span><span class="p">(</span><span class="n">blkgrp</span><span class="p">,</span> <span class="n">school_2mile_I75</span><span class="p">,</span> <span class="n">bg_school_spjoin</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;KEEP_COMMON&quot;</span><span class="p">)</span>
+    <span class="n">bg_school_spjoin</span> <span class="o">=</span> <span class="s2">&quot;bg_school_spjoin&quot;</span>
+    <span class="n">arcpy</span><span class="o">.</span><span class="n">SpatialJoin_analysis</span><span class="p">(</span>
+        <span class="n">blkgrp</span><span class="p">,</span> <span class="n">school_2mi_I75</span><span class="p">,</span> <span class="n">bg_school_spjoin</span><span class="p">,</span> 
+        <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;KEEP_COMMON&quot;</span>
+    <span class="p">)</span>
     <span class="n">arcpy</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="n">bg_school_spjoin</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="c1">#.strip())</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  <span class="c1"># any type of Exception will be captured</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This message proves the script continues moving on after the ERROR.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error: Failed to execute. Parameters are not valid.
-ERROR 000725: Output Feature Class: Dataset ../data/class_data.gdb\blockgroups_school_spjoin already exists.
+ERROR 000725: Output Feature Class: Dataset ../data/class_data.gdb\bg_school_spjoin already exists.
 Failed to execute (SpatialJoin).
+
+This message proves the script continues moving on after the ERROR.
 </pre></div>
 </div>
 </div>
@@ -1055,57 +1073,67 @@ class first, if already exists, use <code class="docutils literal notranslate"><
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">bg_school_spjoin</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A feature class with the name </span><span class="si">{}</span><span class="s2"> already exists&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bg_school_spjoin</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Message 1: </span><span class="si">{}</span><span class="s2"> already exists.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bg_school_spjoin</span><span class="p">))</span>
     <span class="n">arcpy</span><span class="o">.</span><span class="n">Delete_management</span><span class="p">(</span><span class="n">bg_school_spjoin</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;However, arcpy helped you deleted </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bg_school_spjoin</span><span class="p">))</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">blkgrp</span> <span class="o">=</span> <span class="s2">&quot;blockgroups&quot;</span>
-    <span class="n">bg_school_spjoin</span> <span class="o">=</span> <span class="s2">&quot;blockgroups_school_spjoin&quot;</span>
-    <span class="n">arcpy</span><span class="o">.</span><span class="n">SpatialJoin_analysis</span><span class="p">(</span><span class="n">blkgrp</span><span class="p">,</span> <span class="n">school_2mile_I75</span><span class="p">,</span> <span class="n">bg_school_spjoin</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;KEEP_COMMON&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;succeed, output </span><span class="si">{}</span><span class="s2"> features&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arcpy</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="n">bg_school_spjoin</span><span class="p">)))</span>
-<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Message 2: </span><span class="si">{}</span><span class="s2"> has been removed.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bg_school_spjoin</span><span class="p">))</span>
+    
+<span class="n">blkgrp</span> <span class="o">=</span> <span class="s2">&quot;blockgroups&quot;</span>
+<span class="n">bg_school_spjoin</span> <span class="o">=</span> <span class="s2">&quot;blockgroups_school_spjoin&quot;</span>
+
+<span class="n">arcpy</span><span class="o">.</span><span class="n">SpatialJoin_analysis</span><span class="p">(</span>
+    <span class="n">blkgrp</span><span class="p">,</span> <span class="n">school_2mi_I75</span><span class="p">,</span> <span class="n">bg_school_spjoin</span><span class="p">,</span> 
+    <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;KEEP_COMMON&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Message 3: success! </span><span class="si">{}</span><span class="s2"> output features&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="n">arcpy</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="n">bg_school_spjoin</span><span class="p">)</span>
+<span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A feature class with the name blockgroups_school_spjoin already exists
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Message 1: bg_school_spjoin already exists.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>However, arcpy helped you deleted blockgroups_school_spjoin.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Message 2: bg_school_spjoin has been removed.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>succeed, output 19 features
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Message 3: success! 19 output features
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="set-the-overwriteoutput-attribute-of-the-env-class">
-<h3>5.2 Set the <code class="docutils literal notranslate"><span class="pre">OverwriteOutput</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">env</span></code> class<a class="headerlink" href="#set-the-overwriteoutput-attribute-of-the-env-class" title="Permalink to this headline">#</a></h3>
-<p>Another option is to simply set <code class="docutils literal notranslate"><span class="pre">OverwriteOutput</span></code> to be <code class="docutils literal notranslate"><span class="pre">True</span></code>.
-However, be careful, enable this setting will cause ArcPy to always overwrite
+<section id="set-overwriteoutput">
+<h3>5.2 Set <code class="docutils literal notranslate"><span class="pre">OverwriteOutput</span></code><a class="headerlink" href="#set-overwriteoutput" title="Permalink to this headline">#</a></h3>
+<p>Another option is to simply set <code class="docutils literal notranslate"><span class="pre">env.OverwriteOutput</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>.
+However, be careful, enable this setting will cause <strong>arcpy</strong> to always overwrite
 current feature class to write output feature class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">overwriteOutput</span> <span class="o">=</span> <span class="kc">True</span>
+
 <span class="k">if</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">bg_school_spjoin</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yes, </span><span class="si">{}</span><span class="s2"> exists&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bg_school_spjoin</span><span class="p">))</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">blkgrp</span> <span class="o">=</span> <span class="s2">&quot;blockgroups&quot;</span>
-    <span class="n">bg_school_spjoin</span> <span class="o">=</span> <span class="s2">&quot;blockgroups_school_spjoin&quot;</span>
-    <span class="n">arcpy</span><span class="o">.</span><span class="n">SpatialJoin_analysis</span><span class="p">(</span><span class="n">blkgrp</span><span class="p">,</span> <span class="n">school_2mile_I75</span><span class="p">,</span> <span class="n">bg_school_spjoin</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;KEEP_COMMON&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;succeed, output </span><span class="si">{}</span><span class="s2"> features&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arcpy</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="n">bg_school_spjoin</span><span class="p">)))</span>
-<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Message 1: </span><span class="si">{}</span><span class="s2"> already exists.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bg_school_spjoin</span><span class="p">))</span>
+    
+
+<span class="n">blkgrp</span> <span class="o">=</span> <span class="s2">&quot;blockgroups&quot;</span>
+<span class="n">bg_school_spjoin</span> <span class="o">=</span> <span class="s2">&quot;blockgroups_school_spjoin&quot;</span>
+
+<span class="n">arcpy</span><span class="o">.</span><span class="n">SpatialJoin_analysis</span><span class="p">(</span>
+    <span class="n">blkgrp</span><span class="p">,</span> <span class="n">school_2mi_I75</span><span class="p">,</span> <span class="n">bg_school_spjoin</span><span class="p">,</span> 
+    <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;KEEP_COMMON&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Message 2: success! </span><span class="si">{}</span><span class="s2"> output features&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="n">arcpy</span><span class="o">.</span><span class="n">GetCount_management</span><span class="p">(</span><span class="n">bg_school_spjoin</span><span class="p">)</span>
+<span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Yes, blockgroups_school_spjoin exists
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Message 1: blockgroups_school_spjoin already exists.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>succeed, output 19 features
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Message 2: success! 19 output features
 </pre></div>
 </div>
 </div>
@@ -1151,7 +1179,7 @@ current feature class to write output feature class.</p>
     <a class='right-next' id="next-link" href="4-3.ArcPy_selection.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Querying with ArcPy</p>
+        <p class="prev-next-title">ArcPy Selection Functions</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
