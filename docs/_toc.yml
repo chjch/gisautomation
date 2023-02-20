@@ -24,7 +24,7 @@ chapters:
       - file: modules/4-1.ArcPy_Basics
       - file: modules/4-2.Run_ArcPy_functions
       - file: modules/4-3.ArcPy_selection
-  - file: modules/5-0.SciPy_Landing
+  - file: modules/5-0.scientific_python
     sections:
       - file: modules/5-1.Intro_to_NumPy
       - file: modules/5-2.Intro_to_Pandas
@@ -49,3 +49,4 @@ chapters:
       - file: homework/homework3
       - file: homework/homework4
       - file: homework/homework5
+  - file: final_project
