@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-    <title>5-1: Using NumPy for ArcGIS &#8212; Automation for Geospatial Modeling and Analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Use NumPy in ArcGIS &#8212; Automation for Geospatial Modeling and Analysis</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,45 +18,46 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom_style.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script >mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5-2: Using Pandas for ArcGIS" href="5-2.Intro_to_Pandas.html" />
-    <link rel="prev" title="Introduction to the Scientific Python Ecosystem" href="5-0.SciPy_Landing.html" />
+    <link rel="next" title="Use Pandas in ArcGIS" href="5-2.Intro_to_Pandas.html" />
+    <link rel="prev" title="Scientific Python Ecosystem" href="5-0.scientific_python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -74,21 +73,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -97,10 +82,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -118,15 +102,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Welcome to Automation of GIS
-                </a>
-            </li>
-        </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to Automation of GIS
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../software_0.html">
    Software
@@ -235,14 +218,14 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="4-3.ArcPy_selection.html">
-     Querying with ArcPy
+     ArcPy Selection Functions
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="5-0.SciPy_Landing.html">
-   Introduction to the Scientific Python Ecosystem
+  <a class="reference internal" href="5-0.scientific_python.html">
+   Scientific Python Ecosystem
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -252,12 +235,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5-1: Using NumPy for ArcGIS
+     Use NumPy in ArcGIS
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="5-2.Intro_to_Pandas.html">
-     5-2: Using Pandas for ArcGIS
+     Use Pandas in ArcGIS
     </a>
    </li>
   </ul>
@@ -375,20 +358,20 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../final_project.html">
+   Final Project
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -396,212 +379,135 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/5-1.Intro_to_NumPy.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/chjch/gisautomation"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/5-1.Intro_to_NumPy.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/modules/5-1.Intro_to_NumPy.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/modules/5-1.Intro_to_NumPy.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/chjch/gisautomation"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/5-1.Intro_to_NumPy.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/5-1.Intro_to_NumPy.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-the-numpy-package">
-   1. import the NumPy package
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#get-started-with-the-basics">
-   2. Get started with the basics
+  <a class="reference internal nav-link" href="#create-a-numpy-ndarray">
+   1. Create a
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy.ndarray
+    </span>
+   </code>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#recall-a-python-list">
-     2.1 Recall a Python list
+    <a class="reference internal nav-link" href="#from-a-python-list">
+     1.1 From a Python list
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#indexing-and-slicing-on-numpy-array">
-     2.2 Indexing and slicing on NumPy array
+    <a class="reference internal nav-link" href="#use-np-arange">
+     1.2 Use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.arange()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-np-linspace">
+     1.3 Use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.linspace()
+      </span>
+     </code>
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexing-and-slicing">
+   2. Indexing and slicing
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#generate-random-numbers-with-numpy">
@@ -614,13 +520,14 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#retrieve-field-names-of-a-feature-class-arcpy-listfields">
-     4.1 Retrieve field names of a feature class
+    <a class="reference internal nav-link" href="#use-arcpy-listfields-to-access-fields">
+     4.1 Use
      <code class="docutils literal notranslate">
       <span class="pre">
        arcpy.ListFields()
       </span>
      </code>
+     to access fields
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -629,13 +536,18 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compute-statistics-of-an-ndarray">
-     4.3 Compute statistics of an ndarray
+    <a class="reference internal nav-link" href="#compute-statistics-of-a-np-ndarray">
+     4.3 Compute statistics of a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.ndarray
+      </span>
+     </code>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#simple-query-against-numpy-array">
-     4.4 Simple Query against NumPy array
+     4.4 Simple query against NumPy array
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -652,14 +564,15 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>5-1: Using NumPy for ArcGIS</h1>
+                <h1>Use NumPy in ArcGIS</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -670,26 +583,46 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-the-numpy-package">
-   1. import the NumPy package
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#get-started-with-the-basics">
-   2. Get started with the basics
+  <a class="reference internal nav-link" href="#create-a-numpy-ndarray">
+   1. Create a
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy.ndarray
+    </span>
+   </code>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#recall-a-python-list">
-     2.1 Recall a Python list
+    <a class="reference internal nav-link" href="#from-a-python-list">
+     1.1 From a Python list
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#indexing-and-slicing-on-numpy-array">
-     2.2 Indexing and slicing on NumPy array
+    <a class="reference internal nav-link" href="#use-np-arange">
+     1.2 Use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.arange()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-np-linspace">
+     1.3 Use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.linspace()
+      </span>
+     </code>
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexing-and-slicing">
+   2. Indexing and slicing
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#generate-random-numbers-with-numpy">
@@ -702,13 +635,14 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#retrieve-field-names-of-a-feature-class-arcpy-listfields">
-     4.1 Retrieve field names of a feature class
+    <a class="reference internal nav-link" href="#use-arcpy-listfields-to-access-fields">
+     4.1 Use
      <code class="docutils literal notranslate">
       <span class="pre">
        arcpy.ListFields()
       </span>
      </code>
+     to access fields
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -717,13 +651,18 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compute-statistics-of-an-ndarray">
-     4.3 Compute statistics of an ndarray
+    <a class="reference internal nav-link" href="#compute-statistics-of-a-np-ndarray">
+     4.3 Compute statistics of a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       np.ndarray
+      </span>
+     </code>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#simple-query-against-numpy-array">
-     4.4 Simple Query against NumPy array
+     4.4 Simple query against NumPy array
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -744,50 +683,43 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="using-numpy-for-arcgis">
-<h1>5-1: Using NumPy for ArcGIS<a class="headerlink" href="#using-numpy-for-arcgis" title="Permalink to this headline">#</a></h1>
+  <div class="section" id="use-numpy-in-arcgis">
+<h1>Use NumPy in ArcGIS<a class="headerlink" href="#use-numpy-in-arcgis" title="Permalink to this headline">¶</a></h1>
+<a class="border reference internal image-reference" href="../_images/numpylogo.svg"><img alt="numpylogo" class="border align-right" height="138" src="../_images/numpylogo.svg" width="286" /></a>
+<p><a class="reference external" href="https://numpy.org/">NumPy</a> is a <strong>numeric computing library</strong> of Python. It is a fundamental package of the
+Scientific Python Ecosystem. It provides fast operation on n-dimensional (n-d) arrays. It includes functions
+for <strong>linear algebra</strong> and comprehensive mathematical operations.</p>
+<p>Other packages in the Scientific Python Ecosystem.</p>
 <ul class="simple">
-<li><p>NumPy: a numeric computing libary: multidimensional array, linear algebra, mathematical operation</p></li>
-<li><p>Offer fast operation of n-dimensional array</p></li>
-<li><p>The foundation of the Scientific Python Ecosystem</p>
-<ul>
-<li><p>pandas</p></li>
-<li><p>SciPy</p></li>
-<li><p>matplotlib</p></li>
-<li><p>Seaborn</p></li>
-<li><p>scikit-learn</p></li>
-<li><p>IPython</p></li>
-<li><p>NetworkX</p></li>
-<li><p>Statsmodel</p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/">pandas</a>: Python’s “<strong>excelsheet</strong>”</p></li>
+<li><p><a class="reference external" href="https://scipy.org/">SciPy</a>: <em>optimization</em>, interpolation, mathematical <strong>algorithms</strong></p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/">matplotlib</a>: <strong>plotting</strong> graphs and interactive visualization</p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/">Seaborn</a>: based on <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> with more graph types and styles</p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/">scikit-learn</a>: regression, classification, clustering, <strong>machine learning</strong></p></li>
+<li><p><a class="reference external" href="https://networkx.org/documentation/stable/auto_examples/index.html">NetworkX</a>: create, manipulate complex <strong>networks</strong> (graphs).</p></li>
+<li><p><a class="reference external" href="https://www.statsmodels.org/stable/index.html">statsmodels</a>: estimation <strong>statistical models</strong>, conducting statistical tests.</p></li>
 </ul>
-</li>
-</ul>
-<p>Helpful resource on NumPy:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://numpy.org/">NumPy official site</a></p></li>
-<li><p><a class="reference external" href="http://scipy-lectures.org/intro/numpy/index.html">Tutorials on the scientific Python ecosystem</a></p></li>
-</ul>
-<section id="import-the-numpy-package">
-<h2>1. import the NumPy package<a class="headerlink" href="#import-the-numpy-package" title="Permalink to this headline">#</a></h2>
+<p>Same as before, when dealing with a new package, we need to learn how to import
+it. Note that please <strong>follow the convention</strong> (as below) to import the package.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># this is a convention</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="get-started-with-the-basics">
-<h2>2. Get started with the basics<a class="headerlink" href="#get-started-with-the-basics" title="Permalink to this headline">#</a></h2>
-<section id="recall-a-python-list">
-<h3>2.1 Recall a Python list<a class="headerlink" href="#recall-a-python-list" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Converting list to numpy ndarray using <code class="docutils literal notranslate"><span class="pre">np.array()</span></code></p></li>
-</ul>
+<div class="section" id="create-a-numpy-ndarray">
+<h2>1. Create a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code><a class="headerlink" href="#create-a-numpy-ndarray" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> is a fundamental data structure in the NumPy library for Python,
+which is used to represent homogeneous multidimensional arrays of data.
+It is a collection of <strong>elements of the same data type</strong> that can be <strong>indexed</strong>
+and manipulated efficiently.</p>
+<div class="section" id="from-a-python-list">
+<h3>1.1 From a Python list<a class="headerlink" href="#from-a-python-list" title="Permalink to this headline">¶</a></h3>
+<p>We can convert a <code class="docutils literal notranslate"><span class="pre">list</span></code> to <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> using <code class="docutils literal notranslate"><span class="pre">np.array()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
@@ -801,22 +733,16 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">my_list</span>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Recall that we can also create a <code class="docutils literal notranslate"><span class="pre">list</span></code> using the <code class="docutils literal notranslate"><span class="pre">range</span></code> object.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4]
-</pre></div>
-</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -838,9 +764,37 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>Create ndarray with <code class="docutils literal notranslate"><span class="pre">np.arange()</span></code>: control interval width</p></li>
-</ul>
+<div class="admonition-make-sure-the-list-is-homogeneous admonition">
+<p class="admonition-title">Make sure the list is homogeneous</p>
+<p>If a list is not homogeneous, NumPy will <strong>try to cast</strong> all the elements to the <strong>same data type</strong>.
+This may result in unexpected behavior or errors if the elements cannot be converted to a common data type.
+For example, if a list contains both strings and integers, NumPy may cast all the elements to strings,
+resulting in a NumPy array of dtype ‘U’.</p>
+<p>In general, it is recommended to use NumPy arrays <strong>with homogeneous data</strong> types to take full advantage
+of the <strong>performance benefits</strong> and functionality provided by the library.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mix_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">,</span> <span class="s1">&#39;five&#39;</span><span class="p">]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mix_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;four&#39;, &#39;five&#39;], dtype=&#39;&lt;U11&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="use-np-arange">
+<h3>1.2 Use <code class="docutils literal notranslate"><span class="pre">np.arange()</span></code><a class="headerlink" href="#use-np-arange" title="Permalink to this headline">¶</a></h3>
+<p>Returns an array of <strong>evenly spaced</strong> values within a specified interval.
+The interval is defined by a start value, a stop value, and a step size.
+Think of it as a NumPy equivalent of the <code class="docutils literal notranslate"><span class="pre">range</span></code> object.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">([</span><span class="n">start</span><span class="p">,]</span> <span class="n">stop</span><span class="p">[,</span> <span class="n">step</span><span class="p">,],</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -853,30 +807,25 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>As shown in the syntax, if <code class="docutils literal notranslate"><span class="pre">start</span></code> is omitted, the function will use a default
+“start” of <code class="docutils literal notranslate"><span class="pre">0</span></code>. Therefore, the two statements below are equivalent.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># default is start from 0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 2 3 4 5 6 7 8 9]
+[0 1 2 3 4 5 6 7 8 9]
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-</pre></div>
-</div>
-</div>
-</div>
+<p>Similar to the <code class="docutils literal notranslate"><span class="pre">step</span></code> argument in <code class="docutils literal notranslate"><span class="pre">range</span></code>, <code class="docutils literal notranslate"><span class="pre">step</span></code> here is an optional argument
+that specifies the <strong>step size</strong> (increment/decrement) between each value in
+the interval. If step is not provided, the default value of <code class="docutils literal notranslate"><span class="pre">1</span></code> is used.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -889,9 +838,14 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>Create ndarray the <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code>: controlling number of elements</p></li>
-</ul>
+</div>
+<div class="section" id="use-np-linspace">
+<h3>1.3 Use <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code><a class="headerlink" href="#use-np-linspace" title="Permalink to this headline">¶</a></h3>
+<p>Returns an array of evenly spaced values within a specified interval, and allows you
+to <strong>specify the number</strong> (<code class="docutils literal notranslate"><span class="pre">num</span></code>) of items in the interval.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># start, stop, num</span>
@@ -904,6 +858,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>The “spacing” is calculated by <code class="docutils literal notranslate"><span class="pre">(stop</span> <span class="pre">-</span> <span class="pre">start)</span> <span class="pre">/</span> <span class="pre">(num</span> <span class="pre">-</span> <span class="pre">1)</span></code>. In the example,
+<code class="docutils literal notranslate"><span class="pre">(5</span> <span class="pre">-</span> <span class="pre">1)</span> <span class="pre">/</span> <span class="pre">(5</span> <span class="pre">-</span> <span class="pre">1)</span></code> equals to <code class="docutils literal notranslate"><span class="pre">1</span></code>, hence the result.
+Let’s see another example in which we create an array with spacing equals to <code class="docutils literal notranslate"><span class="pre">0.5</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>   <span class="c1"># (5-0)/(11-1)</span>
@@ -929,27 +886,52 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>NumPy is very powerful and flexible in generating array of numbers.
+Imagine how much more codes you need if creating such an array or list using “loops”.</p>
+<p>The default value for argument <code class="docutils literal notranslate"><span class="pre">num</span></code> is 50 and <code class="docutils literal notranslate"><span class="pre">True</span></code> for <code class="docutils literal notranslate"><span class="pre">endpoint</span></code>, meaning the
+end is included by default.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span>   <span class="c1"># it requires a lot more codes without numpy i.e., using loop</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0. , 0.2, 0.4, 0.6, 0.8, 1. , 1.2, 1.4, 1.6, 1.8, 2. , 2.2, 2.4,
-       2.6, 2.8, 3. , 3.2, 3.4, 3.6, 3.8, 4. , 4.2, 4.4, 4.6, 4.8, 5. ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10., 11., 12., 13.,
+       14., 15., 16., 17., 18., 19., 20., 21., 22., 23., 24., 25., 26.,
+       27., 28., 29., 30., 31., 32., 33., 34., 35., 36., 37., 38., 39.,
+       40., 41., 42., 43., 44., 45., 46., 47., 48., 49., 50.])
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="indexing-and-slicing-on-numpy-array">
-<h3>2.2 Indexing and slicing on NumPy array<a class="headerlink" href="#indexing-and-slicing-on-numpy-array" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">len</span></code> function also works for numpy arrays. <code class="docutils literal notranslate"><span class="pre">len(arr)</span></code> returns
+the length of the first dimension of the array.
+For a 1-dimensional array, the length returned by len is equal to the
+<strong>size</strong> of the first dimension of the array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexing-and-slicing">
+<h2>2. Indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this headline">¶</a></h2>
+<p>Indexing and slicing in NumPy arrays are <strong><em>similar</em></strong> to those in Python lists, but with additional
+features that make them more powerful and flexible.</p>
 <ul class="simple">
 <li><p>index starts with “<strong>0</strong>” as usual</p></li>
 <li><p>a negative index start count from the end of the array</p></li>
-<li><p>use the colon to get multiple elements and return as an array</p></li>
-<li><p>we can also slice NumPy array with step</p></li>
+<li><p>use the colon to specify the start and end for <strong>slicing</strong></p></li>
+<li><p>slice NumPy array with “step” is also allowed</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -966,31 +948,21 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_arr</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_arr</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_arr</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+8
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_arr</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>  <span class="c1"># slicing</span>
 </pre></div>
 </div>
 </div>
@@ -1002,7 +974,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># slicing with step</span>
 </pre></div>
 </div>
 </div>
@@ -1014,7 +986,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_arr</span><span class="p">[:]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_arr</span><span class="p">[:]</span>  <span class="c1"># omit both ends</span>
 </pre></div>
 </div>
 </div>
@@ -1026,7 +998,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_arr</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_arr</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># reverse the order</span>
 </pre></div>
 </div>
 </div>
@@ -1036,10 +1008,34 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="generate-random-numbers-with-numpy">
-<h2>3. Generate random numbers with NumPy<a class="headerlink" href="#generate-random-numbers-with-numpy" title="Permalink to this headline">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Fancy indexing</p>
+<p>You can use a <em>list</em> or an <em>array</em> <strong>of indices</strong> to access specific
+elements of an array. The result will be another <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code>.
+This is another demo of NumPy’s power in manipulating arrays.
+Consider how you would get this without “fancy indexing.”</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_arr</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>  <span class="c1"># to access elements at index 1, 3, and 5.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 3, 5])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="generate-random-numbers-with-numpy">
+<h2>3. Generate random numbers with NumPy<a class="headerlink" href="#generate-random-numbers-with-numpy" title="Permalink to this headline">¶</a></h2>
+<p>The behavior of <code class="docutils literal notranslate"><span class="pre">numpy.random.randint</span></code> is different from the built-in <code class="docutils literal notranslate"><span class="pre">random.randint</span></code>
+function in Python when it comes to the <em>inclusion of the upper bound</em>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">random.randint</span></code>: <code class="docutils literal notranslate"><span class="pre">[low,</span> <span class="pre">high]</span></code>, i.e., high is included.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.random.randint</span></code>: <code class="docutils literal notranslate"><span class="pre">[low,</span> <span class="pre">high)</span></code>, i.e., high is excluded. This is also called “<strong>half open</strong>.”</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -1047,11 +1043,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
 </div>
+<p>If <em>high</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code> (the default), then results are from <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">low)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -1064,6 +1061,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>You can repeatedly generate any number of integers within such an interval.
+The resulting random integers follows a “<strong>discrete uniform</strong>” distribution,
+meaning any integer within that range has equal probability to be drawn each time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
@@ -1071,28 +1071,72 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([9, 0, 3, 8, 3, 1, 7, 1, 7, 6, 0, 8, 0, 8, 9, 7, 3, 8, 2, 7])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5, 4, 5, 7, 7, 3, 5, 7, 7, 8, 6, 5, 3, 6, 8, 3, 6, 6, 7, 1])
 </pre></div>
 </div>
 </div>
 </div>
+<p>Another popular function for many experimental testing is to randomly generate
+floating numbers in [0, 1), which can be done by <code class="docutils literal notranslate"><span class="pre">np.random.rand</span></code>.
+The function allows to specify the shape of the numpy array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># from a uniform distribution over `[0, 1)`</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># an array of size 6 and shape 3 (rows) by 2 (columns)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.84280788, 0.51906668],
-       [0.50586591, 0.10912067],
-       [0.32683782, 0.8357805 ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.86917058, 0.99661103],
+       [0.08656044, 0.04937853],
+       [0.64062612, 0.9443378 ]])
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="work-with-numpy-in-arcgis">
-<h2>4. Work with NumPy in ArcGIS<a class="headerlink" href="#work-with-numpy-in-arcgis" title="Permalink to this headline">#</a></h2>
+<p>Two useful methods of <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> is <code class="docutils literal notranslate"><span class="pre">shape</span></code> and <code class="docutils literal notranslate"><span class="pre">size</span></code>. <code class="docutils literal notranslate"><span class="pre">shape</span></code> returns a
+<code class="docutils literal notranslate"><span class="pre">tuple</span></code> consists of number of elements on each dimension.
+<code class="docutils literal notranslate"><span class="pre">size</span></code> is the total number of elements regardless of dimension.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The size of arr: </span><span class="si">{</span><span class="n">arr</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The shape of arr: </span><span class="si">{</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.57335896 0.4025607  0.86716562]
+ [0.60417307 0.4666549  0.92132897]
+ [0.41703322 0.26913141 0.043624  ]
+ [0.02626723 0.95530654 0.8225394 ]
+ [0.0970961  0.52875728 0.08096818]
+ [0.62047254 0.80498131 0.92336633]]
+The size of arr: 18.
+The shape of arr: (6, 3).
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">len</span></code> returns the element of first dimension only. So, except for 1-d array,
+<code class="docutils literal notranslate"><span class="pre">len</span></code> and <code class="docutils literal notranslate"><span class="pre">size</span></code> will not return the same value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+18
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="work-with-numpy-in-arcgis">
+<h2>4. Work with NumPy in ArcGIS<a class="headerlink" href="#work-with-numpy-in-arcgis" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
@@ -1102,7 +1146,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdb_worksp</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;D:\Dropbox (UFL)\URP6271\urp6271_spring2022\class_data.gdb&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdb_worksp</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;../data/class_data.gdb&quot;</span>
 <span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">workspace</span> <span class="o">=</span> <span class="n">gdb_worksp</span>
 </pre></div>
 </div>
@@ -1127,14 +1171,18 @@ title="Print to PDF"
  &#39;landuse&#39;,
  &#39;crash&#39;,
  &#39;blockgroups&#39;,
- &#39;mjhwy_30m_buff&#39;,
- &#39;crash_mjhwy&#39;,
- &#39;blgrp_crash&#39;,
- &#39;blkgrp_selected&#39;]
+ &#39;I75_2mi_buff&#39;,
+ &#39;schools_2mile_I75&#39;,
+ &#39;blockgroups_school_spjoin&#39;,
+ &#39;zip_q1_out&#39;,
+ &#39;zip_q2_out&#39;,
+ &#39;zipbnd_q3_out&#39;,
+ &#39;blockgroups_Layer2_CopyFeatures&#39;]
 </pre></div>
 </div>
 </div>
 </div>
+<p>Set to work with the <code class="docutils literal notranslate"><span class="pre">schools</span></code> feature class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_fc</span> <span class="o">=</span> <span class="s2">&quot;schools&quot;</span>
@@ -1142,18 +1190,14 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<section id="retrieve-field-names-of-a-feature-class-arcpy-listfields">
-<h3>4.1 Retrieve field names of a feature class <code class="docutils literal notranslate"><span class="pre">arcpy.ListFields()</span></code><a class="headerlink" href="#retrieve-field-names-of-a-feature-class-arcpy-listfields" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>a <a class="reference external" href="https://pro.arcgis.com/en/pro-app/2.7/arcpy/classes/field.htm">field object</a></p></li>
-<li><p>Code example:</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
-
-<span class="n">feature_class</span> <span class="o">=</span> <span class="s2">&quot;c:/data/counties.shp&quot;</span>
-
-<span class="c1"># Create a list of fields using the ListFields function</span>
-<span class="n">fields</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">ListFields</span><span class="p">(</span><span class="n">feature_class</span><span class="p">)</span>
+<div class="section" id="use-arcpy-listfields-to-access-fields">
+<h3>4.1 Use <code class="docutils literal notranslate"><span class="pre">arcpy.ListFields()</span></code> to access fields<a class="headerlink" href="#use-arcpy-listfields-to-access-fields" title="Permalink to this headline">¶</a></h3>
+<p>A <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/field.htm">field object</a>
+represents a column in a table. A field has many properties, the most obvious ones
+being its <strong>name</strong> and its <strong>type</strong>.</p>
+<div class="seealso admonition">
+<p class="admonition-title">An example of field object</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fields</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">ListFields</span><span class="p">(</span><span class="n">feature_class</span><span class="p">)</span>
 
 <span class="c1"># Iterate through the list of fields</span>
 <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
@@ -1166,6 +1210,7 @@ title="Print to PDF"
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scale:       </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">scale</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Precision:   </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">precision</span><span class="p">))</span>
 </pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1182,26 +1227,105 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="convert-a-feature-class-to-numpy-array">
-<h3>4.2 Convert a feature class to NumPy array<a class="headerlink" href="#convert-a-feature-class-to-numpy-array" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">arcpy.da</span></code>: the <strong><em><a class="reference external" href="https://pro.arcgis.com/en/pro-app/2.8/arcpy/data-access/what-is-the-data-access-module-.htm">Data Access</a></em></strong> module</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">arcpy.da.FeatureClassToNumPyArray</span></code> converts a feature class to a <strong><em>Structured Array</em></strong></p></li>
-<li><p>learn more about <a class="reference external" href="https://docs.scipy.org/doc/numpy/user/basics.rec.html">structured arrays</a></p></li>
-</ul>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">join</span></code> function and the “new line” escape sequence, i.e., <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code>
+to print individual field names on separate lines.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">school_fields</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OBJECTID_1
+Shape
+OBJECTID
+STATUS
+SCORE
+SIDE
+MATCH_ADDR
+FEDERAL_ID
+STATE_ID
+SCHOOL_ID
+NAME
+ADDRESS
+CITY
+ZIPCODE
+PHONE
+COUNTY
+OPERATING
+OP_CLASS
+ENROLLMENT
+PROGRAMS
+COMMON_USE
+USE
+TYPE
+ACTIVITY
+GRADES
+LOW_GRADE
+HIGH_GRADE
+PRINCIPAL
+TEACHERS
+STDTCH_RT
+MIGRNT_STD
+TITLE1SCHO
+MAGNETINFO
+FREE_LUNCH
+REDUCED_LU
+FISH_FAC1
+FISH_FAC2
+COMMENTS
+BBSERVICE
+BBPROVIDER
+BBSPEED
+DSTREAMSPD
+YR_BUILT
+PARCEL_ID
+LAT_DD
+LONG_DD
+USNG_FL_1K
+FDOE_MSID
+NCES_PUB
+NCES_PRIV
+FDOE_PRV
+SOURCE
+DESCRIPT
+FLAG
+UPDATE_DAY
+FGDLAQDATE
+AUTOID
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="convert-a-feature-class-to-numpy-array">
+<h3>4.2 Convert a feature class to NumPy array<a class="headerlink" href="#convert-a-feature-class-to-numpy-array" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">arcpy.da.FeatureClassToNumPyArray</span></code> converts a feature class to a <a class="reference external" href="https://numpy.org/doc/stable/user/basics.rec.html">Structured Array</a>. A NumPy structured array is a special kind of array that allows you to store and manipulate heterogeneous data (i.e., data of different types) in a <strong>tabular format</strong>.</p>
+<p>Each element in a structured array is a <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, where each <a class="reference external" href="https://numpy.org/doc/stable/glossary.html#term-field">field</a>
+of the tuple can be of a different data type.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="s1">&#39;Rex&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mf">81.0</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Fido&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">27.0</span><span class="p">)],</span>
+             <span class="n">dtype</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;U10&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;i4&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;f4&#39;</span><span class="p">)])</span>
+</pre></div>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">Data access module</p>
+<p>The “da” in <code class="docutils literal notranslate"><span class="pre">arcpy.da</span></code> stands for <strong>Data Access</strong>. See <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/data-access/what-is-the-data-access-module-.htm">a list of functions</a>
+of this module .</p>
+</div>
+<p>The syntax of <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/data-access/featureclasstonumpyarray.htm">this function</a>
+is the following.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">FeatureClassToNumPyArray</span><span class="p">(</span><span class="n">in_table</span><span class="p">,</span> <span class="n">field_names</span><span class="p">,</span> <span class="p">{</span><span class="n">where_clause</span><span class="p">},</span> <span class="p">{</span><span class="n">spatial_reference</span><span class="p">},</span>
+                         <span class="p">{</span><span class="n">explode_to_points</span><span class="p">},</span> <span class="p">{</span><span class="n">skip_nulls</span><span class="p">},</span> <span class="p">{</span><span class="n">null_value</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Specify a list of fields that are desired to be included in the returned array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_arr</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">da</span><span class="o">.</span><span class="n">FeatureClassToNumPyArray</span><span class="p">(</span>
     <span class="n">school_fc</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;NAME&quot;</span><span class="p">,</span> <span class="s1">&#39;OP_CLASS&#39;</span><span class="p">,</span> <span class="s1">&#39;ENROLLMENT&#39;</span><span class="p">,</span> <span class="s1">&#39;TYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;TEACHERS&#39;</span><span class="p">]</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_arr</span>
+
+<span class="n">school_arr</span>
 </pre></div>
 </div>
 </div>
@@ -1323,19 +1447,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Retrieve the <strong>shape</strong> (or length) of an array</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">school_arr</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>112
-</pre></div>
-</div>
-</div>
-</div>
+<p>Check the <code class="docutils literal notranslate"><span class="pre">shape</span></code> of an array. Note that it returns a tuple of one element
+since the structured array is considered a 1-d array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_arr</span><span class="o">.</span><span class="n">shape</span>
@@ -1366,27 +1479,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([(&#39;GRACE CHRISTIAN SCHOOL OF ALACHUA CO.&#39;, &#39;PRIVATE&#39;,  0., &#39;SENIOR HIGH&#39;, 0. ),
-       (&#39;FAMILY LIFE ACADEMY&#39;, &#39;PRIVATE&#39;,  0., &#39;COMBINATION ELEMENTARY &amp; SECONDARY&#39;, 0. ),
-       (&#39;FOREST GROVE CHRISTIAN ACADEMY&#39;, &#39;PRIVATE&#39;, 53., &#39;COMBINATION ELEMENTARY &amp; SECONDARY&#39;, 9.4),
-       (&#39;VAISHNAVA ACADEMY FOR GIRLS&#39;, &#39;PRIVATE&#39;, 19., &#39;COMBINATION JR. HIGH &amp; SENIOR HIGH&#39;, 0. ),
-       (&#39;BHAKTIVEDANTA ACADEMY&#39;, &#39;PRIVATE&#39;,  0., &#39;COMBINATION ELEMENTARY &amp; MIDDLE&#39;, 0. )],
-      dtype=[(&#39;NAME&#39;, &#39;&lt;U100&#39;), (&#39;OP_CLASS&#39;, &#39;&lt;U12&#39;), (&#39;ENROLLMENT&#39;, &#39;&lt;f8&#39;), (&#39;TYPE&#39;, &#39;&lt;U35&#39;), (&#39;TEACHERS&#39;, &#39;&lt;f8&#39;)])
-</pre></div>
-</div>
-</div>
-</div>
-<p>View the 1st, 5th, 10th, 100th element of the array</p>
-<ul class="simple">
-<li><p>supply the indicies as a Python list</p></li>
-</ul>
+<p>View the 1st, 5th, 10th, 100th element of the array by providing a list (or tuple)
+of indicies. Remember this is called <em>fancy indexing</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_arr</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">99</span><span class="p">]]</span>
@@ -1403,7 +1497,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Retrieve a <strong>field</strong> (column) from a structured array: using the field name</p>
+<p>Get a <strong>field</strong> (or column) from a structured array using the field name.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_arr</span><span class="p">[</span><span class="s1">&#39;ENROLLMENT&#39;</span><span class="p">]</span>
@@ -1428,9 +1522,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="compute-statistics-of-an-ndarray">
-<h3>4.3 Compute statistics of an ndarray<a class="headerlink" href="#compute-statistics-of-an-ndarray" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="compute-statistics-of-a-np-ndarray">
+<h3>4.3 Compute statistics of a <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code><a class="headerlink" href="#compute-statistics-of-a-np-ndarray" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>maximum: <code class="docutils literal notranslate"><span class="pre">np.max()</span></code></p></li>
 <li><p>minimum: <code class="docutils literal notranslate"><span class="pre">np.min()</span></code></p></li>
@@ -1492,9 +1586,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="simple-query-against-numpy-array">
-<h3>4.4 Simple Query against NumPy array<a class="headerlink" href="#simple-query-against-numpy-array" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="simple-query-against-numpy-array">
+<h3>4.4 Simple query against NumPy array<a class="headerlink" href="#simple-query-against-numpy-array" title="Permalink to this headline">¶</a></h3>
+<p>Consider the following questions:</p>
 <ul class="simple">
 <li><p>which school has the largest enrollment: <code class="docutils literal notranslate"><span class="pre">argmax</span></code></p></li>
 <li><p>which school has the smallest enrollment: <code class="docutils literal notranslate"><span class="pre">argmin</span></code></p></li>
@@ -1535,12 +1630,13 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="generate-new-arrays-based-on-a-conditional-statement">
-<h3>4.5 Generate new arrays based on a conditional statement<a class="headerlink" href="#generate-new-arrays-based-on-a-conditional-statement" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="generate-new-arrays-based-on-a-conditional-statement">
+<h3>4.5 Generate new arrays based on a conditional statement<a class="headerlink" href="#generate-new-arrays-based-on-a-conditional-statement" title="Permalink to this headline">¶</a></h3>
+<p>Let’s try to filter by the following criteria:</p>
 <ul class="simple">
-<li><p>schools enrollment is positive</p></li>
-<li><p>schools that are public</p></li>
+<li><p>schools enrollment is positive, and</p></li>
+<li><p>schools that are public.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1591,10 +1687,16 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Use array of booleans to select from an ndarray</p>
-<ul class="simple">
-<li><p>the array of booleans must be in the same shape as the original array</p></li>
-</ul>
+<div class="tip admonition">
+<p class="admonition-title">Boolean Indexing</p>
+<p>Another great feature of NumPy contributing to its advantage in data processing
+is <strong>boolean indexing</strong>, in which a boolean array (array of booleans, i.e., <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>) is
+used to specify which elements of an array should be selected.
+The boolean array is typically the result of some condition that
+is applied to the original array. The result of boolean indexing is a new array that
+contains only the elements that correspond to the <code class="docutils literal notranslate"><span class="pre">True</span></code> values in the boolean array.</p>
+<p>Note that the boolean array must be in the <strong>same shape</strong> as the original array.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
@@ -1627,11 +1729,13 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>To find out schools that don’t have positive enrollment, we can use
+<code class="docutils literal notranslate"><span class="pre">np.invert</span></code> which negates the judgement.
+Then, we use the field name again to get a 1-d array of the names
+of these schools.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How to find out which school doesn&#39;t have positive enrollment</span>
-<span class="c1"># np.invert() negates the judgement</span>
-<span class="n">school_arr</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">invert</span><span class="p">(</span><span class="n">enroll_arr</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)][</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_arr</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">invert</span><span class="p">(</span><span class="n">enroll_arr</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)][</span><span class="s1">&#39;NAME&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1662,13 +1766,11 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="simple-numeric-operation">
-<h3>4.6 Simple numeric operation<a class="headerlink" href="#simple-numeric-operation" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>operation on its own</p></li>
-<li><p>operation including two arrays (must be of the same shape)</p></li>
-</ul>
+</div>
+<div class="section" id="simple-numeric-operation">
+<h3>4.6 Simple numeric operation<a class="headerlink" href="#simple-numeric-operation" title="Permalink to this headline">¶</a></h3>
+<p>We can apply basic arithmetic operations using the normal operators on
+arrays themselves.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">enroll_arr</span>
@@ -1693,6 +1795,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>The following doubles the size of each school’s enrollment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">enroll_arr</span> <span class="o">*</span> <span class="mi">2</span>
@@ -1748,6 +1851,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>We can perform a division to find out number of teachers per student directly using
+two fields, i.e., two <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ratio of number of teachers and students</span>
@@ -1777,21 +1882,24 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>The following can help us answer which public school in Alachua County has the
+highest ratio between teachers and students.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">pos_school_arr</span><span class="p">[</span><span class="s2">&quot;TEACHERS&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">pos_school_arr</span><span class="p">[</span><span class="s2">&quot;ENROLLMENT&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_ratio_id</span> <span class="o">=</span> <span class="p">(</span><span class="n">pos_school_arr</span><span class="p">[</span><span class="s2">&quot;TEACHERS&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">pos_school_arr</span><span class="p">[</span><span class="s2">&quot;ENROLLMENT&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the max value occurs at </span><span class="si">{</span><span class="n">max_ratio_id</span><span class="si">}</span><span class="s2"> index.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>56
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the max value occurs at 56 index.
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos_school_arr</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">][(</span><span class="n">pos_school_arr</span><span class="p">[</span><span class="s2">&quot;TEACHERS&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">pos_school_arr</span><span class="p">[</span><span class="s2">&quot;ENROLLMENT&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">argmax</span><span class="p">()]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos_school_arr</span><span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">][</span><span class="n">max_ratio_id</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1801,9 +1909,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1827,48 +1935,42 @@ title="Print to PDF"
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="5-0.SciPy_Landing.html" title="previous page">
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="5-0.scientific_python.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Introduction to the Scientific Python Ecosystem</p>
+            <p class="prev-next-title">Scientific Python Ecosystem</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="5-2.Intro_to_Pandas.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">5-2: Using Pandas for ArcGIS</p>
+        <p class="prev-next-title">Use Pandas in ArcGIS</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By <a href="https://chjch.github.io/">Changjie Chen</a><br/>
-  
-      &copy; Copyright 2022-2023.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By <a href="https://chjch.github.io/">Changjie Chen</a><br/>
+    
+        &copy; Copyright 2022-2023.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
