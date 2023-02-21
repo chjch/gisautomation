@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Use Pandas in ArcGIS &#8212; Automation for Geospatial Modeling and Analysis</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,42 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom_style.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-    <script >mermaid.initialize({startOnLoad:true});</script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Data Vizualization in Python" href="6-0.Visualization_Landing.html" />
@@ -73,7 +72,21 @@
                 </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,9 +95,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -102,14 +116,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Welcome to Automation of GIS
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Automation of GIS
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../software_0.html">
    Software
@@ -366,107 +381,209 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/modules/5-2.Intro_to_Pandas.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/chjch/gisautomation"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/5-2.Intro_to_Pandas.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/5-2.Intro_to_Pandas.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/5-2.Intro_to_Pandas.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/chjch/gisautomation"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/5-2.Intro_to_Pandas.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/modules/5-2.Intro_to_Pandas.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pandas-series">
    1.
@@ -478,62 +595,57 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-pandas-series">
-     2.1 Create a pandas Series
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#series-with-label-index">
-     2.2 Series with label index
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#indexing-and-slicing-for-series">
-     2.3 indexing and slicing for Series
+     1.1 Indexing and slicing for Series
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#operations-on-series">
-     2.4 Operations on Series
+     1.2 Operations on Series
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dataframe-object">
-   3. DataFrame object
+   2. DataFrame object
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-dataframe-from-series">
-     3.1 Create DataFrame from Series
+     2.1 Create DataFrame from Series
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#convert-numpy-structured-array-to-pandas-dataframe">
-     3.2 Convert numpy Structured Array to pandas DataFrame
+    <a class="reference internal nav-link" href="#convert-numpy-s-structured-array-to-pd-dataframe">
+     2.2 Convert NumPy’s Structured Array to
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pd.DataFrame
+      </span>
+     </code>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#preview-the-head-and-tail-of-a-dataframe">
-     3.3 preview the head and tail of a DataFrame
+    <a class="reference internal nav-link" href="#preview-a-dataframe">
+     2.3 Preview a DataFrame
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#indexing-and-slicing">
-     3.4 Indexing and Slicing
+    <a class="reference internal nav-link" href="#indexing-and-slicing-for-dataframe">
+     2.4 Indexing and Slicing for DataFrame
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#selection-query-on-pandas-dataframe">
-   4. Selection query on pandas DataFrame
+  <a class="reference internal nav-link" href="#selection-query-on-dataframe">
+   3. Selection Query on DataFrame
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#groupby-function">
-   5.
+   4.
    <code class="docutils literal notranslate">
     <span class="pre">
      groupby()
@@ -544,12 +656,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Use Pandas in ArcGIS</h1>
@@ -573,62 +684,57 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-pandas-series">
-     2.1 Create a pandas Series
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#series-with-label-index">
-     2.2 Series with label index
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#indexing-and-slicing-for-series">
-     2.3 indexing and slicing for Series
+     1.1 Indexing and slicing for Series
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#operations-on-series">
-     2.4 Operations on Series
+     1.2 Operations on Series
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dataframe-object">
-   3. DataFrame object
+   2. DataFrame object
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-dataframe-from-series">
-     3.1 Create DataFrame from Series
+     2.1 Create DataFrame from Series
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#convert-numpy-structured-array-to-pandas-dataframe">
-     3.2 Convert numpy Structured Array to pandas DataFrame
+    <a class="reference internal nav-link" href="#convert-numpy-s-structured-array-to-pd-dataframe">
+     2.2 Convert NumPy’s Structured Array to
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pd.DataFrame
+      </span>
+     </code>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#preview-the-head-and-tail-of-a-dataframe">
-     3.3 preview the head and tail of a DataFrame
+    <a class="reference internal nav-link" href="#preview-a-dataframe">
+     2.3 Preview a DataFrame
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#indexing-and-slicing">
-     3.4 Indexing and Slicing
+    <a class="reference internal nav-link" href="#indexing-and-slicing-for-dataframe">
+     2.4 Indexing and Slicing for DataFrame
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#selection-query-on-pandas-dataframe">
-   4. Selection query on pandas DataFrame
+  <a class="reference internal nav-link" href="#selection-query-on-dataframe">
+   3. Selection Query on DataFrame
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#groupby-function">
-   5.
+   4.
    <code class="docutils literal notranslate">
     <span class="pre">
      groupby()
@@ -643,11 +749,12 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="use-pandas-in-arcgis">
-<h1>Use Pandas in ArcGIS<a class="headerlink" href="#use-pandas-in-arcgis" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="use-pandas-in-arcgis">
+<h1>Use Pandas in ArcGIS<a class="headerlink" href="#use-pandas-in-arcgis" title="Permalink to this headline">#</a></h1>
 <a class="border reference internal image-reference" href="../_images/pandaslogo.svg"><img alt="pandaslogo" class="border align-right" src="../_images/pandaslogo.svg" width="400" /></a>
 <p><a class="reference external" href="https://pandas.pydata.org/">Pandas</a> is widely used in <strong>data science</strong> and data analysis,
 and is a popular choice for <em>cleaning</em>, <em>transforming</em>, and <em>analyzing</em> data in Python.</p>
@@ -669,14 +776,12 @@ routine, the two packages are usually imported together with <code class="docuti
 </div>
 </div>
 </div>
-<div class="section" id="pandas-series">
-<h2>1. <code class="docutils literal notranslate"><span class="pre">pandas.Series</span></code><a class="headerlink" href="#pandas-series" title="Permalink to this headline">¶</a></h2>
+<section id="pandas-series">
+<h2>1. <code class="docutils literal notranslate"><span class="pre">pandas.Series</span></code><a class="headerlink" href="#pandas-series" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.Series.html">Series</a> is the fundamental
-data structure of pandas.</p>
-<p>A <code class="docutils literal notranslate"><span class="pre">pandas.Series</span></code> object is an 1-dimensional ndarray.</p>
-<p>The key difference comparing with a numpy array is that Series have <strong>indexed labels</strong>.</p>
-<div class="section" id="create-a-pandas-series">
-<h3>2.1 Create a pandas Series<a class="headerlink" href="#create-a-pandas-series" title="Permalink to this headline">¶</a></h3>
+data structure of pandas.
+A <code class="docutils literal notranslate"><span class="pre">pandas.Series</span></code> object is essentially a 1-d array of indexed values.</p>
+<p>Let’s again start by creating a <code class="docutils literal notranslate"><span class="pre">pd.Series</span></code> using a list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
@@ -712,6 +817,11 @@ dtype: int64
 </div>
 </div>
 </div>
+<p>The above code converts a list to a Series. Note that the default index for
+Series starts with index <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>But <code class="docutils literal notranslate"><span class="pre">pd.Series</span></code> can have non-numeric and non-sequential indices, whereas a
+<code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> is only indexed by whole numbers.</p>
+<p>Let’s customize the index of this Series.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
@@ -738,35 +848,9 @@ dtype: int64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="series-with-label-index">
-<h3>2.2 Series with label index<a class="headerlink" href="#series-with-label-index" title="Permalink to this headline">¶</a></h3>
-<p>Check the documentation for arguments</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">my_list</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>  <span class="c1"># named argument or keyword argument</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a    0
-b    1
-c    2
-d    3
-e    4
-f    5
-g    6
-h    7
-i    8
-j    9
-dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>  <span class="c1"># positional argument</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -793,9 +877,34 @@ dtype: int64
 </div>
 </div>
 </div>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">values</span></code> to obtain the values as a 1-d <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_sr</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
 </div>
-<div class="section" id="indexing-and-slicing-for-series">
-<h3>2.3 indexing and slicing for Series<a class="headerlink" href="#indexing-and-slicing-for-series" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Likewise, we can also retrieve a Series’s index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_sr</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;, &#39;i&#39;, &#39;j&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="indexing-and-slicing-for-series">
+<h3>1.1 Indexing and slicing for Series<a class="headerlink" href="#indexing-and-slicing-for-series" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>indexing by label</p></li>
 <li><p>indexing by location</p></li>
@@ -842,13 +951,11 @@ dtype: int64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="operations-on-series">
-<h3>2.4 Operations on Series<a class="headerlink" href="#operations-on-series" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-note admonition">
-<p class="admonition-title">Note:</p>
-<p>Pandas perform operations based on labels (indicies)</p>
-</div>
+</section>
+<section id="operations-on-series">
+<h3>1.2 Operations on Series<a class="headerlink" href="#operations-on-series" title="Permalink to this headline">#</a></h3>
+<p>Similar to <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code>, operations on <code class="docutils literal notranslate"><span class="pre">pd.Series</span></code> applies to every single element in it.</p>
+<p>Let’s create <code class="docutils literal notranslate"><span class="pre">pd.Series</span></code> to represent the following tables.</p>
 <p><font color='steelblue'><strong>Top 3 U.S. State by Population</strong></font></p>
 <table class="colwidths-auto table">
 <thead>
@@ -887,9 +994,11 @@ dtype: int64
 </tr>
 </tbody>
 </table>
+<p>Let’s use <code class="docutils literal notranslate"><span class="pre">split()</span></code>, a <strong>string manipulation</strong> function, to split the string
+by whitespace, which will result in a <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;CA TA FL&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>  <span class="c1"># use split() function of string to split on space </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;CA TA FL&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -901,7 +1010,7 @@ dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;CA TA FL&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="c1"># split() acts on space by default</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;CA TA FL&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>  <span class="c1"># split() acts on space by default</span>
 </pre></div>
 </div>
 </div>
@@ -928,6 +1037,7 @@ dtype: int64
 </div>
 </div>
 </div>
+<p>What about population in millions?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="n">sr1</span> <span class="o">/</span> <span class="mi">1000000</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -943,6 +1053,7 @@ dtype: float64
 </div>
 </div>
 </div>
+<p>Similarly, we can split a string by “comma” (or any other characters).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;AL,TA,CA&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
@@ -971,6 +1082,10 @@ dtype: int64
 </div>
 </div>
 </div>
+<div class="highlight-{note}: notranslate"><div class="highlight"><pre><span></span>Pandas perform operations based on indicies. In other word, only values of the same
+index can be used together to perform some operation.
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sr1</span> <span class="o">/</span> <span class="n">sr2</span>
@@ -987,18 +1102,23 @@ dtype: float64
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="dataframe-object">
-<h2>3. DataFrame object<a class="headerlink" href="#dataframe-object" title="Permalink to this headline">¶</a></h2>
+<p>Note that only California and Texas have values returned because their indices exist
+in both Series. On the contrary, Alaska doesn’t appear in <code class="docutils literal notranslate"><span class="pre">sr1</span></code> and Florida isn’t in <code class="docutils literal notranslate"><span class="pre">sr2</span></code>,
+the division for those returned <code class="docutils literal notranslate"><span class="pre">NaN</span></code> meaning “not a number.”</p>
+</section>
+</section>
+<section id="dataframe-object">
+<h2>2. DataFrame object<a class="headerlink" href="#dataframe-object" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html">DataFrame</a>: <strong>Two-dimensional</strong> (rows &amp; columns), size-mutable, potentially heterogeneous tabular data.</p>
 <p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> consists of one or more <code class="docutils literal notranslate"><span class="pre">Series</span></code> that shares the same labels (indicies).</p>
 <p>It is the <strong>DataFrame</strong> structure makes pandas a powerful tool for scientific data analysis.</p>
-<div class="section" id="create-dataframe-from-series">
-<h3>3.1 Create DataFrame from Series<a class="headerlink" href="#create-dataframe-from-series" title="Permalink to this headline">¶</a></h3>
+<section id="create-dataframe-from-series">
+<h3>2.1 Create DataFrame from Series<a class="headerlink" href="#create-dataframe-from-series" title="Permalink to this headline">#</a></h3>
+<p>We can convert a <code class="docutils literal notranslate"><span class="pre">pd.Series</span></code> to a <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> of a single column.
+And note that the column names must be supplied as a list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sr1</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">])</span> <span class="c1"># note that the column names must be supplied as a list</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sr1</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1169,9 +1289,9 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="convert-numpy-structured-array-to-pandas-dataframe">
-<h3>3.2 Convert numpy Structured Array to pandas DataFrame<a class="headerlink" href="#convert-numpy-structured-array-to-pandas-dataframe" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="convert-numpy-s-structured-array-to-pd-dataframe">
+<h3>2.2 Convert NumPy’s Structured Array to <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code><a class="headerlink" href="#convert-numpy-s-structured-array-to-pd-dataframe" title="Permalink to this headline">#</a></h3>
 <p>Recall how we convert a feature class to a <strong>structured ndarray</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1259,7 +1379,7 @@ dtype: int64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;NAME&quot;</span><span class="p">,</span> <span class="s1">&#39;OP_CLASS&#39;</span><span class="p">,</span> <span class="s1">&#39;ENROLLMENT&#39;</span><span class="p">,</span> <span class="s1">&#39;TYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;TEACHERS&#39;</span><span class="p">]</span>
 <span class="n">school_arr</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">da</span><span class="o">.</span><span class="n">FeatureClassToNumPyArray</span><span class="p">(</span><span class="n">school_fc</span><span class="p">,</span> <span class="n">columns</span><span class="p">)</span>
 
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">school_arr</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span> <span class="c1"># first columns and second columns</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">school_arr</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1383,9 +1503,11 @@ dtype: int64
 <p>112 rows × 5 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="preview-the-head-and-tail-of-a-dataframe">
-<h3>3.3 preview the head and tail of a DataFrame<a class="headerlink" href="#preview-the-head-and-tail-of-a-dataframe" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="preview-a-dataframe">
+<h3>2.3 Preview a DataFrame<a class="headerlink" href="#preview-a-dataframe" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">head</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code> functions will allow us to preview the top
+and bottom of a DataFrame, respectively.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">school_arr</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
@@ -1464,6 +1586,7 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
+<p>And, by default (without giving an argument), both functions return 5 rows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
@@ -1541,6 +1664,7 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
+<p>But, we can specify the number we want to preview.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -1658,10 +1782,10 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="indexing-and-slicing">
-<h3>3.4 Indexing and Slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this headline">¶</a></h3>
-<p>Select single column return a pandas <strong>Series</strong></p>
+</section>
+<section id="indexing-and-slicing-for-dataframe">
+<h3>2.4 Indexing and Slicing for DataFrame<a class="headerlink" href="#indexing-and-slicing-for-dataframe" title="Permalink to this headline">#</a></h3>
+<p>Select single column returns a <code class="docutils literal notranslate"><span class="pre">pd.Series</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;NAME&quot;</span><span class="p">]</span>
@@ -1776,10 +1900,11 @@ Name: NAME, Length: 112, dtype: object
 <p>112 rows × 2 columns</p>
 </div></div></div>
 </div>
-<p>Select row using the <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> function (<strong>label/index-based</strong>)</p>
+<p>Select row using the <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> function (<strong>label/index-based</strong>).
+Note that <code class="docutils literal notranslate"><span class="pre">.loc</span></code> is followed by square brackets not parentheses.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># note that .loc followed by square brackets not parentheses</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2098,6 +2223,7 @@ Name: ENROLLMENT, Length: 112, dtype: float64
 </div>
 </div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">.iloc</span></code> for both row indices and column indices.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
@@ -2199,6 +2325,9 @@ Name: ENROLLMENT, Length: 112, dtype: float64
 </table>
 </div></div></div>
 </div>
+<p>Similar to indexing on a 2-d NumPy array, we can access individual values
+of <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> based on row index and column index.
+Below is an example of finding out <em>The Rock School</em>’s (row) size of Enrollment (column).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;THE ROCK SCHOOL&#39;</span><span class="p">,</span> <span class="s1">&#39;ENROLLMENT&#39;</span><span class="p">]</span>
@@ -2211,10 +2340,10 @@ Name: ENROLLMENT, Length: 112, dtype: float64
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="selection-query-on-pandas-dataframe">
-<h2>4. Selection query on pandas DataFrame<a class="headerlink" href="#selection-query-on-pandas-dataframe" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="selection-query-on-dataframe">
+<h2>3. Selection Query on DataFrame<a class="headerlink" href="#selection-query-on-dataframe" title="Permalink to this headline">#</a></h2>
 <p>A single condition returns a Series of booleans again with the same index</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2354,127 +2483,9 @@ Name: ENROLLMENT, dtype: float64
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;ENROLLMENT&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># with loc (recommeneded)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>OP_CLASS</th>
-      <th>ENROLLMENT</th>
-      <th>TYPE</th>
-      <th>TEACHERS</th>
-    </tr>
-    <tr>
-      <th>NAME</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>FOREST GROVE CHRISTIAN ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>53.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>9.4</td>
-    </tr>
-    <tr>
-      <th>VAISHNAVA ACADEMY FOR GIRLS</th>
-      <td>PRIVATE</td>
-      <td>19.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>JORDAN GLEN SCHOOL INC.</th>
-      <td>PRIVATE</td>
-      <td>115.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>14.5</td>
-    </tr>
-    <tr>
-      <th>QUEEN OF PEACE CATHOLIC ACADEMY</th>
-      <td>PRIVATE</td>
-      <td>358.0</td>
-      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
-      <td>28.4</td>
-    </tr>
-    <tr>
-      <th>THE ROCK SCHOOL</th>
-      <td>PRIVATE</td>
-      <td>207.0</td>
-      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
-      <td>17.9</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>FLORIDA SIATECH AT GAINESVILLE,INC.</th>
-      <td>PUBLIC</td>
-      <td>202.0</td>
-      <td>SENIOR HIGH</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>SHELL ELEMENTARY SCHOOL</th>
-      <td>PUBLIC</td>
-      <td>193.0</td>
-      <td>ELEMENTARY</td>
-      <td>16.0</td>
-    </tr>
-    <tr>
-      <th>HAWTHORNE JR/SR HIGH SCHOOL</th>
-      <td>PUBLIC</td>
-      <td>395.0</td>
-      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
-      <td>23.0</td>
-    </tr>
-    <tr>
-      <th>WALDO COMMUNITY SCHOOL</th>
-      <td>PUBLIC</td>
-      <td>215.0</td>
-      <td>ELEMENTARY</td>
-      <td>17.0</td>
-    </tr>
-    <tr>
-      <th>OAK HALL LOWER SCHOOL</th>
-      <td>PRIVATE</td>
-      <td>365.0</td>
-      <td>ELEMENTARY</td>
-      <td>16.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>84 rows × 4 columns</p>
-</div></div></div>
-</div>
+<p>Similar to NumPy, we can use <strong>boolean indexing</strong> for Pandas as well,
+in which we create a condition (return Booleans in a Series) and then use it
+to filter the original DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_df</span><span class="p">[</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;ENROLLMENT&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># without loc</span>
@@ -2596,14 +2607,137 @@ Name: ENROLLMENT, dtype: float64
 <p>84 rows × 4 columns</p>
 </div></div></div>
 </div>
-<p>For multiple conditions, use <strong>parentheses</strong> to enclose each criterion</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;ENROLLMENT&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># with loc (recommended)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>OP_CLASS</th>
+      <th>ENROLLMENT</th>
+      <th>TYPE</th>
+      <th>TEACHERS</th>
+    </tr>
+    <tr>
+      <th>NAME</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>FOREST GROVE CHRISTIAN ACADEMY</th>
+      <td>PRIVATE</td>
+      <td>53.0</td>
+      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
+      <td>9.4</td>
+    </tr>
+    <tr>
+      <th>VAISHNAVA ACADEMY FOR GIRLS</th>
+      <td>PRIVATE</td>
+      <td>19.0</td>
+      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>JORDAN GLEN SCHOOL INC.</th>
+      <td>PRIVATE</td>
+      <td>115.0</td>
+      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
+      <td>14.5</td>
+    </tr>
+    <tr>
+      <th>QUEEN OF PEACE CATHOLIC ACADEMY</th>
+      <td>PRIVATE</td>
+      <td>358.0</td>
+      <td>COMBINATION ELEMENTARY &amp; MIDDLE</td>
+      <td>28.4</td>
+    </tr>
+    <tr>
+      <th>THE ROCK SCHOOL</th>
+      <td>PRIVATE</td>
+      <td>207.0</td>
+      <td>COMBINATION ELEMENTARY &amp; SECONDARY</td>
+      <td>17.9</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>FLORIDA SIATECH AT GAINESVILLE,INC.</th>
+      <td>PUBLIC</td>
+      <td>202.0</td>
+      <td>SENIOR HIGH</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>SHELL ELEMENTARY SCHOOL</th>
+      <td>PUBLIC</td>
+      <td>193.0</td>
+      <td>ELEMENTARY</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>HAWTHORNE JR/SR HIGH SCHOOL</th>
+      <td>PUBLIC</td>
+      <td>395.0</td>
+      <td>COMBINATION JR. HIGH &amp; SENIOR HIGH</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <th>WALDO COMMUNITY SCHOOL</th>
+      <td>PUBLIC</td>
+      <td>215.0</td>
+      <td>ELEMENTARY</td>
+      <td>17.0</td>
+    </tr>
+    <tr>
+      <th>OAK HALL LOWER SCHOOL</th>
+      <td>PRIVATE</td>
+      <td>365.0</td>
+      <td>ELEMENTARY</td>
+      <td>16.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>84 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>For multiple conditions, use <strong>parentheses</strong> to enclose each condition and then connect
+multiple conditions by either one of the following symbols.</p>
 <ul class="simple">
 <li><p><strong>AND</strong> operation: <code class="docutils literal notranslate"><span class="pre">&amp;</span></code></p></li>
 <li><p><strong>OR</strong> operation: <code class="docutils literal notranslate"><span class="pre">|</span></code></p></li>
 </ul>
+<p>Let’s find out schools with both <strong>positive enrollment</strong> and <strong>positive number of teachers</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_df</span><span class="p">[(</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;ENROLLMENT&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;TEACHERS&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)]</span> <span class="c1"># positive enrollment and positive # teachers</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_df</span><span class="p">[(</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;ENROLLMENT&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;TEACHERS&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -2843,12 +2977,19 @@ Name: ENROLLMENT, dtype: float64
 <p>86 rows × 4 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="groupby-function">
-<h2>5. <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> function<a class="headerlink" href="#groupby-function" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html">groupby</a> is a powerful function to aggregate data.</p>
-<p>A groupby operation involves some combination of splitting the object, <strong>applying a function</strong>, and combining the results.</p>
-<p>This can be used to group large amounts of data and <strong>compute operations on these groups</strong> to understand the subgroups in the data.</p>
+</section>
+<section id="groupby-function">
+<h2>4. <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> function<a class="headerlink" href="#groupby-function" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html">groupby</a> is a
+useful function to aggregate data.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">groupby</span></code> operation involves some combination of</p>
+<ul class="simple">
+<li><p>splitting the object,</p></li>
+<li><p><strong>applying a function</strong>, and</p></li>
+<li><p>combining the results.</p></li>
+</ul>
+<p>This can be used to group large amounts of data and <strong>compute operations on these groups</strong>
+to understand <strong>subgroups</strong> in the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_df</span> <span class="o">=</span> <span class="n">school_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;ENROLLMENT&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">school_df</span><span class="p">[</span><span class="s2">&quot;TEACHERS&quot;</span><span class="p">])]</span>
@@ -2856,6 +2997,7 @@ Name: ENROLLMENT, dtype: float64
 </div>
 </div>
 </div>
+<p>Without the aggregation function, the return is simply a <code class="docutils literal notranslate"><span class="pre">groupby</span></code> object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;TYPE&quot;</span><span class="p">)</span>
@@ -2863,7 +3005,7 @@ Name: ENROLLMENT, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x000001597F0A5340&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x00000277F08D6DC0&gt;
 </pre></div>
 </div>
 </div>
@@ -2948,7 +3090,7 @@ Name: ENROLLMENT, dtype: float64
 </table>
 </div></div></div>
 </div>
-<br><div class="cell docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">by_type</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </pre></div>
@@ -3037,7 +3179,7 @@ Name: ENROLLMENT, dtype: float64
 </table>
 </div></div></div>
 </div>
-<br><div class="cell docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;TYPE&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
@@ -3116,7 +3258,9 @@ Name: ENROLLMENT, dtype: float64
 </table>
 </div></div></div>
 </div>
-<br><div class="cell docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">agg</span></code> stands for “aggregation” allows us to specify different aggregation functions
+for different columns.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">by_type</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;ENROLLMENT&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">,</span> <span class="s1">&#39;TEACHERS&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="s1">&#39;OP_CLASS&#39;</span><span class="p">:</span> <span class="s1">&#39;count&#39;</span><span class="p">})</span>
 </pre></div>
@@ -3205,8 +3349,8 @@ Name: ENROLLMENT, dtype: float64
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -3220,7 +3364,7 @@ Name: ENROLLMENT, dtype: float64
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./modules"
         },
         predefinedOutput: true
@@ -3230,9 +3374,11 @@ Name: ENROLLMENT, dtype: float64
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="5-1.Intro_to_NumPy.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -3248,24 +3394,28 @@ Name: ENROLLMENT, dtype: float64
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By <a href="https://chjch.github.io/">Changjie Chen</a><br/>
+  
+      &copy; Copyright 2022-2023.<br/>
+</p>
+        </footer>
+    </div>
     
-      By <a href="https://chjch.github.io/">Changjie Chen</a><br/>
-    
-        &copy; Copyright 2022-2023.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
