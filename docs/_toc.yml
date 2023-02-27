@@ -28,7 +28,7 @@ chapters:
     sections:
       - file: modules/5-1.Intro_to_NumPy
       - file: modules/5-2.Intro_to_Pandas
-  - file: modules/6-0.Visualization_Landing
+  - file: modules/6-0.data_visualization
     sections:
       - file: modules/6-1.Intro_to_Matplotlib
       - file: modules/6-2.Intro_to_ArcGIS_API_for_Python
