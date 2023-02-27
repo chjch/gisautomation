@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Data Vizualization in Python &#8212; Automation for Geospatial Modeling and Analysis</title>
+    <title>Data Visualization using Python &#8212; Automation for Geospatial Modeling and Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -43,6 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -52,12 +53,12 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6-1: Visualize tabular (aspatial) data using Matplotlib" href="6-1.Intro_to_Matplotlib.html" />
+    <link rel="next" title="Using Matplotlib for Data Visualization" href="6-1.Intro_to_Matplotlib.html" />
     <link rel="prev" title="Use Pandas in ArcGIS" href="5-2.Intro_to_Pandas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -264,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   Data Vizualization in Python
+   Data Visualization using Python
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -274,12 +275,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="6-1.Intro_to_Matplotlib.html">
-     6-1: Visualize tabular (aspatial) data using Matplotlib
+     Using Matplotlib for Data Visualization
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="6-2.Intro_to_ArcGIS_API_for_Python.html">
-     6-2: Visualizing Spatial Data using ArcGIS API for Python
+     Visualizing Spatial Data
     </a>
    </li>
   </ul>
@@ -431,35 +432,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/6-0.Visualization_Landing.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -499,7 +471,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/6-0.Visualization_Landing.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/6-0.data_visualization.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -527,7 +499,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/modules/6-0.Visualization_Landing.ipynb"
+        <a href="../_sources/modules/6-0.data_visualization.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -538,7 +510,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="headerbtn__text-container">.md</span>
 </a>
 
       </li>
@@ -592,8 +564,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-steps">
-   Learning Steps
+  <a class="reference internal nav-link" href="#additional-resources">
+   Additional Resources
   </a>
  </li>
 </ul>
@@ -605,7 +577,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Data Vizualization in Python</h1>
+                <h1>Data Visualization using Python</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -621,8 +593,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-steps">
-   Learning Steps
+  <a class="reference internal nav-link" href="#additional-resources">
+   Additional Resources
   </a>
  </li>
 </ul>
@@ -635,8 +607,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="data-vizualization-in-python">
-<h1>Data Vizualization in Python<a class="headerlink" href="#data-vizualization-in-python" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-visualization-using-python">
+<h1>Data Visualization using Python<a class="headerlink" href="#data-visualization-using-python" title="Permalink to this headline">#</a></h1>
 <section id="learning-objectives">
 <h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
 <p>Upon completion of this module, you should be able to:</p>
@@ -648,12 +620,13 @@ title="Print to PDF"
 <li><p>Visualize spatial data in Jupyter Notebook</p></li>
 </ul>
 </section>
-<section id="learning-steps">
-<h2>Learning Steps<a class="headerlink" href="#learning-steps" title="Permalink to this headline">#</a></h2>
+<section id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Download the notebooks from the group portal in ArcGIS Pro</p></li>
-<li><p>Review the resources listed in the notebook</p></li>
-<li><p>Visualize spatial and aspatial data by running the notebooks</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/gallery/index.html">Matplotlib Gallery</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PL-osiE80TeTvipOqomVEeZ1HRrcEvtZB_">Matplotlib playlist from Corey Schafer</a></p></li>
+<li><p><a class="reference external" href="https://developers.arcgis.com/python/guide/overview-of-the-arcgis-api-for-python/">An overview of the API</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Esri/arcgis-python-api">GitHub: ArcGIS API for Python</a></p></li>
 </ul>
 </section>
 <div class="toctree-wrapper compound">
@@ -697,7 +670,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="6-1.Intro_to_Matplotlib.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">6-1: Visualize tabular (aspatial) data using Matplotlib</p>
+        <p class="prev-next-title">Using Matplotlib for Data Visualization</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

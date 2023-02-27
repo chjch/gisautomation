@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6-1: Visualize tabular (aspatial) data using Matplotlib &#8212; Automation for Geospatial Modeling and Analysis</title>
+    <title>Using Matplotlib for Data Visualization &#8212; Automation for Geospatial Modeling and Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -43,6 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -52,13 +53,13 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6-2: Visualizing Spatial Data using ArcGIS API for Python" href="6-2.Intro_to_ArcGIS_API_for_Python.html" />
-    <link rel="prev" title="Data Vizualization in Python" href="6-0.Visualization_Landing.html" />
+    <link rel="next" title="Visualizing Spatial Data" href="6-2.Intro_to_ArcGIS_API_for_Python.html" />
+    <link rel="prev" title="Data Visualization using Python" href="6-0.data_visualization.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -263,8 +264,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="6-0.Visualization_Landing.html">
-   Data Vizualization in Python
+  <a class="reference internal" href="6-0.data_visualization.html">
+   Data Visualization using Python
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -274,12 +275,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     6-1: Visualize tabular (aspatial) data using Matplotlib
+     Using Matplotlib for Data Visualization
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="6-2.Intro_to_ArcGIS_API_for_Python.html">
-     6-2: Visualizing Spatial Data using ArcGIS API for Python
+     Visualizing Spatial Data
     </a>
    </li>
   </ul>
@@ -587,18 +588,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-and-import-all-modules">
-   1. Setup and Import All Modules
+  <a class="reference internal nav-link" href="#first-plot">
+   1. First Plot
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-a-plot-figure-and-axis">
-   2. Setup a plot: Figure and axis
+  <a class="reference internal nav-link" href="#figure-and-axes">
+   2. Figure and axes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-plots-with-attribute-data">
-   3. Create plots with attribute data
+  <a class="reference internal nav-link" href="#scatter-plot-and-basic-plot-settings">
+   3. Scatter plot and basic plot settings
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -607,38 +608,47 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#change-figure-size">
-     3.2 Change figure size
+    <a class="reference internal nav-link" href="#figure-size">
+     3.2 Figure size
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#add-labels-and-title">
-     3.3 Add labels and title
+    <a class="reference internal nav-link" href="#title-and-label">
+     3.3 Title and label
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#change-color-and-marker">
-     3.4 Change color and marker
+    <a class="reference internal nav-link" href="#color-and-marker">
+     3.4 Color and marker
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-bar-plot">
-     3.5 A bar plot
+    <a class="reference internal nav-link" href="#marker-size">
+     3.5 Marker size
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bar-plot">
+   4. Bar plot
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#add-legend">
-     3.6 Add legend
+    <a class="reference internal nav-link" href="#legend">
+     4.1 Legend
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-histogram">
-     3.7 Create a histogram
-    </a>
-   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#histogram">
+   5. Histogram
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#display-two-plots-side-by-side">
-     3.8 Display two plots side by side
+     5.1 Display two plots side by side
     </a>
    </li>
   </ul>
@@ -652,7 +662,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>6-1: Visualize tabular (aspatial) data using Matplotlib</h1>
+                <h1>Using Matplotlib for Data Visualization</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -663,18 +673,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-and-import-all-modules">
-   1. Setup and Import All Modules
+  <a class="reference internal nav-link" href="#first-plot">
+   1. First Plot
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-a-plot-figure-and-axis">
-   2. Setup a plot: Figure and axis
+  <a class="reference internal nav-link" href="#figure-and-axes">
+   2. Figure and axes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-plots-with-attribute-data">
-   3. Create plots with attribute data
+  <a class="reference internal nav-link" href="#scatter-plot-and-basic-plot-settings">
+   3. Scatter plot and basic plot settings
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -683,38 +693,47 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#change-figure-size">
-     3.2 Change figure size
+    <a class="reference internal nav-link" href="#figure-size">
+     3.2 Figure size
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#add-labels-and-title">
-     3.3 Add labels and title
+    <a class="reference internal nav-link" href="#title-and-label">
+     3.3 Title and label
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#change-color-and-marker">
-     3.4 Change color and marker
+    <a class="reference internal nav-link" href="#color-and-marker">
+     3.4 Color and marker
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-bar-plot">
-     3.5 A bar plot
+    <a class="reference internal nav-link" href="#marker-size">
+     3.5 Marker size
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bar-plot">
+   4. Bar plot
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#add-legend">
-     3.6 Add legend
+    <a class="reference internal nav-link" href="#legend">
+     4.1 Legend
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-histogram">
-     3.7 Create a histogram
-    </a>
-   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#histogram">
+   5. Histogram
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#display-two-plots-side-by-side">
-     3.8 Display two plots side by side
+     5.1 Display two plots side by side
     </a>
    </li>
   </ul>
@@ -729,31 +748,94 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="visualize-tabular-aspatial-data-using-matplotlib">
-<h1>6-1: Visualize tabular (aspatial) data using Matplotlib<a class="headerlink" href="#visualize-tabular-aspatial-data-using-matplotlib" title="Permalink to this headline">#</a></h1>
-<ul class="simple">
-<li><p>Matplotlib is the most popular plotting library</p></li>
-<li><p>Works with NumPy and pandas DataFrame</p></li>
-<li><p>Allow you to tweak every single detail of your plot.</p></li>
-<li><p>Similar experience to MatLab’s graphical plotting.</p></li>
-</ul>
-<p>Helpful resource on <strong>Matplotlib</strong>:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://matplotlib.org/gallery/index.html">Matplotlib official website - Gallery</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PL-osiE80TeTvipOqomVEeZ1HRrcEvtZB_">Matplotlib playlist from Corey Schafer</a></p></li>
-</ul>
-<section id="setup-and-import-all-modules">
-<h2>1. Setup and Import All Modules<a class="headerlink" href="#setup-and-import-all-modules" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="using-matplotlib-for-data-visualization">
+<h1>Using Matplotlib for Data Visualization<a class="headerlink" href="#using-matplotlib-for-data-visualization" title="Permalink to this headline">#</a></h1>
+<a class="border mb-3 reference internal image-reference" href="../_images/matplotliblogo.svg"><img alt="matplotliblogo" class="border mb-3 align-right" height="115" src="../_images/matplotliblogo.svg" width="480" /></a>
+<p>Matplotlib is a powerful data visualization library for Python that
+provides a rich set of features for creating a wide variety of plots and charts.</p>
+<p>Many other Python plotting libraries are built on top of Matplotlib including
+<em>Seaborn</em>, <em>Plotly</em>, <em>Bokeh</em>, <em>Holoviews</em>.
+Some key features of Matplotlib include:</p>
+<ol class="simple">
+<li><p><strong>Wide range of plot types</strong>: Matplotlib supports a wide range of plot types, including
+line plots, scatter plots, bar charts, histograms, pie charts, 3D plots, and more.</p></li>
+<li><p><strong>Customization</strong>: Matplotlib allows extensive customization of plot properties,
+including color, line style, markers, labels, and fonts.</p></li>
+<li><p><strong>Interactive visualization</strong>: Matplotlib can be used to create interactive plots with
+features such as zooming, panning, and hovering over data points.</p></li>
+<li><p><strong>Integration with other libraries</strong>: Matplotlib supports a variety of data types including
+<code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas.Series</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.</p></li>
+<li><p><strong>Publication quality plots</strong>: Matplotlib produces high-quality plots suitable for use in
+scientific publications, with support for vector graphics formats such as PDF and SVG.</p></li>
+</ol>
+<section id="first-plot">
+<h2>1. First Plot<a class="headerlink" href="#first-plot" title="Permalink to this headline">#</a></h2>
+<p>Just as <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code> and <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code>, there is a convention for importing
+Matplotlib as well. Uniquely, we normally <strong><em>do not</em></strong> “import” the whole <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> package
+but one of its module, <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> like the following.</p>
+<p>Oftentimes, you need to use <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> together with Matplotlib. So it is a good idea
+to also import those two libraries. And when you do, you should follow this order.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  <span class="c1"># yet another convention</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Recall how we convert feature class to numpy array to pandas DataFrame.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use magic command <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code> to render plots directly inside Python Notebook.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6-1.Intro_to_Matplotlib_4_0.png" src="../_images/6-1.Intro_to_Matplotlib_4_0.png" />
+</div>
+</div>
+</section>
+<section id="figure-and-axes">
+<h2>2. Figure and axes<a class="headerlink" href="#figure-and-axes" title="Permalink to this headline">#</a></h2>
+<p>In Matplotlib, a <strong>figure</strong> is a top-level container for all plot elements.
+It can contain one or more axes (also known as subplots), each of which
+is a <strong><em>container</em></strong> for a specific plot or graph.
+A figure can have multiple subplots, arranged in a <strong>grid-like structure</strong>.
+Subplots can be created using the <code class="docutils literal notranslate"><span class="pre">subplots()</span></code> function, which
+take arguments to specify the number of rows and columns of subplots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6-1.Intro_to_Matplotlib_6_0.png" src="../_images/6-1.Intro_to_Matplotlib_6_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6-1.Intro_to_Matplotlib_7_0.png" src="../_images/6-1.Intro_to_Matplotlib_7_0.png" />
+</div>
+</div>
+<p>Now, let’s look at a concrete example in our class geodatabase.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
@@ -765,17 +847,21 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Recall how we convert feature class to <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> and to <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.
+Let’s define a function for this conversion.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fc_to_df</span><span class="p">(</span><span class="n">fc</span><span class="p">):</span>
-    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">ListFields</span><span class="p">(</span><span class="n">fc</span><span class="p">)]</span>
-    <span class="n">arr</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">da</span><span class="o">.</span><span class="n">FeatureClassToNumPyArray</span><span class="p">(</span><span class="n">fc</span><span class="p">,</span> <span class="n">fields</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
-    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">fields</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fc_to_df</span><span class="p">(</span><span class="n">fc</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">fields</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">ListFields</span><span class="p">(</span><span class="n">fc</span><span class="p">)]</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="n">fields</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>  <span class="c1"># ignore OID and SHAPE fields</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">da</span><span class="o">.</span><span class="n">FeatureClassToNumPyArray</span><span class="p">(</span><span class="n">fc</span><span class="p">,</span> <span class="n">fields</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">fields</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blkgrp_df</span> <span class="o">=</span> <span class="n">fc_to_df</span><span class="p">(</span><span class="n">blkgrp_fc</span><span class="p">)</span>
 <span class="n">blkgrp_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -950,38 +1036,84 @@ title="Print to PDF"
 <p>5 rows × 202 columns</p>
 </div></div></div>
 </div>
-</section>
-<section id="setup-a-plot-figure-and-axis">
-<h2>2. Setup a plot: Figure and axis<a class="headerlink" href="#setup-a-plot-figure-and-axis" title="Permalink to this headline">#</a></h2>
-<div class="admonition-warning admonition">
-<p class="admonition-title">⚠️ WARNING:</p>
-<p>Python Notebook in ArcGIS Pro currently does not support plotting.
-To use matplotlib and view the plots, you must open the jupyter notebook from browser.</p>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blkgrp_df_short</span> <span class="o">=</span> <span class="n">fc_to_df</span><span class="p">(</span><span class="n">blkgrp_fc</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;GEOID10&quot;</span><span class="p">,</span> <span class="s2">&quot;ALAND10&quot;</span><span class="p">,</span> <span class="s2">&quot;TOTALPOP&quot;</span><span class="p">,</span> <span class="s2">&quot;AVE_HH_SZ&quot;</span><span class="p">])</span>
+<span class="n">blkgrp_df_short</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6-1.Intro_to_Matplotlib_7_0.png" src="../_images/6-1.Intro_to_Matplotlib_7_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/6-1.Intro_to_Matplotlib_8_0.png" src="../_images/6-1.Intro_to_Matplotlib_8_0.png" />
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GEOID10</th>
+      <th>ALAND10</th>
+      <th>TOTALPOP</th>
+      <th>AVE_HH_SZ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>120231109032</td>
+      <td>57546992.0</td>
+      <td>2094</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>120231109041</td>
+      <td>85591551.0</td>
+      <td>2269</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>120070003005</td>
+      <td>196424609.0</td>
+      <td>1305</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>120070003004</td>
+      <td>16339411.0</td>
+      <td>1991</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>120070003001</td>
+      <td>57089369.0</td>
+      <td>2056</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
-<section id="create-plots-with-attribute-data">
-<h2>3. Create plots with attribute data<a class="headerlink" href="#create-plots-with-attribute-data" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
+<section id="scatter-plot-and-basic-plot-settings">
+<h2>3. Scatter plot and basic plot settings<a class="headerlink" href="#scatter-plot-and-basic-plot-settings" title="Permalink to this headline">#</a></h2>
+<p>The following statement returns all column names in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> as
+a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>.</p>
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blkgrp_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
@@ -1042,36 +1174,36 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23eceba7ca0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x27a9689c280&gt;
 </pre></div>
 </div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_12_1.png" src="../_images/6-1.Intro_to_Matplotlib_12_1.png" />
+<img alt="../_images/6-1.Intro_to_Matplotlib_17_1.png" src="../_images/6-1.Intro_to_Matplotlib_17_1.png" />
 </div>
 </div>
 </section>
-<section id="change-figure-size">
-<h3>3.2 Change figure size<a class="headerlink" href="#change-figure-size" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>the figure size argument: <code class="docutils literal notranslate"><span class="pre">figsize</span></code></p></li>
-<li><p>supply as a tuple <code class="docutils literal notranslate"><span class="pre">(width,</span> <span class="pre">height)</span></code></p></li>
-</ul>
+<section id="figure-size">
+<h3>3.2 Figure size<a class="headerlink" href="#figure-size" title="Permalink to this headline">#</a></h3>
+<p>We can customize the figure size by changing <code class="docutils literal notranslate"><span class="pre">figsize</span></code> and assign a <strong>tuple</strong>
+of <code class="docutils literal notranslate"><span class="pre">(&lt;width&gt;,</span> <span class="pre">&lt;height&gt;)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">axis</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;HOUSEHOLDS&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23ecec2e400&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x27a96bfa250&gt;
 </pre></div>
 </div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_14_1.png" src="../_images/6-1.Intro_to_Matplotlib_14_1.png" />
+<img alt="../_images/6-1.Intro_to_Matplotlib_19_1.png" src="../_images/6-1.Intro_to_Matplotlib_19_1.png" />
 </div>
 </div>
 </section>
-<section id="add-labels-and-title">
-<h3>3.3 Add labels and title<a class="headerlink" href="#add-labels-and-title" title="Permalink to this headline">#</a></h3>
+<section id="title-and-label">
+<h3>3.3 Title and label<a class="headerlink" href="#title-and-label" title="Permalink to this headline">#</a></h3>
+<p>We can change the table of x and y axes and the title of the figure by using
+following functions:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">set_xlabel()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">set_ylabel()</span></code></p></li>
@@ -1079,10 +1211,10 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">axis</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;HOUSEHOLDS&quot;</span><span class="p">])</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;total population&quot;</span><span class="p">)</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;number of households&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Total population&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Number of households&quot;</span><span class="p">)</span>
 <span class="n">axis</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;2010 Alachua County Census Block Group&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1091,65 +1223,82 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;2010 Alachua County Census Block Group&#39;)
 </pre></div>
 </div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_16_1.png" src="../_images/6-1.Intro_to_Matplotlib_16_1.png" />
+<img alt="../_images/6-1.Intro_to_Matplotlib_21_1.png" src="../_images/6-1.Intro_to_Matplotlib_21_1.png" />
 </div>
 </div>
 </section>
-<section id="change-color-and-marker">
-<h3>3.4 Change color and marker<a class="headerlink" href="#change-color-and-marker" title="Permalink to this headline">#</a></h3>
-<p>Set the <code class="docutils literal notranslate"><span class="pre">color</span></code> argument or <code class="docutils literal notranslate"><span class="pre">c</span></code></p>
+<section id="color-and-marker">
+<h3>3.4 Color and marker<a class="headerlink" href="#color-and-marker" title="Permalink to this headline">#</a></h3>
+<p>In Matplotlib to change color, you can pick any <strong><em>color names</em></strong>
+below and supply the value as a <code class="docutils literal notranslate"><span class="pre">str</span></code> to the <code class="docutils literal notranslate"><span class="pre">color</span></code> argument, or the equivalent <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
 <p><img alt="base color" src="https://matplotlib.org/stable/_images/sphx_glr_named_colors_001.png" />
 <img alt="tableau color" src="https://matplotlib.org/stable/_images/sphx_glr_named_colors_002.png" />
 <img alt="css color" src="https://matplotlib.org/stable/_images/sphx_glr_named_colors_003.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;HOUSEHOLDS&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span>
+             <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;HOUSEHOLDS&quot;</span><span class="p">],</span>
+             <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23ececd75b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x27a916390d0&gt;
 </pre></div>
 </div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_18_1.png" src="../_images/6-1.Intro_to_Matplotlib_18_1.png" />
+<img alt="../_images/6-1.Intro_to_Matplotlib_23_1.png" src="../_images/6-1.Intro_to_Matplotlib_23_1.png" />
 </div>
 </div>
-<p>Set the <code class="docutils literal notranslate"><span class="pre">marker</span></code> argument or <code class="docutils literal notranslate"><span class="pre">m</span></code></p>
+<p>You can change a marker’s “<em>shape</em>” by setting the <code class="docutils literal notranslate"><span class="pre">marker</span></code> argument or <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p>
 <p><a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html">Matplotlib markers</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;HOUSEHOLDS&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;darkgreen&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span>
+             <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;HOUSEHOLDS&quot;</span><span class="p">],</span>
+             <span class="n">color</span><span class="o">=</span><span class="s2">&quot;darkgreen&quot;</span><span class="p">,</span>
+             <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23eced3cb50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x27a916b65b0&gt;
 </pre></div>
 </div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_20_1.png" src="../_images/6-1.Intro_to_Matplotlib_20_1.png" />
-</div>
-</div>
-<p>Set the size of the marker <code class="docutils literal notranslate"><span class="pre">s</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;PCT_POV&quot;</span><span class="p">],</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;MEDHHINC&quot;</span><span class="p">],</span> 
-             <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s1">&#39;TOTALPOP&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23eceddee20&gt;
-</pre></div>
-</div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_22_1.png" src="../_images/6-1.Intro_to_Matplotlib_22_1.png" />
+<img alt="../_images/6-1.Intro_to_Matplotlib_25_1.png" src="../_images/6-1.Intro_to_Matplotlib_25_1.png" />
 </div>
 </div>
 </section>
-<section id="a-bar-plot">
-<h3>3.5 A bar plot<a class="headerlink" href="#a-bar-plot" title="Permalink to this headline">#</a></h3>
+<section id="marker-size">
+<h3>3.5 Marker size<a class="headerlink" href="#marker-size" title="Permalink to this headline">#</a></h3>
+<p>You can set marker’s size by the argument <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;PCT_POV&quot;</span><span class="p">],</span>
+             <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;MEDHHINC&quot;</span><span class="p">],</span>
+             <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span>
+             <span class="n">s</span><span class="o">=</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s1">&#39;TOTALPOP&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Population in poverty (pct)&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Median household income&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Median household income&#39;)
+</pre></div>
+</div>
+<img alt="../_images/6-1.Intro_to_Matplotlib_27_1.png" src="../_images/6-1.Intro_to_Matplotlib_27_1.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="bar-plot">
+<h2>4. Bar plot<a class="headerlink" href="#bar-plot" title="Permalink to this headline">#</a></h2>
+<p>Bar plot displays rectangular bars with lengths proportional to the values
+that they represent. Bar plots are often used to compare the sizes or
+<strong>frequencies</strong> of different categories of data.</p>
 <ul class="simple">
 <li><p>use <code class="docutils literal notranslate"><span class="pre">bar()</span></code> to plot</p></li>
 <li><p>the <code class="docutils literal notranslate"><span class="pre">width</span></code> argument</p></li>
@@ -1157,10 +1306,14 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>   <span class="c1"># tuple unpacking</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;FEMALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span> 
-         <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">)</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;MALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span> 
-         <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+         <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;FEMALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span>
+         <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+         <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;MALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span>
+         <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1168,16 +1321,20 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 10 artists&gt;
 </pre></div>
 </div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_24_1.png" src="../_images/6-1.Intro_to_Matplotlib_24_1.png" />
+<img alt="../_images/6-1.Intro_to_Matplotlib_29_1.png" src="../_images/6-1.Intro_to_Matplotlib_29_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>   <span class="c1"># tuple unpacking</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;FEMALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span> 
-         <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">)</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">+</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;MALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span> 
-         <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.15</span><span class="p">,</span>
+         <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;FEMALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span>
+         <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.15</span><span class="p">,</span>
+         <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;MALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span>
+         <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1185,59 +1342,87 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 10 artists&gt;
 </pre></div>
 </div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_25_1.png" src="../_images/6-1.Intro_to_Matplotlib_25_1.png" />
+<img alt="../_images/6-1.Intro_to_Matplotlib_30_1.png" src="../_images/6-1.Intro_to_Matplotlib_30_1.png" />
 </div>
 </div>
-</section>
-<section id="add-legend">
-<h3>3.6 Add legend<a class="headerlink" href="#add-legend" title="Permalink to this headline">#</a></h3>
+<section id="legend">
+<h3>4.1 Legend<a class="headerlink" href="#legend" title="Permalink to this headline">#</a></h3>
+<p>The legend is used to help identify which plot element corresponds
+to which data series, especially when multiple data series are
+displayed on the same plot.</p>
 <ul class="simple">
 <li><p>set the <code class="docutils literal notranslate"><span class="pre">label</span></code> argument</p></li>
-<li><p>use the <code class="docutils literal notranslate"><span class="pre">.legend()</span></code> function</p></li>
+<li><p>use the <code class="docutils literal notranslate"><span class="pre">legend()</span></code> function</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>   <span class="c1"># tuple unpacking</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;FEMALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span> 
-         <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;WOMAN&quot;</span><span class="p">)</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">+</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;MALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span> 
-         <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MAN&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.15</span><span class="p">,</span>
+         <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;FEMALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span>
+         <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s2">&quot;WOMAN&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.15</span><span class="p">,</span>
+         <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;MALE&quot;</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span>
+         <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MAN&quot;</span><span class="p">)</span>
 <span class="n">axis</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x23ecf0a8130&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x27a91dc26d0&gt;
 </pre></div>
 </div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_27_1.png" src="../_images/6-1.Intro_to_Matplotlib_27_1.png" />
+<img alt="../_images/6-1.Intro_to_Matplotlib_32_1.png" src="../_images/6-1.Intro_to_Matplotlib_32_1.png" />
 </div>
 </div>
+<p>Here are the integer values that correspond to each location:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: ‘best’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: ‘upper right’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code>: ‘upper left’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3</span></code>: ‘lower left’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">4</span></code>: ‘lower right’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">5</span></code>: ‘right’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">6</span></code>: ‘center left’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">7</span></code>: ‘center right’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">8</span></code>: ‘lower center’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">9</span></code>: ‘upper center’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: ‘center’</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>   <span class="c1"># tuple unpacking</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;WHITE&quot;</span><span class="p">][:</span><span class="mi">20</span><span class="p">],</span> 
-         <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;WHITE&quot;</span><span class="p">)</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">+</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;BLACK&quot;</span><span class="p">][:</span><span class="mi">20</span><span class="p">],</span> 
-         <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;BLACK&quot;</span><span class="p">)</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.15</span><span class="p">,</span>
+         <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;WHITE&quot;</span><span class="p">][:</span><span class="mi">20</span><span class="p">],</span>
+         <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s2">&quot;WHITE&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.15</span><span class="p">,</span>
+         <span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;BLACK&quot;</span><span class="p">][:</span><span class="mi">20</span><span class="p">],</span>
+         <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:orange&quot;</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s2">&quot;BLACK&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># or axis.legend(loc=&#39;upper right&#39;)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x23ecf28f6a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x27a91d421f0&gt;
 </pre></div>
 </div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_28_1.png" src="../_images/6-1.Intro_to_Matplotlib_28_1.png" />
+<img alt="../_images/6-1.Intro_to_Matplotlib_34_1.png" src="../_images/6-1.Intro_to_Matplotlib_34_1.png" />
 </div>
 </div>
 </section>
-<section id="create-a-histogram">
-<h3>3.7 Create a histogram<a class="headerlink" href="#create-a-histogram" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>use the <code class="docutils literal notranslate"><span class="pre">hist()</span></code> to plot</p></li>
-<li><p>set the <code class="docutils literal notranslate"><span class="pre">bin()</span></code> argument</p></li>
-</ul>
+</section>
+<section id="histogram">
+<h2>5. Histogram<a class="headerlink" href="#histogram" title="Permalink to this headline">#</a></h2>
+<p>A histogram is a <em>graphical representation</em> of the <strong>distribution</strong> of a dataset.
+It shows the <em>frequency</em> of data points that fall within <em>equal intervals</em> or <strong>bins</strong>.</p>
+<p>To create a histogram, use the <code class="docutils literal notranslate"><span class="pre">hist()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -1252,13 +1437,24 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_30_1.png" src="../_images/6-1.Intro_to_Matplotlib_30_1.png" />
+<img alt="../_images/6-1.Intro_to_Matplotlib_36_1.png" src="../_images/6-1.Intro_to_Matplotlib_36_1.png" />
 </div>
 </div>
+<p>By default, <strong>bins</strong> is set to <code class="docutils literal notranslate"><span class="pre">10</span></code>, which means that the data will be divided
+into 10 <strong>equal-width</strong> bins. In a histogram, the bin size determines the width
+of each bin, which in turn determines the range of values that are <strong>grouped together
+and counted</strong>. A smaller bin size will result in more bins and more detail in the
+distribution of the data, while a larger bin size will result in fewer bins and less detail.</p>
+<p>The choice of bin size is important in constructing a meaningful histogram, as it can
+affect the <em>visual representation</em> of the data and the <em>interpretation</em> of the distribution.
+A bin size that is too small may result in an <strong>overly detailed</strong> and noisy histogram, while
+a bin size that is too large may <strong>obscure important features</strong> of the distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span>
+          <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+          <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1270,13 +1466,16 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
  &lt;BarContainer object of 15 artists&gt;)
 </pre></div>
 </div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_31_1.png" src="../_images/6-1.Intro_to_Matplotlib_31_1.png" />
+<img alt="../_images/6-1.Intro_to_Matplotlib_38_1.png" src="../_images/6-1.Intro_to_Matplotlib_38_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span>
+          <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+          <span class="n">color</span><span class="o">=</span><span class="s2">&quot;teal&quot;</span><span class="p">,</span>
+          <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1288,13 +1487,16 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
  &lt;BarContainer object of 15 artists&gt;)
 </pre></div>
 </div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_32_1.png" src="../_images/6-1.Intro_to_Matplotlib_32_1.png" />
+<img alt="../_images/6-1.Intro_to_Matplotlib_39_1.png" src="../_images/6-1.Intro_to_Matplotlib_39_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;teal&quot;</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span>
+          <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+          <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+          <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1303,37 +1505,18 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
          1.,  1.]),
  array([ 163.,  512.,  861., 1210., 1559., 1908., 2257., 2606., 2955.,
         3304., 3653., 4002., 4351., 4700., 5049., 5398.]),
- &lt;BarContainer object of 15 artists&gt;)
+ [&lt;matplotlib.patches.Polygon at 0x27a9308ed90&gt;])
 </pre></div>
 </div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_33_1.png" src="../_images/6-1.Intro_to_Matplotlib_33_1.png" />
+<img alt="../_images/6-1.Intro_to_Matplotlib_40_1.png" src="../_images/6-1.Intro_to_Matplotlib_40_1.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">axis</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TOTALPOP&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3., 26., 37., 32., 27., 21., 12.,  9.,  4.,  4.,  1.,  0.,  0.,
-         1.,  1.]),
- array([ 163.,  512.,  861., 1210., 1559., 1908., 2257., 2606., 2955.,
-        3304., 3653., 4002., 4351., 4700., 5049., 5398.]),
- [&lt;matplotlib.patches.Polygon at 0x23ecf3e8fa0&gt;])
-</pre></div>
-</div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_34_1.png" src="../_images/6-1.Intro_to_Matplotlib_34_1.png" />
-</div>
-</div>
-</section>
 <section id="display-two-plots-side-by-side">
-<h3>3.8 Display two plots side by side<a class="headerlink" href="#display-two-plots-side-by-side" title="Permalink to this headline">#</a></h3>
+<h3>5.1 Display two plots side by side<a class="headerlink" href="#display-two-plots-side-by-side" title="Permalink to this headline">#</a></h3>
 <p>Each axis is an element of the axes list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TRAN_BIKE&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">)</span>
 <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TRAN_CAR&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;teal&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1346,12 +1529,16 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
-<img alt="../_images/6-1.Intro_to_Matplotlib_36_1.png" src="../_images/6-1.Intro_to_Matplotlib_36_1.png" />
+<img alt="../_images/6-1.Intro_to_Matplotlib_42_1.png" src="../_images/6-1.Intro_to_Matplotlib_42_1.png" />
 </div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">plt.tight_layout()</span></code> to have a more compact figure.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TRAN_CAR&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">)</span>
 <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">blkgrp_df</span><span class="p">[</span><span class="s2">&quot;TRAN_BIKE&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;teal&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
@@ -1359,7 +1546,7 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6-1.Intro_to_Matplotlib_37_0.png" src="../_images/6-1.Intro_to_Matplotlib_37_0.png" />
+<img alt="../_images/6-1.Intro_to_Matplotlib_44_0.png" src="../_images/6-1.Intro_to_Matplotlib_44_0.png" />
 </div>
 </div>
 </section>
@@ -1393,17 +1580,17 @@ To use matplotlib and view the plots, you must open the jupyter notebook from br
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="6-0.Visualization_Landing.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="6-0.data_visualization.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Data Vizualization in Python</p>
+            <p class="prev-next-title">Data Visualization using Python</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="6-2.Intro_to_ArcGIS_API_for_Python.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">6-2: Visualizing Spatial Data using ArcGIS API for Python</p>
+        <p class="prev-next-title">Visualizing Spatial Data</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
