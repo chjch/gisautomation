@@ -6,60 +6,58 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Raster Data Analysis using ArcPy &#8212; Automation for Geospatial Modeling and Analysis</title>
+    <title>Fix missing buttons in Jupyter Notebook &#8212; Automation for Geospatial Modeling and Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom_style.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7-1: Raster Analysis Basics" href="7-1.Raster_Analysis_Basics.html" />
-    <link rel="prev" title="Visualizing Spatial Data" href="6-2.Intro_to_ArcGIS_API_for_Python.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction to ModelBuilder" href="modules/1-1.Intro_to_ModelBuilder.html" />
+    <link rel="prev" title="Use Notebook in a Browser" href="software_2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -102,19 +100,19 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+    <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="../_static/logo.png" class="logo" alt="logo">
+      <img src="_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Automation for Geospatial Modeling and Analysis</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -122,41 +120,46 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
+                <a class="reference internal" href="intro.html">
                     Welcome to Automation of GIS
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../software_0.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="software_0.html">
    Software
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../software_1.html">
+    <a class="reference internal" href="software_1.html">
      Basics of Jupyter Notebook
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../software_2.html">
+    <a class="reference internal" href="software_2.html">
      Use Notebook in a Browser
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Fix missing buttons in Jupyter Notebook
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="1-1.Intro_to_ModelBuilder.html">
+  <a class="reference internal" href="modules/1-1.Intro_to_ModelBuilder.html">
    Introduction to ModelBuilder
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="2-0.Intro_to_Python.html">
+  <a class="reference internal" href="modules/2-0.Intro_to_Python.html">
    Introduction to Python Programming
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -166,24 +169,24 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="2-1.Markdown.html">
+    <a class="reference internal" href="modules/2-1.Markdown.html">
      Introduction to Markdown
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="2-2.Data_Types.html">
+    <a class="reference internal" href="modules/2-2.Data_Types.html">
      Basic Python Data Types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="2-3.Control_Structure.html">
+    <a class="reference internal" href="modules/2-3.Control_Structure.html">
      Control Flow Structure
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="3-0.Intro_Python_2.html">
+  <a class="reference internal" href="modules/3-0.Intro_Python_2.html">
    Additional Data Types and Function
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -193,29 +196,29 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-1.More_Data_Types.html">
+    <a class="reference internal" href="modules/3-1.More_Data_Types.html">
      More Python Data Types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-2.More_Control_Flow.html">
+    <a class="reference internal" href="modules/3-2.More_Control_Flow.html">
      More Statements for Control Flow
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-3.Exceptions.html">
+    <a class="reference internal" href="modules/3-3.Exceptions.html">
      Exceptions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-4.Python_Function.html">
+    <a class="reference internal" href="modules/3-4.Python_Function.html">
      Variable and Function
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="4-0.intro_arcpy.html">
+  <a class="reference internal" href="modules/4-0.intro_arcpy.html">
    Introduction to ArcPy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -225,24 +228,24 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-1.ArcPy_Basics.html">
+    <a class="reference internal" href="modules/4-1.ArcPy_Basics.html">
      The basics of ArcPy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-2.Run_ArcPy_functions.html">
+    <a class="reference internal" href="modules/4-2.Run_ArcPy_functions.html">
      Run ArcPy Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="4-3.ArcPy_selection.html">
+    <a class="reference internal" href="modules/4-3.ArcPy_selection.html">
      ArcPy Selection Functions
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="5-0.scientific_python.html">
+  <a class="reference internal" href="modules/5-0.scientific_python.html">
    Scientific Python Ecosystem
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -252,19 +255,19 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="5-1.Intro_to_NumPy.html">
+    <a class="reference internal" href="modules/5-1.Intro_to_NumPy.html">
      Use NumPy in ArcGIS
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="5-2.Intro_to_Pandas.html">
+    <a class="reference internal" href="modules/5-2.Intro_to_Pandas.html">
      Use Pandas in ArcGIS
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="6-0.data_visualization.html">
+  <a class="reference internal" href="modules/6-0.data_visualization.html">
    Data Visualization using Python
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -274,41 +277,41 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="6-1.Intro_to_Matplotlib.html">
+    <a class="reference internal" href="modules/6-1.Intro_to_Matplotlib.html">
      Using Matplotlib for Data Visualization
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="6-2.Intro_to_ArcGIS_API_for_Python.html">
+    <a class="reference internal" href="modules/6-2.Intro_to_ArcGIS_API_for_Python.html">
      Visualizing Spatial Data
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="modules/7-0.Raster_analysis.html">
    Raster Data Analysis using ArcPy
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="7-1.Raster_Analysis_Basics.html">
+    <a class="reference internal" href="modules/7-1.Raster_Analysis_Basics.html">
      7-1: Raster Analysis Basics
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="7-2.ArcPy_Raster.html">
+    <a class="reference internal" href="modules/7-2.ArcPy_Raster.html">
      7-2: Run Raster Geoprocessing using ArcPy
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="8-0.Tool_Landing.html">
+  <a class="reference internal" href="modules/8-0.Tool_Landing.html">
    Building a script tool in ArcGIS Pro
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -318,29 +321,29 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="8-1.develop_a_script_file.html">
+    <a class="reference internal" href="modules/8-1.develop_a_script_file.html">
      8-1: The Basics of a Script Tool
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="8-2.setup_for_a_script_tool.html">
+    <a class="reference internal" href="modules/8-2.setup_for_a_script_tool.html">
      8-2: Create a Script Tool
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="8-3.additional_features_for_script_tool.html">
+    <a class="reference internal" href="modules/8-3.additional_features_for_script_tool.html">
      8-3:  Add Additional Features to the Script Tool
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="9.Problem_Solving_in_Python_and_GIS.html">
+  <a class="reference internal" href="modules/9.Problem_Solving_in_Python_and_GIS.html">
    A Journey of Solving a GIS Automation Problem: from Google to Settle
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../homework/homework_problems.html">
+  <a class="reference internal" href="homework/homework_problems.html">
    Homework Problems
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -350,34 +353,34 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../homework/homework1.html">
+    <a class="reference internal" href="homework/homework1.html">
      Homework 1
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../homework/homework2.html">
+    <a class="reference internal" href="homework/homework2.html">
      Homework 2
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../homework/homework3.html">
+    <a class="reference internal" href="homework/homework3.html">
      Homework 3
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../homework/homework4.html">
+    <a class="reference internal" href="homework/homework4.html">
      Homework 4
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../homework/homework5.html">
+    <a class="reference internal" href="homework/homework5.html">
      Homework 5
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../final_project.html">
+  <a class="reference internal" href="final_project.html">
    Final Project
   </a>
  </li>
@@ -432,35 +435,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/7-0.Raster_Landing.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -500,7 +474,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/7-0.Raster_Landing.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fsoftware_3.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -528,7 +502,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/modules/7-0.Raster_Landing.ipynb"
+        <a href="_sources/software_3.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -539,7 +513,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="headerbtn__text-container">.md</span>
 </a>
 
       </li>
@@ -565,70 +539,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-steps">
-   Learning Steps
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Raster Data Analysis using ArcPy</h1>
+                <h1>Fix missing buttons in Jupyter Notebook</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-steps">
-   Learning Steps
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -636,30 +563,33 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="raster-data-analysis-using-arcpy">
-<h1>Raster Data Analysis using ArcPy<a class="headerlink" href="#raster-data-analysis-using-arcpy" title="Permalink to this headline">#</a></h1>
-<section id="learning-objectives">
-<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
-<p>Upon completion of this module, you should be able to:</p>
-<ul class="simple">
-<li><p>List rasters</p></li>
-<li><p>Describe raster properties</p></li>
-<li><p>Work with raster properties</p></li>
-<li><p>Use spatial analyst module</p></li>
-<li><p>Use map algebra</p></li>
-<li><p>Use the environment parameters</p></li>
-<li><p>Perform suitability analysis using raster geoprocessing functions</p></li>
-</ul>
-</section>
-<section id="learning-steps">
-<h2>Learning Steps<a class="headerlink" href="#learning-steps" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>none</p></li>
-</ul>
-</section>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="fix-missing-buttons-in-jupyter-notebook">
+<h1>Fix missing buttons in Jupyter Notebook<a class="headerlink" href="#fix-missing-buttons-in-jupyter-notebook" title="Permalink to this headline">#</a></h1>
+<p>In ArcGIS Pro’s Jupyter Notebook, two useful buttons in the menu bar are
+missing: <strong>Files</strong> and <strong>Kernel</strong>.</p>
+<p>These two buttons give you access to several key functions, such as
+<strong><em>Restart Kernel</em></strong> and <strong><em>Download Notebook as Python file</em></strong>.</p>
+<p>A solution to fix the missing buttons is presented below. The answer is based
+on this <a class="reference external" href="https://community.esri.com/t5/arcgis-online-questions/juypter-notebook-via-arcpro-missing-menu-bar/td-p/1118984/page/3">post</a>.</p>
+<div style="padding: 10px;margin-bottom: 20px;border: thin solid #3F48CC;border-left-width: 25px;background-color: #fff">
+<strong>Step 1:</strong> Navigate to the following folder.
 </div>
-</section>
+<p><code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\share\jupyter\kernels\ArcGISPro\default</span></code></p>
+<div style="padding: 10px;margin-bottom: 20px;border: thin solid #3F48CC;border-left-width: 25px;background-color: #fff">
+<strong>Step 2:</strong> Copy the two files below.
+</div>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">messsages.css</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">messages.js</span></code></p></li>
+</ol>
+<a class="mb-3 reference internal image-reference" href="https://live.staticflickr.com/65535/51888195506_7591dc13fe_o.png"><img alt="jupyter files" class="mb-3" src="https://live.staticflickr.com/65535/51888195506_7591dc13fe_o.png" style="width: 620px;" /></a>
+<div style="padding: 10px;margin-bottom: 20px;border: thin solid #3F48CC;border-left-width: 25px;background-color: #fff">
+<strong>Step 3:</strong> Paste the two files into the following folder.
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\Lib\site-packages\notebook\static\custom</span></code></p>
+<div style="padding: 10px;margin-bottom: 20px;border: thin solid #3F48CC;border-left-width: 25px;background-color: #fff">
+<strong>Step 4:</strong> Restart the Jupyter Notebook. (restart the _Python Command Prompt_ if necessary)
+</div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -674,7 +604,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             name: "python3",
-            path: "./modules"
+            path: "./."
         },
         predefinedOutput: true
     }
@@ -688,17 +618,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="6-2.Intro_to_ArcGIS_API_for_Python.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="software_2.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Visualizing Spatial Data</p>
+            <p class="prev-next-title">Use Notebook in a Browser</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="7-1.Raster_Analysis_Basics.html" title="next page">
+    <a class='right-next' id="next-link" href="modules/1-1.Intro_to_ModelBuilder.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">7-1: Raster Analysis Basics</p>
+        <p class="prev-next-title">Introduction to ModelBuilder</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -723,7 +653,7 @@ title="Print to PDF"
     </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
 
   </body>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>7-2: Run Raster Geoprocessing using ArcPy &#8212; Automation for Geospatial Modeling and Analysis</title>
+    <title>Run Raster Geoprocessing using ArcPy &#8212; Automation for Geospatial Modeling and Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,14 +52,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Building a script tool in ArcGIS Pro" href="8-0.Tool_Landing.html" />
-    <link rel="prev" title="7-1: Raster Analysis Basics" href="7-1.Raster_Analysis_Basics.html" />
+    <link rel="prev" title="Raster Analysis Basics" href="7-1.Raster_Analysis_Basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -146,6 +144,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../software_2.html">
      Use Notebook in a Browser
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_3.html">
+     Fix missing buttons in Jupyter Notebook
     </a>
    </li>
   </ul>
@@ -286,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="7-0.Raster_Landing.html">
+  <a class="reference internal" href="7-0.Raster_analysis.html">
    Raster Data Analysis using ArcPy
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -297,12 +300,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="7-1.Raster_Analysis_Basics.html">
-     7-1: Raster Analysis Basics
+     Raster Analysis Basics
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     7-2: Run Raster Geoprocessing using ArcPy
+     Run Raster Geoprocessing using ArcPy
     </a>
    </li>
   </ul>
@@ -588,8 +591,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-mesc-for-arcpy">
-   1. Setup “mesc” for ArcPy
+  <a class="reference internal nav-link" href="#set-mesc-for-arcpy-processing">
+   1. Set “mesc” for ArcPy processing
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -631,8 +634,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#setup-output-geodatabse">
-     2.1 Setup output geodatabse
+    <a class="reference internal nav-link" href="#setup-output-geodatabase">
+     2.1 Setup output geodatabase
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -666,7 +669,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>7-2: Run Raster Geoprocessing using ArcPy</h1>
+                <h1>Run Raster Geoprocessing using ArcPy</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -677,8 +680,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-mesc-for-arcpy">
-   1. Setup “mesc” for ArcPy
+  <a class="reference internal nav-link" href="#set-mesc-for-arcpy-processing">
+   1. Set “mesc” for ArcPy processing
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -720,8 +723,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#setup-output-geodatabse">
-     2.1 Setup output geodatabse
+    <a class="reference internal nav-link" href="#setup-output-geodatabase">
+     2.1 Setup output geodatabase
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -757,9 +760,9 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="run-raster-geoprocessing-using-arcpy">
-<h1>7-2: Run Raster Geoprocessing using ArcPy<a class="headerlink" href="#run-raster-geoprocessing-using-arcpy" title="Permalink to this headline">#</a></h1>
-<section id="setup-mesc-for-arcpy">
-<h2>1. Setup “mesc” for ArcPy<a class="headerlink" href="#setup-mesc-for-arcpy" title="Permalink to this headline">#</a></h2>
+<h1>Run Raster Geoprocessing using ArcPy<a class="headerlink" href="#run-raster-geoprocessing-using-arcpy" title="Permalink to this headline">#</a></h1>
+<section id="set-mesc-for-arcpy-processing">
+<h2>1. Set “mesc” for ArcPy processing<a class="headerlink" href="#set-mesc-for-arcpy-processing" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
@@ -781,16 +784,18 @@ that affect a tool’s results.</p>
 </section>
 <section id="set-mask">
 <h3>1.2 Set mask<a class="headerlink" href="#set-mask" title="Permalink to this headline">#</a></h3>
+<p>We can set the “mask” of a geoprocessing tool using a feature class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">mask</span> <span class="o">=</span> <span class="s2">&quot;county_boundary&quot;</span>  <span class="c1"># set mask by a feature class</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">mask</span> <span class="o">=</span> <span class="s2">&quot;county_boundary&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>It can also be set by a raster dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">mask</span> <span class="o">=</span> <span class="s2">&quot;dem&quot;</span>  <span class="c1"># set mask by a raster dataset</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">mask</span> <span class="o">=</span> <span class="s2">&quot;dem&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -798,13 +803,15 @@ that affect a tool’s results.</p>
 </section>
 <section id="set-extent-and-read-extent">
 <h3>1.3 Set extent and Read extent<a class="headerlink" href="#set-extent-and-read-extent" title="Permalink to this headline">#</a></h3>
+<p>Similarly, we can set the <em>processing</em> “extent” using a feature class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">extent</span> <span class="o">=</span> <span class="s2">&quot;county_boundary&quot;</span> <span class="c1"># set extent by a feature class</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">extent</span> <span class="o">=</span> <span class="s2">&quot;county_boundary&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Or, a raster dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">extent</span> <span class="o">=</span> <span class="s2">&quot;dem&quot;</span>
@@ -812,10 +819,11 @@ that affect a tool’s results.</p>
 </div>
 </div>
 </div>
+<p>The extent is essentially defined by 4 numbers: top, left, bottom, right.
+For example, we can read the left, right, top, bottom coordinates of the extent setting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read the left, right, top, bottom coordinates of the extent setting</span>
-<span class="n">extent_info</span> <span class="o">=</span> <span class="s2">&quot;Left:</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">Right:</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">Top:</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">Bottom:</span><span class="se">\t</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">extent_info</span> <span class="o">=</span> <span class="s2">&quot;Left:</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">Right:</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">Top:</span><span class="se">\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">Bottom:</span><span class="se">\t</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
     <span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">extent</span><span class="o">.</span><span class="n">XMin</span><span class="p">,</span> 
     <span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">extent</span><span class="o">.</span><span class="n">XMax</span><span class="p">,</span> 
     <span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">extent</span><span class="o">.</span><span class="n">YMax</span><span class="p">,</span> 
@@ -843,9 +851,10 @@ Bottom:	602507.1999999955
 </section>
 <section id="set-snap-raster">
 <h3>1.4 Set snap raster<a class="headerlink" href="#set-snap-raster" title="Permalink to this headline">#</a></h3>
+<p>Since “snap raster” is a raster itself, so it can only be set by a raster dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">snapRaster</span> <span class="o">=</span> <span class="s2">&quot;dem&quot;</span> <span class="c1"># can only be set by a raster dataset</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">snapRaster</span> <span class="o">=</span> <span class="s2">&quot;dem&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -853,16 +862,18 @@ Bottom:	602507.1999999955
 </section>
 <section id="set-cell-size">
 <h3>1.5 Set cell size<a class="headerlink" href="#set-cell-size" title="Permalink to this headline">#</a></h3>
+<p>We can set the output raster’s cell size by another raster.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">cellSize</span> <span class="o">=</span> <span class="s2">&quot;dem&quot;</span> <span class="c1"># set output raster cell size by another raster</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">cellSize</span> <span class="o">=</span> <span class="s2">&quot;dem&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Or a number. Note that this number is in the default <strong>linear unit</strong> defined by the raster’s spatial reference.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">cellSize</span> <span class="o">=</span> <span class="mi">90</span> <span class="c1"># set output raster cell size by a number (in default linear unit)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">cellSize</span> <span class="o">=</span> <span class="mi">90</span>
 </pre></div>
 </div>
 </div>
@@ -886,19 +897,20 @@ Bottom:	602507.1999999955
 </div>
 </div>
 </div>
-<section id="setup-output-geodatabse">
-<h3>2.1 Setup output geodatabse<a class="headerlink" href="#setup-output-geodatabse" title="Permalink to this headline">#</a></h3>
+<section id="setup-output-geodatabase">
+<h3>2.1 Setup output geodatabase<a class="headerlink" href="#setup-output-geodatabase" title="Permalink to this headline">#</a></h3>
+<p>Recall the ways we can define an output feature class <a class="reference external" href="4-3.ArcPy_selection.html#save-layer-selection-to-a-feature-class">here</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
-<span class="n">output_gdb</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;..\data\class_data.gdb\module7\in class\Raster\Raster.gdb&quot;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_gdb</span><span class="p">,</span> <span class="s1">&#39;out_rast&#39;</span><span class="p">)</span> <span class="c1"># with built-in function</span>
+<span class="n">output_gdb</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;..\data\output_data.gdb&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_gdb</span><span class="p">,</span> <span class="s1">&#39;out_rast&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;..\\data\\class_data.gdb\\module7\\in class\\Raster\\Raster.gdb\\out_rast&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;..\\data\\output_data.gdb\\out_rast&#39;
 </pre></div>
 </div>
 </div>
@@ -910,7 +922,7 @@ Bottom:	602507.1999999955
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;..\\data\\class_data.gdb\\module7\\in class\\Raster\\Raster.gdb\\out_rast&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;..\\data\\output_data.gdb\\out_rast&#39;
 </pre></div>
 </div>
 </div>
@@ -922,7 +934,7 @@ Bottom:	602507.1999999955
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;..\\data\\class_data.gdb\\module7\\in class\\Raster\\Raster.gdb\\out_rast&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;..\\data\\output_data.gdb\\out_rast&#39;
 </pre></div>
 </div>
 </div>
@@ -939,9 +951,10 @@ Bottom:	602507.1999999955
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_fc</span> <span class="o">=</span> <span class="s2">&quot;schools&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">workspace</span> <span class="o">=</span> <span class="n">gdb_worksp</span>
+<span class="n">school_fc</span> <span class="o">=</span> <span class="s2">&quot;schools&quot;</span>
 
-<span class="n">school_dist_rast</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">sa</span><span class="o">.</span><span class="n">EucDistance</span><span class="p">(</span><span class="n">school_fc</span><span class="p">)</span>   <span class="c1"># cell_size using default setup in env parameter</span>
+<span class="n">school_dist_rast</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">sa</span><span class="o">.</span><span class="n">EucDistance</span><span class="p">(</span><span class="n">school_fc</span><span class="p">)</span>   <span class="c1"># withtout setting cell_size</span>
 <span class="n">school_dist_rast</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_gdb</span><span class="p">,</span> <span class="s1">&#39;school_dist_rast&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -949,18 +962,18 @@ Bottom:	602507.1999999955
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ExecuteError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="mi">6126</span><span class="n">d7d46b22</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">school_fc</span> <span class="o">=</span> <span class="s2">&quot;schools&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">school_dist_rast</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">sa</span><span class="o">.</span><span class="n">EucDistance</span><span class="p">(</span><span class="n">school_fc</span><span class="p">)</span>   <span class="c1"># cell_size using default setup in env parameter</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">school_dist_rast</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_gdb</span><span class="p">,</span> <span class="s1">&#39;school_dist_rast&#39;</span><span class="p">))</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_23728\2934819003.py</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">school_fc</span> <span class="o">=</span> <span class="s2">&quot;schools&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">school_dist_rast</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">sa</span><span class="o">.</span><span class="n">EucDistance</span><span class="p">(</span><span class="n">school_fc</span><span class="p">)</span>   <span class="c1"># withtout setting cell_size</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">school_dist_rast</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_gdb</span><span class="p">,</span> <span class="s1">&#39;school_dist_rast&#39;</span><span class="p">))</span>
 
 <span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\sa\Functions.py</span> in <span class="ni">EucDistance</span><span class="nt">(in_source_data, maximum_distance, cell_size, out_direction_raster, distance_method, in_barrier_data, out_back_direction_raster)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3833</span>             <span class="n">out_back_direction_raster</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3834</span>         <span class="k">return</span> <span class="n">_wrapToolRaster</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;EucDistance_sa&quot;</span><span class="p">,</span> <span class="n">unicode</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">getOutput</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
-<span class="ne">-&gt; </span><span class="mi">3835</span>     <span class="k">return</span> <span class="n">Wrapper</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">3836</span>         <span class="n">in_source_data</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">3837</span>         <span class="n">maximum_distance</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3841</span>             <span class="n">out_back_direction_raster</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3842</span>         <span class="k">return</span> <span class="n">_wrapToolRaster</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;EucDistance_sa&quot;</span><span class="p">,</span> <span class="n">unicode</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">getOutput</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
+<span class="ne">-&gt; </span><span class="mi">3843</span>     <span class="k">return</span> <span class="n">Wrapper</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3844</span>         <span class="n">in_source_data</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3845</span>         <span class="n">maximum_distance</span><span class="p">,</span>
 
 <span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\sa\Utils.py</span> in <span class="ni">swapper</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">     </span><span class="mi">53</span> 
@@ -970,11 +983,11 @@ Bottom:	602507.1999999955
 <span class="g g-Whitespace">     </span><span class="mi">57</span>                 <span class="c1"># Reset the geoprocessor state to the original setting.</span>
 
 <span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\sa\Functions.py</span> in <span class="ni">Wrapper</span><span class="nt">(in_source_data, maximum_distance, cell_size, out_direction_raster, distance_method, in_barrier_data, out_back_direction_raster)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3823</span>             <span class="n">out_back_direction_raster</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">3824</span>         <span class="n">out_distance_raster</span> <span class="o">=</span> <span class="s2">&quot;#&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">3825</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">gp</span><span class="o">.</span><span class="n">EucDistance_sa</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">3826</span>             <span class="n">in_source_data</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">3827</span>             <span class="n">out_distance_raster</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3831</span>             <span class="n">out_back_direction_raster</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3832</span>         <span class="n">out_distance_raster</span> <span class="o">=</span> <span class="s2">&quot;#&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">3833</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">gp</span><span class="o">.</span><span class="n">EucDistance_sa</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3834</span>             <span class="n">in_source_data</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3835</span>             <span class="n">out_distance_raster</span><span class="p">,</span>
 
 <span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(*args)</span>
 <span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
@@ -986,6 +999,7 @@ Bottom:	602507.1999999955
 <span class="ne">ExecuteError</span>: ERROR 999999: Something unexpected caused the tool to fail. Contact Esri Technical Support (http://esriurl.com/support) to Report a Bug, and refer to the error help for potential solutions or workarounds.
 <span class="n">No</span> <span class="n">raster</span> <span class="n">store</span> <span class="ow">is</span> <span class="n">configurated</span><span class="o">.</span>
 <span class="n">No</span> <span class="n">raster</span> <span class="n">store</span> <span class="ow">is</span> <span class="n">configurated</span><span class="o">.</span>
+<span class="n">Not</span> <span class="n">running</span> <span class="n">inside</span> <span class="n">a</span> <span class="n">server</span> <span class="n">process</span><span class="o">.</span>
 <span class="n">Failed</span> <span class="n">to</span> <span class="n">execute</span> <span class="p">(</span><span class="n">EucDistance</span><span class="p">)</span><span class="o">.</span>
 </pre></div>
 </div>
@@ -1006,7 +1020,7 @@ Bottom:	602507.1999999955
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">snapRaster</span> <span class="o">=</span> <span class="n">school_dist_rast</span>
 
 <span class="n">school_dist_1_9</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">sa</span><span class="o">.</span><span class="n">Slice</span><span class="p">(</span>
-    <span class="n">school_dist_grid</span><span class="p">,</span>
+    <span class="n">school_dist_rast</span><span class="p">,</span>
     <span class="n">number_zones</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> 
     <span class="n">slice_type</span><span class="o">=</span><span class="s2">&quot;NATURAL_BREAKS&quot;</span><span class="p">,</span>
     <span class="n">base_output_zone</span><span class="o">=</span><span class="mi">1</span>
@@ -1019,11 +1033,11 @@ Bottom:	602507.1999999955
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="mi">58</span><span class="n">fe85667b56</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_23728\2902444777.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">snapRaster</span> <span class="o">=</span> <span class="n">school_dist_rast</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">school_dist_1_9</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">sa</span><span class="o">.</span><span class="n">Slice</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">school_dist_grid</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">school_dist_rast</span><span class="p">,</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">number_zones</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
 
 <span class="ne">NameError</span>: name &#39;school_dist_rast&#39; is not defined
@@ -1071,7 +1085,7 @@ Bottom:	602507.1999999955
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="mf">9180889e7</span><span class="n">f27</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_23728\2477450030.py</span> in <span class="ni">&lt;cell line: 6&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
 <span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">school_dist_9_1</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">sa</span><span class="o">.</span><span class="n">Reclassify</span><span class="p">(</span><span class="n">school_dist_1_9</span><span class="p">,</span> <span class="s2">&quot;Value&quot;</span><span class="p">,</span> <span class="n">dist_remap</span><span class="p">)</span>
@@ -1095,7 +1109,7 @@ Bottom:	602507.1999999955
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="n">f06f557e46fc</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_23728\3734019468.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_dist_wgted</span> <span class="o">=</span> <span class="n">school_dist_9_1</span><span class="o">*</span><span class="mf">0.3</span> <span class="o">+</span> <span class="n">school_dist_1_9</span><span class="o">*</span><span class="mf">0.7</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">school_dist_wgted</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_gdb</span><span class="p">,</span> <span class="s2">&quot;school_dist_wgted&quot;</span><span class="p">))</span>
 
@@ -1124,7 +1138,7 @@ Bottom:	602507.1999999955
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="mi">8938</span><span class="n">cd092451</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_23728\820020787.py</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># without defining a variable to store the output raster</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">sa</span><span class="o">.</span><span class="n">Int</span><span class="p">(</span><span class="n">school_dist_wgted</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span>
@@ -1171,7 +1185,7 @@ Bottom:	602507.1999999955
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">7-1: Raster Analysis Basics</p>
+            <p class="prev-next-title">Raster Analysis Basics</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="8-0.Tool_Landing.html" title="next page">
