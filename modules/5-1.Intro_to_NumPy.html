@@ -52,9 +52,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -146,6 +144,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../software_2.html">
      Use Notebook in a Browser
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_3.html">
+     Fix missing buttons in Jupyter Notebook
     </a>
    </li>
   </ul>
@@ -286,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="7-0.Raster_Landing.html">
+  <a class="reference internal" href="7-0.Raster_analysis.html">
    Raster Data Analysis using ArcPy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -297,12 +300,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="7-1.Raster_Analysis_Basics.html">
-     7-1: Raster Analysis Basics
+     Raster Analysis Basics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="7-2.ArcPy_Raster.html">
-     7-2: Run Raster Geoprocessing using ArcPy
+     Run Raster Geoprocessing using ArcPy
     </a>
    </li>
   </ul>
@@ -1163,7 +1166,7 @@ function in Python when it comes to the <em>inclusion of the upper bound</em>.</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
@@ -1176,7 +1179,7 @@ function in Python when it comes to the <em>inclusion of the upper bound</em>.</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 </pre></div>
 </div>
 </div>
@@ -1191,7 +1194,7 @@ meaning any integer within that range has equal probability to be drawn each tim
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([8, 0, 4, 1, 7, 5, 8, 2, 3, 4, 8, 6, 1, 8, 4, 5, 5, 0, 5, 4])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([7, 6, 7, 9, 2, 5, 5, 5, 3, 1, 1, 5, 7, 2, 0, 7, 6, 4, 3, 9])
 </pre></div>
 </div>
 </div>
@@ -1206,9 +1209,9 @@ The function allows to specify the shape of the numpy array.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.94202603, 0.55507904],
-       [0.16187862, 0.006309  ],
-       [0.96275518, 0.51313865]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.27994866, 0.6351891 ],
+       [0.81436184, 0.49466108],
+       [0.57408405, 0.9534148 ]])
 </pre></div>
 </div>
 </div>
@@ -1226,12 +1229,12 @@ The function allows to specify the shape of the numpy array.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.05353321 0.7510901  0.21616533]
- [0.87043597 0.61075251 0.72589899]
- [0.665916   0.23390903 0.61130606]
- [0.29665145 0.21021465 0.26035931]
- [0.05860016 0.21811092 0.48727328]
- [0.16257425 0.03965429 0.54403896]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.90741574 0.77437658 0.95209581]
+ [0.8844087  0.6820324  0.23831916]
+ [0.5099338  0.49209966 0.2632299 ]
+ [0.96357136 0.89310141 0.36956809]
+ [0.39308226 0.35523336 0.47978657]
+ [0.1640017  0.56397541 0.5351869 ]]
 The size of arr: 18.
 The shape of arr: (6, 3).
 </pre></div>
@@ -1290,7 +1293,14 @@ The shape of arr: (6, 3).
  &#39;major_roads&#39;,
  &#39;landuse&#39;,
  &#39;crash&#39;,
- &#39;blockgroups&#39;]
+ &#39;blockgroups&#39;,
+ &#39;I75_2mi_buff&#39;,
+ &#39;schools_2mile_I75&#39;,
+ &#39;blockgroups_school_spjoin&#39;,
+ &#39;zip_q1_out&#39;,
+ &#39;zip_q2_out&#39;,
+ &#39;zipbnd_q3_out&#39;,
+ &#39;blockgroups_Layer1_CopyFeatures&#39;]
 </pre></div>
 </div>
 </div>

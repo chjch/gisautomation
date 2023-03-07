@@ -52,9 +52,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -146,6 +144,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../software_2.html">
      Use Notebook in a Browser
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_3.html">
+     Fix missing buttons in Jupyter Notebook
     </a>
    </li>
   </ul>
@@ -286,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="7-0.Raster_Landing.html">
+  <a class="reference internal" href="7-0.Raster_analysis.html">
    Raster Data Analysis using ArcPy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -297,12 +300,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="7-1.Raster_Analysis_Basics.html">
-     7-1: Raster Analysis Basics
+     Raster Analysis Basics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="7-2.ArcPy_Raster.html">
-     7-2: Run Raster Geoprocessing using ArcPy
+     Run Raster Geoprocessing using ArcPy
     </a>
    </li>
   </ul>
@@ -698,7 +701,7 @@ Following are some common examples:</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="n">ada2bdf6ec5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_19640\1844727562.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">int</span><span class="p">([</span><span class="s1">&#39;3.4&#39;</span><span class="p">])</span>
 
 <span class="ne">TypeError</span>: int() argument must be a string, a bytes-like object or a number, not &#39;list&#39;
@@ -721,7 +724,7 @@ Following are some common examples:</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">76</span><span class="n">ea80225931</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_19640\1606758863.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="ne">ZeroDivisionError</span>: division by zero
@@ -754,7 +757,7 @@ Following are some common examples:</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">4</span><span class="n">b21885ecf42</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_19640\1655869452.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 
 <span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;upper&#39;
@@ -788,7 +791,7 @@ Following are some common examples:</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="n">d79b9642955a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_19640\1603646997.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
 
 <span class="ne">ValueError</span>: could not convert string to float: &#39;d&#39;

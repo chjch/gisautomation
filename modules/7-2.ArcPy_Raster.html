@@ -52,7 +52,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -939,6 +939,13 @@ Bottom:	602507.1999999955
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_gdb</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">output_gdb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="euclidean-distance">
 <h3>2.2 Euclidean Distance<a class="headerlink" href="#euclidean-distance" title="Permalink to this headline">#</a></h3>
@@ -951,56 +958,15 @@ Bottom:	602507.1999999955
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">workspace</span> <span class="o">=</span> <span class="n">gdb_worksp</span>
-<span class="n">school_fc</span> <span class="o">=</span> <span class="s2">&quot;schools&quot;</span>
-
-<span class="n">school_dist_rast</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">sa</span><span class="o">.</span><span class="n">EucDistance</span><span class="p">(</span><span class="n">school_fc</span><span class="p">)</span>   <span class="c1"># withtout setting cell_size</span>
-<span class="n">school_dist_rast</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_gdb</span><span class="p">,</span> <span class="s1">&#39;school_dist_rast&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_fc</span> <span class="o">=</span> <span class="s2">&quot;schools&quot;</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ExecuteError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="nn">~\AppData\Local\Temp\ipykernel_23728\2934819003.py</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">school_fc</span> <span class="o">=</span> <span class="s2">&quot;schools&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">school_dist_rast</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">sa</span><span class="o">.</span><span class="n">EucDistance</span><span class="p">(</span><span class="n">school_fc</span><span class="p">)</span>   <span class="c1"># withtout setting cell_size</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">school_dist_rast</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_gdb</span><span class="p">,</span> <span class="s1">&#39;school_dist_rast&#39;</span><span class="p">))</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\sa\Functions.py</span> in <span class="ni">EucDistance</span><span class="nt">(in_source_data, maximum_distance, cell_size, out_direction_raster, distance_method, in_barrier_data, out_back_direction_raster)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3841</span>             <span class="n">out_back_direction_raster</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3842</span>         <span class="k">return</span> <span class="n">_wrapToolRaster</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;EucDistance_sa&quot;</span><span class="p">,</span> <span class="n">unicode</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">getOutput</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
-<span class="ne">-&gt; </span><span class="mi">3843</span>     <span class="k">return</span> <span class="n">Wrapper</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">3844</span>         <span class="n">in_source_data</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">3845</span>         <span class="n">maximum_distance</span><span class="p">,</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\sa\Utils.py</span> in <span class="ni">swapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">53</span> 
-<span class="g g-Whitespace">     </span><span class="mi">54</span>             <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">55</span>                 <span class="n">result</span> <span class="o">=</span> <span class="n">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span>             <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">57</span>                 <span class="c1"># Reset the geoprocessor state to the original setting.</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\sa\Functions.py</span> in <span class="ni">Wrapper</span><span class="nt">(in_source_data, maximum_distance, cell_size, out_direction_raster, distance_method, in_barrier_data, out_back_direction_raster)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3831</span>             <span class="n">out_back_direction_raster</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">3832</span>         <span class="n">out_distance_raster</span> <span class="o">=</span> <span class="s2">&quot;#&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">3833</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">gp</span><span class="o">.</span><span class="n">EucDistance_sa</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">3834</span>             <span class="n">in_source_data</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">3835</span>             <span class="n">out_distance_raster</span><span class="p">,</span>
-
-<span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(*args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">512</span>             <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">val</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">513</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span>             <span class="k">return</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-
-<span class="ne">ExecuteError</span>: ERROR 999999: Something unexpected caused the tool to fail. Contact Esri Technical Support (http://esriurl.com/support) to Report a Bug, and refer to the error help for potential solutions or workarounds.
-<span class="n">No</span> <span class="n">raster</span> <span class="n">store</span> <span class="ow">is</span> <span class="n">configurated</span><span class="o">.</span>
-<span class="n">No</span> <span class="n">raster</span> <span class="n">store</span> <span class="ow">is</span> <span class="n">configurated</span><span class="o">.</span>
-<span class="n">Not</span> <span class="n">running</span> <span class="n">inside</span> <span class="n">a</span> <span class="n">server</span> <span class="n">process</span><span class="o">.</span>
-<span class="n">Failed</span> <span class="n">to</span> <span class="n">execute</span> <span class="p">(</span><span class="n">EucDistance</span><span class="p">)</span><span class="o">.</span>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_dist_rast</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">sa</span><span class="o">.</span><span class="n">EucDistance</span><span class="p">(</span><span class="n">school_fc</span><span class="p">)</span>   <span class="c1"># without setting cell_size</span>
+<span class="n">school_dist_rast</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_gdb</span><span class="p">,</span> <span class="s1">&#39;school_dist_rast&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1027,20 +993,6 @@ Bottom:	602507.1999999955
 <span class="p">)</span>
 
 <span class="n">school_dist_1_9</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">output_gdb</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;school_dist_1_9&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">~\AppData\Local\Temp\ipykernel_23728\2902444777.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">snapRaster</span> <span class="o">=</span> <span class="n">school_dist_rast</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">school_dist_1_9</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">sa</span><span class="o">.</span><span class="n">Slice</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">school_dist_rast</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">number_zones</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
-
-<span class="ne">NameError</span>: name &#39;school_dist_rast&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1082,19 +1034,6 @@ Bottom:	602507.1999999955
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">~\AppData\Local\Temp\ipykernel_23728\2477450030.py</span> in <span class="ni">&lt;cell line: 6&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">school_dist_9_1</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">sa</span><span class="o">.</span><span class="n">Reclassify</span><span class="p">(</span><span class="n">school_dist_1_9</span><span class="p">,</span> <span class="s2">&quot;Value&quot;</span><span class="p">,</span> <span class="n">dist_remap</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">school_dist_9_1</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">\</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">output_gdb</span><span class="p">,</span> <span class="s2">&quot;school_dist_9_1&quot;</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;school_dist_1_9&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="map-algebra-directly-operated-on-rasters">
@@ -1103,17 +1042,6 @@ Bottom:	602507.1999999955
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_dist_wgted</span> <span class="o">=</span> <span class="n">school_dist_9_1</span><span class="o">*</span><span class="mf">0.3</span> <span class="o">+</span> <span class="n">school_dist_1_9</span><span class="o">*</span><span class="mf">0.7</span>
 <span class="n">school_dist_wgted</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_gdb</span><span class="p">,</span> <span class="s2">&quot;school_dist_wgted&quot;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">~\AppData\Local\Temp\ipykernel_23728\3734019468.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">school_dist_wgted</span> <span class="o">=</span> <span class="n">school_dist_9_1</span><span class="o">*</span><span class="mf">0.3</span> <span class="o">+</span> <span class="n">school_dist_1_9</span><span class="o">*</span><span class="mf">0.7</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">school_dist_wgted</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_gdb</span><span class="p">,</span> <span class="s2">&quot;school_dist_wgted&quot;</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;school_dist_9_1&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1132,20 +1060,6 @@ Bottom:	602507.1999999955
 <span class="n">arcpy</span><span class="o">.</span><span class="n">sa</span><span class="o">.</span><span class="n">Int</span><span class="p">(</span><span class="n">school_dist_wgted</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span>
     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_gdb</span><span class="p">,</span> <span class="s2">&quot;school_dist_wgted_int&quot;</span><span class="p">)</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">~\AppData\Local\Temp\ipykernel_23728\820020787.py</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># without defining a variable to store the output raster</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">sa</span><span class="o">.</span><span class="n">Int</span><span class="p">(</span><span class="n">school_dist_wgted</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_gdb</span><span class="p">,</span> <span class="s2">&quot;school_dist_wgted_int&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;school_dist_wgted&#39; is not defined
 </pre></div>
 </div>
 </div>

@@ -52,9 +52,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -146,6 +144,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../software_2.html">
      Use Notebook in a Browser
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_3.html">
+     Fix missing buttons in Jupyter Notebook
     </a>
    </li>
   </ul>
@@ -286,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="7-0.Raster_Landing.html">
+  <a class="reference internal" href="7-0.Raster_analysis.html">
    Raster Data Analysis using ArcPy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -297,12 +300,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="7-1.Raster_Analysis_Basics.html">
-     7-1: Raster Analysis Basics
+     Raster Analysis Basics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="7-2.ArcPy_Raster.html">
-     7-2: Run Raster Geoprocessing using ArcPy
+     Run Raster Geoprocessing using ArcPy
     </a>
    </li>
   </ul>
@@ -1174,7 +1177,7 @@ a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</sp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x27a9689c280&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1e128007ee0&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_17_1.png" src="../_images/6-1.Intro_to_Matplotlib_17_1.png" />
@@ -1193,7 +1196,7 @@ of <code class="docutils literal notranslate"><span class="pre">(&lt;width&gt;,<
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x27a96bfa250&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1e1281456d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_19_1.png" src="../_images/6-1.Intro_to_Matplotlib_19_1.png" />
@@ -1244,7 +1247,7 @@ below and supply the value as a <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x27a916390d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1e1298191c0&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_23_1.png" src="../_images/6-1.Intro_to_Matplotlib_23_1.png" />
@@ -1263,7 +1266,7 @@ below and supply the value as a <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x27a916b65b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1e129893730&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_25_1.png" src="../_images/6-1.Intro_to_Matplotlib_25_1.png" />
@@ -1372,7 +1375,7 @@ displayed on the same plot.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x27a91dc26d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1e129c6bb80&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_32_1.png" src="../_images/6-1.Intro_to_Matplotlib_32_1.png" />
@@ -1410,7 +1413,7 @@ displayed on the same plot.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x27a91d421f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1e129f2ffa0&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_34_1.png" src="../_images/6-1.Intro_to_Matplotlib_34_1.png" />
@@ -1505,7 +1508,7 @@ a bin size that is too large may <strong>obscure important features</strong> of 
          1.,  1.]),
  array([ 163.,  512.,  861., 1210., 1559., 1908., 2257., 2606., 2955.,
         3304., 3653., 4002., 4351., 4700., 5049., 5398.]),
- [&lt;matplotlib.patches.Polygon at 0x27a9308ed90&gt;])
+ [&lt;matplotlib.patches.Polygon at 0x1e12b24f850&gt;])
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_40_1.png" src="../_images/6-1.Intro_to_Matplotlib_40_1.png" />

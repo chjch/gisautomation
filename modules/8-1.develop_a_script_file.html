@@ -52,9 +52,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -146,6 +144,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../software_2.html">
      Use Notebook in a Browser
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_3.html">
+     Fix missing buttons in Jupyter Notebook
     </a>
    </li>
   </ul>
@@ -286,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="7-0.Raster_Landing.html">
+  <a class="reference internal" href="7-0.Raster_analysis.html">
    Raster Data Analysis using ArcPy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -297,12 +300,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="7-1.Raster_Analysis_Basics.html">
-     7-1: Raster Analysis Basics
+     Raster Analysis Basics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="7-2.ArcPy_Raster.html">
-     7-2: Run Raster Geoprocessing using ArcPy
+     Run Raster Geoprocessing using ArcPy
     </a>
    </li>
   </ul>
@@ -732,7 +735,7 @@ into your own <strong>geoprocessing tools</strong>.</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ExecuteError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">d3234768f404</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_23400\2824152856.py</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># geoprocessing operations</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">analysis</span><span class="o">.</span><span class="n">Buffer</span><span class="p">(</span><span class="n">I75_fc</span><span class="p">,</span> <span class="n">I75_buff</span><span class="p">,</span> <span class="s2">&quot;6 Miles&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> 
@@ -740,18 +743,18 @@ into your own <strong>geoprocessing tools</strong>.</p>
 <span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">blkgrp_fc</span><span class="p">,</span> <span class="s2">&quot;WITHIN&quot;</span><span class="p">,</span> <span class="n">cntbnd_fc</span>
 
 <span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py</span> in <span class="ni">Buffer</span><span class="nt">(in_features, out_feature_class, buffer_distance_or_field, line_side, line_end_type, dissolve_option, dissolve_field, method)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1369</span>         <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">   </span><span class="mi">1370</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1371</span>         <span class="k">raise</span> <span class="n">e</span>
-<span class="g g-Whitespace">   </span><span class="mi">1372</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1373</span> <span class="nd">@gptooldoc</span><span class="p">(</span><span class="s1">&#39;CreateThiessenPolygons_analysis&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1374</span>         <span class="k">return</span> <span class="n">retval</span>
+<span class="g g-Whitespace">   </span><span class="mi">1375</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1376</span>         <span class="k">raise</span> <span class="n">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1377</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1378</span> <span class="nd">@gptooldoc</span><span class="p">(</span><span class="s1">&#39;CreateThiessenPolygons_analysis&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 
 <span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\analysis.py</span> in <span class="ni">Buffer</span><span class="nt">(in_features, out_feature_class, buffer_distance_or_field, line_side, line_end_type, dissolve_option, dissolve_field, method)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1366</span>     <span class="kn">from</span> <span class="nn">arcpy.arcobjects.arcobjectconversion</span> <span class="kn">import</span> <span class="n">convertArcObjectToPythonObject</span>
-<span class="g g-Whitespace">   </span><span class="mi">1367</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1368</span>         <span class="n">retval</span> <span class="o">=</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">Buffer_analysis</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">((</span><span class="n">in_features</span><span class="p">,</span> <span class="n">out_feature_class</span><span class="p">,</span> <span class="n">buffer_distance_or_field</span><span class="p">,</span> <span class="n">line_side</span><span class="p">,</span> <span class="n">line_end_type</span><span class="p">,</span> <span class="n">dissolve_option</span><span class="p">,</span> <span class="n">dissolve_field</span><span class="p">,</span> <span class="n">method</span><span class="p">),</span> <span class="kc">True</span><span class="p">)))</span>
-<span class="g g-Whitespace">   </span><span class="mi">1369</span>         <span class="k">return</span> <span class="n">retval</span>
-<span class="g g-Whitespace">   </span><span class="mi">1370</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1371</span>     <span class="kn">from</span> <span class="nn">arcpy.arcobjects.arcobjectconversion</span> <span class="kn">import</span> <span class="n">convertArcObjectToPythonObject</span>
+<span class="g g-Whitespace">   </span><span class="mi">1372</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1373</span>         <span class="n">retval</span> <span class="o">=</span> <span class="n">convertArcObjectToPythonObject</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">Buffer_analysis</span><span class="p">(</span><span class="o">*</span><span class="n">gp_fixargs</span><span class="p">((</span><span class="n">in_features</span><span class="p">,</span> <span class="n">out_feature_class</span><span class="p">,</span> <span class="n">buffer_distance_or_field</span><span class="p">,</span> <span class="n">line_side</span><span class="p">,</span> <span class="n">line_end_type</span><span class="p">,</span> <span class="n">dissolve_option</span><span class="p">,</span> <span class="n">dissolve_field</span><span class="p">,</span> <span class="n">method</span><span class="p">),</span> <span class="kc">True</span><span class="p">)))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1374</span>         <span class="k">return</span> <span class="n">retval</span>
+<span class="g g-Whitespace">   </span><span class="mi">1375</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 
 <span class="nn">C:\Program Files\ArcGIS\Pro\Resources\ArcPy\arcpy\geoprocessing\_base.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(*args)</span>
 <span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gp</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>

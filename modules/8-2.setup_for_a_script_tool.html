@@ -52,9 +52,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -146,6 +144,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../software_2.html">
      Use Notebook in a Browser
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_3.html">
+     Fix missing buttons in Jupyter Notebook
     </a>
    </li>
   </ul>
@@ -286,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="7-0.Raster_Landing.html">
+  <a class="reference internal" href="7-0.Raster_analysis.html">
    Raster Data Analysis using ArcPy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -297,12 +300,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="7-1.Raster_Analysis_Basics.html">
-     7-1: Raster Analysis Basics
+     Raster Analysis Basics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="7-2.ArcPy_Raster.html">
-     7-2: Run Raster Geoprocessing using ArcPy
+     Run Raster Geoprocessing using ArcPy
     </a>
    </li>
   </ul>
@@ -701,7 +704,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">42</span><span class="n">be1f54d328</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_10156\1318439211.py</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Access soft-coded parameter</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">I75</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">blkgrp</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -723,7 +726,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">ba58398facf6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_10156\3135365642.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">output_gdb</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">blkgrp_select</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
@@ -743,7 +746,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">c70e045379af</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_10156\1397270509.py</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># intermediate output</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">I75_buff</span> <span class="o">=</span> <span class="n">output_gdb</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;I75_Buff&quot;</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">blkgrp_law</span> <span class="o">=</span> <span class="n">output_gdb</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;blkgrp_law&quot;</span>

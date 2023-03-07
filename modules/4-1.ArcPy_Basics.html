@@ -52,9 +52,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -146,6 +144,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../software_2.html">
      Use Notebook in a Browser
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_3.html">
+     Fix missing buttons in Jupyter Notebook
     </a>
    </li>
   </ul>
@@ -286,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="7-0.Raster_Landing.html">
+  <a class="reference internal" href="7-0.Raster_analysis.html">
    Raster Data Analysis using ArcPy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -297,12 +300,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="7-1.Raster_Analysis_Basics.html">
-     7-1: Raster Analysis Basics
+     Raster Analysis Basics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="7-2.ArcPy_Raster.html">
-     7-2: Run Raster Geoprocessing using ArcPy
+     Run Raster Geoprocessing using ArcPy
     </a>
    </li>
   </ul>
@@ -798,7 +801,7 @@ C\Users\chjch\Documents\class_data.gdb
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-3-dd777b75b75a&gt;&quot;</span><span class="gt">, line </span><span class="mi">3</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\chjch\AppData\Local\Temp\ipykernel_14116\448856761.py&quot;</span><span class="gt">, line </span><span class="mi">3</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C\Users\chjch\Documents\class_data.gdb&#39;</span><span class="p">)</span>
                                                   <span class="o">^</span>
 <span class="ne">SyntaxError</span>: (unicode error) &#39;unicodeescape&#39; codec can&#39;t decode bytes in position 1-2: truncated \UXXXXXXXX escape
@@ -886,7 +889,7 @@ world
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;MDomain&#39;, &#39;MResolution&#39;, &#39;MTolerance&#39;, &#39;S100FeatureCatalogueFile&#39;, &#39;XYDomain&#39;, &#39;XYResolution&#39;, &#39;XYTolerance&#39;, &#39;ZDomain&#39;, &#39;ZResolution&#39;, &#39;ZTolerance&#39;, &#39;__class__&#39;, &#39;__delattr__&#39;, &#39;__delitem__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__getitem__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__iter__&#39;, &#39;__le__&#39;, &#39;__lt__&#39;, &#39;__module__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__setattr__&#39;, &#39;__setitem__&#39;, &#39;__sizeof__&#39;, &#39;__slots__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;_environments&#39;, &#39;_gp&#39;, &#39;_refresh&#39;, &#39;addOutputsToMap&#39;, &#39;annotationTextStringFieldLength&#39;, &#39;autoCancelling&#39;, &#39;autoCommit&#39;, &#39;baDataSource&#39;, &#39;baNetworkSource&#39;, &#39;baUseDetailedAggregation&#39;, &#39;buildStatsAndRATForTempRaster&#39;, &#39;cartographicCoordinateSystem&#39;, &#39;cartographicPartitions&#39;, &#39;cellAlignment&#39;, &#39;cellSize&#39;, &#39;cellSizeProjectionMethod&#39;, &#39;coincidentPoints&#39;, &#39;compression&#39;, &#39;configKeyword&#39;, &#39;extent&#39;, &#39;geographicTransformations&#39;, &#39;gpuId&#39;, &#39;isCancelled&#39;, &#39;items&#39;, &#39;iteritems&#39;, &#39;keys&#39;, &#39;maintainAttachments&#39;, &#39;maintainCurveSegments&#39;, &#39;maintainSpatialIndex&#39;, &#39;mask&#39;, &#39;matchMultidimensionalVariable&#39;, &#39;nodata&#39;, &#39;outputCoordinateSystem&#39;, &#39;outputMFlag&#39;, &#39;outputZFlag&#39;, &#39;outputZValue&#39;, &#39;overwriteOutput&#39;, &#39;packageWorkspace&#39;, &#39;parallelProcessingFactor&#39;, &#39;preserveGlobalIds&#39;, &#39;processingServer&#39;, &#39;processingServerPassword&#39;, &#39;processingServerUser&#39;, &#39;processorType&#39;, &#39;pyramid&#39;, &#39;qualifiedFieldNames&#39;, &#39;randomGenerator&#39;, &#39;rasterStatistics&#39;, &#39;recycleProcessingWorkers&#39;, &#39;referenceScale&#39;, &#39;resamplingMethod&#39;, &#39;retryOnFailures&#39;, &#39;scratchFolder&#39;, &#39;scratchGDB&#39;, &#39;scratchWorkspace&#39;, &#39;scriptWorkspace&#39;, &#39;snapRaster&#39;, &#39;terrainMemoryUsage&#39;, &#39;tileSize&#39;, &#39;tinSaveVersion&#39;, &#39;transferDomains&#39;, &#39;transferGDBAttributeProperties&#39;, &#39;unionDimension&#39;, &#39;values&#39;, &#39;workspace&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;MDomain&#39;, &#39;MResolution&#39;, &#39;MTolerance&#39;, &#39;S100FeatureCatalogueFile&#39;, &#39;XYDomain&#39;, &#39;XYResolution&#39;, &#39;XYTolerance&#39;, &#39;ZDomain&#39;, &#39;ZResolution&#39;, &#39;ZTolerance&#39;, &#39;__class__&#39;, &#39;__delattr__&#39;, &#39;__delitem__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__getitem__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__iter__&#39;, &#39;__le__&#39;, &#39;__lt__&#39;, &#39;__module__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__setattr__&#39;, &#39;__setitem__&#39;, &#39;__sizeof__&#39;, &#39;__slots__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;_environments&#39;, &#39;_gp&#39;, &#39;_refresh&#39;, &#39;addOutputsToMap&#39;, &#39;annotationTextStringFieldLength&#39;, &#39;autoCancelling&#39;, &#39;autoCommit&#39;, &#39;baDataSource&#39;, &#39;baNetworkSource&#39;, &#39;baUseDetailedAggregation&#39;, &#39;buildStatsAndRATForTempRaster&#39;, &#39;cartographicCoordinateSystem&#39;, &#39;cartographicPartitions&#39;, &#39;cellAlignment&#39;, &#39;cellSize&#39;, &#39;cellSizeProjectionMethod&#39;, &#39;coincidentPoints&#39;, &#39;compression&#39;, &#39;configKeyword&#39;, &#39;daylightSaving&#39;, &#39;extent&#39;, &#39;geographicTransformations&#39;, &#39;gpuId&#39;, &#39;isCancelled&#39;, &#39;items&#39;, &#39;iteritems&#39;, &#39;keys&#39;, &#39;maintainAttachments&#39;, &#39;maintainCurveSegments&#39;, &#39;maintainSpatialIndex&#39;, &#39;mask&#39;, &#39;matchMultidimensionalVariable&#39;, &#39;nodata&#39;, &#39;outputCoordinateSystem&#39;, &#39;outputMFlag&#39;, &#39;outputZFlag&#39;, &#39;outputZValue&#39;, &#39;overwriteOutput&#39;, &#39;packageWorkspace&#39;, &#39;parallelProcessingFactor&#39;, &#39;preserveGlobalIds&#39;, &#39;processingServer&#39;, &#39;processingServerPassword&#39;, &#39;processingServerUser&#39;, &#39;processorType&#39;, &#39;pyramid&#39;, &#39;qualifiedFieldNames&#39;, &#39;randomGenerator&#39;, &#39;rasterStatistics&#39;, &#39;recycleProcessingWorkers&#39;, &#39;referenceScale&#39;, &#39;resamplingMethod&#39;, &#39;retryOnFailures&#39;, &#39;scratchFolder&#39;, &#39;scratchGDB&#39;, &#39;scratchWorkspace&#39;, &#39;scriptWorkspace&#39;, &#39;snapRaster&#39;, &#39;terrainMemoryUsage&#39;, &#39;tileSize&#39;, &#39;timeZone&#39;, &#39;tinSaveVersion&#39;, &#39;transferDomains&#39;, &#39;transferGDBAttributeProperties&#39;, &#39;unionDimension&#39;, &#39;values&#39;, &#39;workspace&#39;]
 </pre></div>
 </div>
 </div>
