@@ -7,6 +7,7 @@ chapters:
     sections:
       - file: software_1
       - file: software_2
+      - file: software_3
   - file: modules/1-1.Intro_to_ModelBuilder
   - file: modules/2-0.Intro_to_Python
     sections:
@@ -32,7 +33,7 @@ chapters:
     sections:
       - file: modules/6-1.Intro_to_Matplotlib
       - file: modules/6-2.Intro_to_ArcGIS_API_for_Python
-  - file: modules/7-0.Raster_Landing
+  - file: modules/7-0.Raster_analysis
     sections:
       - file: modules/7-1.Raster_Analysis_Basics
       - file: modules/7-2.ArcPy_Raster
