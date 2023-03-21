@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -310,8 +312,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="8-0.Tool_Landing.html">
-   Building a script tool in ArcGIS Pro
+  <a class="reference internal" href="8-0.script_tool.html">
+   Develop a Script Tool
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -320,17 +322,17 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="8-1.develop_a_script_file.html">
-     8-1: The Basics of a Script Tool
+    <a class="reference internal" href="8-1.script_tool_basics.html">
+     The Basics of a Script Tool
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="8-2.setup_for_a_script_tool.html">
-     8-2: Create a Script Tool
+    <a class="reference internal" href="8-2.script_tool_setup.html">
+     Build a Script Tool
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="8-3.additional_features_for_script_tool.html">
+    <a class="reference internal" href="8-3.additional_features.html">
      8-3:  Add Additional Features to the Script Tool
     </a>
    </li>
@@ -1165,7 +1167,7 @@ function in Python when it comes to the <em>inclusion of the upper bound</em>.</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -1178,7 +1180,7 @@ function in Python when it comes to the <em>inclusion of the upper bound</em>.</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
 </pre></div>
 </div>
 </div>
@@ -1193,7 +1195,7 @@ meaning any integer within that range has equal probability to be drawn each tim
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([7, 6, 7, 9, 2, 5, 5, 5, 3, 1, 1, 5, 7, 2, 0, 7, 6, 4, 3, 9])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6, 0, 3, 9, 8, 7, 8, 4, 4, 0, 0, 9, 8, 6, 6, 4, 8, 7, 7, 1])
 </pre></div>
 </div>
 </div>
@@ -1208,9 +1210,9 @@ The function allows to specify the shape of the numpy array.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.27994866, 0.6351891 ],
-       [0.81436184, 0.49466108],
-       [0.57408405, 0.9534148 ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.43655481, 0.52675833],
+       [0.7324775 , 0.82068934],
+       [0.78546315, 0.56511864]])
 </pre></div>
 </div>
 </div>
@@ -1228,12 +1230,12 @@ The function allows to specify the shape of the numpy array.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.90741574 0.77437658 0.95209581]
- [0.8844087  0.6820324  0.23831916]
- [0.5099338  0.49209966 0.2632299 ]
- [0.96357136 0.89310141 0.36956809]
- [0.39308226 0.35523336 0.47978657]
- [0.1640017  0.56397541 0.5351869 ]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.5222541  0.39546114 0.21162882]
+ [0.66593784 0.94148584 0.88868914]
+ [0.65737895 0.84035573 0.2614769 ]
+ [0.52853724 0.21758158 0.39929422]
+ [0.2142824  0.75570243 0.66141073]
+ [0.06959242 0.41591085 0.93542547]]
 The size of arr: 18.
 The shape of arr: (6, 3).
 </pre></div>

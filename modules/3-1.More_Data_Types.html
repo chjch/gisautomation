@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -310,8 +312,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="8-0.Tool_Landing.html">
-   Building a script tool in ArcGIS Pro
+  <a class="reference internal" href="8-0.script_tool.html">
+   Develop a Script Tool
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -320,17 +322,17 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="8-1.develop_a_script_file.html">
-     8-1: The Basics of a Script Tool
+    <a class="reference internal" href="8-1.script_tool_basics.html">
+     The Basics of a Script Tool
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="8-2.setup_for_a_script_tool.html">
-     8-2: Create a Script Tool
+    <a class="reference internal" href="8-2.script_tool_setup.html">
+     Build a Script Tool
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="8-3.additional_features_for_script_tool.html">
+    <a class="reference internal" href="8-3.additional_features.html">
      8-3:  Add Additional Features to the Script Tool
     </a>
    </li>
@@ -952,12 +954,12 @@ first element of the set.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I like St. Augustine
-I like Gainesville
-I like Orlando
-I like Jacksonville
-I like Fort Myers
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I like Jacksonville
+I like St. Augustine
 I like Tampa
+I like Fort Myers
+I like Orlando
+I like Gainesville
 </pre></div>
 </div>
 </div>
@@ -1013,7 +1015,7 @@ I like Tampa
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">~\AppData\Local\Temp\ipykernel_14784\2056869115.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_15500\2056869115.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_dict</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="ne">KeyError</span>: 0
@@ -1082,7 +1084,7 @@ the value of collegeis Design, Construction, and Planning
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">~\AppData\Local\Temp\ipykernel_14784\2290443898.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_15500\2290443898.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the value of &#39;</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;is &#39;</span> <span class="o">+</span> <span class="n">value</span><span class="p">)</span>  <span class="c1"># what&#39;s wrong here</span>
 

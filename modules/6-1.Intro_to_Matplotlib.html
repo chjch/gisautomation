@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -310,8 +312,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="8-0.Tool_Landing.html">
-   Building a script tool in ArcGIS Pro
+  <a class="reference internal" href="8-0.script_tool.html">
+   Develop a Script Tool
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -320,17 +322,17 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="8-1.develop_a_script_file.html">
-     8-1: The Basics of a Script Tool
+    <a class="reference internal" href="8-1.script_tool_basics.html">
+     The Basics of a Script Tool
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="8-2.setup_for_a_script_tool.html">
-     8-2: Create a Script Tool
+    <a class="reference internal" href="8-2.script_tool_setup.html">
+     Build a Script Tool
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="8-3.additional_features_for_script_tool.html">
+    <a class="reference internal" href="8-3.additional_features.html">
      8-3:  Add Additional Features to the Script Tool
     </a>
    </li>
@@ -1176,7 +1178,7 @@ a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</sp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1e128007ee0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23a1711b520&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_17_1.png" src="../_images/6-1.Intro_to_Matplotlib_17_1.png" />
@@ -1195,7 +1197,7 @@ of <code class="docutils literal notranslate"><span class="pre">(&lt;width&gt;,<
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1e1281456d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23a171dc730&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_19_1.png" src="../_images/6-1.Intro_to_Matplotlib_19_1.png" />
@@ -1246,7 +1248,7 @@ below and supply the value as a <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1e1298191c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23a17508370&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_23_1.png" src="../_images/6-1.Intro_to_Matplotlib_23_1.png" />
@@ -1265,7 +1267,7 @@ below and supply the value as a <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1e129893730&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x23a17581850&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_25_1.png" src="../_images/6-1.Intro_to_Matplotlib_25_1.png" />
@@ -1374,7 +1376,7 @@ displayed on the same plot.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1e129c6bb80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x23a17c90310&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_32_1.png" src="../_images/6-1.Intro_to_Matplotlib_32_1.png" />
@@ -1412,7 +1414,7 @@ displayed on the same plot.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1e129f2ffa0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x23a17c01fa0&gt;
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_34_1.png" src="../_images/6-1.Intro_to_Matplotlib_34_1.png" />
@@ -1507,7 +1509,7 @@ a bin size that is too large may <strong>obscure important features</strong> of 
          1.,  1.]),
  array([ 163.,  512.,  861., 1210., 1559., 1908., 2257., 2606., 2955.,
         3304., 3653., 4002., 4351., 4700., 5049., 5398.]),
- [&lt;matplotlib.patches.Polygon at 0x1e12b24f850&gt;])
+ [&lt;matplotlib.patches.Polygon at 0x23a18efe9a0&gt;])
 </pre></div>
 </div>
 <img alt="../_images/6-1.Intro_to_Matplotlib_40_1.png" src="../_images/6-1.Intro_to_Matplotlib_40_1.png" />
