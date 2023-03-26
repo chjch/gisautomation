@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom_style.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
@@ -43,7 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -1066,7 +1066,7 @@ within the range of <code class="docutils literal notranslate"><span class="pre"
 </section>
 <section id="span-font-color-royalblue-q-1-6-font-span">
 <h3><span><strong><font color='royalblue'>Q. 1-6</font></strong></span><a class="headerlink" href="#span-font-color-royalblue-q-1-6-font-span" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Import <code class="docutils literal notranslate"><span class="pre">arcpy</span></code> and set up <em>workspace</em> as the <strong>class geodatabase</strong>, i.e.,
 <code class="docutils literal notranslate"><span class="pre">class_data.gdb</span></code>.</p></li>
 <li><p>Create a variable that references the <code class="docutils literal notranslate"><span class="pre">crash</span></code> feature class.</p></li>
@@ -1074,7 +1074,7 @@ within the range of <code class="docutils literal notranslate"><span class="pre"
 </section>
 <section id="span-font-color-royalblue-q-1-7-font-span">
 <h3><span><strong><font color='royalblue'>Q. 1-7</font></strong></span><a class="headerlink" href="#span-font-color-royalblue-q-1-7-font-span" title="Permalink to this headline">#</a></h3>
-<ol>
+<ol class="arabic">
 <li><p>Retrieve and print out all the field names (as a <code class="docutils literal notranslate"><span class="pre">list</span></code>) in the <code class="docutils literal notranslate"><span class="pre">crash</span></code>
 feature class.</p></li>
 <li><p>Convert the <code class="docutils literal notranslate"><span class="pre">crash</span></code> feature class to a (<em>Structured</em>) NumPy array with the
@@ -1095,7 +1095,7 @@ following fields.</p>
 </section>
 <section id="span-font-color-royalblue-q-1-8-font-span">
 <h3><span><strong><font color='royalblue'>Q. 1-8</font></strong></span><a class="headerlink" href="#span-font-color-royalblue-q-1-8-font-span" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Retrieve the first 7 elements of <code class="docutils literal notranslate"><span class="pre">crash_arr</span></code>.</p></li>
 <li><p>Grab (retrieve and store as a variable) the first, fourth, eighth, 12th,
 50th, 100th row of the array.</p></li>
@@ -1105,7 +1105,7 @@ following fields.</p>
 <section id="span-font-color-royalblue-q-1-9-font-span">
 <h3><span><strong><font color='royalblue'>Q. 1-9</font></strong></span><a class="headerlink" href="#span-font-color-royalblue-q-1-9-font-span" title="Permalink to this headline">#</a></h3>
 <p>Write codes to answer following codes:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>How many crashes have <strong>positive fatalities</strong> in this dataset?</p></li>
 <li><p>What is the <strong>maximum</strong> value of fatalities in the data?</p></li>
 <li><p>How many <strong>total fatalities</strong> in the dataset?</p></li>
@@ -1113,7 +1113,7 @@ following fields.</p>
 </section>
 <section id="span-font-color-royalblue-q-1-10-font-span">
 <h3><span><strong><font color='royalblue'>Q. 1-10</font></strong></span><a class="headerlink" href="#span-font-color-royalblue-q-1-10-font-span" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>The <strong>total Damage</strong> to an accident is considered as <em>property damage</em> plus
 <em>vehicle damage</em>. Create a new array that adds the two corresponding
 columns.</p></li>
@@ -1145,7 +1145,7 @@ in a short paragraph (2-4 sentences).</p>
 </section>
 <section id="span-font-color-royalblue-q-2-4-font-span">
 <h3><span><strong><font color='royalblue'>Q. 2-4</font></strong></span><a class="headerlink" href="#span-font-color-royalblue-q-2-4-font-span" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Convert <code class="docutils literal notranslate"><span class="pre">crash_arr</span></code> array to a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and name it <code class="docutils literal notranslate"><span class="pre">crash_df</span></code>.</p></li>
 <li><p>Preview the first 5 elements.</p></li>
 <li><p>Preview the last 8 elements.</p></li>
@@ -1153,10 +1153,10 @@ in a short paragraph (2-4 sentences).</p>
 </section>
 <section id="span-font-color-royalblue-q-2-5-font-span">
 <h3><span><strong><font color='royalblue'>Q. 2-5</font></strong></span><a class="headerlink" href="#span-font-color-royalblue-q-2-5-font-span" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Retrieve columns <code class="docutils literal notranslate"><span class="pre">['Alcohol_Related',</span> <span class="pre">'Drug_Related',</span> <span class="pre">'Injuries']</span></code> from
 <code class="docutils literal notranslate"><span class="pre">crash_df</span></code></p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>using label indexing.</p></li>
 <li><p>using position-based indexing.</p></li>
 </ol>
@@ -1172,14 +1172,14 @@ crashes?</p></li>
 </section>
 <section id="span-font-color-royalblue-q-2-6-font-span">
 <h3><span><strong><font color='royalblue'>Q. 2-6</font></strong></span><a class="headerlink" href="#span-font-color-royalblue-q-2-6-font-span" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Aggregate <code class="docutils literal notranslate"><span class="pre">crash_df</span></code> by “<strong>City</strong>” and then calculate the <strong>sum</strong>?</p></li>
 <li><p>Which <strong>city</strong> has the largest number of citations?</p></li>
 </ol>
 </section>
 <section id="span-font-color-royalblue-q-2-7-font-span">
 <h3><span><strong><font color='royalblue'>Q. 2-7</font></strong></span><a class="headerlink" href="#span-font-color-royalblue-q-2-7-font-span" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Aggregate <code class="docutils literal notranslate"><span class="pre">crash_df</span></code> by “<strong>Alcohol_Related</strong>” and then calculate the <code class="docutils literal notranslate"><span class="pre">mean</span></code>
 for “<strong>Estimated_Damages</strong>”?</p></li>
 <li><p>What do you find out?</p></li>

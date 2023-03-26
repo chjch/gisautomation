@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom_style.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
@@ -43,7 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -769,7 +769,7 @@ works when a workspace or dataset is selected in the “Catalog Pane.”</p>
 between a parent folder and a sub-folder, which is in conflict with the
 <strong>escape character</strong> of Python.</p>
 <p>There are three options to address this:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Change the delimiter to be double backslashes, i.e., <code class="docutils literal notranslate"><span class="pre">\\</span></code></p></li>
 <li><p>Change the delimiter to be a single forwardslash, i.e., <code class="docutils literal notranslate"><span class="pre">/</span></code></p></li>
 <li><p>Change the string to a raw string with a <code class="docutils literal notranslate"><span class="pre">r</span></code> in front of the path.</p></li>
@@ -800,7 +800,7 @@ C\Users\chjch\Documents\class_data.gdb
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\chjch\AppData\Local\Temp\ipykernel_7276\448856761.py&quot;</span><span class="gt">, line </span><span class="mi">3</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\chjch\AppData\Local\Temp\ipykernel_11420\448856761.py&quot;</span><span class="gt">, line </span><span class="mi">3</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C\Users\chjch\Documents\class_data.gdb&#39;</span><span class="p">)</span>
                                                   <span class="o">^</span>
 <span class="ne">SyntaxError</span>: (unicode error) &#39;unicodeescape&#39; codec can&#39;t decode bytes in position 1-2: truncated \UXXXXXXXX escape
@@ -903,7 +903,7 @@ world
 the <strong>alias of the toolbox</strong> that the tool is contained.
 The first letter of every word in the tool name is capitalized.
 The alias of the toolbox are all in lowercase.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">arcpy.&lt;ToolName&gt;_&lt;toolboxalias&gt;</span></code> (old way)</p>
 <ul class="simple">
 <li><p>Buffer: <code class="docutils literal notranslate"><span class="pre">arcpy.AddField_management</span></code></p></li>
@@ -955,7 +955,7 @@ The alias of the toolbox are all in lowercase.</p>
 <section id="view-help-documentation">
 <h3>2.2 View Help Documentation<a class="headerlink" href="#view-help-documentation" title="Permalink to this headline">#</a></h3>
 <p>There are 4 methods to view the Help Documentation of a function.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Tab</span></code>: open a popup menu in place.</p></li>
 <li><p>use the function’s <code class="docutils literal notranslate"><span class="pre">.__doc__</span></code> attribute</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">help(&lt;function&gt;)</span></code></p></li>
