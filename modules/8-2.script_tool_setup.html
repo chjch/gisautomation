@@ -51,13 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8-3: Add Additional Features to the Script Tool" href="8-3.additional_features.html" />
+    <link rel="next" title="More Script Tool Features" href="8-3.additional_features.html" />
     <link rel="prev" title="The Basics of a Script Tool" href="8-1.script_tool_basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -333,7 +331,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="8-3.additional_features.html">
-     8-3:  Add Additional Features to the Script Tool
+     More Script Tool Features
     </a>
    </li>
   </ul>
@@ -725,8 +723,8 @@ Here’s how it works.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access soft-coded parameter</span>
-<span class="n">I75</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">blkgrp</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">I75</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">cntbnd</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">lawenforce</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">GetParameterAsText</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
@@ -790,7 +788,7 @@ Here’s how it works.</p>
     <a class='right-next' id="next-link" href="8-3.additional_features.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">8-3:  Add Additional Features to the Script Tool</p>
+        <p class="prev-next-title">More Script Tool Features</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
