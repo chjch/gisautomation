@@ -37,11 +37,11 @@ chapters:
     sections:
       - file: modules/7-1.Raster_Analysis_Basics
       - file: modules/7-2.ArcPy_Raster
-  - file: modules/8-0.Tool_Landing
+  - file: modules/8-0.script_tool
     sections:
-      - file: modules/8-1.develop_a_script_file
-      - file: modules/8-2.setup_for_a_script_tool
-      - file: modules/8-3.additional_features_for_script_tool
+      - file: modules/8-1.script_tool_basics
+      - file: modules/8-2.script_tool_setup
+      - file: modules/8-3.additional_features
   - file: modules/9.Problem_Solving_in_Python_and_GIS
   - file: homework/homework_problems
     sections:
