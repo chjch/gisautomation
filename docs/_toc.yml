@@ -13,10 +13,10 @@ chapters:
     sections:
       - file: modules/2-1.Markdown
       - file: modules/2-2.Data_Types
-      - file: modules/2-3.Control_Structure
+      - file: modules/2-3.More_Data_Types
   - file: modules/3-0.Intro_Python_2
     sections:
-      - file: modules/3-1.More_Data_Types
+      - file: modules/3-1.Control_Structure
       - file: modules/3-2.More_Control_Flow
       - file: modules/3-3.Exceptions
       - file: modules/3-4.Python_Function
