@@ -16,10 +16,10 @@ chapters:
       - file: modules/2-3.More_Data_Types
   - file: modules/3-0.Intro_Python_2
     sections:
-      - file: modules/3-1.Control_Structure
-      - file: modules/3-2.More_Control_Flow
+      - file: modules/3-1.Variable_Function
+      - file: modules/3-2.Conditional_Statement
       - file: modules/3-3.Exceptions
-      - file: modules/3-4.Python_Function
+      - file: modules/3-4.Loops_LoopControl
   - file: modules/4-0.intro_arcpy
     sections:
       - file: modules/4-1.ArcPy_Basics
@@ -50,4 +50,5 @@ chapters:
       - file: homework/homework3
       - file: homework/homework4
       - file: homework/homework5
+      - file: homework/homework6
   - file: final_project
