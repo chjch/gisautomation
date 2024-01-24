@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction to ArcPy" href="4-0.intro_arcpy.html" />
-    <link rel="prev" title="Exceptions" href="3-3.Exceptions.html" />
+    <link rel="next" title="Conditional Statement" href="3-2.Conditional_Statement.html" />
+    <link rel="prev" title="Function and Control Flow" href="3-0.Intro_Python_2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -186,7 +186,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="3-0.Intro_Python_2.html">
-   Control Flow and Function
+   Function and Control Flow
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -194,14 +194,14 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="3-1.Control_Structure.html">
-     Control Flow Structure
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Variable and Function
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3-2.More_Control_Flow.html">
-     More Statements for Control Flow
+    <a class="reference internal" href="3-2.Conditional_Statement.html">
+     Conditional Statement
     </a>
    </li>
    <li class="toctree-l2">
@@ -209,9 +209,9 @@ const thebe_selector_output = ".output, .cell_output"
      Exceptions
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Variable and Function
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-4.Loops_LoopControl.html">
+     Loops and Loop Control
     </a>
    </li>
   </ul>
@@ -376,6 +376,11 @@ const thebe_selector_output = ".output, .cell_output"
      Homework 5
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../homework/homework6.html">
+     Homework 5
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -442,7 +447,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/3-4.Python_Function.ipynb"
+        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/3-1.Variable_Function.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -502,7 +507,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/3-4.Python_Function.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/3-1.Variable_Function.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -530,7 +535,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/modules/3-4.Python_Function.ipynb"
+        <a href="../_sources/modules/3-1.Variable_Function.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -785,17 +790,47 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># invalid names</span>
-<span class="n">my</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>  <span class="c1"># space is invalid</span>
-<span class="n">my</span><span class="o">-</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>  <span class="c1"># dash is invalid (all special characters)</span>
-<span class="mi">1</span><span class="n">st_name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>  <span class="c1"># starting with a number is invalid</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># invalid varialbe name example: space is invalid</span>
+<span class="n">my</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>  
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\chjch\AppData\Local\Temp\ipykernel_4356\3934679671.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
-    <span class="n">my</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>  <span class="c1"># space is invalid</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\chjch\AppData\Local\Temp\ipykernel_16276\3326325253.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+    <span class="n">my</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>
        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># invalid variable name example: dash/hyphen is invalid (all special characters)</span>
+<span class="n">my</span><span class="o">-</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\chjch\AppData\Local\Temp\ipykernel_16276\3539178090.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+    <span class="n">my</span><span class="o">-</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>
+    <span class="o">^</span>
+<span class="ne">SyntaxError</span>: cannot assign to operator
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># invalid variable name example: starting with a number is invalid</span>
+<span class="mi">1</span><span class="n">st_name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\chjch\AppData\Local\Temp\ipykernel_16276\2344343295.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+<span class="g g-Whitespace">    </span><span class="mi">1</span><span class="n">st_name</span> <span class="o">=</span> <span class="s2">&quot;Michael&quot;</span>
+     <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
@@ -1197,17 +1232,17 @@ the system paths.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="3-3.Exceptions.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="3-0.Intro_Python_2.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Exceptions</p>
+            <p class="prev-next-title">Function and Control Flow</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="4-0.intro_arcpy.html" title="next page">
+    <a class='right-next' id="next-link" href="3-2.Conditional_Statement.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to ArcPy</p>
+        <p class="prev-next-title">Conditional Statement</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

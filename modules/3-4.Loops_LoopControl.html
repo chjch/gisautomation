@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>More Statements for Control Flow &#8212; Automation for Geospatial Modeling and Analysis</title>
+    <title>Loops and Loop Control &#8212; Automation for Geospatial Modeling and Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exceptions" href="3-3.Exceptions.html" />
-    <link rel="prev" title="Control Flow Structure" href="3-1.Control_Structure.html" />
+    <link rel="next" title="Introduction to ArcPy" href="4-0.intro_arcpy.html" />
+    <link rel="prev" title="Exceptions" href="3-3.Exceptions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -186,7 +186,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="3-0.Intro_Python_2.html">
-   Control Flow and Function
+   Function and Control Flow
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -195,13 +195,13 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="3-1.Control_Structure.html">
-     Control Flow Structure
+    <a class="reference internal" href="3-1.Variable_Function.html">
+     Variable and Function
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     More Statements for Control Flow
+   <li class="toctree-l2">
+    <a class="reference internal" href="3-2.Conditional_Statement.html">
+     Conditional Statement
     </a>
    </li>
    <li class="toctree-l2">
@@ -209,9 +209,9 @@ const thebe_selector_output = ".output, .cell_output"
      Exceptions
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="3-4.Python_Function.html">
-     Variable and Function
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Loops and Loop Control
     </a>
    </li>
   </ul>
@@ -376,6 +376,11 @@ const thebe_selector_output = ".output, .cell_output"
      Homework 5
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../homework/homework6.html">
+     Homework 5
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -442,7 +447,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/3-2.More_Control_Flow.ipynb"
+        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/3-4.Loops_LoopControl.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -502,7 +507,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/3-2.More_Control_Flow.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/3-4.Loops_LoopControl.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -530,7 +535,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/modules/3-2.More_Control_Flow.ipynb"
+        <a href="../_sources/modules/3-4.Loops_LoopControl.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -590,8 +595,28 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-loop">
+   1. For Loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while-loop">
+   2. While Loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#guess-a-randomly-generated-integer">
+   3. Guess a Randomly Generated Integer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loop-control-statements">
+   4. Loop Control Statements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#break-statement">
-   1.
+   4.1
    <code class="docutils literal notranslate">
     <span class="pre">
      break
@@ -599,28 +624,30 @@ title="Print to PDF"
    </code>
    statement
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#continue-statement">
-   2.
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     continue
-    </span>
-   </code>
-   statement
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pass-statement">
-   3.
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     pass
-    </span>
-   </code>
-   statement
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continue-statement">
+     4.2
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       continue
+      </span>
+     </code>
+     statement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pass-statement">
+     4.3
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pass
+      </span>
+     </code>
+     statement
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -631,7 +658,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>More Statements for Control Flow</h1>
+                <h1>Loops and Loop Control</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -642,8 +669,28 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-loop">
+   1. For Loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while-loop">
+   2. While Loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#guess-a-randomly-generated-integer">
+   3. Guess a Randomly Generated Integer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loop-control-statements">
+   4. Loop Control Statements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#break-statement">
-   1.
+   4.1
    <code class="docutils literal notranslate">
     <span class="pre">
      break
@@ -651,28 +698,30 @@ title="Print to PDF"
    </code>
    statement
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#continue-statement">
-   2.
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     continue
-    </span>
-   </code>
-   statement
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pass-statement">
-   3.
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     pass
-    </span>
-   </code>
-   statement
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continue-statement">
+     4.2
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       continue
+      </span>
+     </code>
+     statement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pass-statement">
+     4.3
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pass
+      </span>
+     </code>
+     statement
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -684,8 +733,260 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="more-statements-for-control-flow">
-<h1>More Statements for Control Flow<a class="headerlink" href="#more-statements-for-control-flow" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="loops-and-loop-control">
+<h1>Loops and Loop Control<a class="headerlink" href="#loops-and-loop-control" title="Permalink to this headline">#</a></h1>
+<p>A loop is an instruction that repeats multiple times (iterations) as long as some <strong>condition</strong> is met.
+There are two types of loops in Python:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> loop</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> loop</p></li>
+</ul>
+<section id="for-loop">
+<h2>1. For Loop<a class="headerlink" href="#for-loop" title="Permalink to this headline">#</a></h2>
+<p>A for loop in Python is used to iterate over a sequence, e.g., list, <em>tuple</em>, set, dictionary, string.</p>
+<p>Following is an example of For loop using a <code class="docutils literal notranslate"><span class="pre">range</span></code> object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">range</span></code> object starts at 0 and doesn’t include the upper number.
+Therefore, <code class="docutils literal notranslate"><span class="pre">range(5)</span></code> would include the numbers 0, 1, 2, 3, 4.
+Simliar to indexing of other data types, <code class="docutils literal notranslate"><span class="pre">range</span></code> can take two arguments
+(starting and end index) and an additional “step” argument.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also convert <code class="docutils literal notranslate"><span class="pre">range</span></code> to a <code class="docutils literal notranslate"><span class="pre">list</span></code> object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 3, 5, 7, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># notice the 2nd index is not included</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 9, 8, 7, 6, 5, 4, 3, 2]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use <strong>for loop</strong> to calculate a sum.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sum up value from 1 to 4.</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">i</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sum is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;program done.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i is 0
+sum is 0
+i is 1
+sum is 1
+i is 2
+sum is 3
+i is 3
+sum is 6
+program done.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>“<code class="docutils literal notranslate"><span class="pre">sum</span></code>” is a reserved word in python. It is a function, so avoid using it for variable names.
+Stay alert and memorize these <strong>reserved words</strong> as you learn Python</p>
+</div>
+<p>For loop with a <strong>list</strong> object</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Gainesville&#39;</span><span class="p">,</span> <span class="s1">&#39;Miami&#39;</span><span class="p">,</span> <span class="s1">&#39;Orlando&#39;</span><span class="p">,</span> <span class="s1">&#39;Tampa&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I like &quot;</span> <span class="o">+</span> <span class="n">city</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I like Gainesville
+I like Miami
+I like Orlando
+I like Tampa
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In the example above, <code class="docutils literal notranslate"><span class="pre">city</span></code> is just <strong><em>a pointer</em></strong> it can have any name as long as the name abides by the rules.
+<strong>Try</strong> use <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">c</span> <span class="pre">in</span> <span class="pre">cities:</span></code> or <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">_</span> <span class="pre">in</span> <span class="pre">cities:</span></code>.</p>
+</div>
+</section>
+<section id="while-loop">
+<h2>2. While Loop<a class="headerlink" href="#while-loop" title="Permalink to this headline">#</a></h2>
+<p>While loops repeat (iterate) as long as a certain boolean condition is met (<code class="docutils literal notranslate"><span class="pre">True</span></code>).</p>
+<p>Calculate the <strong>total sum from 1 to 100</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="c1"># print(&quot;i is &quot; + str(i))</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">i</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># same as i = i + 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Final sum is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Final sum is 5050
+</pre></div>
+</div>
+</div>
+</div>
+<p>The while loop requires relevant variables to be ready, in this example we need to define <strong>an indexing variable</strong>, <code class="docutils literal notranslate"><span class="pre">i</span></code>, which we set to 1.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Remember to increment i, or else the loop will continue forever (<strong><em>infinite loop</em></strong>).
+Because of how the two types of loops operate, <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is more inclined to infinite loops.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The difference between for and while loops is whether the number of iteration is known.
+In for loops, you can pre-define a sequence over which the iteration loops through.</p>
+</div>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">while</span> <span class="n">my_bool</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter a number: &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
+        <span class="n">my_bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;program finished.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="guess-a-randomly-generated-integer">
+<h2>3. Guess a Randomly Generated Integer<a class="headerlink" href="#guess-a-randomly-generated-integer" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">import</span></code> statement is required to add more functions from modules or packages outside
+of the <a class="reference external" href="https://docs.python.org/3/library/builtins.html">builtins</a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">random</span></code> is a module that implements <em>pseudo-random</em> number generators for various distributions.</p>
+</div>
+<p>Generate a random integer between 1 and 6.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">randint</span></code> is a method belongs to the <code class="docutils literal notranslate"><span class="pre">random</span></code> module.</p>
+<p>Unlike the <code class="docutils literal notranslate"><span class="pre">range</span></code> object, it includes both ends.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tab</span></code> to <strong>auto</strong>complete code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">tab</span></code> to view the documentation.</p></li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tab</span></code> to <strong>auto</strong>complete code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">tab</span></code> to view the documentation.</p></li>
+</ul>
+</div>
+<p>We can add a <code class="docutils literal notranslate"><span class="pre">break</span></code> to <strong>terminate</strong> a while loop prematurely.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">chance</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">while</span> <span class="n">chance</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number between 1 and 6: &quot;</span><span class="p">))</span>
+    <span class="n">chance</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">guess</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try larger.&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">guess</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try smaller.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bingo!&quot;</span><span class="p">)</span>
+        <span class="k">break</span>    
+        
+    <span class="k">if</span> <span class="n">chance</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num_guess</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; more guesses left.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, no more guesses.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="loop-control-statements">
+<h2>4. Loop Control Statements<a class="headerlink" href="#loop-control-statements" title="Permalink to this headline">#</a></h2>
 <p>Using loops in Python automates and repeats the tasks in an efficient manner.
 But sometimes, there may arise a condition where you want to (1) <em>exit the loop completely</em>,
 (2) skip an iteration, or (3) ignore that condition.
@@ -697,6 +998,11 @@ In Python, these statements include:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">continue</span></code>,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">path</span></code>.</p></li>
 </ul>
+</section>
+<section id="break-statement">
+<h2>4.1 <code class="docutils literal notranslate"><span class="pre">break</span></code> statement<a class="headerlink" href="#break-statement" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is used to <strong>terminate the loop</strong> or statement in which it is present.
+After that, the control will pass to the statements that are present after the break statement, if available.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -705,10 +1011,6 @@ In Python, these statements include:</p>
 </div>
 </div>
 </div>
-<section id="break-statement">
-<h2>1. <code class="docutils literal notranslate"><span class="pre">break</span></code> statement<a class="headerlink" href="#break-statement" title="Permalink to this headline">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is used to <strong>terminate the loop</strong> or statement in which it is present.
-After that, the control will pass to the statements that are present after the break statement, if available.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example of break statement (same script from last module)</span>
@@ -795,9 +1097,8 @@ flowchart TD
 </div>
 </div>
 </div>
-</section>
 <section id="continue-statement">
-<h2>2. <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement<a class="headerlink" href="#continue-statement" title="Permalink to this headline">#</a></h2>
+<h3>4.2 <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement<a class="headerlink" href="#continue-statement" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">continue</span></code> statement is opposite to that of <code class="docutils literal notranslate"><span class="pre">break</span></code> statement, instead of
 terminating the loop, it forces to execute the next iteration of the loop.</p>
 <p>The following example allows us to <strong>validate the input</strong> before evaluate the value of the input number.</p>
@@ -831,7 +1132,7 @@ terminating the loop, it forces to execute the next iteration of the loop.</p>
 </div>
 </section>
 <section id="pass-statement">
-<h2>3. <code class="docutils literal notranslate"><span class="pre">pass</span></code> statement<a class="headerlink" href="#pass-statement" title="Permalink to this headline">#</a></h2>
+<h3>4.3 <code class="docutils literal notranslate"><span class="pre">pass</span></code> statement<a class="headerlink" href="#pass-statement" title="Permalink to this headline">#</a></h3>
 <p>The pass statement does nothing. It can be used when a statement is required syntactically but the program requires no action.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -870,6 +1171,7 @@ This means that the <code class="docutils literal notranslate"><span class="pre"
 </div>
 </section>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -898,17 +1200,17 @@ This means that the <code class="docutils literal notranslate"><span class="pre"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="3-1.Control_Structure.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="3-3.Exceptions.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Control Flow Structure</p>
+            <p class="prev-next-title">Exceptions</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="3-3.Exceptions.html" title="next page">
+    <a class='right-next' id="next-link" href="4-0.intro_arcpy.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exceptions</p>
+        <p class="prev-next-title">Introduction to ArcPy</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
