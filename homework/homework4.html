@@ -378,7 +378,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="homework6.html">
-     Homework 5
+     Homework 6
     </a>
    </li>
   </ul>
@@ -595,13 +595,23 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assignment">
-   Assignment
+  <a class="reference internal nav-link" href="#program-structure">
+   Program Structure:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#files-to-submit">
-   Files to Submit
+  <a class="reference internal nav-link" href="#error-handling">
+   Error Handling:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#required-individual-work">
+   REQUIRED INDIVIDUAL WORK
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#penalty-for-late-submission">
+   PENALTY FOR LATE SUBMISSION
   </a>
  </li>
 </ul>
@@ -624,13 +634,23 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assignment">
-   Assignment
+  <a class="reference internal nav-link" href="#program-structure">
+   Program Structure:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#files-to-submit">
-   Files to Submit
+  <a class="reference internal nav-link" href="#error-handling">
+   Error Handling:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#required-individual-work">
+   REQUIRED INDIVIDUAL WORK
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#penalty-for-late-submission">
+   PENALTY FOR LATE SUBMISSION
   </a>
  </li>
 </ul>
@@ -645,24 +665,57 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="homework-4">
 <h1>Homework 4<a class="headerlink" href="#homework-4" title="Permalink to this headline">#</a></h1>
-<section id="assignment">
-<h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">#</a></h2>
+<p>Write a unit converter program that can convert any amount from input units to output units as follows:</p>
 <ol class="arabic simple">
-<li><p>Solve the problem in <span class="xref myst">Homework 1</span>.</p></li>
-<li><p>However, other than using ModelBuilder, you are asked to tackle the problem <strong>using ArcPy functions</strong>, just as the instructor did in the second lecture in Module 4.</p></li>
-<li><p>For criterion (a), i.e., <em>“completely within 6 miles of I-75”</em>, you <strong>must use “Select by Location”</strong>.</p></li>
-<li><p>For criterion (b), i.e., “<em>within Alachua County boundary</em>” you <strong>must use “Select by Attributes”</strong> in ArcPy to select records whose <code class="docutils literal notranslate"><span class="pre">COUNTY</span></code> field equals to <code class="docutils literal notranslate"><span class="pre">'001'</span></code>.</p></li>
+<li><p>Feet to Miles,</p></li>
+<li><p>Feet to Meters,</p></li>
+<li><p>Meters to Feet,</p></li>
+<li><p>Meters to Miles,</p></li>
+<li><p>Square Feet to Acres,</p></li>
+<li><p>Square Meters to Acres,</p></li>
+<li><p>Square Miles to Acres, and</p></li>
+<li><p>Hectares to Acres.</p></li>
 </ol>
+<section id="program-structure">
+<h2>Program Structure:<a class="headerlink" href="#program-structure" title="Permalink to this headline">#</a></h2>
+<p>Two scripts are required: the main script (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file) and a module script (<code class="docutils literal notranslate"><span class="pre">.py</span></code> file).</p>
+<p>The module script should contain <strong>8</strong> functions, one for each of the conversions above. e.g., the function to convert feet to miles could be called <code class="docutils literal notranslate"><span class="pre">feet2miles</span></code>.
+It should take one numeric parameter (assumed to be the amount in feet) and should return the corresponding amount converted to miles. e.g., if we pass <strong>5280</strong> to the <code class="docutils literal notranslate"><span class="pre">feet2miles</span></code> function, it should return <strong>1</strong>.</p>
+<p>When the main script runs, it should prompt the user to enter a numeric amount in the interactive window, as below.</p>
+<img src="../_static/images/hw3_value.png">
+<ol class="arabic simple">
+<li><p>Make sure that the amount entered is a <strong>positive</strong> <u>valid number</u>, which can be either an integer or floating-point number.</p></li>
+<li><p>Once the number is entered and validated, prompt the user with a list of conversion options (see below).</p></li>
+<li><p>Check to make sure that the user chose one of the numbers between 1 and 8 (since 8 conversions are offered).</p></li>
+<li><p>Any other character should not be accepted, and the user should be asked to try again and enter a valid number between 1 and 8.</p></li>
+</ol>
+<img src="../_static/images/hw3_convchoice.png" alt="hw3_convchoice">
+<p>Once the conversion option is chosen, you should display the results as follows: <code class="docutils literal notranslate"><span class="pre">xx</span> <span class="pre">input_unit</span> <span class="pre">=</span> <span class="pre">yy</span></code> output_unit e.g. <code class="docutils literal notranslate"><span class="pre">5280</span> <span class="pre">Feet</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">Mile</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">Square</span> <span class="pre">Mile</span> <span class="pre">=</span> <span class="pre">640</span> <span class="pre">Acres</span></code>.</p>
+<p>Last, prompt the user if they would like to <strong>continue or not</strong>.
+If they choose to continue, prompt them again to enter a numeric value.
+This should continue until the user chooses to stop.</p>
+<img src="../_static/images/hw3_result.png" alt="hw3_result"></section>
+<section id="error-handling">
+<h2>Error Handling:<a class="headerlink" href="#error-handling" title="Permalink to this headline">#</a></h2>
+<p>Make sure anticipate input errors e.g., if a user enters an amount that’s not a valid number e.g. <strong>80a2g</strong> or negative value <strong>-50</strong>.</p>
+<p>Additionally, include the use of <code class="docutils literal notranslate"><span class="pre">try-except</span></code> clause to capture unexpected errors and <code class="docutils literal notranslate"><span class="pre">print</span></code> the error messages on the screen similar to cases we have shown in class.</p>
+<p><strong>Note</strong>: If Python is not finding the functions in your module, try to close python and open it again.</p>
+<p><strong>Data</strong>: No data are required or used for this homework.</p>
+<p><strong>Turn In</strong>: (pay attention to the naming convention)</p>
+<ol class="arabic simple">
+<li><p>a Python Notebook, Name the file as following <code class="docutils literal notranslate"><span class="pre">LASTNAME_HW3.ipynb</span></code> e.g., <code class="docutils literal notranslate"><span class="pre">CHEN_HW3.ipynb</span></code>.</p></li>
+<li><p>python file (<code class="docutils literal notranslate"><span class="pre">CHEN_ucon.py</span></code>), and</p></li>
+<li><p>a presentation recording (<code class="docutils literal notranslate"><span class="pre">CHEN_HW3.mp4</span></code>)</p></li>
+</ol>
+<p><strong>Evaluation</strong>: The instructor will review the contents and test the scripts.</p>
 </section>
-<section id="files-to-submit">
-<h2>Files to Submit<a class="headerlink" href="#files-to-submit" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Put all the codes in this Jupyter Notebook.</p></li>
-<li><p>Rename this Jupyter Notebook (the .ipynb file) as <code class="docutils literal notranslate"><span class="pre">HW4_&lt;LASTNAME&gt;.ipynb</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">HW4_CHEN.ipynb</span></code>.</p></li>
-<li><p>Create a short video (5 minutes) to present your work.</p></li>
-<li><p>Submit both files (e.g., <code class="docutils literal notranslate"><span class="pre">HW4_CHEN.ipynb</span></code> and <code class="docutils literal notranslate"><span class="pre">HW4_CHEN.mp4</span></code>) through canvas.</p></li>
-<li><p>See syllabus for deadline.</p></li>
-</ul>
+<section id="required-individual-work">
+<h2>REQUIRED INDIVIDUAL WORK<a class="headerlink" href="#required-individual-work" title="Permalink to this headline">#</a></h2>
+<p>Homework must be individual. Students are allowed to discuss ideas; however, the implementation of the solution should be individual. Please follow the honesty standards as defined by the University of Florida Honor Code. See syllabus for more information.</p>
+</section>
+<section id="penalty-for-late-submission">
+<h2>PENALTY FOR LATE SUBMISSION<a class="headerlink" href="#penalty-for-late-submission" title="Permalink to this headline">#</a></h2>
+<p>See syllabus</p>
 </section>
 </section>
 

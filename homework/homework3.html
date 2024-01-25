@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -378,7 +380,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="homework6.html">
-     Homework 5
+     Homework 6
     </a>
    </li>
   </ul>
@@ -439,35 +441,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/homework/homework3.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -535,7 +508,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/homework/homework3.ipynb"
+        <a href="../_sources/homework/homework3.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -546,7 +519,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="headerbtn__text-container">.md</span>
 </a>
 
       </li>
@@ -603,18 +576,16 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#question-1">
    Question 1:
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-code">
-     Example Code:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expected-concepts-to-be-used">
-     Expected Concepts to be Used:
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-2">
+   Question 2:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-3">
+   Question 3:
+  </a>
  </li>
 </ul>
 
@@ -644,18 +615,16 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#question-1">
    Question 1:
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-code">
-     Example Code:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expected-concepts-to-be-used">
-     Expected Concepts to be Used:
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-2">
+   Question 2:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-3">
+   Question 3:
+  </a>
  </li>
 </ul>
 
@@ -680,35 +649,77 @@ title="Print to PDF"
 </section>
 <section id="question-1">
 <h2>Question 1:<a class="headerlink" href="#question-1" title="Permalink to this headline">#</a></h2>
-<p>Write a Python program that checks the value of a variable temperature. If the temperature is greater than or equal to 100, the program should print “Boiling Point”. If the temperature is less than 100 but greater than or equal to 0, it should print “Liquid”. If the temperature is below 0, it should print “Freezing”.</p>
-<section id="example-code">
-<h3>Example Code:<a class="headerlink" href="#example-code" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># You can change this number to test with other values</span>
-
-<span class="c1"># Your if-else logic goes here</span>
+<p>Write a Python program that checks the value of a variable temperature.
+If the temperature is greater than or equal to 100, the program should print “Boiling Point”.
+If the temperature is less than 100 but greater than or equal to 0, it should print “Liquid”.
+If the temperature is below 0, it should print “Freezing”.</p>
+<p><strong>Sample Output</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># You can change this number to test with other values</span>
+<span class="c1"># should print &quot;Liquid&quot;</span>
 </pre></div>
 </div>
-</div>
-</div>
-<p>Sample Output for <code class="docutils literal notranslate"><span class="pre">temperature</span> <span class="pre">=</span> <span class="pre">50</span></code>:</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Liquid
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="expected-concepts-to-be-used">
-<h3>Expected Concepts to be Used:<a class="headerlink" href="#expected-concepts-to-be-used" title="Permalink to this headline">#</a></h3>
+<p><strong>Expected Concepts to be Used</strong>:</p>
 <ul class="simple">
 <li><p>Variables</p></li>
 <li><p>If-Else statement</p></li>
 <li><p>Comparison operators</p></li>
 </ul>
 </section>
+<section id="question-2">
+<h2>Question 2:<a class="headerlink" href="#question-2" title="Permalink to this headline">#</a></h2>
+<p>Define a Python <strong><em>function</em></strong> named <code class="docutils literal notranslate"><span class="pre">calculate_area</span></code> that takes the
+<span class="math notranslate nohighlight">\(base\)</span> and <span class="math notranslate nohighlight">\(height\)</span> of a triangle as arguments and <strong>returns</strong> the <em>area of the triangle</em>.
+Remember, the formula for the area of a triangle is: <span class="math notranslate nohighlight">\(\frac{1}{2} \times base \times height\)</span>.
+Then, write a <code class="docutils literal notranslate"><span class="pre">print</span></code> statement with either <code class="docutils literal notranslate"><span class="pre">.format</span></code> or “f-string” to print out the
+message.</p>
+<p><strong>Sample Output</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">calculate_area</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="c1"># should print &quot;Area of the triangle with base 10 and height 5 is 25.0.&quot;</span>
+</pre></div>
+</div>
+<p><strong>Expected Concepts to be Used</strong>:</p>
+<ul class="simple">
+<li><p>Function definition</p></li>
+<li><p>Parameters and arguments</p></li>
+<li><p>Return statement</p></li>
+<li><p>Arithmetic operations</p></li>
+</ul>
+</section>
+<section id="question-3">
+<h2>Question 3:<a class="headerlink" href="#question-3" title="Permalink to this headline">#</a></h2>
+<p>Write a Python <strong>function</strong> named <code class="docutils literal notranslate"><span class="pre">evaluate_zone</span></code> that takes two arguments:
+<code class="docutils literal notranslate"><span class="pre">zone_type</span></code> (a string) and <code class="docutils literal notranslate"><span class="pre">population_density</span></code> (a number).
+The function should return recommendations for urban planning based on the following conditions:</p>
+<ul class="simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">zone_type</span></code> is “Residential” and <code class="docutils literal notranslate"><span class="pre">population_density</span></code> is greater than <strong>1000</strong>,
+return “High-density residential area. Consider infrastructure for high population.”</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">zone_type</span></code> is “Residential” and <code class="docutils literal notranslate"><span class="pre">population_density</span></code> is <strong>1000</strong> or less,
+return “Low-density residential area. Focus on community services.”</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">zone_type</span></code> is “Commercial” and <code class="docutils literal notranslate"><span class="pre">population_density</span></code> is greater than <strong>500</strong>,
+return “High-density commercial area. Prioritize business development and public transportation.”</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">zone_type</span></code> is “Commercial” and <code class="docutils literal notranslate"><span class="pre">population_density</span></code> is <strong>500</strong> or less,
+return “Low-density commercial area. Encourage local businesses and pedestrian-friendly spaces.”</p></li>
+<li><p>In all other cases, return “Zone type not recognized.”</p></li>
+</ul>
+<p><strong>Sample Output</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">evaluate_zone</span><span class="p">(</span><span class="s2">&quot;Residential&quot;</span><span class="p">,</span> <span class="mi">1500</span><span class="p">))</span>
+<span class="c1"># Should print &quot;High-density residential area. Consider infrastructure for high population.&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">evaluate_zone</span><span class="p">(</span><span class="s2">&quot;Commercial&quot;</span><span class="p">,</span> <span class="mi">300</span><span class="p">))</span>
+<span class="c1"># Should print &quot;Low-density commercial area. Encourage local businesses and pedestrian-friendly spaces.&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">evaluate_zone</span><span class="p">(</span><span class="s2">&quot;Industrial&quot;</span><span class="p">,</span> <span class="mi">800</span><span class="p">))</span>
+<span class="c1"># Should print &quot;Zone type not recognized.&quot;</span>
+</pre></div>
+</div>
+<p><strong>Expected Concepts to be Used</strong>:</p>
+<ul class="simple">
+<li><p>Function definition</p></li>
+<li><p>If-Else statement with compound conditions</p></li>
+<li><p>Parameters and arguments</p></li>
+<li><p>String operations</p></li>
+<li><p>Return statement</p></li>
+</ul>
 </section>
 </section>
 
