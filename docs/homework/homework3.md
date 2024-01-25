@@ -9,7 +9,10 @@
 
 ## Question 1:
 
-Write a Python program that checks the value of a variable temperature. If the temperature is greater than or equal to 100, the program should print "Boiling Point". If the temperature is less than 100 but greater than or equal to 0, it should print "Liquid". If the temperature is below 0, it should print "Freezing".
+Write a Python program that checks the value of a variable temperature.
+If the temperature is greater than or equal to 100, the program should print "Boiling Point".
+If the temperature is less than 100 but greater than or equal to 0, it should print "Liquid".
+If the temperature is below 0, it should print "Freezing".
 
 **Sample Output**:
 
@@ -24,13 +27,13 @@ temperature = 50  # You can change this number to test with other values
 - If-Else statement
 - Comparison operators
 
-# Question 2:
+## Question 2:
 
 Define a Python **_function_** named `calculate_area` that takes the
 $base$ and $height$ of a triangle as arguments and **returns** the _area of the triangle_.
 Remember, the formula for the area of a triangle is: $\frac{1}{2} \times base \times height$.
 Then, write a `print` statement with either `.format` or "f-string" to print out the
-message
+message.
 
 **Sample Output**:
 
