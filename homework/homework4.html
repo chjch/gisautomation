@@ -439,35 +439,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/homework/homework4.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -535,7 +506,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/homework/homework4.ipynb"
+        <a href="../_sources/homework/homework4.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -546,7 +517,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="headerbtn__text-container">.md</span>
 </a>
 
       </li>
@@ -682,19 +653,20 @@ title="Print to PDF"
 <p>The module script should contain <strong>8</strong> functions, one for each of the conversions above. e.g., the function to convert feet to miles could be called <code class="docutils literal notranslate"><span class="pre">feet2miles</span></code>.
 It should take one numeric parameter (assumed to be the amount in feet) and should return the corresponding amount converted to miles. e.g., if we pass <strong>5280</strong> to the <code class="docutils literal notranslate"><span class="pre">feet2miles</span></code> function, it should return <strong>1</strong>.</p>
 <p>When the main script runs, it should prompt the user to enter a numeric amount in the interactive window, as below.</p>
-<img src="../_static/images/hw3_value.png">
+<img src="../_static/images/hw4_value.png">
 <ol class="arabic simple">
 <li><p>Make sure that the amount entered is a <strong>positive</strong> <u>valid number</u>, which can be either an integer or floating-point number.</p></li>
 <li><p>Once the number is entered and validated, prompt the user with a list of conversion options (see below).</p></li>
 <li><p>Check to make sure that the user chose one of the numbers between 1 and 8 (since 8 conversions are offered).</p></li>
 <li><p>Any other character should not be accepted, and the user should be asked to try again and enter a valid number between 1 and 8.</p></li>
 </ol>
-<img src="../_static/images/hw3_convchoice.png" alt="hw3_convchoice">
+<img src="../_static/images/hw4_convchoice.png" alt="hw4_convchoice">
 <p>Once the conversion option is chosen, you should display the results as follows: <code class="docutils literal notranslate"><span class="pre">xx</span> <span class="pre">input_unit</span> <span class="pre">=</span> <span class="pre">yy</span></code> output_unit e.g. <code class="docutils literal notranslate"><span class="pre">5280</span> <span class="pre">Feet</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">Mile</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">Square</span> <span class="pre">Mile</span> <span class="pre">=</span> <span class="pre">640</span> <span class="pre">Acres</span></code>.</p>
 <p>Last, prompt the user if they would like to <strong>continue or not</strong>.
 If they choose to continue, prompt them again to enter a numeric value.
 This should continue until the user chooses to stop.</p>
-<img src="../_static/images/hw3_result.png" alt="hw3_result"></section>
+<img src="../_static/images/hw4_result.png" alt="hw4_result">
+</section>
 <section id="error-handling">
 <h2>Error Handling:<a class="headerlink" href="#error-handling" title="Permalink to this headline">#</a></h2>
 <p>Make sure anticipate input errors e.g., if a user enters an amount that’s not a valid number e.g. <strong>80a2g</strong> or negative value <strong>-50</strong>.</p>
@@ -703,9 +675,9 @@ This should continue until the user chooses to stop.</p>
 <p><strong>Data</strong>: No data are required or used for this homework.</p>
 <p><strong>Turn In</strong>: (pay attention to the naming convention)</p>
 <ol class="arabic simple">
-<li><p>a Python Notebook, Name the file as following <code class="docutils literal notranslate"><span class="pre">LASTNAME_HW3.ipynb</span></code> e.g., <code class="docutils literal notranslate"><span class="pre">CHEN_HW3.ipynb</span></code>.</p></li>
+<li><p>a Python Notebook, Name the file as following <code class="docutils literal notranslate"><span class="pre">&lt;LASTNAME&gt;_HW4.ipynb</span></code> e.g., <code class="docutils literal notranslate"><span class="pre">CHEN_HW4.ipynb</span></code>.</p></li>
 <li><p>python file (<code class="docutils literal notranslate"><span class="pre">CHEN_ucon.py</span></code>), and</p></li>
-<li><p>a presentation recording (<code class="docutils literal notranslate"><span class="pre">CHEN_HW3.mp4</span></code>)</p></li>
+<li><p>a presentation recording (<code class="docutils literal notranslate"><span class="pre">CHEN_HW4.mp4</span></code>)</p></li>
 </ol>
 <p><strong>Evaluation</strong>: The instructor will review the contents and test the scripts.</p>
 </section>
