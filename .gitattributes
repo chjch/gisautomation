@@ -1,0 +1,3 @@
+# Apply the keepOriginal filter to the geodatabase
+docs/data/class_data.gdb/** filter=keepOriginal 
+docs/data/output_data.gdb/** filter=keepOriginal 
