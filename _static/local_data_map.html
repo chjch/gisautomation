@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.31/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.31"></script>
+
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+    </style>
+
+    <script>
+      require([
+        "esri/config",
+
+        "esri/views/MapView",
+
+        "esri/WebMap",
+
+        "esri/layers/FeatureLayer",
+        "esri/layers/Layer",
+
+        "esri/Graphic",
+        "esri/widgets/Legend",
+        "esri/widgets/Expand",
+        "esri/widgets/Swipe",
+      ], (
+        esriConfig,
+        MapView,
+
+        WebMap,
+
+        FeatureLayer,
+        Layer,
+
+        Graphic,
+        Legend,
+        Expand,
+        Swipe
+      ) => {
+        esriConfig.apiKey = ""
+
+        const wm = new WebMap({
+          portalItem: { id: "4f645cb0cb34406eb4b07b5311122bc8" },
+        })
+
+        const view = new MapView({
+          container: "viewDiv",
+          map: wm,
+          popup: {
+            defaultPopupTemplateEnabled: true,
+            dockEnabled: true,
+            dockOptions: {
+              buttonEnabled: false,
+              breakpoint: false,
+              position: "top-right"
+            },
+            viewModel: {
+              includeDefaultActions: false
+            }
+          }
+        })
+
+        view.when(() => {
+          addLegend()
+        })
+
+        const addLegend = () => {
+          const legend = new Legend({
+            view
+          })
+          const expand = new Expand({
+            view,
+            content: legend,
+            expandIconClass: "esri-icon-legend",
+          })
+          view.ui.add(expand, "top-right")
+        }
+
+      })
+    </script>
+  </head>
+
+  <body class="theme">
+    <div id="viewDiv"></div>
+  </body>
+</html>

@@ -1,121 +1,190 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Use NumPy in ArcGIS &#8212; Automation for Geospatial Modeling and Analysis</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom_style.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom_style.css?v=28ea9193" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-55C2BQ9HQX"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-55C2BQ9HQX');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-55C2BQ9HQX');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modules/5-1.Intro_to_NumPy';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Use Pandas in ArcGIS" href="5-2.Intro_to_Pandas.html" />
     <link rel="prev" title="Scientific Python Ecosystem" href="5-0.scientific_python.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-55C2BQ9HQX"></script>
-<script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){ dataLayer.push(arguments); }
-                    gtag('js', new Date());
-                    gtag('config', 'G-55C2BQ9HQX');
-                </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Automation for Geospatial Modeling and Analysis</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Automation for Geospatial Modeling and Analysis - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Automation for Geospatial Modeling and Analysis - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -125,692 +194,294 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../software_0.html">
-   Software
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../software_1.html">
-     Basics of Jupyter Notebook
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../software_2.html">
-     Use Notebook in a Browser
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../software_3.html">
-     Fix missing buttons in Jupyter Notebook
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1-1.Intro_to_ModelBuilder.html">
-   Introduction to ModelBuilder
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="2-0.Intro_to_Python.html">
-   Built-in Data Types
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-1.Markdown.html">
-     Introduction to Markdown
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-2.Data_Types.html">
-     Basic Python Data Types
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2-3.More_Data_Types.html">
-     More Python Data Types
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="3-0.Intro_Python_2.html">
-   Control Flow and Function
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="3-2.Control_Structure.html">
-     Control Flow Structure
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="3-3.More_Control_Flow.html">
-     More Statements for Control Flow
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="3-3.Exceptions.html">
-     Exceptions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="3-1.Variable_Function.html">
-     Variable and Function
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="4-0.intro_arcpy.html">
-   Introduction to ArcPy
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="4-1.ArcPy_Basics.html">
-     The basics of ArcPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="4-2.Run_ArcPy_functions.html">
-     Run ArcPy Functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="4-3.ArcPy_selection.html">
-     ArcPy Selection Functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="5-0.scientific_python.html">
-   Scientific Python Ecosystem
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Use NumPy in ArcGIS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="5-2.Intro_to_Pandas.html">
-     Use Pandas in ArcGIS
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="6-0.data_visualization.html">
-   Data Visualization using Python
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="6-1.Intro_to_Matplotlib.html">
-     Using Matplotlib for Data Visualization
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="6-2.Intro_to_ArcGIS_API_for_Python.html">
-     Visualizing Spatial Data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="7-0.Raster_analysis.html">
-   Raster Data Analysis using ArcPy
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="7-1.Raster_Analysis_Basics.html">
-     Raster Analysis Basics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="7-2.ArcPy_Raster.html">
-     Run Raster Geoprocessing using ArcPy
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="8-0.script_tool.html">
-   Develop a Script Tool
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="8-1.script_tool_basics.html">
-     The Basics of a Script Tool
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="8-2.script_tool_setup.html">
-     Build a Script Tool
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="8-3.additional_features.html">
-     More Script Tool Features
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="9.Problem_Solving_in_Python_and_GIS.html">
-   A Journey of Solving a GIS Automation Problem: from Google to Settle
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../homework/homework_problems.html">
-   Homework Problems
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../homework/homework1.html">
-     Homework 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../homework/homework2.html">
-     Homework 2
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../homework/homework3.html">
-     Homework 3
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../homework/homework4.html">
-     Homework 4
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../homework/homework5.html">
-     Homework 5
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../final_project.html">
-   Final Project
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../software_0.html">Software</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../software_1.html">Basics of Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software_2.html">Use Notebook in a Browser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software_3.html">Fix missing buttons in Jupyter Notebook</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="1-1.Intro_to_ModelBuilder.html">Introduction to ModelBuilder</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2-0.Intro_to_Python.html">Built-in Data Types</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2-1.Markdown.html">Introduction to Markdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-2.Data_Types.html">Basic Python Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-3.More_Data_Types.html">More Python Data Types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="3-0.Intro_Python_2.html">Function and Control Flow</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="3-1.Variable_Function.html">Variable and Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-2.Conditional_Statement.html">Conditional Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-3.Exceptions.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-4.Loops_LoopControl.html">Loops and Loop Control</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="4-0.intro_arcpy.html">Introduction to ArcPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="4-1.ArcPy_Basics.html">The basics of ArcPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-2.Run_ArcPy_functions.html">Run ArcPy Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-3.ArcPy_selection.html">ArcPy Selection Functions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="5-0.scientific_python.html">Scientific Python Ecosystem</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Use NumPy in ArcGIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-2.Intro_to_Pandas.html">Use Pandas in ArcGIS</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="6-0.data_visualization.html">Data Visualization using Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="6-1.Intro_to_Matplotlib.html">Using Matplotlib for Data Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6-2.Intro_to_ArcGIS_API_for_Python.html">Visualizing Spatial Data</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="7-0.arcgis_api_for_python.html">ArcGIS API for Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="8-0.Raster_analysis.html">Raster Data Analysis using ArcPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="8-1.Raster_Analysis_Basics.html">Raster Analysis Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8-2.ArcPy_Raster.html">Run Raster Geoprocessing using ArcPy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="9-0.script_tool.html">Develop a Script Tool</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="9-1.script_tool_basics.html">The Basics of a Script Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9-2.script_tool_setup.html">Build a Script Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9-3.additional_features.html">More Script Tool Features</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="10.Problem_Solving_in_Python_and_GIS.html">A Journey of Solving a GIS Automation Problem: from Google to Settle</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../homework/homework_problems.html">Homework Problems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../homework/homework1.html">Homework 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../homework/homework2.html">Homework 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../homework/homework3.html">Homework 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../homework/homework4.html">Homework 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../homework/homework5.html">Homework 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../homework/homework6.html">Homework 6</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../final_project.html">Final Project</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/chjch/gisautomation/main?urlpath=tree/docs/modules/5-1.Intro_to_NumPy.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/chjch/gisautomation" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/5-1.Intro_to_NumPy.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/modules/5-1.Intro_to_NumPy.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/chjch/gisautomation"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/5-1.Intro_to_NumPy.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/modules/5-1.Intro_to_NumPy.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-numpy-ndarray">
-   1. Create a
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     numpy.ndarray
-    </span>
-   </code>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#from-a-python-list">
-     1.1 From a Python list
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-np-arange">
-     1.2 Use
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       np.arange()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-np-linspace">
-     1.3 Use
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       np.linspace()
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#indexing-and-slicing">
-   2. Indexing and slicing
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#generate-random-numbers-with-numpy">
-   3. Generate random numbers with NumPy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#work-with-numpy-in-arcgis">
-   4. Work with NumPy in ArcGIS
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-arcpy-listfields-to-access-fields">
-     4.1 Use
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       arcpy.ListFields()
-      </span>
-     </code>
-     to access fields
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#convert-a-feature-class-to-numpy-array">
-     4.2 Convert a feature class to NumPy array
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compute-statistics-of-a-np-ndarray">
-     4.3 Compute statistics of a
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       np.ndarray
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simple-query-against-numpy-array">
-     4.4 Simple query against NumPy array
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#generate-new-arrays-based-on-a-conditional-statement">
-     4.5 Generate new arrays based on a conditional statement
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simple-numeric-operation">
-     4.6 Simple numeric operation
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Use NumPy in ArcGIS</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-numpy-ndarray">
-   1. Create a
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     numpy.ndarray
-    </span>
-   </code>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#from-a-python-list">
-     1.1 From a Python list
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-np-arange">
-     1.2 Use
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       np.arange()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-np-linspace">
-     1.3 Use
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       np.linspace()
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#indexing-and-slicing">
-   2. Indexing and slicing
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#generate-random-numbers-with-numpy">
-   3. Generate random numbers with NumPy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#work-with-numpy-in-arcgis">
-   4. Work with NumPy in ArcGIS
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-arcpy-listfields-to-access-fields">
-     4.1 Use
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       arcpy.ListFields()
-      </span>
-     </code>
-     to access fields
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#convert-a-feature-class-to-numpy-array">
-     4.2 Convert a feature class to NumPy array
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compute-statistics-of-a-np-ndarray">
-     4.3 Compute statistics of a
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       np.ndarray
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simple-query-against-numpy-array">
-     4.4 Simple query against NumPy array
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#generate-new-arrays-based-on-a-conditional-statement">
-     4.5 Generate new arrays based on a conditional statement
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simple-numeric-operation">
-     4.6 Simple numeric operation
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Use NumPy in ArcGIS</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-numpy-ndarray">1. Create a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-a-python-list">1.1 From a Python list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-np-arange">1.2 Use <code class="docutils literal notranslate"><span class="pre">np.arange()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-np-linspace">1.3 Use <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">2. Indexing and slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-random-numbers-with-numpy">3. Generate random numbers with NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-with-numpy-in-arcgis">4. Work with NumPy in ArcGIS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-arcpy-listfields-to-access-fields">4.1 Use <code class="docutils literal notranslate"><span class="pre">arcpy.ListFields()</span></code> to access fields</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-a-feature-class-to-numpy-array">4.2 Convert a feature class to NumPy array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-statistics-of-a-np-ndarray">4.3 Compute statistics of a <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-query-against-numpy-array">4.4 Simple query against NumPy array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-new-arrays-based-on-a-conditional-statement">4.5 Generate new arrays based on a conditional statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-numeric-operation">4.6 Simple numeric operation</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="use-numpy-in-arcgis">
-<h1>Use NumPy in ArcGIS<a class="headerlink" href="#use-numpy-in-arcgis" title="Permalink to this headline">#</a></h1>
-<a class="border reference internal image-reference" href="../_images/numpylogo.svg"><img alt="numpylogo" class="border align-right" height="138" src="../_images/numpylogo.svg" width="286" /></a>
+<h1>Use NumPy in ArcGIS<a class="headerlink" href="#use-numpy-in-arcgis" title="Link to this heading">#</a></h1>
+<a class="border reference internal image-reference" href="../_images/numpylogo.svg"><img alt="numpylogo" class="border align-right" src="../_images/numpylogo.svg" style="width: 286.51000000000005px; height: 138.11px;" />
+</a>
 <p><a class="reference external" href="https://numpy.org/">NumPy</a> is a <strong>numeric computing library</strong> of Python. It is a fundamental package of the
 Scientific Python Ecosystem. It provides fast operation on n-dimensional (n-d) arrays. It includes functions
 for <strong>linear algebra</strong> and comprehensive mathematical operations.</p>
@@ -834,13 +505,13 @@ it. Note that please <strong>follow the convention</strong> (as below) to import
 </div>
 </div>
 <section id="create-a-numpy-ndarray">
-<h2>1. Create a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code><a class="headerlink" href="#create-a-numpy-ndarray" title="Permalink to this headline">#</a></h2>
+<h2>1. Create a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code><a class="headerlink" href="#create-a-numpy-ndarray" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> is a fundamental data structure in the NumPy library for Python,
 which is used to represent homogeneous multidimensional arrays of data.
 It is a collection of <strong>elements of the same data type</strong> that can be <strong>indexed</strong>
 and manipulated efficiently.</p>
 <section id="from-a-python-list">
-<h3>1.1 From a Python list<a class="headerlink" href="#from-a-python-list" title="Permalink to this headline">#</a></h3>
+<h3>1.1 From a Python list<a class="headerlink" href="#from-a-python-list" title="Link to this heading">#</a></h3>
 <p>We can convert a <code class="docutils literal notranslate"><span class="pre">list</span></code> to <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> using <code class="docutils literal notranslate"><span class="pre">np.array()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -910,7 +581,7 @@ of the <strong>performance benefits</strong> and functionality provided by the l
 </div>
 </section>
 <section id="use-np-arange">
-<h3>1.2 Use <code class="docutils literal notranslate"><span class="pre">np.arange()</span></code><a class="headerlink" href="#use-np-arange" title="Permalink to this headline">#</a></h3>
+<h3>1.2 Use <code class="docutils literal notranslate"><span class="pre">np.arange()</span></code><a class="headerlink" href="#use-np-arange" title="Link to this heading">#</a></h3>
 <p>Returns an array of <strong>evenly spaced</strong> values within a specified interval.
 The interval is defined by a start value, a stop value, and a step size.
 Think of it as a NumPy equivalent of the <code class="docutils literal notranslate"><span class="pre">range</span></code> object.</p>
@@ -962,7 +633,7 @@ the interval. If step is not provided, the default value of <code class="docutil
 </div>
 </section>
 <section id="use-np-linspace">
-<h3>1.3 Use <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code><a class="headerlink" href="#use-np-linspace" title="Permalink to this headline">#</a></h3>
+<h3>1.3 Use <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code><a class="headerlink" href="#use-np-linspace" title="Link to this heading">#</a></h3>
 <p>Returns an array of evenly spaced values within a specified interval, and allows you
 to <strong>specify the number</strong> (<code class="docutils literal notranslate"><span class="pre">num</span></code>) of items in the interval.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -1046,7 +717,7 @@ For a 1-dimensional array, the length returned by len is equal to the
 </section>
 </section>
 <section id="indexing-and-slicing">
-<h2>2. Indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Permalink to this headline">#</a></h2>
+<h2>2. Indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Link to this heading">#</a></h2>
 <p>Indexing and slicing in NumPy arrays are <strong><em>similar</em></strong> to those in Python lists, but with additional
 features that make them more powerful and flexible.</p>
 <ul class="simple">
@@ -1151,7 +822,7 @@ Consider how you would get this without “fancy indexing.”</p>
 </div>
 </section>
 <section id="generate-random-numbers-with-numpy">
-<h2>3. Generate random numbers with NumPy<a class="headerlink" href="#generate-random-numbers-with-numpy" title="Permalink to this headline">#</a></h2>
+<h2>3. Generate random numbers with NumPy<a class="headerlink" href="#generate-random-numbers-with-numpy" title="Link to this heading">#</a></h2>
 <p>The behavior of <code class="docutils literal notranslate"><span class="pre">numpy.random.randint</span></code> is different from the built-in <code class="docutils literal notranslate"><span class="pre">random.randint</span></code>
 function in Python when it comes to the <em>inclusion of the upper bound</em>.</p>
 <ul class="simple">
@@ -1178,7 +849,7 @@ function in Python when it comes to the <em>inclusion of the upper bound</em>.</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
 </pre></div>
 </div>
 </div>
@@ -1193,7 +864,7 @@ meaning any integer within that range has equal probability to be drawn each tim
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([9, 2, 4, 6, 0, 0, 6, 5, 4, 9, 6, 7, 9, 3, 5, 7, 3, 8, 9, 6])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 5, 7, 6, 2, 4, 8, 8, 4, 0, 9, 2, 5, 7, 8, 4, 7, 7, 1, 1])
 </pre></div>
 </div>
 </div>
@@ -1208,9 +879,9 @@ The function allows to specify the shape of the numpy array.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.20191371, 0.30418614],
-       [0.78891467, 0.41619982],
-       [0.09169838, 0.12678858]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.90742694, 0.01573528],
+       [0.25453594, 0.6477839 ],
+       [0.05587012, 0.37183869]])
 </pre></div>
 </div>
 </div>
@@ -1228,12 +899,12 @@ The function allows to specify the shape of the numpy array.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.27431737 0.51009214 0.8001273 ]
- [0.7378156  0.72025623 0.16373974]
- [0.77804814 0.76287854 0.38625261]
- [0.82533601 0.63923246 0.41923371]
- [0.83303691 0.11121103 0.48612382]
- [0.3593643  0.52778161 0.04028845]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.28344889 0.25837032 0.08130563]
+ [0.12459613 0.12423512 0.30360352]
+ [0.04745404 0.08925944 0.88752836]
+ [0.56429834 0.04372743 0.50681343]
+ [0.79455522 0.82866095 0.99243088]
+ [0.1142947  0.39647186 0.03043736]]
 The size of arr: 18.
 The shape of arr: (6, 3).
 </pre></div>
@@ -1258,7 +929,7 @@ The shape of arr: (6, 3).
 </div>
 </section>
 <section id="work-with-numpy-in-arcgis">
-<h2>4. Work with NumPy in ArcGIS<a class="headerlink" href="#work-with-numpy-in-arcgis" title="Permalink to this headline">#</a></h2>
+<h2>4. Work with NumPy in ArcGIS<a class="headerlink" href="#work-with-numpy-in-arcgis" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
@@ -1295,11 +966,12 @@ The shape of arr: (6, 3).
  &#39;blockgroups&#39;,
  &#39;I75_2mi_buff&#39;,
  &#39;schools_2mile_I75&#39;,
+ &#39;blockgroups_Layer1_CopyFeatures&#39;,
  &#39;blockgroups_school_spjoin&#39;,
  &#39;zip_q1_out&#39;,
  &#39;zip_q2_out&#39;,
  &#39;zipbnd_q3_out&#39;,
- &#39;blockgroups_Layer1_CopyFeatures&#39;]
+ &#39;blockgroups_Layer1_CopyFeatures1&#39;]
 </pre></div>
 </div>
 </div>
@@ -1313,7 +985,7 @@ The shape of arr: (6, 3).
 </div>
 </div>
 <section id="use-arcpy-listfields-to-access-fields">
-<h3>4.1 Use <code class="docutils literal notranslate"><span class="pre">arcpy.ListFields()</span></code> to access fields<a class="headerlink" href="#use-arcpy-listfields-to-access-fields" title="Permalink to this headline">#</a></h3>
+<h3>4.1 Use <code class="docutils literal notranslate"><span class="pre">arcpy.ListFields()</span></code> to access fields<a class="headerlink" href="#use-arcpy-listfields-to-access-fields" title="Link to this heading">#</a></h3>
 <p>A <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/field.htm">field object</a>
 represents a column in a table. A field has many properties, the most obvious ones
 being its <strong>name</strong> and its <strong>type</strong>.</p>
@@ -1421,7 +1093,7 @@ AUTOID
 </div>
 </section>
 <section id="convert-a-feature-class-to-numpy-array">
-<h3>4.2 Convert a feature class to NumPy array<a class="headerlink" href="#convert-a-feature-class-to-numpy-array" title="Permalink to this headline">#</a></h3>
+<h3>4.2 Convert a feature class to NumPy array<a class="headerlink" href="#convert-a-feature-class-to-numpy-array" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">arcpy.da.FeatureClassToNumPyArray</span></code> converts a feature class to a <a class="reference external" href="https://numpy.org/doc/stable/user/basics.rec.html">Structured Array</a>. A NumPy structured array is a special kind of array that allows you to store and manipulate heterogeneous data (i.e., data of different types) in a <strong>tabular format</strong>.</p>
 <p>Each element in a structured array is a <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, where each <a class="reference external" href="https://numpy.org/doc/stable/glossary.html#term-field">field</a>
 of the tuple can be of a different data type.</p>
@@ -1646,7 +1318,7 @@ of indicies. Remember this is called <em>fancy indexing</em>.</p>
 </div>
 </section>
 <section id="compute-statistics-of-a-np-ndarray">
-<h3>4.3 Compute statistics of a <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code><a class="headerlink" href="#compute-statistics-of-a-np-ndarray" title="Permalink to this headline">#</a></h3>
+<h3>4.3 Compute statistics of a <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code><a class="headerlink" href="#compute-statistics-of-a-np-ndarray" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>maximum: <code class="docutils literal notranslate"><span class="pre">np.max()</span></code></p></li>
 <li><p>minimum: <code class="docutils literal notranslate"><span class="pre">np.min()</span></code></p></li>
@@ -1710,7 +1382,7 @@ of indicies. Remember this is called <em>fancy indexing</em>.</p>
 </div>
 </section>
 <section id="simple-query-against-numpy-array">
-<h3>4.4 Simple query against NumPy array<a class="headerlink" href="#simple-query-against-numpy-array" title="Permalink to this headline">#</a></h3>
+<h3>4.4 Simple query against NumPy array<a class="headerlink" href="#simple-query-against-numpy-array" title="Link to this heading">#</a></h3>
 <p>Consider the following questions:</p>
 <ul class="simple">
 <li><p>which school has the largest enrollment: <code class="docutils literal notranslate"><span class="pre">argmax</span></code></p></li>
@@ -1754,7 +1426,7 @@ of indicies. Remember this is called <em>fancy indexing</em>.</p>
 </div>
 </section>
 <section id="generate-new-arrays-based-on-a-conditional-statement">
-<h3>4.5 Generate new arrays based on a conditional statement<a class="headerlink" href="#generate-new-arrays-based-on-a-conditional-statement" title="Permalink to this headline">#</a></h3>
+<h3>4.5 Generate new arrays based on a conditional statement<a class="headerlink" href="#generate-new-arrays-based-on-a-conditional-statement" title="Link to this heading">#</a></h3>
 <p>Let’s try to filter by the following criteria:</p>
 <ul class="simple">
 <li><p>schools enrollment is positive, and</p></li>
@@ -1890,7 +1562,7 @@ of these schools.</p>
 </div>
 </section>
 <section id="simple-numeric-operation">
-<h3>4.6 Simple numeric operation<a class="headerlink" href="#simple-numeric-operation" title="Permalink to this headline">#</a></h3>
+<h3>4.6 Simple numeric operation<a class="headerlink" href="#simple-numeric-operation" title="Link to this heading">#</a></h3>
 <p>We can apply basic arithmetic operations using the normal operators on
 arrays themselves.</p>
 <div class="cell docutils container">
@@ -2055,50 +1727,119 @@ highest ratio between teachers and students.</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="5-0.scientific_python.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Scientific Python Ecosystem</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="5-0.scientific_python.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Scientific Python Ecosystem</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="5-2.Intro_to_Pandas.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="5-2.Intro_to_Pandas.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Use Pandas in ArcGIS</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-numpy-ndarray">1. Create a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-a-python-list">1.1 From a Python list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-np-arange">1.2 Use <code class="docutils literal notranslate"><span class="pre">np.arange()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-np-linspace">1.3 Use <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">2. Indexing and slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-random-numbers-with-numpy">3. Generate random numbers with NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-with-numpy-in-arcgis">4. Work with NumPy in ArcGIS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-arcpy-listfields-to-access-fields">4.1 Use <code class="docutils literal notranslate"><span class="pre">arcpy.ListFields()</span></code> to access fields</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-a-feature-class-to-numpy-array">4.2 Convert a feature class to NumPy array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-statistics-of-a-np-ndarray">4.3 Compute statistics of a <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-query-against-numpy-array">4.4 Simple query against NumPy array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-new-arrays-based-on-a-conditional-statement">4.5 Generate new arrays based on a conditional statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-numeric-operation">4.6 Simple numeric operation</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By <a href="https://chjch.github.io/">Changjie Chen</a><br/>
-  
-      &copy; Copyright 2022-2024.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By <a href="https://chjch.github.io/">Changjie Chen</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022-2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

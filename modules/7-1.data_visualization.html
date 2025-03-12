@@ -1,0 +1,1170 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Visualizing Spatial Data &#8212; Automation for Geospatial Modeling and Analysis</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom_style.css?v=28ea9193" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-55C2BQ9HQX"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-55C2BQ9HQX');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-55C2BQ9HQX');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"eb66875afe6a40c9826cca926c1b2f2d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "600px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ddec877701604f73848547e4148f28ab": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": "600px", "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "600px"}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modules/7-1.data_visualization';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="GeoEnrichment" href="7-2.geoenrichment.html" />
+    <link rel="prev" title="ArcGIS API for Python" href="7-0.arcgis_api_for_python.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Automation for Geospatial Modeling and Analysis - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Automation for Geospatial Modeling and Analysis - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Welcome to Automation of GIS
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../software_0.html">Software</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../software_1.html">Basics of Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software_2.html">Use Notebook in a Browser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software_3.html">Fix missing buttons in Jupyter Notebook</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="1-1.Intro_to_ModelBuilder.html">Introduction to ModelBuilder</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2-0.Intro_to_Python.html">Built-in Data Types</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2-1.Markdown.html">Introduction to Markdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-2.Data_Types.html">Basic Python Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-3.More_Data_Types.html">More Python Data Types</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="3-0.Intro_Python_2.html">Function and Control Flow</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="3-1.Variable_Function.html">Variable and Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-2.Conditional_Statement.html">Conditional Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-3.Exceptions.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-4.Loops_LoopControl.html">Loops and Loop Control</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="4-0.intro_arcpy.html">Introduction to ArcPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="4-1.ArcPy_Basics.html">The basics of ArcPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-2.Run_ArcPy_functions.html">Run ArcPy Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-3.ArcPy_selection.html">ArcPy Selection Functions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="5-0.scientific_python.html">Scientific Python Ecosystem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="5-1.Intro_to_NumPy.html">Use NumPy in ArcGIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-2.Intro_to_Pandas.html">Use Pandas in ArcGIS</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="6-0.data_visualization.html">Data Visualization using Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="6-1.Intro_to_Matplotlib.html">Using Matplotlib for Data Visualization</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="7-0.arcgis_api_for_python.html">ArcGIS API for Python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Visualizing Spatial Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7-2.geoenrichment.html">GeoEnrichment</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="8-0.Raster_analysis.html">Raster Data Analysis using ArcPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="8-1.Raster_Analysis_Basics.html">Raster Analysis Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8-2.ArcPy_Raster.html">Run Raster Geoprocessing using ArcPy</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="9-0.script_tool.html">Develop a Script Tool</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="9-1.script_tool_basics.html">The Basics of a Script Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9-2.script_tool_setup.html">Build a Script Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9-3.additional_features.html">More Script Tool Features</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="10.Problem_Solving_in_Python_and_GIS.html">A Journey of Solving a GIS Automation Problem: from Google to Settle</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../homework/homework_problems.html">Homework Problems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../homework/homework1.html">Homework 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../homework/homework2.html">Homework 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../homework/homework3.html">Homework 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../homework/homework4.html">Homework 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../homework/homework5.html">Homework 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../homework/homework6.html">Homework 6</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../final_project.html">Final Project</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/chjch/gisautomation" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/chjch/gisautomation/issues/new?title=Issue%20on%20page%20%2Fmodules/7-1.data_visualization.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/modules/7-1.data_visualization.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Visualizing Spatial Data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arcgis-api-for-python">1. ArcGIS API for Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-package">1.1 Import the package</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-arcgis-gis-class">1.2 The <code class="docutils literal notranslate"><span class="pre">arcgis.GIS</span></code> class</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatially-enabled-dataframe">2. Spatially Enabled DataFrame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3. Visualizing spatial data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-map-object">3.1 Create a map object</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-sedfs-into-the-mapwidget">3.2 Load SEDFs into the MapWidget</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modify-the-size-of-the-widget-window">3.3 Modify the size of the widget window</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-the-basemap">3.3 Change the Basemap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choropleth-map">3.4 Choropleth Map</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="visualizing-spatial-data">
+<h1>Visualizing Spatial Data<a class="headerlink" href="#visualizing-spatial-data" title="Link to this heading">#</a></h1>
+<a class="mb-3 reference internal image-reference" href="../_images/arcgisapi.png"><img alt="arcgisapi" class="mb-3 align-right" src="../_images/arcgisapi.png" style="width: 276.0px; height: 298.5px;" />
+</a>
+<section id="arcgis-api-for-python">
+<h2>1. ArcGIS API for Python<a class="headerlink" href="#arcgis-api-for-python" title="Link to this heading">#</a></h2>
+<p>The ArcGIS API for Python, i.e., the <code class="docutils literal notranslate"><span class="pre">arcgis</span></code> package, is a powerful,
+modern and easy to use Pythonic library to perform GIS <strong>visualization</strong>
+and analysis, spatial data management and GIS system administration tasks
+that can run both in an interactive fashion, and using scripts.</p>
+<p>The package is shipped with a standard ArcGIS Pro installation.
+The API is distributed as the <code class="docutils literal notranslate"><span class="pre">arcgis</span></code> package via conda and pip.
+Within the <code class="docutils literal notranslate"><span class="pre">arcgis</span></code> package, which represents the generic <strong>GIS model</strong>,
+functionality is organized into a number of different modules that makes it
+simple to use and understand. Each module has a handful of types and functions
+that are focused towards one aspect of the GIS.</p>
+<p>This diagram below depicts the modules present in the API.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span>
+<span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/irpubkYLrWI&quot;</span>
+<span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span>
+<span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315"
+src="https://www.youtube.com/embed/irpubkYLrWI"
+title="YouTube video player" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div></div>
+</div>
+<section id="import-the-package">
+<h3>1.1 Import the package<a class="headerlink" href="#import-the-package" title="Link to this heading">#</a></h3>
+<p>The following statement imports the <code class="docutils literal notranslate"><span class="pre">arcgis</span></code> library and several submodules
+that we use for to plotting maps in a Python Notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcgis</span>
+<span class="kn">from</span> <span class="nn">arcgis</span> <span class="kn">import</span> <span class="n">GIS</span><span class="p">,</span> <span class="n">GeoAccessor</span><span class="p">,</span> <span class="n">GeoSeriesAccessor</span><span class="p">,</span> <span class="n">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-arcgis-gis-class">
+<h3>1.2 The <code class="docutils literal notranslate"><span class="pre">arcgis.GIS</span></code> class<a class="headerlink" href="#the-arcgis-gis-class" title="Link to this heading">#</a></h3>
+<p>What is <strong><em>class</em></strong> in Python?</p>
+<ul class="simple">
+<li><p>It is a blueprint for building things (a machine produces products)</p></li>
+<li><p>Things get created from the class are called objects (or instances of the class)</p></li>
+<li><p>DRY (Don’t repeat yourself) code.</p></li>
+<li><p>Example classes: a college student or a car, or a data structure that organizes
+the data just as <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> and <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code>.</p></li>
+</ul>
+<p>What is <strong>GIS</strong> (Geographic Information System)?</p>
+<ul class="simple">
+<li><p>Geographic Data:</p>
+<ul>
+<li><p>collection</p></li>
+<li><p>storage</p></li>
+<li><p>manipulation</p></li>
+<li><p>analysis</p></li>
+<li><p>visualization</p></li>
+<li><p>management/administration</p></li>
+<li><p>distribution</p></li>
+</ul>
+</li>
+<li><p>A variety of technologies:</p>
+<ul>
+<li><p>human activities (such as conducting survey of an area of land)</p></li>
+<li><p>hardware</p></li>
+<li><p>software (a narrower definition of GIS)</p></li>
+</ul>
+</li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">arcgis.GIS</span></code>:</p>
+<ul class="simple">
+<li><p>a portal to do GIS in Python Notebooks</p></li>
+<li><p>can link to an ArcGIS Online account</p></li>
+<li><p>or, be used locally without the connection</p></li>
+</ul>
+</section>
+</section>
+<section id="spatially-enabled-dataframe">
+<h2>2. Spatially Enabled DataFrame<a class="headerlink" href="#spatially-enabled-dataframe" title="Link to this heading">#</a></h2>
+<p>A Spatially Enabled DataFrame (SEDF) is a special type of <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> that is
+part of the ArcGIS API for Python. It allows you to work with and analyze spatial
+data in Python, using the power of the Pandas library.</p>
+<p>It is a class defined in the <em>features</em> module of <em>arcgis</em> (<code class="docutils literal notranslate"><span class="pre">arcgis.features</span></code>).
+It contains types and functions for working with features and feature layers in the GIS.
+Since it is an extension of <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> class, meaning that it possesses all
+functions of a normal <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<p>We use ArcPy as the geometry engine for this module, which gives us access to all native
+GIS data ArcGIS Pro supports.</p>
+<p>Now, let’s see how we can load a feature class as a “SEDF.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arcgis</span> <span class="kn">import</span> <span class="n">pd</span><span class="p">,</span> <span class="n">GeoAccessor</span><span class="p">,</span> <span class="n">GeoSeriesAccessor</span>
+<span class="kn">import</span> <span class="nn">arcpy</span>
+
+<span class="n">gdb_worksp</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;..\data\class_data.gdb&quot;</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">workspace</span> <span class="o">=</span> <span class="n">gdb_worksp</span>
+<span class="n">blkgrp_fc</span> <span class="o">=</span> <span class="s2">&quot;blockgroups&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blkgrp_sedf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">from_featureclass</span><span class="p">(</span><span class="n">blkgrp_fc</span><span class="p">)</span>
+<span class="n">blkgrp_sedf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>OBJECTID</th>
+      <th>STATEFP10</th>
+      <th>COUNTYFP10</th>
+      <th>TRACTCE10</th>
+      <th>BLKGRPCE10</th>
+      <th>GEOID10</th>
+      <th>NAMELSAD10</th>
+      <th>MTFCC10</th>
+      <th>FUNCSTAT10</th>
+      <th>ALAND10</th>
+      <th>...</th>
+      <th>DEN_NOTWEL</th>
+      <th>DEN_NOTATA</th>
+      <th>PCT_OWN5</th>
+      <th>PCT_RENT5</th>
+      <th>PCT_BACHLR</th>
+      <th>PCT_POV</th>
+      <th>PCT_RU1</th>
+      <th>DATAYEAR</th>
+      <th>DESCRIPT</th>
+      <th>SHAPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>12</td>
+      <td>023</td>
+      <td>110903</td>
+      <td>2</td>
+      <td>120231109032</td>
+      <td>Block Group 2</td>
+      <td>G5030</td>
+      <td>S</td>
+      <td>57546992</td>
+      <td>...</td>
+      <td>0.004918</td>
+      <td>0.0</td>
+      <td>17.225951</td>
+      <td>62.878788</td>
+      <td>9.922481</td>
+      <td>23.488372</td>
+      <td>23.488372</td>
+      <td>REDISTRICTING, SF1, ACS 2010</td>
+      <td>120231109032</td>
+      <td>{"rings": [[[530441.2199999988, 651631.75], [5...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>12</td>
+      <td>023</td>
+      <td>110904</td>
+      <td>1</td>
+      <td>120231109041</td>
+      <td>Block Group 1</td>
+      <td>G5030</td>
+      <td>S</td>
+      <td>85591551</td>
+      <td>...</td>
+      <td>0.000329</td>
+      <td>0.000329</td>
+      <td>26.21232</td>
+      <td>58.015267</td>
+      <td>5.456656</td>
+      <td>4.102167</td>
+      <td>4.102167</td>
+      <td>REDISTRICTING, SF1, ACS 2010</td>
+      <td>120231109041</td>
+      <td>{"rings": [[[534712.1700000018, 663369.54], [5...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>12</td>
+      <td>007</td>
+      <td>000300</td>
+      <td>5</td>
+      <td>120070003005</td>
+      <td>Block Group 5</td>
+      <td>G5030</td>
+      <td>S</td>
+      <td>196424609</td>
+      <td>...</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>13.270142</td>
+      <td>68.181818</td>
+      <td>1.254613</td>
+      <td>10.701107</td>
+      <td>10.701107</td>
+      <td>REDISTRICTING, SF1, ACS 2010</td>
+      <td>120070003005</td>
+      <td>{"rings": [[[567924.9299999997, 665800.79], [5...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>12</td>
+      <td>007</td>
+      <td>000300</td>
+      <td>4</td>
+      <td>120070003004</td>
+      <td>Block Group 4</td>
+      <td>G5030</td>
+      <td>S</td>
+      <td>16339411</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>18.924731</td>
+      <td>73.71134</td>
+      <td>12.617839</td>
+      <td>14.902103</td>
+      <td>14.902103</td>
+      <td>REDISTRICTING, SF1, ACS 2010</td>
+      <td>120070003004</td>
+      <td>{"rings": [[[588576.3599999994, 644359.46], [5...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>12</td>
+      <td>007</td>
+      <td>000300</td>
+      <td>1</td>
+      <td>120070003001</td>
+      <td>Block Group 1</td>
+      <td>G5030</td>
+      <td>S</td>
+      <td>57089369</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.001138</td>
+      <td>22.957198</td>
+      <td>43.333333</td>
+      <td>1.134021</td>
+      <td>21.161826</td>
+      <td>21.161826</td>
+      <td>REDISTRICTING, SF1, ACS 2010</td>
+      <td>120070003001</td>
+      <td>{"rings": [[[576256.1799999997, 656541.8300000...</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 202 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">blkgrp_sedf</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">blkgrp_sedf</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>178
+(178, 202)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blkgrp_sedf</span><span class="p">[</span><span class="s1">&#39;TOTALPOP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;IntegerArray&gt;
+[2094, 2269, 1305, 1991, 2056, 1410, 1890, 2510, 1150, 1856,
+ ...
+ 1091,  637,  921, 1342, 2680, 1211, 1788, 1723, 1189,  789]
+Length: 178, dtype: Int32
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>3. Visualizing spatial data<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="create-a-map-object">
+<h3>3.1 Create a map object<a class="headerlink" href="#create-a-map-object" title="Link to this heading">#</a></h3>
+<p>Before we can create a map, we need to set up a GIS instance that is connected
+to your ArcGIS Online account.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_gis</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">GIS @ <a href="https://www.arcgis.com">https://www.arcgis.com</a></div></div>
+</div>
+<p>Then, we can prepare SEDFs  Loading data into the GIS instance</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
+<span class="n">gdb_worksp</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;..\data\class_data.gdb&quot;</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">workspace</span> <span class="o">=</span> <span class="n">gdb_worksp</span>
+
+<span class="n">blkgrp</span> <span class="o">=</span> <span class="s2">&quot;blockgroups&quot;</span>
+<span class="n">schools</span> <span class="o">=</span> <span class="s1">&#39;schools&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blkgrp_sedf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">from_featureclass</span><span class="p">(</span><span class="n">blkgrp</span><span class="p">)</span>
+<span class="n">schools_sedf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">from_featureclass</span><span class="p">(</span><span class="n">schools</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">map()</span></code> function to create a <strong>map widget</strong> from the <code class="docutils literal notranslate"><span class="pre">GIS</span></code> instance to create a map.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">location</span></code> parameter takes a list of coordinates. And <code class="docutils literal notranslate"><span class="pre">zoomlevel</span></code> dictates
+how “zoomed-in” the map will be displayed initially. It is a value ranged between <code class="docutils literal notranslate"><span class="pre">0</span></code> (world)
+to <code class="docutils literal notranslate"><span class="pre">23</span></code> (house). Check this
+<a class="reference external" href="https://developers.arcgis.com/documentation/mapping-apis-and-services/reference/zoom-levels-and-scale/#conversion-tool">link</a>
+to learn more.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_map_in_my_gis</span> <span class="o">=</span> <span class="n">my_gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">29.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">82.3</span><span class="p">],</span>
+                              <span class="n">zoomlevel</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_map_in_my_gis</span> <span class="o">=</span> <span class="n">my_gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">29.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">82.3</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>                               <span class="n">zoomlevel</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: GIS.map() got an unexpected keyword argument &#39;zoomlevel&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_map_in_my_gis</span>
+</pre></div>
+</div>
+</div>
+</div>
+<img alt="mapwidget" class="mb-3" src="../_images/mapwidget.png" />
+</section>
+<section id="load-sedfs-into-the-mapwidget">
+<h3>3.2 Load SEDFs into the MapWidget<a class="headerlink" href="#load-sedfs-into-the-mapwidget" title="Link to this heading">#</a></h3>
+<p>Call <code class="docutils literal notranslate"><span class="pre">spatial.plot()</span></code> and specify the <code class="docutils literal notranslate"><span class="pre">map_widget</span></code> parameter to add the layer
+to a specific map.
+Note that SEDF loaded later will <strong>overlap</strong> the SEDFs loaded earlier.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blkgrp_sedf</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">map_widget</span><span class="o">=</span><span class="n">my_map_in_my_gis</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">schools_sedf</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">map_widget</span><span class="o">=</span><span class="n">my_map_in_my_gis</span><span class="p">,</span>
+                          <span class="n">col</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> 
+                          <span class="n">renderer_type</span><span class="o">=</span><span class="s1">&#39;u&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_map_in_my_gis</span>
+</pre></div>
+</div>
+</div>
+</div>
+<img alt="mapwidget-layers" class="mb-3" src="../_images/mapwidget_layers.png" />
+</section>
+<section id="modify-the-size-of-the-widget-window">
+<h3>3.3 Modify the size of the widget window<a class="headerlink" href="#modify-the-size-of-the-widget-window" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">Layout</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_map_in_my_gis</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="s2">&quot;600px&quot;</span><span class="p">)</span>
+<span class="n">my_map_in_my_gis</span>
+</pre></div>
+</div>
+</div>
+</div>
+<img alt="mapwidget-height" class="mb-3" src="../_images/mapwidget_height.png" />
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_map_in_my_gis</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;600px&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;600px&quot;</span><span class="p">)</span>
+<span class="n">my_map_in_my_gis</span>
+</pre></div>
+</div>
+</div>
+</div>
+<a class="mb-3 reference internal image-reference" href="../_images/mapwidget_width_height.png"><img alt="mapwidget-width-height" class="mb-3" src="../_images/mapwidget_width_height.png" style="width: 631.4px; height: 630.6999999999999px;" />
+</a>
+</section>
+<section id="change-the-basemap">
+<h3>3.3 Change the Basemap<a class="headerlink" href="#change-the-basemap" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">basemaps</span></code> attribute of a <code class="docutils literal notranslate"><span class="pre">map</span></code> returns a list of available basemaps</p></li>
+</ol>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_map_in_my_gis</span><span class="o">.</span><span class="n">basemaps</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_map_in_my_gis</span><span class="o">.</span><span class="n">basemaps</span>
+
+<span class="ne">NameError</span>: name &#39;my_map_in_my_gis&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pick a basemap from the above list and assign it to the <code class="docutils literal notranslate"><span class="pre">basemap</span></code> attribute to
+the map widget.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_map_in_my_gis</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="s1">&#39;dark-gray-vector&#39;</span>
+<span class="n">my_map_in_my_gis</span>
+</pre></div>
+</div>
+</div>
+</div>
+<a class="mb-3 reference internal image-reference" href="../_images/mapwidget_dark.png"><img alt="mapwidget-dark" class="mb-3" src="../_images/mapwidget_dark.png" style="width: 630.0px; height: 630.0px;" />
+</a>
+</section>
+<section id="choropleth-map">
+<h3>3.4 Choropleth Map<a class="headerlink" href="#choropleth-map" title="Link to this heading">#</a></h3>
+<p>A choropleth map is a type of thematic map that uses color to represent
+a quantitative variable (e.g., population) for different geographic regions,
+such as countries, states, or counties.</p>
+<p>In a choropleth map, each region is shaded or colored based on its corresponding
+value for the variable being mapped. Regions with higher values are typically
+shaded with darker or more intense colors, while regions with lower values are
+shaded with lighter or less intense colors.</p>
+<p>ArcGIS Python API provides a series of <strong>color maps</strong> to plot features on maps.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arcgis</span> <span class="kn">import</span> <span class="n">mapping</span>
+
+<span class="n">mapping</span><span class="o">.</span><span class="n">display_colormaps</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">arcgis</span> <span class="kn">import</span> <span class="n">mapping</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">mapping</span><span class="o">.</span><span class="n">display_colormaps</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: module &#39;arcgis.mapping&#39; has no attribute &#39;display_colormaps&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">map2</span> <span class="o">=</span> <span class="n">my_gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">29.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">82.3</span><span class="p">],</span> <span class="n">zoomlevel</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">map2</span> <span class="o">=</span> <span class="n">my_gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">29.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">82.3</span><span class="p">],</span> <span class="n">zoomlevel</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: GIS.map() got an unexpected keyword argument &#39;zoomlevel&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blkgrp_sedf</span><span class="o">.</span><span class="n">spatial</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">map_widget</span><span class="o">=</span><span class="n">map2</span><span class="p">,</span>
+                         <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;YlGnBu&quot;</span><span class="p">,</span>
+                         <span class="n">col</span><span class="o">=</span><span class="s1">&#39;TOTALPOP&#39;</span><span class="p">,</span>
+                         <span class="n">renderer_type</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span>
+                         <span class="n">method</span><span class="o">=</span><span class="s1">&#39;esriClassifyNaturalBreaks&#39;</span><span class="p">,</span>
+                         <span class="n">class_count</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">map2</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="s2">&quot;700px&quot;</span><span class="p">)</span>
+<span class="n">map2</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="s2">&quot;dark-gray-vector&quot;</span>
+<span class="n">map2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<img alt="mapwidget-choropleth" class="mb-3" src="../_images/mapwidget_choropleth.png" />
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./modules"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="7-0.arcgis_api_for_python.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ArcGIS API for Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="7-2.geoenrichment.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">GeoEnrichment</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arcgis-api-for-python">1. ArcGIS API for Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-package">1.1 Import the package</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-arcgis-gis-class">1.2 The <code class="docutils literal notranslate"><span class="pre">arcgis.GIS</span></code> class</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatially-enabled-dataframe">2. Spatially Enabled DataFrame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3. Visualizing spatial data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-map-object">3.1 Create a map object</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-sedfs-into-the-mapwidget">3.2 Load SEDFs into the MapWidget</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modify-the-size-of-the-widget-window">3.3 Modify the size of the widget window</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-the-basemap">3.3 Change the Basemap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choropleth-map">3.4 Choropleth Map</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://chjch.github.io/">Changjie Chen</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022-2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
