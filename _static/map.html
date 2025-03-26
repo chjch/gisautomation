@@ -1,0 +1,47 @@
+
+        <html>
+            <head>
+                <meta charset="utf-8" />
+                <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+                <title>Exported ArcGIS Map from Python API</title>
+
+                <style>
+                    html,
+                    body,
+                    #viewDiv {
+                        padding: 0;
+                        margin: 0;
+                        height: 100%;
+                        width: 100%;
+                    }
+                </style>
+
+                <link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css">
+                <script>
+                    var esriConfig = {
+                      apiKey: "AAPTxy8BH1VEsoebNVZXo8HurOB-qUDlHkp2KVuV5t-oSPzgOJAW_4l29510tXfyfc1t824hpXUV0wt10ADu6sx_dP5RYNRkFrgXnccW-Zgmk1cAeHycdlf9FJgz3nDSpkdeN-uSLrfHQEnsTUGRedftU1CoXaBDMTRG9nu-gqHTgKYvViqJ0XnG14KHZU5D9qRnr9qQ6gLOt00NGUq1kSAcaWOuCCXIjsfysO_tfHf6XLE.AT1_KHcekbw4"
+                    };
+                </script>
+                <script src="https://js.arcgis.com/4.30/"></script>
+
+
+                <script>
+                    require(["esri/config", "esri/WebMap", "esri/views/MapView"], function(esriConfig, WebMap, MapView) {
+
+
+                        const map = WebMap.fromJSON({"authoringApp": "ArcGISPythonAPI", "authoringAppVersion": "2.4.0", "baseMap": {"baseMapLayers": [{"id": "195d3e1180d-layer-6", "layerType": "VectorTileLayer", "opacity": 1, "styleUrl": "https://basemaps-api.arcgis.com/arcgis/rest/services/styles/ArcGIS:Navigation", "title": "World Navigation Map", "visibility": true}], "title": "Arcgis Navigation"}, "bookmarks": [], "initialState": {"viewpoint": {"rotation": 0.0, "targetGeometry": {"spatialReference": {"latestWkid": 3857, "wkid": 102100}, "xmax": -9079164.15851849, "xmin": -9097031.313880127, "ymax": 3550013.102733829, "ymin": 3544280.325612448}}}, "operationalLayers": [{"disablePopup": false, "featureCollection": {"layers": [{"disablePopup": false, "featureSet": {"features": [{"attributes": {"OBJECTID": 1}, "geometry": {"spatialReference": {"wkid": 4326}, "x": -81.639771, "y": 30.338587}, "popupInfo": {"fieldInfos": [{"fieldName": "OBJECTID", "isEditable": true, "label": "OBJECTID", "visible": true}], "showAttachments": true, "showLastEditInfo": true, "title": "Sketch Layer"}, "symbol": {"angle": 0.0, "color": [226, 29, 145, 158], "outline": {"color": [0, 0, 0, 255], "style": "esriSLSSolid", "type": "esriSLS", "width": 0.75}, "size": 12.0, "style": "esriSMSCircle", "type": "esriSMS", "xoffset": 0.0, "yoffset": 0.0}}], "geometryType": "esriGeometryPoint"}, "layerDefinition": {"drawingInfo": {"renderer": {"symbol": {"angle": 0.0, "color": [226, 29, 145, 158], "outline": {"color": [0, 0, 0, 255], "style": "esriSLSSolid", "type": "esriSLS", "width": 0.75}, "size": 12.0, "style": "esriSMSCircle", "type": "esriSMS", "xoffset": 0.0, "yoffset": 0.0}, "type": "simple"}, "scaleSymbols": false}, "fields": [{"alias": "OBJECTID", "name": "OBJECTID", "type": "esriFieldTypeOID"}], "geometryType": "esriGeometryPoint", "maxScale": 0.0, "minScale": 0.0, "name": "Sketch Layer", "objectIdField": "OBJECTID", "spatialReference": {"wkid": 4326}, "type": "Feature Layer"}, "showLegend": true}], "showLegend": true}, "id": "47175d2ede8c", "layerDefinition": {"drawingInfo": {"renderer": {"symbol": {"angle": 0.0, "color": [226, 29, 145, 158], "outline": {"color": [0, 0, 0, 255], "style": "esriSLSSolid", "type": "esriSLS", "width": 0.75}, "size": 12.0, "style": "esriSMSCircle", "type": "esriSMS", "xoffset": 0.0, "yoffset": 0.0}, "type": "simple"}, "scaleSymbols": false}, "fields": [{"alias": "OBJECTID", "name": "OBJECTID", "type": "esriFieldTypeOID"}], "geometryType": "esriGeometryPoint", "maxScale": 0.0, "minScale": 0.0, "name": "Sketch Layer", "objectIdField": "OBJECTID", "spatialReference": {"wkid": 4326}, "type": "Feature Layer"}, "layerType": "ArcGISFeatureLayer", "opacity": 1, "popupInfo": {"fieldInfos": [{"fieldName": "OBJECTID", "isEditable": true, "label": "OBJECTID", "visible": true}], "showAttachments": true, "showLastEditInfo": true, "title": "Sketch Layer"}, "refreshInterval": 0, "showLabels": false, "showLegend": true, "timeAnimation": true, "title": "Sketch Layer", "visibility": true}], "referenceScale": 0, "spatialReference": {"latestWkid": 3857, "wkid": 102100}, "version": "2.31"});
+
+                        const view = new MapView({
+                            map: map,
+                            extent: {"spatialReference": {"latestWkid": 3857, "wkid": 102100}, "xmin": -9097031.313880127, "ymin": 3544280.325612448, "xmax": -9079164.15851849, "ymax": 3550013.102733829},
+                            container: "viewDiv"
+                        });
+
+                    });
+                </script>
+            </head>
+            <body>
+                <div id="viewDiv"></div>
+            </body>
+        </html>
+        
