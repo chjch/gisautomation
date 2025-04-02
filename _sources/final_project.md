@@ -19,7 +19,7 @@ in ArcGIS Pro that can identify **census block groups** based on 3 criteria.
 
 ### 1. Block groups with high crash rate
 
-_Crash rate_ can be calculated as **number of crashes per liner roadway mile**.
+_Crash rate_ can be calculated as **number of crashes per linear roadway mile**.
 Only consider crashes that are **within 300 feet of major roads**. This rate
 should be calculated for every block group. Only block groups within the
 Alachua county should be considered. The block groups are classified into
