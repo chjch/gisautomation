@@ -81,6 +81,15 @@ AREAS** occupy **more than 50%** of the block group area.
 :width: 784
 ```
 
+If you were a planner in Alachua County, which blockgroup you would invest in
+first for traffic safety intervention projects, and which one you would invest
+second? 
+Use the [GeoEnrichment](https://chjch.github.io/gisautomation/modules/7-2.geoenrichment.html)
+tools we have learned to **rank the final four blockgroups** based on socioeconomic variables
+that you deemed important to make this decision, e.g., total population, age groups, etc.
+Explain your choices of [variables](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/tools/analysis-variable-finder/)
+in your presentation as well as in the final executive summary report. 
+
 ## Part I: Develop the model with ModelBuilder
 
 **DELIVERABLE**: Submit the model and the resulting feature class produced by
