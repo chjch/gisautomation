@@ -60,13 +60,6 @@
             margin-top: 80px !important;
             margin-left: 15px !important;
         }
-
-        /* Force BasemapGallery to 5 columns */
-        #basemapGalleryContainer .esri-basemap-gallery__grid {
-            display: grid !important;
-            grid-template-columns: repeat(5, 1fr) !important;
-            gap: 8px;
-        }
     </style>
 
     <!-- require ArcGIS REST JS libraries from https://unpkg.com -->
@@ -91,16 +84,15 @@
             "esri/config",
             "esri/widgets/Sketch/SketchViewModel",
             "esri/layers/FeatureLayer",
-            "esri/geometry/projection",
-            "esri/widgets/BasemapGallery"
+            "esri/geometry/projection"
         ],
-            (Map, MapView, Point, Graphic, geometryEngine, reactiveUtils, esriConfig, SketchViewModel, FeatureLayer, projection, BasemapGallery) => {
+            (Map, MapView, Point, Graphic, geometryEngine, reactiveUtils, esriConfig, SketchViewModel, FeatureLayer, projection) => {
 
                 const apiKey = "AAPTxy8BH1VEsoebNVZXo8HurOB-qUDlHkp2KVuV5t-oSPw6uWrzGDsDlEWvzoJ3sO4fymdu3ciU4TAtgAh52C4W5KKvWoVFM_oETkRV8lknI9QK8qJKzXjHh8nc9oeccRnh-NErn30jiA4UghSyZw_9xRNX0P5mP1CxJbasNx32FRzOOXdp_edmjsixsI3POOFycmL9nqiM5gN9MsLPO_BtwFlIUaWeRgmisCjP9J5BEOY.AT1_KHcekbw4";
                 esriConfig.apiKey = apiKey;
                 const authentication = arcgisRest.ApiKeyManager.fromKey(apiKey);
 
-                const start = [-79.0045, -2.9006];  // Cuenca, Ecuador
+                const start = [-74.0060, 40.7128];  // New York
                 const zoom = 13;
 
                 const map = new Map({
@@ -353,53 +345,6 @@
                             sketchViewModel.cancel();
                         }
                     });
-
-                    // Move BasemapGallery widget into a hidden container
-                    const galleryButton = document.getElementById("basemapGalleryButton");
-                    const galleryContainer = document.getElementById("basemapGalleryContainer");
-                    const arcgisBasemapGallery = document.getElementById("arcgisBasemapGallery");
-                    let galleryVisible = false;
-                    function toggleGallery() {
-                        if (!galleryVisible) {
-                            // Position the gallery below the toolbar, right-aligned with the screen
-                            const toolbar = document.getElementById("toolbar");
-                            const rect = toolbar.getBoundingClientRect();
-                            galleryContainer.style.display = "block";
-                            galleryContainer.style.top = (window.scrollY + rect.bottom + 4) + "px";
-                            galleryContainer.style.right = "15px";
-                            galleryContainer.style.left = "auto";
-                            galleryVisible = true;
-                        } else {
-                            galleryContainer.style.display = "none";
-                            galleryVisible = false;
-                        }
-                    }
-                    galleryButton.addEventListener("click", (e) => {
-                        e.stopPropagation();
-                        toggleGallery();
-                    });
-                    // Hide gallery when clicking outside
-                    document.addEventListener("click", (e) => {
-                        if (galleryVisible && !galleryContainer.contains(e.target) && e.target !== galleryButton && !galleryButton.contains(e.target)) {
-                            galleryContainer.style.display = "none";
-                            galleryVisible = false;
-                        }
-                    });
-                    // Ensure the web component is upgraded before assigning the view and event
-                    setTimeout(() => {
-                        arcgisBasemapGallery.view = view;
-                        let lastBasemapId = arcgisBasemapGallery.activeBasemap && arcgisBasemapGallery.activeBasemap.id;
-                        setInterval(() => {
-                            const current = arcgisBasemapGallery.activeBasemap;
-                            if (current && current.id !== lastBasemapId) {
-                                console.log('Basemap changed:', current);
-                                console.log(galleryVisible);
-                                galleryVisible = false;
-                                galleryContainer.style.display = "none";
-                                lastBasemapId = current.id;
-                            }
-                        }, 300);
-                    }, 500);
                 });
 
                 function refreshPopup(e) {
@@ -680,15 +625,9 @@
         <calcite-button id="centerButton" appearance="solid" color="neutral" scale="m">
             <calcite-icon icon="layer-polygon" scale="m"></calcite-icon>
         </calcite-button>
-        <calcite-button id="driveButton" appearance="solid" color="neutral" scale="m" title="Drive Time Analysis">
+        <calcite-button id="driveButton" appearance="solid" color="neutral" scale="m">
             <calcite-icon icon="car" scale="m"></calcite-icon>
         </calcite-button>
-        <calcite-button id="basemapGalleryButton" appearance="solid" color="neutral" scale="m" title="Basemap Gallery">
-            <calcite-icon icon="basemap" scale="m"></calcite-icon>
-        </calcite-button>
-    </div>
-    <div id="basemapGalleryContainer" style="display:none; position:absolute; z-index:1000; background:white; border-radius:4px; box-shadow:0 1px 4px rgba(0,0,0,0.3); right:15px; width:1050px; border:1px solid #ccc;">
-        <arcgis-basemap-gallery id="arcgisBasemapGallery"></arcgis-basemap-gallery>
     </div>
     <div id="selectContainer" class="esri-widget">
         <select id="selectDataCollection" class="esri-select esri-input" style="font-size: 16px; padding: 2px 4px;">
