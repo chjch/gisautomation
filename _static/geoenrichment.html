@@ -1,0 +1,709 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>What is GeoEnrichment?</title>
+    <style>
+        html,
+        body,
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .esri-view .esri-popup__button.esri-popup__button--dock {
+            display: none;
+        }
+
+        .esri-popup__header-title {
+            text-align: left;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .data-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .data-table tr:nth-child(odd) {
+            background-color: #f5f5f5;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        .data-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        #toolbar {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: white;
+            padding: 6px;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+        }
+
+        .esri-popup {
+            margin-top: 80px !important;
+            margin-left: 15px !important;
+        }
+
+        /* Force BasemapGallery to 5 columns */
+        #basemapGalleryContainer .esri-basemap-gallery__grid {
+            display: grid !important;
+            grid-template-columns: repeat(5, 1fr) !important;
+            gap: 8px;
+        }
+    </style>
+
+    <!-- require ArcGIS REST JS libraries from https://unpkg.com -->
+    <script src="https://unpkg.com/@esri/arcgis-rest-request@4/dist/bundled/request.umd.js"></script>
+    <script src="https://unpkg.com/@esri/arcgis-rest-demographics@4/dist/bundled/demographics.umd.js"></script>
+
+
+    <script src="https://js.arcgis.com/calcite-components/3.1.0/calcite.esm.js" type="module"></script>
+
+    <script src="https://js.arcgis.com/4.32/"></script>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.32/esri/themes/light/main.css" />
+    <script type="module" src="https://js.arcgis.com/map-components/4.32/arcgis-map-components.esm.js"></script>
+
+    <script>
+        require([
+            "esri/Map",
+            "esri/views/MapView",
+            "esri/geometry/Point",
+            "esri/Graphic",
+            "esri/geometry/geometryEngine",
+            "esri/core/reactiveUtils",
+            "esri/config",
+            "esri/widgets/Sketch/SketchViewModel",
+            "esri/layers/FeatureLayer",
+            "esri/geometry/projection",
+            "esri/widgets/BasemapGallery"
+        ],
+            (Map, MapView, Point, Graphic, geometryEngine, reactiveUtils, esriConfig, SketchViewModel, FeatureLayer, projection, BasemapGallery) => {
+
+                const apiKey = "AAPTxy8BH1VEsoebNVZXo8HurOB-qUDlHkp2KVuV5t-oSPw6uWrzGDsDlEWvzoJ3sO4fymdu3ciU4TAtgAh52C4W5KKvWoVFM_oETkRV8lknI9QK8qJKzXjHh8nc9oeccRnh-NErn30jiA4UghSyZw_9xRNX0P5mP1CxJbasNx32FRzOOXdp_edmjsixsI3POOFycmL9nqiM5gN9MsLPO_BtwFlIUaWeRgmisCjP9J5BEOY.AT1_KHcekbw4";
+                esriConfig.apiKey = apiKey;
+                const authentication = arcgisRest.ApiKeyManager.fromKey(apiKey);
+
+                const start = [-79.0045, -2.9006];  // Cuenca, Ecuador
+                const zoom = 13;
+
+                const map = new Map({
+                    basemap: "arcgis/navigation"
+                });
+
+                // Add Jacksonville Neighborhoods layer
+                const neighborhoodsLayer = new FeatureLayer({
+                    url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/JAX_Neighborhoods/FeatureServer/0",
+                    title: "Jacksonville Neighborhoods",
+                    outFields: ["*"],
+                    renderer: {
+                        type: "simple",
+                        symbol: {
+                            type: "simple-fill",
+                            style: "solid",
+                            color: [255, 255, 255, 0],
+                            outline: {
+                                color: [138, 138, 138], 
+                                width: 1.5
+                            }
+                        }
+                    },
+                    popupEnabled: false,
+                    labelingInfo: [{
+                        symbol: {
+                            type: "text",
+                            color: [100, 100, 100],
+                            haloSize: 1,
+                            haloColor: [230, 230, 230],
+                            font: {
+                                size: 12,
+                                family: "Arial"
+                            }
+                        },
+                        labelExpressionInfo: {
+                            expression: "$feature.NEIGHBORHO"
+                        },
+                        minScale: 50000,  // City scale
+                        maxScale: 5000    // Street scale
+                    }],
+                    // popupTemplate: {
+                    //     title: "{NEIGHBORHO}",
+                    //     content: [
+                    //         {
+                    //             type: "fields",
+                    //             fieldInfos: [
+                    //                 {
+                    //                     fieldName: "CODENUM",
+                    //                     label: "Code Number"
+                    //                 },
+                    //                 {
+                    //                     fieldName: "NUM_NAME",
+                    //                     label: "Number and Name"
+                    //                 },
+                    //                 {
+                    //                     fieldName: "COUNTY_AREA",
+                    //                     label: "County Area"
+                    //                 }
+                    //             ]
+                    //         }
+                    //     ]
+                    // }
+                });
+                map.add(neighborhoodsLayer);
+
+                const view = new MapView({
+                    map: map,
+                    center: start, // longitude, latitude
+                    zoom: zoom, // zoom level
+                    container: "viewDiv",
+                    constraints: {
+                        snapToZoom: false
+                    }
+                });
+
+                view.popup.actions = [];
+
+                let lastPoint;
+                let drawnPolygon;
+                let driveTimeArea;
+                let selectDataCollection;
+                let activeTool = "point"; // Set default active tool to point
+                let sketchViewModel;
+                let highlightHandle = null; // Track the highlight handle
+                let highlightedFeature = null; // Track the currently highlighted feature
+
+                // Function to clear popup and buffer geometry
+                function clearPopupAndBuffer() {
+                    view.popup.close();
+                    view.graphics.removeAll();
+                }
+
+                // Function to clear highlight
+                function clearHighlight() {
+                    if (highlightHandle) {
+                        highlightHandle.remove();
+                        highlightHandle = null;
+                    }
+                    highlightedFeature = null;
+                }
+
+                view.when(() => {
+                    lastPoint = view.center;
+
+                    const elem = document.getElementById("selectContainer");
+                    view.ui.add(elem, "top-left");
+                    view.ui.move("zoom", "bottom-right");
+
+                    // Configure popup
+                    view.popup.dockEnabled = false;
+                    view.popup.dockOptions = {
+                        position: "top-right",
+                        buttonEnabled: true,
+                        breakpoint: false
+                    };
+
+                    selectDataCollection = document.getElementById("selectDataCollection");
+                    selectDataCollection.addEventListener("change", refreshPopup);
+
+                    // Set initial button states
+                    document.getElementById("pointButton").active = true;
+                    document.getElementById("polygonButton").active = false;
+                    document.getElementById("centerButton").active = false;
+                    document.getElementById("driveButton").active = false;
+
+                    getDemographicData(lastPoint, selectDataCollection.value);
+
+                    // Initialize SketchViewModel
+                    sketchViewModel = new SketchViewModel({
+                        view: view,
+                        layer: view.graphics
+                    });
+
+                    // Add event listeners for the toolbar buttons
+                    document.getElementById("pointButton").addEventListener("click", () => {
+                        clearPopupAndBuffer();
+                        clearHighlight();
+                        if (activeTool === "point") {
+                            sketchViewModel.create("point");
+                        } else {
+                            activeTool = "point";
+                            sketchViewModel.create("point");
+                            document.getElementById("pointButton").active = true;
+                            document.getElementById("polygonButton").active = false;
+                            document.getElementById("centerButton").active = false;
+                            document.getElementById("driveButton").active = false;
+                        }
+                    });
+
+                    document.getElementById("polygonButton").addEventListener("click", () => {
+                        clearPopupAndBuffer();
+                        clearHighlight();
+                        if (activeTool === "polygon") {
+                            sketchViewModel.create("polygon");
+                        } else {
+                            activeTool = "polygon";
+                            sketchViewModel.create("polygon");
+                            document.getElementById("polygonButton").active = true;
+                            document.getElementById("pointButton").active = false;
+                            document.getElementById("centerButton").active = false;
+                            document.getElementById("driveButton").active = false;
+                        }
+                    });
+
+                    document.getElementById("centerButton").addEventListener("click", () => {
+                        clearPopupAndBuffer();
+                        clearHighlight();
+                        if (activeTool === "center") {
+                            return;
+                        } else {
+                            activeTool = "center";
+                            document.getElementById("centerButton").active = true;
+                            document.getElementById("pointButton").active = false;
+                            document.getElementById("polygonButton").active = false;
+                            document.getElementById("driveButton").active = false;
+                            
+                            // Center the view on the neighborhoods layer
+                            neighborhoodsLayer.queryExtent().then((response) => {
+                                if (response.extent) {
+                                    view.goTo(response.extent, {
+                                        duration: 5000,
+                                        easing: "ease-in-out"
+                                    });
+                                }
+                            });
+                        }
+                    });
+
+                    document.getElementById("driveButton").addEventListener("click", () => {
+                        clearPopupAndBuffer();
+                        clearHighlight();
+                        if (activeTool === "drive") {
+                            sketchViewModel.create("point");
+                        } else {
+                            activeTool = "drive";
+                            document.getElementById("driveButton").active = true;
+                            document.getElementById("pointButton").active = false;
+                            document.getElementById("polygonButton").active = false;
+                            document.getElementById("centerButton").active = false;
+                            sketchViewModel.create("point");
+                        }
+                    });
+
+                    // Add click handler for feature selection
+                    view.on("click", (event) => {
+                        if (activeTool === "center") {
+                            view.hitTest(event).then((response) => {
+                                const feature = response.results.find(
+                                    result => result.graphic && result.graphic.layer === neighborhoodsLayer
+                                );
+                                if (feature && feature.graphic !== highlightedFeature) {
+                                    // Clear previous highlight
+                                    clearHighlight();
+                                    // Create new highlight
+                                    const layerView = view.layerViews.find(lv => lv.layer === neighborhoodsLayer);
+                                    if (layerView) {
+                                        highlightHandle = layerView.highlight(feature.graphic);
+                                        highlightedFeature = feature.graphic;
+                                        // Get neighborhood name from the feature
+                                        const neighborhoodName = feature.graphic.attributes.NEIGHBORHO;
+                                        // Query demographic data for the selected feature
+                                        getDemographicData(feature.graphic.geometry, selectDataCollection.value, neighborhoodName);
+                                    }
+                                }
+                            });
+                        } else if (activeTool === "point") {
+                            lastPoint = event.mapPoint;
+                            getDemographicData(lastPoint, selectDataCollection.value);
+                        }
+                    });
+
+                    // Listen for sketch completion
+                    sketchViewModel.on("create", (event) => {
+                        if (event.state === "complete") {
+                            if (event.graphic.geometry.type === "point" && activeTool === "point") {
+                                lastPoint = event.graphic.geometry;
+                                getDemographicData(lastPoint, selectDataCollection.value);
+                            } else if (event.graphic.geometry.type === "polygon" && activeTool === "polygon") {
+                                // Get the drawn polygon geometry
+                                drawnPolygon = event.graphic.geometry;
+                                // Query demographic data for the drawn polygon
+                                getDemographicData(drawnPolygon, selectDataCollection.value);
+                            } else if (event.graphic.geometry.type === "point" && activeTool === "drive") {
+                                // Get the origin point for drive time analysis
+                                lastPoint = event.graphic.geometry;
+                                getDemographicData(lastPoint, selectDataCollection.value);
+                            }
+                            // Don't reset the active tool here
+                            sketchViewModel.cancel();
+                        }
+                    });
+
+                    // Move BasemapGallery widget into a hidden container
+                    const galleryButton = document.getElementById("basemapGalleryButton");
+                    const galleryContainer = document.getElementById("basemapGalleryContainer");
+                    const arcgisBasemapGallery = document.getElementById("arcgisBasemapGallery");
+                    let galleryVisible = false;
+                    function toggleGallery() {
+                        if (!galleryVisible) {
+                            // Position the gallery below the toolbar, right-aligned with the screen
+                            const toolbar = document.getElementById("toolbar");
+                            const rect = toolbar.getBoundingClientRect();
+                            galleryContainer.style.display = "block";
+                            galleryContainer.style.top = (window.scrollY + rect.bottom + 4) + "px";
+                            galleryContainer.style.right = "15px";
+                            galleryContainer.style.left = "auto";
+                            galleryVisible = true;
+                        } else {
+                            galleryContainer.style.display = "none";
+                            galleryVisible = false;
+                        }
+                    }
+                    galleryButton.addEventListener("click", (e) => {
+                        e.stopPropagation();
+                        toggleGallery();
+                    });
+                    // Hide gallery when clicking outside
+                    document.addEventListener("click", (e) => {
+                        if (galleryVisible && !galleryContainer.contains(e.target) && e.target !== galleryButton && !galleryButton.contains(e.target)) {
+                            galleryContainer.style.display = "none";
+                            galleryVisible = false;
+                        }
+                    });
+                    // Ensure the web component is upgraded before assigning the view and event
+                    setTimeout(() => {
+                        arcgisBasemapGallery.view = view;
+                        let lastBasemapId = arcgisBasemapGallery.activeBasemap && arcgisBasemapGallery.activeBasemap.id;
+                        setInterval(() => {
+                            const current = arcgisBasemapGallery.activeBasemap;
+                            if (current && current.id !== lastBasemapId) {
+                                console.log('Basemap changed:', current);
+                                console.log(galleryVisible);
+                                galleryVisible = false;
+                                galleryContainer.style.display = "none";
+                                lastBasemapId = current.id;
+                            }
+                        }, 300);
+                    }, 500);
+                });
+
+                function refreshPopup(e) {
+                    if (activeTool === "point") {
+                        getDemographicData(lastPoint, selectDataCollection.value);
+                    } else if (activeTool === "center" && highlightedFeature) {
+                        getDemographicData(highlightedFeature.geometry, selectDataCollection.value, highlightedFeature.attributes.NEIGHBORHO);
+                    } else if (activeTool === "polygon" && drawnPolygon) {
+                        getDemographicData(drawnPolygon, selectDataCollection.value);
+                    } else if (activeTool === "drive" && driveTimeArea) {
+                        getDemographicData(driveTimeArea, selectDataCollection.value);
+                    }
+                }
+
+
+                function getDemographicData(geometry, dataCollection, neighborhoodName = null) {
+                    if (!dataCollection) {
+                        return;
+                    }
+
+                    let studyArea;
+                    let projectedGeometry;
+                    let params = {};
+
+                    if (geometry.type === "point") {
+                        studyArea = { "geometry": { "x": geometry.longitude, "y": geometry.latitude } };
+                        projectedGeometry = geometry;
+
+                        // If drive tool is active, add drive time parameters
+                        if (activeTool === "drive") {
+                            params = {
+                                studyareasoptions: JSON.stringify({
+                                    areaType: "NetworkServiceArea",
+                                    bufferUnits: "Minutes",
+                                    bufferRadii: [15],
+                                    travel_mode: "Driving"
+                                })
+                            };
+                        }
+                    } else if (geometry.type === "polygon") {
+                        // Project the polygon to WGS84
+                        projectedGeometry = projection.project(geometry, {
+                            wkid: 4326
+                        });
+                        studyArea = { "geometry": projectedGeometry };
+                    }
+
+                    // Request demographic data using the session for authentication
+                    arcgisRest.queryDemographicData({
+                        studyAreas: [studyArea],
+                        authentication: authentication,  
+                        dataCollections: [dataCollection],
+                        params: params,
+                        ...(activeTool === "drive" ? { returnGeometry: true } : {})
+                    })
+                    .then((response) => {
+                        if (response.results[0].value.FeatureSet.length > 0 &&
+                            response.results[0].value.FeatureSet[0].features.length > 0) {
+                            const attributes = response.results[0].value.FeatureSet[0].features[0].attributes;
+                            const fields = response.results[0].value.FeatureSet[0].fields;    
+
+                            // fields.forEach(field => {
+                            //     console.log(field.name);
+                            // });
+                            
+                            // If drive tool is active, store the service area geometry
+                            if (activeTool === "drive" && response.results[0].value.FeatureSet[0].features[0].geometry) {
+                                const feature = response.results[0].value.FeatureSet[0].features[0];
+                                driveTimeArea = {
+                                    type: "polygon",
+                                    rings: feature.geometry.rings,
+                                    spatialReference: { wkid: 4326 }
+                                };
+                            }
+                            
+                            // Update the variable dropdown
+                            const variableSelect = document.getElementById("selectVariable");
+                            variableSelect.innerHTML = '<option value="">Select a variable...</option>';
+                            
+                            // Fields to skip
+                            const skipFields = [
+                                'ID', 'OBJECTID', 'sourceCountry', 'areaType', 
+                                'bufferUnits', 'bufferUnitsAlias', 'bufferRadii',
+                                'aggregationMethod', 'populationToPolygonSizeRating', 
+                                'apportionmentConfidence', 'HasData'
+                            ];
+                            
+                            // Add options for each field, skipping the specified fields
+                            fields.forEach(field => {
+                                if (!skipFields.includes(field.name)) {
+                                    const option = document.createElement("option");
+                                    option.value = field.name;
+                                    option.textContent = field.alias || field.name;
+                                    variableSelect.appendChild(option);
+                                }
+                            });
+                            
+                            // If drive tool is active, use the drive time area for the search area label
+                            const searchAreaLabel = activeTool === "drive" ? "15-min drive" : neighborhoodName;
+                            showData(attributes, projectedGeometry, dataCollection, searchAreaLabel);
+                        } else {
+                            console.log("No data found or geometry not in the United States.");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error querying demographic data:", error);
+                    });
+                }
+
+
+                function showData(attributes, geometry, dataCollection, neighborhoodName = null) {
+                    if (!attributes || !geometry) {
+                        return;
+                    }
+
+                    let title = "";
+                    let tableContent = "";
+                    let popupLocation;
+                    let searchArea;
+                    if (geometry.type === "point") {
+                        searchArea = activeTool === "drive" ? "15-min drive" : "1 mile search";
+                    } else if (geometry.type === "polygon") {
+                        searchArea = neighborhoodName || "polygon search";
+                    }
+
+                    // Calculate popup location based on geometry type
+                    if (geometry.type === "point") {
+                        popupLocation = geometry;
+                        view.popup.alignment = "auto";
+                    } else if (geometry.type === "polygon") {
+                        const extent = geometry.extent;
+                        // Calculate center point
+                        const centerX = (extent.xmin + extent.xmax) / 2;
+                        const centerY = (extent.ymin + extent.ymax) / 2;
+                        // Offset the popup location slightly above the center
+                        popupLocation = {
+                            longitude: centerX,
+                            latitude: centerY + (extent.ymax - extent.ymin) * 0.1 // Move up by 10% of the height
+                        };
+                        view.popup.alignment = "auto";
+                    }
+
+                    switch (dataCollection) {
+                        case "householdincome":
+                            title = `Household Income facts (${searchArea})`;
+                            tableContent = `
+                                <table class="data-table">
+                                    <tr><td>Median Household Income</td><td>${formatMoney(attributes.MEDHINC_CY)}</td></tr>
+                                    <tr><td>Average Household Income</td><td>${formatMoney(attributes.AVGHINC_CY)}</td></tr>
+                                    <tr><td>Per Capita Income</td><td>${formatMoney(attributes.PCI_CY)}</td></tr>
+                                    <tr><td>Aggregate Income</td><td>${formatMoney(attributes.AGGINC_CY)}</td></tr>
+                                </table>`;
+                            break;
+
+                        case "HistoricalHousing":
+                            title = `Historical Housing facts (${searchArea})`;
+                            const selectedVariable = document.getElementById("selectVariable").value;
+                            if (selectedVariable) {
+                                // If a specific variable is selected, show only that one
+                                tableContent = `
+                                    <table class="data-table">
+                                        <tr><td>${fields.find(f => f.name === selectedVariable)?.alias || selectedVariable}</td><td>${attributes[selectedVariable]}</td></tr>
+                                    </table>`;
+                            } else {
+                                // If no variable is selected, show all variables from the dropdown
+                                const variableSelect = document.getElementById("selectVariable");
+                                const options = Array.from(variableSelect.options).slice(1); // Skip the first "Select a variable..." option
+                                tableContent = `
+                                    <table class="data-table">
+                                        ${options.map(option => `
+                                            <tr><td>${option.text}</td><td>${attributes[option.value]}</td></tr>
+                                        `).join('')}
+                                    </table>`;
+                            }
+                            break;
+
+                        case "entertainment":
+                            title = `Entertainment facts (${searchArea})`;
+                            tableContent = `
+                                <table class="data-table">
+                                    <tr><td>Tickets to Movies</td><td>${formatMoney(attributes.X9078_X)}</td></tr>
+                                    <tr><td>Streaming/Downloaded Audio</td><td>${formatMoney(attributes.X9029_X)}</td></tr>
+                                    <tr><td>Online Gaming Services</td><td>${formatMoney(attributes.X9045_X)}</td></tr>
+                                    <tr><td>Camping Equipment</td><td>${formatMoney(attributes.X9054_X)}</td></tr>
+                                    <tr><td>Books</td><td>${formatMoney(attributes.X9068_X)}</td></tr>
+                                </table>`;
+                            break;
+
+                        case "populationtotals":
+                            title = `Population facts (${searchArea})`;
+                            tableContent = `
+                                <table class="data-table">
+                                    <tr><td>Total Population</td><td>${attributes.TOTPOP_CY}</td></tr>
+                                    <tr><td>Household Population</td><td>${attributes.HHPOP_CY}</td></tr>
+                                    <tr><td>Population Density (per sq. mile)</td><td>${attributes.POPDENS_CY}</td></tr>
+                                    <tr><td>Population Annual Growth Rate</td><td>${attributes.POPGRW10CY}</td></tr>
+                                    <tr><td>Housing Affordability Index</td><td>${attributes.HAI_CY}</td></tr>
+                                </table>`;
+                            break;
+
+                        case "businesses":
+                            title = `Business facts (${searchArea})`;
+                            tableContent = `
+                                <table class="data-table">
+                                    <tr><td>Total Businesses</td><td>${attributes.S01_BUS}</td></tr>
+                                    <tr><td>Retail Businesses</td><td>${attributes.S02_BUS}</td></tr>
+                                    <tr><td>Manufacturing Businesses</td><td>${attributes.S04_BUS}</td></tr>
+                                    <tr><td>Food Store Businesses</td><td>${attributes.S12_BUS}</td></tr>
+                                    <tr><td>Communication Businesses</td><td>${attributes.S06_BUS}</td></tr>
+                                    <tr><td>Apparel/Accessory Businesses</td><td>${attributes.S14_BUS}</td></tr>
+                                    <tr><td>Movie/Amusement Businesses</td><td>${attributes.S26_BUS}</td></tr>
+                                    <tr><td>Auto Services - Businesses</td><td>${attributes.S25_BUS}</td></tr>
+                                </table>`;
+                            break;
+
+                        case "educationalattainment":
+                            title = `Education facts (${searchArea})`;
+                            tableContent = `
+                                <table class="data-table">
+                                    <tr><td>Age 25+ < 9th Grade</td><td>${attributes.NOHS_CY}</td></tr>
+                                    <tr><td>Age 25+ High School/No Diploma</td><td>${attributes.SOMEHS_CY}</td></tr>
+                                    <tr><td>Age 25+ High School Diploma</td><td>${attributes.HSGRAD_CY}</td></tr>
+                                    <tr><td>Age 25+ Associate's Degree</td><td>${attributes.ASSCDEG_CY}</td></tr>
+                                    <tr><td>Age 25+ Bachelor's Degree</td><td>${attributes.BACHDEG_CY}</td></tr>
+                                    <tr><td>Age 25+ Grad/Professional Degree</td><td>${attributes.GRADDEG_CY}</td></tr>
+                                </table>`;
+                            break;
+                    }
+
+                    view.openPopup({
+                        location: popupLocation,
+                        title: title,
+                        content: tableContent
+                    });
+
+                    // Create buffer or service area visualization
+                    if (geometry.type === "point") {
+                        let areaGeometry;
+                        if (activeTool === "drive" && driveTimeArea) {
+                            areaGeometry = driveTimeArea;
+                        } else {
+                            // Create a 1-mile buffer for regular point analysis
+                            areaGeometry = geometryEngine.geodesicBuffer(geometry, 1, "miles");
+                        }
+
+                        const graphicArea = new Graphic({
+                            geometry: areaGeometry,
+                            symbol: {
+                                type: "simple-fill",
+                                color: [50, 50, 50, 0.3],
+                                outline: {
+                                    color: [0, 0, 0, 1],
+                                    width: .5
+                                }
+                            }
+                        });
+                        view.graphics.removeAll();
+                        view.graphics.add(graphicArea);
+                    }
+                }
+
+                function formatMoney(number) {
+                    return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+                }
+            });
+    </script>
+</head>
+
+<body>
+    <div id="viewDiv"></div>
+    <div id="toolbar">
+        <calcite-button id="pointButton" appearance="solid" color="neutral" scale="m">
+            <calcite-icon icon="buffer-point" scale="m"></calcite-icon>
+        </calcite-button>
+        <calcite-button id="polygonButton" appearance="solid" color="neutral" scale="m">
+            <calcite-icon icon="polygon" scale="m"></calcite-icon>
+        </calcite-button>
+        <calcite-button id="centerButton" appearance="solid" color="neutral" scale="m">
+            <calcite-icon icon="layer-polygon" scale="m"></calcite-icon>
+        </calcite-button>
+        <calcite-button id="driveButton" appearance="solid" color="neutral" scale="m" title="Drive Time Analysis">
+            <calcite-icon icon="car" scale="m"></calcite-icon>
+        </calcite-button>
+        <calcite-button id="basemapGalleryButton" appearance="solid" color="neutral" scale="m" title="Basemap Gallery">
+            <calcite-icon icon="basemap" scale="m"></calcite-icon>
+        </calcite-button>
+    </div>
+    <div id="basemapGalleryContainer" style="display:none; position:absolute; z-index:1000; background:white; border-radius:4px; box-shadow:0 1px 4px rgba(0,0,0,0.3); right:15px; width:1050px; border:1px solid #ccc;">
+        <arcgis-basemap-gallery id="arcgisBasemapGallery"></arcgis-basemap-gallery>
+    </div>
+    <div id="selectContainer" class="esri-widget">
+        <select id="selectDataCollection" class="esri-select esri-input" style="font-size: 16px; padding: 2px 4px;">
+            <option value="">Select a data collection...</option>
+            <option selected value="householdincome">Household Income</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="populationtotals">Population Totals</option>
+            <option value="businesses">Businesses</option>
+            <option value="educationalattainment">Education</option>
+            <option value="HistoricalHousing">Historical Housing</option>
+        </select>
+        <select id="selectVariable" class="esri-select esri-input" style="font-size: 16px; padding: 2px 4px;">
+            <option value="">Select a variable...</option>
+        </select>
+    </div>
+</body>
+
+</html>
