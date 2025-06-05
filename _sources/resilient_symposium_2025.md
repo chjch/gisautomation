@@ -31,3 +31,7 @@ Check out this [live example](https://chjch.github.io/gisautomation/_static/geoe
 ```{image} _static/images/APIforPython.png
 :alt: APIforPython
 ```
+
+## 2. Using GeoEnrichment with Python in Google Colab
+
+### 2.1 How to access GeoEnrichment service?
