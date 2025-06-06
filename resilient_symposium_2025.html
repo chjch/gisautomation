@@ -71,6 +71,8 @@
                 gtag('config', 'G-55C2BQ9HQX');
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'resilient_symposium_2025';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -453,10 +455,19 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agenda">Agenda</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-geoenrichment">1. What is GeoEnrichment?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-geoenrichment-with-python-in-google-colab">2. Using GeoEnrichment with Python in Google Colab</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-access-geoenrichment-service">2.1 How to access GeoEnrichment service?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-geoenrichment-in-google-colab">2. Using GeoEnrichment in Google Colab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-access-geoenrichment-service">2.1 How to access GeoEnrichment service</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-in-google-colab">2.2 Create a Notebook in Google Colab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-geoenrichment-work">2.3 How does GeoEnrichment work</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#develop-a-web-app-with-cursor">3. Develop a Web App with Cursor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-web-map-using-prompts">3.1 Create a web map using prompts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-api-key-and-change-the-basemap">3.2 Add api key and change the basemap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-geoenrichment-service">3.3 Add GeoEnrichment service</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">4. Conclusion</a></li>
 </ul>
             </nav>
         </div>
@@ -498,13 +509,707 @@ document.write(`
 </ul>
 </div>
 <p>Check out this <a class="reference external" href="https://chjch.github.io/gisautomation/_static/geoenrichment.html">live example</a>.</p>
-<img alt="APIforPython" src="_images/APIforPython.png" />
 </section>
-<section id="using-geoenrichment-with-python-in-google-colab">
-<h2>2. Using GeoEnrichment with Python in Google Colab<a class="headerlink" href="#using-geoenrichment-with-python-in-google-colab" title="Link to this heading">#</a></h2>
+<section id="using-geoenrichment-in-google-colab">
+<h2>2. Using GeoEnrichment in Google Colab<a class="headerlink" href="#using-geoenrichment-in-google-colab" title="Link to this heading">#</a></h2>
 <section id="how-to-access-geoenrichment-service">
-<h3>2.1 How to access GeoEnrichment service?<a class="headerlink" href="#how-to-access-geoenrichment-service" title="Link to this heading">#</a></h3>
+<h3>2.1 How to access GeoEnrichment service<a class="headerlink" href="#how-to-access-geoenrichment-service" title="Link to this heading">#</a></h3>
+<p>To perform GeoEnrichment, we need to utilize Esri’s <a class="reference external" href="https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/#api-support">GeoEnrichment service</a>. The service provides over <strong>15,000</strong> data variables (data fields) with coverage for more than 150 countries and regions.</p>
+<p>An <strong>access token</strong> is <em>required</em> to use the service for developers who have an <a class="reference external" href="https://developers.arcgis.com/documentation/glossary/arcgis-location-platform-account/">ArcGIS Location Platform</a> account or <a class="reference external" href="https://developers.arcgis.com/documentation/glossary/arcgis-online-account/">ArcGIS Online account</a>.</p>
+<p>The service can be used with many Esri APIs (Application Programming Interfaces), such as <em>ArcGIS Maps SDK</em> and <em>ArcGIS REST JS</em>. Among them, only ArcGIS Python API offers <a class="reference external" href="https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/#api-support">Full Support</a>.</p>
+<div class="admonition-api-key-for-this-workshop-only admonition">
+<p class="admonition-title">API Key (for this workshop only)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>AAPTxy8BH1VEsoebNVZXo8HurOB-qUDlHkp2KVuV5t-oSPzbtZJWBxFY-pE-rlUKOswgNr30Xf652G73pBqrpNjoWI-KrgkeP4i5jYeq3BczHmj695E-_OZA4Ekk2dyHuLwH6nhi5aui1WZQqHB8Z5q7p0Yx03keZlBiuuNqN32wxbbIv4rs5P0ZBoZamtElNuZrULn8uRnA5Dkvl7XzVkA-B4B9oIU3h-7XRUsADZFgZbQ.AT1_Z9N4skKF
+</pre></div>
+</div>
+</div>
+<p>Refer to <a class="reference external" href="https://chjch.github.io/gisautomation/modules/7-2.geoenrichment.html#user-authentication">this</a> for more details on user authentication and creating an access token.</p>
 </section>
+<section id="create-a-notebook-in-google-colab">
+<h3>2.2 Create a Notebook in Google Colab<a class="headerlink" href="#create-a-notebook-in-google-colab" title="Link to this heading">#</a></h3>
+<figure class="align-right" id="google-colab-logo">
+<a class="mb-3 reference internal image-reference" href="_images/Google_Colaboratory_SVG_Logo.svg"><img alt="Google Colab Logo" class="mb-3" src="_images/Google_Colaboratory_SVG_Logo.svg" style="width: 200px;" />
+</a>
+</figure>
+<p><a class="reference external" href="https://colab.research.google.com/">Google Colab</a> is a free, cloud-based Jupyter notebook environment that requires no setup. It provides:</p>
+<ul class="simple">
+<li><p>Free access to GPUs and TPUs</p></li>
+<li><p>Pre-installed data science libraries</p></li>
+<li><p>Easy sharing and collaboration</p></li>
+<li><p>Integration with Google Drive</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Access Google Colab</p>
+<p>Navigate to <a class="reference external" href="https://colab.research.google.com">https://colab.research.google.com</a> to create a new notebook.
+You can also go to Google Drive first and then click on the “New” button and then “Google Colaboratory” to create a new notebook.
+If you have multiple Google accounts, you can switch to the account you want by use the <code class="docutils literal notranslate"><span class="pre">authuser</span></code> parameter. For example,
+<a class="reference external" href="https://colab.research.google.com/?authuser=1">https://colab.research.google.com/?authuser=1</a></p>
+</div>
+<p>To get started, we’ll install the <a class="reference external" href="https://developers.arcgis.com/python/">ArcGIS API for Python</a> and its dependencies.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span><span class="o">==</span><span class="mf">1.24.3</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">arcgis</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">arcgis</span><span class="o">-</span><span class="n">mapping</span>
+</pre></div>
+</div>
+<p>Copy the above code to the first <strong>cell</strong> of the notebook and run it. You can do that by clicking on the <strong>Run</strong> button (at the beginning of the cell) or pressing <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">ArcGIS API for Python</p>
+<figure class="align-right" id="api-for-python">
+<a class="reference internal image-reference" href="_images/APIforPython.png"><img alt="api for python" src="_images/APIforPython.png" style="width: 100px;" />
+</a>
+</figure>
+<p>The ArcGIS API for Python, i.e., the <code class="docutils literal notranslate"><span class="pre">arcgis</span></code> package, is a powerful, modern and easy to use Pythonic library to perform GIS visualization and analysis, spatial data management and GIS system administration tasks that can run both in an interactive fashion, and using scripts.</p>
+<p>The package is shipped with a standard ArcGIS Pro installation. The API is distributed as the <code class="docutils literal notranslate"><span class="pre">arcgis</span></code> package via <strong>conda</strong> and <strong>pip</strong>. Within the <code class="docutils literal notranslate"><span class="pre">arcgis</span></code> package, which represents the generic GIS model, functionality is organized into a number of different modules that makes it simple to use and understand. Each module has a handful of types and functions that are focused towards one aspect of the GIS.</p>
+</div>
+<p>Now let’s add the API key to the notebook.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+
+<span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;AAPTxy8BH1VEsoebNVZXo8HurOB-qUDlHkp2KVuV5t-oSPzbtZJWBxFY-pE-rlUKOswgNr30Xf652G73pBqrpNjoWI-KrgkeP4i5jYeq3BczHmj695E-_OZA4Ekk2dyHuLwH6nhi5aui1WZQqHB8Z5q7p0Yx03keZlBiuuNqN32wxbbIv4rs5P0ZBoZamtElNuZrULn8uRnA5Dkvl7XzVkA-B4B9oIU3h-7XRUsADZFgZbQ.AT1_Z9N4skKF&quot;</span>
+
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We have successfully created a GIS object. Now what can GIS do? Right, we use GIS to create maps.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">map</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">()</span>
+<span class="nb">map</span>
+</pre></div>
+</div>
+<p>Congratulations! You have just created a map in your browser using Python.</p>
+<p>Now let’s do some configuration to the map.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">map</span><span class="o">.</span><span class="n">basemap</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="s2">&quot;arcgis-navigation&quot;</span>  <span class="c1"># set the basemap</span>
+<span class="nb">map</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">2.900060</span><span class="p">,</span> <span class="o">-</span><span class="mf">79.009290</span><span class="p">]</span>       <span class="c1"># set the map&#39;s center</span>
+<span class="nb">map</span><span class="o">.</span><span class="n">zoom</span> <span class="o">=</span> <span class="mi">12</span>                              <span class="c1"># set the zoom level</span>
+</pre></div>
+</div>
+<p>We have centered the map at the coordinates of UCuenca. Let’s add that point to the map.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arcgis.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
+
+<span class="n">pt</span> <span class="o">=</span> <span class="n">Point</span><span class="p">({</span>
+    <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">79.009290</span><span class="p">,</span>   <span class="c1"># longitude</span>
+    <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">2.900060</span><span class="p">,</span>    <span class="c1"># latitude</span>
+    <span class="s2">&quot;spatialReference&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">4326</span><span class="p">}</span> <span class="c1"># WGS84</span>
+<span class="p">})</span>
+
+<span class="nb">map</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>   <span class="c1"># draw the point</span>
+</pre></div>
+</div>
+<p>Now, let’s figure out how many people live within 0.5, 1, and 2 kilometers from the point. To do that, we need to use the <code class="docutils literal notranslate"><span class="pre">enrich</span></code> function from the <code class="docutils literal notranslate"><span class="pre">arcgis.geoenrichment</span></code> module.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import pandas to store the results</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">arcgis.geoenrichment</span> <span class="kn">import</span> <span class="n">BufferStudyArea</span><span class="p">,</span> <span class="n">enrich</span>
+<span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">PopupInfo</span>
+
+<span class="n">buffered</span> <span class="o">=</span> <span class="n">BufferStudyArea</span><span class="p">(</span><span class="n">area</span><span class="o">=</span><span class="n">pt</span><span class="p">,</span> <span class="n">radii</span><span class="o">=</span><span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">],</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;Meters&#39;</span><span class="p">)</span>
+
+<span class="c1">#enrich using keyglobalfacts data collection and return geometry</span>
+<span class="n">result_data_frame</span> <span class="o">=</span> <span class="n">enrich</span><span class="p">(</span>
+    <span class="n">study_areas</span><span class="o">=</span><span class="p">[</span><span class="n">buffered</span><span class="p">],</span> 
+    <span class="n">data_collections</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;KeyFacts&#39;</span><span class="p">],</span>
+    <span class="n">return_geometry</span><span class="o">=</span><span class="kc">False</span>  <span class="c1"># skip returning geometry</span>
+<span class="p">)</span>
+<span class="n">result_data_frame</span>
+</pre></div>
+</div>
+<p>Now let’s put those buffers on the map and add the population information to the <strong>Popup</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arcgis.map.popups</span> <span class="kn">import</span> <span class="n">PopupInfo</span>
+
+<span class="n">result_data_frame</span> <span class="o">=</span> <span class="n">enrich</span><span class="p">(</span>
+    <span class="n">study_areas</span><span class="o">=</span><span class="p">[</span><span class="n">buffered</span><span class="p">],</span> 
+    <span class="n">data_collections</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;KeyFacts&#39;</span><span class="p">],</span>
+    <span class="n">return_geometry</span><span class="o">=</span><span class="kc">True</span>  <span class="c1"># return geometry to display on map</span>
+<span class="p">)</span>
+
+<span class="c1"># Draw each buffer with PopupInfo</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result_data_frame</span><span class="p">)):</span>
+    <span class="n">popup</span> <span class="o">=</span> <span class="n">PopupInfo</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Buffer </span><span class="si">{</span><span class="n">result_data_frame</span><span class="o">.</span><span class="n">buffer_radii</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">m&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Total Population: </span><span class="si">{</span><span class="n">result_data_frame</span><span class="o">.</span><span class="n">totpop</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="nb">map</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">result_data_frame</span><span class="o">.</span><span class="n">SHAPE</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">popup</span><span class="o">=</span><span class="n">popup</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="how-does-geoenrichment-work">
+<h3>2.3 How does GeoEnrichment work<a class="headerlink" href="#how-does-geoenrichment-work" title="Link to this heading">#</a></h3>
+<p>The GeoEnrichment service uses a <strong>Data Apportionment</strong> algorithm to redistribute demographic, data to input polygon features the user defined. The algorithm analyzes each polygon to be enriched relative to a point dataset (settlements) and a detailed dataset of reporting unit polygons that contain attributes for the selected variables. Based on how each polygon being enriched overlays these datasets, the algorithm determines the appropriate amount of each variable to assign.</p>
+<figure class="align-center" id="data-apportionment">
+<a class="reference internal image-reference" href="_images/data_apportionment.png"><img alt="data-apportionment" src="_images/data_apportionment.png" style="width: 50%;" />
+</a>
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">Note</p>
+<p>The GeoEnrichment service uses a <strong>dasymetric apportionment technique</strong> to aggregate census based demographic data for smaller areas. If areas are very small and do not intersect any census block data the service returns zero values. The GeoEnrichment service provides an estimate of population and does not count roof tops.</p>
+</div>
+<div class="math notranslate nohighlight">
+\[
+w_i = \sum_{B \in P_i \cap T} W_i(B)
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(B\)</span> is a block and <span class="math notranslate nohighlight">\(W_i(B)\)</span> is a weight of this block in the site <span class="math notranslate nohighlight">\(P_i\)</span> which equals to,</p>
+<div class="math notranslate nohighlight">
+\[
+W_i(B) = \frac{V^{\text{TOTPOP}}(B)}{\sum_{B' \in P_i} V^{\text{TOTPOP}}(B')}.
+\]</div>
+<p>For more details, please refer to the <a class="reference external" href="https://developers.arcgis.com/rest/geoenrichment/data-apportionment/#apportionment-methodology">Apportionment Methodology</a>.</p>
+</section>
+</section>
+<section id="develop-a-web-app-with-cursor">
+<h2>3. Develop a Web App with Cursor<a class="headerlink" href="#develop-a-web-app-with-cursor" title="Link to this heading">#</a></h2>
+<figure class="align-right" id="cursor">
+<a class="reference internal image-reference" href="_images/cursor.svg"><img alt="cursor" src="_images/cursor.svg" style="width: 100px;" />
+</a>
+</figure>
+<p><a class="reference external" href="https://www.cursor.com/">Cursor</a> is an Integrated Development Environment (IDE), or simply a code editor, built on top of <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>, designed with AI assistance at its core. It offers developers tools to <strong>generate</strong>, <strong>refactor</strong>, and navigate code more efficiently using <strong>integrated language models</strong> (e.g., GPT-4o, claude-4-sonnet, gemini-2.5-pro, etc.). By understanding the structure and context of your codebase, Cursor aims to streamline common development tasks without requiring you to leave your editor.</p>
+<p>With features like <em>in-line code suggestions</em>, <strong>intelligent search</strong>, and <strong>natural language explanations</strong>, Cursor is intended to support developers in writing, reviewing, and maintaining code. Its goal is not to replace traditional workflows, but to enhance productivity and reduce friction in the software development process.</p>
+<p>Navigate to <a class="reference external" href="https://www.cursor.com/">Cursor</a> and sign up for a free account to download the software.</p>
+<section id="create-a-web-map-using-prompts">
+<h3>3.1 Create a web map using prompts<a class="headerlink" href="#create-a-web-map-using-prompts" title="Link to this heading">#</a></h3>
+<p>In the Agent mode, you can ask Cursor to create a web map using prompts. Note that we’ll be creating a self-contained <strong>HTML</strong> file with <strong>CSS</strong> and <strong>JavaScript</strong> embedded in it.</p>
+<p>Our web map is built on top of <a class="reference external" href="https://developers.arcgis.com/javascript/">ArcGIS Maps SDK for JavaScript</a>, which is a powerful tool for creating interactive maps.</p>
+<p>Let’s try with the following prompt:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Create a web map using ArcGIS Maps SDK for JavaScript 4.32. The map should be centered at the coordinates of UCuenca, Ecuador.
+</pre></div>
+</div>
+<p>This is the result:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;initial-scale=1, maximum-scale=1, user-scalable=no&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>UCuenca Map<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://js.arcgis.com/4.32/esri/themes/light/main.css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://js.arcgis.com/4.32/&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nt">html</span><span class="o">,</span>
+<span class="w">        </span><span class="nt">body</span><span class="o">,</span>
+<span class="w">        </span><span class="p">#</span><span class="nn">viewDiv</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nx">require</span><span class="p">([</span>
+<span class="w">            </span><span class="s2">&quot;esri/Map&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/views/MapView&quot;</span>
+<span class="w">        </span><span class="p">],</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nb">Map</span><span class="p">,</span><span class="w"> </span><span class="nx">MapView</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Create a Map instance</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">({</span>
+<span class="w">                </span><span class="nx">basemap</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;topo-vector&quot;</span>
+<span class="w">            </span><span class="p">});</span>
+
+<span class="w">            </span><span class="c1">// Create a MapView instance</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">view</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MapView</span><span class="p">({</span>
+<span class="w">                </span><span class="nx">container</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;viewDiv&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">map</span><span class="o">:</span><span class="w"> </span><span class="nx">map</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">center</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mf">78.9875</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">2.9006</span><span class="p">],</span><span class="w"> </span><span class="c1">// Coordinates of Universidad de Cuenca</span>
+<span class="w">                </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="mf">15</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;viewDiv&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Extension</p>
+<figure class="align-right" id="live-server">
+<a class="reference internal image-reference" href="_images/live_server.png"><img alt="live-server" src="_images/live_server.png" style="width: 100px;" />
+</a>
+</figure>
+<p>Click on the <strong>Extension</strong> icon in the left sidebar and search for <strong>Live Server</strong> to install the extension. The live server will start a <strong>local server</strong> and allow you to see your web map in your defalut web browser.</p>
+<p>There are many other great extensions in the Marketplace to make your coding experience more efficient and productive.</p>
+</div>
+</section>
+<section id="add-api-key-and-change-the-basemap">
+<h3>3.2 Add api key and change the basemap<a class="headerlink" href="#add-api-key-and-change-the-basemap" title="Link to this heading">#</a></h3>
+<p>Try the following prompt:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>My api key is AAPTxy8BH1VEsoebNVZXo8HurOB-qUDlHkp2KVuV5t-oSPzbtZJWBxFY-pE-rlUKOswgNr30Xf652G73pBqrpNjoWI-KrgkeP4i5jYeq3BczHmj695E-_OZA4Ekk2dyHuLwH6nhi5aui1WZQqHB8Z5q7p0Yx03keZlBiuuNqN32wxbbIv4rs5P0ZBoZamtElNuZrULn8uRnA5Dkvl7XzVkA-B4B9oIU3h-7XRUsADZFgZbQ.AT1_Z9N4skKF
+
+Please make the default basemap &quot;arcgis/navigation&quot;, the exact name of the basemap.
+</pre></div>
+</div>
+</section>
+<section id="add-geoenrichment-service">
+<h3>3.3 Add GeoEnrichment service<a class="headerlink" href="#add-geoenrichment-service" title="Link to this heading">#</a></h3>
+<p>Now let’s add a toolbar to the map with the following prompt:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Add the sketch widget to the top right of the map.
+</pre></div>
+</div>
+<p>And this is the result:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;initial-scale=1, maximum-scale=1, user-scalable=no&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>UCuenca Map<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://js.arcgis.com/4.32/esri/themes/light/main.css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://js.arcgis.com/4.32/&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nt">html</span><span class="o">,</span>
+<span class="w">        </span><span class="nt">body</span><span class="o">,</span>
+<span class="w">        </span><span class="p">#</span><span class="nn">viewDiv</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nx">require</span><span class="p">([</span>
+<span class="w">            </span><span class="s2">&quot;esri/Map&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/views/MapView&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/config&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/widgets/Sketch&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/layers/GraphicsLayer&quot;</span>
+<span class="w">        </span><span class="p">],</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nb">Map</span><span class="p">,</span><span class="w"> </span><span class="nx">MapView</span><span class="p">,</span><span class="w"> </span><span class="nx">esriConfig</span><span class="p">,</span><span class="w"> </span><span class="nx">Sketch</span><span class="p">,</span><span class="w"> </span><span class="nx">GraphicsLayer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Set the API key</span>
+<span class="w">            </span><span class="nx">esriConfig</span><span class="p">.</span><span class="nx">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;AAPTxy8BH1VEsoebNVZXo8HurOB-qUDlHkp2KVuV5t-oSPzbtZJWBxFY-pE-rlUKOswgNr30Xf652G73pBqrpNjoWI-KrgkeP4i5jYeq3BczHmj695E-_OZA4Ekk2dyHuLwH6nhi5aui1WZQqHB8Z5q7p0Yx03keZlBiuuNqN32wxbbIv4rs5P0ZBoZamtElNuZrULn8uRnA5Dkvl7XzVkA-B4B9oIU3h-7XRUsADZFgZbQ.AT1_Z9N4skKF&quot;</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// Create a graphics layer for the sketch widget</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">graphicsLayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GraphicsLayer</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// Create a Map instance</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">({</span>
+<span class="w">                </span><span class="nx">basemap</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;arcgis/navigation&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">layers</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">graphicsLayer</span><span class="p">]</span>
+<span class="w">            </span><span class="p">});</span>
+
+<span class="w">            </span><span class="c1">// Create a MapView instance</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">view</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MapView</span><span class="p">({</span>
+<span class="w">                </span><span class="nx">container</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;viewDiv&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">map</span><span class="o">:</span><span class="w"> </span><span class="nx">map</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">center</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mf">78.9875</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">2.9006</span><span class="p">],</span><span class="w"> </span><span class="c1">// Coordinates of Universidad de Cuenca</span>
+<span class="w">                </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="mf">15</span>
+<span class="w">            </span><span class="p">});</span>
+
+<span class="w">            </span><span class="c1">// Create the sketch widget</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">sketch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Sketch</span><span class="p">({</span>
+<span class="w">                </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="nx">view</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">layer</span><span class="o">:</span><span class="w"> </span><span class="nx">graphicsLayer</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">creationMode</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;hybrid&quot;</span>
+<span class="w">            </span><span class="p">});</span>
+
+<span class="w">            </span><span class="c1">// Add the sketch widget to the top right of the view</span>
+<span class="w">            </span><span class="nx">view</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">sketch</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;top-right&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;viewDiv&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Let’s add the GeoEnrichment service to the map.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>when a point is being clicked I want to run the GeoEnrichment service using the point is center and with 500, 1000, and 2000 meter buffers to query &quot;KeyFacts&quot; about these polygons. using my api key and the ArcGIS REST API to make the request to the service.
+</pre></div>
+</div>
+<p>Here is the result:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;initial-scale=1, maximum-scale=1, user-scalable=no&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>UCuenca Map<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://js.arcgis.com/4.32/esri/themes/light/main.css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://js.arcgis.com/4.32/&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nt">html</span><span class="o">,</span>
+<span class="w">        </span><span class="nt">body</span><span class="o">,</span>
+<span class="w">        </span><span class="p">#</span><span class="nn">viewDiv</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="p">#</span><span class="nn">infoDiv</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">            </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span>
+<span class="w">            </span><span class="k">top</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">            </span><span class="k">left</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">            </span><span class="k">z-index</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">            </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">            </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.2</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nx">require</span><span class="p">([</span>
+<span class="w">            </span><span class="s2">&quot;esri/Map&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/views/MapView&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/config&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/widgets/Sketch&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/layers/GraphicsLayer&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/Graphic&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/geometry/Point&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/geometry/Polygon&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/geometry/geometryEngine&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/symbols/SimpleFillSymbol&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/symbols/SimpleLineSymbol&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/Color&quot;</span>
+<span class="w">        </span><span class="p">],</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nb">Map</span><span class="p">,</span><span class="w"> </span><span class="nx">MapView</span><span class="p">,</span><span class="w"> </span><span class="nx">esriConfig</span><span class="p">,</span><span class="w"> </span><span class="nx">Sketch</span><span class="p">,</span><span class="w"> </span><span class="nx">GraphicsLayer</span><span class="p">,</span><span class="w"> </span><span class="nx">Graphic</span><span class="p">,</span><span class="w"> </span><span class="nx">Point</span><span class="p">,</span><span class="w"> </span><span class="nx">Polygon</span><span class="p">,</span><span class="w"> </span><span class="nx">geometryEngine</span><span class="p">,</span><span class="w"> </span><span class="nx">SimpleFillSymbol</span><span class="p">,</span><span class="w"> </span><span class="nx">SimpleLineSymbol</span><span class="p">,</span><span class="w"> </span><span class="nx">Color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Set the API key</span>
+<span class="w">            </span><span class="nx">esriConfig</span><span class="p">.</span><span class="nx">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;AAPTxy8BH1VEsoebNVZXo8HurOB-qUDlHkp2KVuV5t-oSPzbtZJWBxFY-pE-rlUKOswgNr30Xf652G73pBqrpNjoWI-KrgkeP4i5jYeq3BczHmj695E-_OZA4Ekk2dyHuLwH6nhi5aui1WZQqHB8Z5q7p0Yx03keZlBiuuNqN32wxbbIv4rs5P0ZBoZamtElNuZrULn8uRnA5Dkvl7XzVkA-B4B9oIU3h-7XRUsADZFgZbQ.AT1_Z9N4skKF&quot;</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// Create a graphics layer for the sketch widget and buffers</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">graphicsLayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GraphicsLayer</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// Create a Map instance</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">({</span>
+<span class="w">                </span><span class="nx">basemap</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;arcgis/navigation&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">layers</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">graphicsLayer</span><span class="p">]</span>
+<span class="w">            </span><span class="p">});</span>
+
+<span class="w">            </span><span class="c1">// Create a MapView instance</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">view</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MapView</span><span class="p">({</span>
+<span class="w">                </span><span class="nx">container</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;viewDiv&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">map</span><span class="o">:</span><span class="w"> </span><span class="nx">map</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">center</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mf">78.9875</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">2.9006</span><span class="p">],</span><span class="w"> </span><span class="c1">// Coordinates of Universidad de Cuenca</span>
+<span class="w">                </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="mf">15</span>
+<span class="w">            </span><span class="p">});</span>
+
+<span class="w">            </span><span class="c1">// Create the sketch widget</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">sketch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Sketch</span><span class="p">({</span>
+<span class="w">                </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="nx">view</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">layer</span><span class="o">:</span><span class="w"> </span><span class="nx">graphicsLayer</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">creationMode</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;hybrid&quot;</span>
+<span class="w">            </span><span class="p">});</span>
+
+<span class="w">            </span><span class="c1">// Add the sketch widget to the top right of the view</span>
+<span class="w">            </span><span class="nx">view</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">sketch</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;top-right&quot;</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Create info div</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">infoDiv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="nx">infoDiv</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;infoDiv&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">infoDiv</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;h3&gt;Buffer Analysis&lt;/h3&gt;&lt;p&gt;Click a point to see KeyFacts for different buffer zones.&lt;/p&gt;&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">view</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">infoDiv</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;top-left&quot;</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Function to create buffer and query GeoEnrichment</span>
+<span class="w">            </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">analyzePoint</span><span class="p">(</span><span class="nx">point</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="kd">const</span><span class="w"> </span><span class="nx">buffers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span><span class="w"> </span><span class="mf">2000</span><span class="p">];</span><span class="w"> </span><span class="c1">// Buffer distances in meters</span>
+<span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+
+<span class="w">                </span><span class="c1">// Clear previous graphics</span>
+<span class="w">                </span><span class="nx">graphicsLayer</span><span class="p">.</span><span class="nx">removeAll</span><span class="p">();</span>
+
+<span class="w">                </span><span class="c1">// Add the clicked point</span>
+<span class="w">                </span><span class="kd">const</span><span class="w"> </span><span class="nx">pointGraphic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Graphic</span><span class="p">({</span>
+<span class="w">                    </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="nx">point</span><span class="p">,</span>
+<span class="w">                    </span><span class="nx">symbol</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;simple-marker&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;circle&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nx">size</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;8px&quot;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">});</span>
+<span class="w">                </span><span class="nx">graphicsLayer</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">pointGraphic</span><span class="p">);</span>
+
+<span class="w">                </span><span class="c1">// Create buffers and query for each</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">distance</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">buffers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">// Create buffer</span>
+<span class="w">                    </span><span class="kd">const</span><span class="w"> </span><span class="nx">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geometryEngine</span><span class="p">.</span><span class="nx">buffer</span><span class="p">(</span><span class="nx">point</span><span class="p">,</span><span class="w"> </span><span class="nx">distance</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;meters&quot;</span><span class="p">);</span>
+<span class="w">                    </span>
+<span class="w">                    </span><span class="c1">// Create buffer graphic</span>
+<span class="w">                    </span><span class="kd">const</span><span class="w"> </span><span class="nx">bufferGraphic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Graphic</span><span class="p">({</span>
+<span class="w">                        </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="nx">buffer</span><span class="p">,</span>
+<span class="w">                        </span><span class="nx">symbol</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">SimpleFillSymbol</span><span class="p">({</span>
+<span class="w">                            </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Color</span><span class="p">([</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">]),</span>
+<span class="w">                            </span><span class="nx">outline</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">SimpleLineSymbol</span><span class="p">({</span>
+<span class="w">                                </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Color</span><span class="p">([</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">]),</span>
+<span class="w">                                </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span>
+<span class="w">                            </span><span class="p">})</span>
+<span class="w">                        </span><span class="p">})</span>
+<span class="w">                    </span><span class="p">});</span>
+<span class="w">                    </span><span class="nx">graphicsLayer</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">bufferGraphic</span><span class="p">);</span>
+
+<span class="w">                    </span><span class="c1">// Query GeoEnrichment service</span>
+<span class="w">                    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://geoenrich.arcgis.com/arcgis/rest/services/World/GeoenrichmentServer/Geoenrichment/enrich&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                            </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/x-www-form-urlencoded&quot;</span>
+<span class="w">                            </span><span class="p">},</span>
+<span class="w">                            </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URLSearchParams</span><span class="p">({</span>
+<span class="w">                                </span><span class="nx">f</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="nx">esriConfig</span><span class="p">.</span><span class="nx">apiKey</span><span class="p">,</span>
+<span class="w">                                </span><span class="nx">studyAreas</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">([{</span>
+<span class="w">                                    </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="nx">buffer</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">()</span>
+<span class="w">                                </span><span class="p">}]),</span>
+<span class="w">                                </span><span class="nx">dataCollections</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;KeyFacts&quot;</span><span class="p">],</span>
+<span class="w">                                </span><span class="nx">returnGeometry</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">                            </span><span class="p">})</span>
+<span class="w">                        </span><span class="p">});</span>
+
+<span class="w">                        </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">                        </span><span class="nx">results</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+<span class="w">                            </span><span class="nx">distance</span><span class="o">:</span><span class="w"> </span><span class="nx">distance</span><span class="p">,</span>
+<span class="w">                            </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nx">data</span>
+<span class="w">                        </span><span class="p">});</span>
+<span class="w">                    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error querying GeoEnrichment service:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+
+<span class="w">                </span><span class="c1">// Update info div with results</span>
+<span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="nx">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;h3&gt;Buffer Analysis Results&lt;/h3&gt;&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="nx">results</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">data</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">results</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="kd">const</span><span class="w"> </span><span class="nx">keyFacts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">value</span><span class="p">.</span><span class="nx">FeatureSet</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">features</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">attributes</span><span class="p">;</span>
+<span class="w">                        </span><span class="nx">html</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`&lt;h4&gt;</span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">distance</span><span class="si">}</span><span class="sb">m Buffer&lt;/h4&gt;`</span><span class="p">;</span>
+<span class="w">                        </span><span class="nx">html</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot;&lt;ul&gt;&quot;</span><span class="p">;</span>
+<span class="w">                        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">]</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">keyFacts</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;OBJECTID&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                </span><span class="nx">html</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`&lt;li&gt;&lt;strong&gt;</span><span class="si">${</span><span class="nx">key</span><span class="si">}</span><span class="sb">:&lt;/strong&gt; </span><span class="si">${</span><span class="nx">value</span><span class="si">}</span><span class="sb">&lt;/li&gt;`</span><span class="p">;</span>
+<span class="w">                            </span><span class="p">}</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                        </span><span class="nx">html</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot;&lt;/ul&gt;&quot;</span><span class="p">;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">});</span>
+<span class="w">                </span><span class="nx">infoDiv</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">html</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="c1">// Listen for point creation in the sketch widget</span>
+<span class="w">            </span><span class="nx">sketch</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;create&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">state</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;complete&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">graphic</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;point&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nx">analyzePoint</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">graphic</span><span class="p">.</span><span class="nx">geometry</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;viewDiv&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Let’s make some adjustments to make the display more user-friendly.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Move the zoom buttons to the bottom right and make sure the buffer analysis panel is not too long vertically (e.g., 80% of vh) and it&#39;s scrollable.
+</pre></div>
+</div>
+<p>And here is the final result:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;initial-scale=1, maximum-scale=1, user-scalable=no&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>UCuenca Map<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://js.arcgis.com/4.32/esri/themes/light/main.css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://js.arcgis.com/4.32/&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nt">html</span><span class="o">,</span>
+<span class="w">        </span><span class="nt">body</span><span class="o">,</span>
+<span class="w">        </span><span class="p">#</span><span class="nn">viewDiv</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="p">#</span><span class="nn">infoDiv</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">            </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span>
+<span class="w">            </span><span class="k">top</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">            </span><span class="k">left</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">            </span><span class="k">z-index</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">            </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">            </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.2</span><span class="p">);</span>
+<span class="w">            </span><span class="k">max-height</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="kt">vh</span><span class="p">;</span>
+<span class="w">            </span><span class="k">overflow-y</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="p">.</span><span class="nc">esri-zoom</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span>
+<span class="w">            </span><span class="k">bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">            </span><span class="k">right</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nx">require</span><span class="p">([</span>
+<span class="w">            </span><span class="s2">&quot;esri/Map&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/views/MapView&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/config&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/widgets/Sketch&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/layers/GraphicsLayer&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/Graphic&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/geometry/Point&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/geometry/Polygon&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/geometry/geometryEngine&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/symbols/SimpleFillSymbol&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/symbols/SimpleLineSymbol&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/Color&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;esri/widgets/Zoom&quot;</span>
+<span class="w">        </span><span class="p">],</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nb">Map</span><span class="p">,</span><span class="w"> </span><span class="nx">MapView</span><span class="p">,</span><span class="w"> </span><span class="nx">esriConfig</span><span class="p">,</span><span class="w"> </span><span class="nx">Sketch</span><span class="p">,</span><span class="w"> </span><span class="nx">GraphicsLayer</span><span class="p">,</span><span class="w"> </span><span class="nx">Graphic</span><span class="p">,</span><span class="w"> </span><span class="nx">Point</span><span class="p">,</span><span class="w"> </span><span class="nx">Polygon</span><span class="p">,</span><span class="w"> </span><span class="nx">geometryEngine</span><span class="p">,</span><span class="w"> </span><span class="nx">SimpleFillSymbol</span><span class="p">,</span><span class="w"> </span><span class="nx">SimpleLineSymbol</span><span class="p">,</span><span class="w"> </span><span class="nx">Color</span><span class="p">,</span><span class="w"> </span><span class="nx">Zoom</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Set the API key</span>
+<span class="w">            </span><span class="nx">esriConfig</span><span class="p">.</span><span class="nx">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;AAPTxy8BH1VEsoebNVZXo8HurOB-qUDlHkp2KVuV5t-oSPzbtZJWBxFY-pE-rlUKOswgNr30Xf652G73pBqrpNjoWI-KrgkeP4i5jYeq3BczHmj695E-_OZA4Ekk2dyHuLwH6nhi5aui1WZQqHB8Z5q7p0Yx03keZlBiuuNqN32wxbbIv4rs5P0ZBoZamtElNuZrULn8uRnA5Dkvl7XzVkA-B4B9oIU3h-7XRUsADZFgZbQ.AT1_Z9N4skKF&quot;</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// Create a graphics layer for the sketch widget and buffers</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">graphicsLayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GraphicsLayer</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// Create a Map instance</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">({</span>
+<span class="w">                </span><span class="nx">basemap</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;arcgis/navigation&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">layers</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">graphicsLayer</span><span class="p">]</span>
+<span class="w">            </span><span class="p">});</span>
+
+<span class="w">            </span><span class="c1">// Create a MapView instance</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">view</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MapView</span><span class="p">({</span>
+<span class="w">                </span><span class="nx">container</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;viewDiv&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">map</span><span class="o">:</span><span class="w"> </span><span class="nx">map</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">center</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mf">78.9875</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">2.9006</span><span class="p">],</span><span class="w"> </span><span class="c1">// Coordinates of Universidad de Cuenca</span>
+<span class="w">                </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="mf">15</span>
+<span class="w">            </span><span class="p">});</span>
+
+<span class="w">            </span><span class="c1">// Create the sketch widget</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">sketch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Sketch</span><span class="p">({</span>
+<span class="w">                </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="nx">view</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">layer</span><span class="o">:</span><span class="w"> </span><span class="nx">graphicsLayer</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">creationMode</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;hybrid&quot;</span>
+<span class="w">            </span><span class="p">});</span>
+
+<span class="w">            </span><span class="c1">// Add the sketch widget to the top right of the view</span>
+<span class="w">            </span><span class="nx">view</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">sketch</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;top-right&quot;</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Create and add zoom widget to bottom right</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">zoom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Zoom</span><span class="p">({</span>
+<span class="w">                </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="nx">view</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">            </span><span class="nx">view</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">zoom</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;bottom-right&quot;</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Create info div</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">infoDiv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="nx">infoDiv</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;infoDiv&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">infoDiv</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;h3&gt;Buffer Analysis&lt;/h3&gt;&lt;p&gt;Click a point to see KeyFacts for different buffer zones.&lt;/p&gt;&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">view</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">infoDiv</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;top-left&quot;</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Function to create buffer and query GeoEnrichment</span>
+<span class="w">            </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">analyzePoint</span><span class="p">(</span><span class="nx">point</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="kd">const</span><span class="w"> </span><span class="nx">buffers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span><span class="w"> </span><span class="mf">2000</span><span class="p">];</span><span class="w"> </span><span class="c1">// Buffer distances in meters</span>
+<span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+
+<span class="w">                </span><span class="c1">// Clear previous graphics</span>
+<span class="w">                </span><span class="nx">graphicsLayer</span><span class="p">.</span><span class="nx">removeAll</span><span class="p">();</span>
+
+<span class="w">                </span><span class="c1">// Add the clicked point</span>
+<span class="w">                </span><span class="kd">const</span><span class="w"> </span><span class="nx">pointGraphic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Graphic</span><span class="p">({</span>
+<span class="w">                    </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="nx">point</span><span class="p">,</span>
+<span class="w">                    </span><span class="nx">symbol</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;simple-marker&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;circle&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nx">size</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;8px&quot;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">});</span>
+<span class="w">                </span><span class="nx">graphicsLayer</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">pointGraphic</span><span class="p">);</span>
+
+<span class="w">                </span><span class="c1">// Create buffers and query for each</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">distance</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">buffers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">// Create buffer</span>
+<span class="w">                    </span><span class="kd">const</span><span class="w"> </span><span class="nx">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geometryEngine</span><span class="p">.</span><span class="nx">buffer</span><span class="p">(</span><span class="nx">point</span><span class="p">,</span><span class="w"> </span><span class="nx">distance</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;meters&quot;</span><span class="p">);</span>
+<span class="w">                    </span>
+<span class="w">                    </span><span class="c1">// Create buffer graphic</span>
+<span class="w">                    </span><span class="kd">const</span><span class="w"> </span><span class="nx">bufferGraphic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Graphic</span><span class="p">({</span>
+<span class="w">                        </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="nx">buffer</span><span class="p">,</span>
+<span class="w">                        </span><span class="nx">symbol</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">SimpleFillSymbol</span><span class="p">({</span>
+<span class="w">                            </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Color</span><span class="p">([</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">]),</span>
+<span class="w">                            </span><span class="nx">outline</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">SimpleLineSymbol</span><span class="p">({</span>
+<span class="w">                                </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Color</span><span class="p">([</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">255</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">]),</span>
+<span class="w">                                </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span>
+<span class="w">                            </span><span class="p">})</span>
+<span class="w">                        </span><span class="p">})</span>
+<span class="w">                    </span><span class="p">});</span>
+<span class="w">                    </span><span class="nx">graphicsLayer</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">bufferGraphic</span><span class="p">);</span>
+
+<span class="w">                    </span><span class="c1">// Query GeoEnrichment service</span>
+<span class="w">                    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://geoenrich.arcgis.com/arcgis/rest/services/World/GeoenrichmentServer/Geoenrichment/enrich&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                            </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/x-www-form-urlencoded&quot;</span>
+<span class="w">                            </span><span class="p">},</span>
+<span class="w">                            </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URLSearchParams</span><span class="p">({</span>
+<span class="w">                                </span><span class="nx">f</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="nx">esriConfig</span><span class="p">.</span><span class="nx">apiKey</span><span class="p">,</span>
+<span class="w">                                </span><span class="nx">studyAreas</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">([{</span>
+<span class="w">                                    </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="nx">buffer</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">()</span>
+<span class="w">                                </span><span class="p">}]),</span>
+<span class="w">                                </span><span class="nx">dataCollections</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;KeyFacts&quot;</span><span class="p">],</span>
+<span class="w">                                </span><span class="nx">returnGeometry</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">                            </span><span class="p">})</span>
+<span class="w">                        </span><span class="p">});</span>
+
+<span class="w">                        </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">                        </span><span class="nx">results</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+<span class="w">                            </span><span class="nx">distance</span><span class="o">:</span><span class="w"> </span><span class="nx">distance</span><span class="p">,</span>
+<span class="w">                            </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nx">data</span>
+<span class="w">                        </span><span class="p">});</span>
+<span class="w">                    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error querying GeoEnrichment service:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+
+<span class="w">                </span><span class="c1">// Update info div with results</span>
+<span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="nx">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;h3&gt;Buffer Analysis Results&lt;/h3&gt;&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="nx">results</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">data</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">results</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="kd">const</span><span class="w"> </span><span class="nx">keyFacts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">value</span><span class="p">.</span><span class="nx">FeatureSet</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">features</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">attributes</span><span class="p">;</span>
+<span class="w">                        </span><span class="nx">html</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`&lt;h4&gt;</span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">distance</span><span class="si">}</span><span class="sb">m Buffer&lt;/h4&gt;`</span><span class="p">;</span>
+<span class="w">                        </span><span class="nx">html</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot;&lt;ul&gt;&quot;</span><span class="p">;</span>
+<span class="w">                        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">]</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">keyFacts</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;OBJECTID&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                </span><span class="nx">html</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`&lt;li&gt;&lt;strong&gt;</span><span class="si">${</span><span class="nx">key</span><span class="si">}</span><span class="sb">:&lt;/strong&gt; </span><span class="si">${</span><span class="nx">value</span><span class="si">}</span><span class="sb">&lt;/li&gt;`</span><span class="p">;</span>
+<span class="w">                            </span><span class="p">}</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                        </span><span class="nx">html</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot;&lt;/ul&gt;&quot;</span><span class="p">;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">});</span>
+<span class="w">                </span><span class="nx">infoDiv</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">html</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="c1">// Listen for point creation in the sketch widget</span>
+<span class="w">            </span><span class="nx">sketch</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;create&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">state</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;complete&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">graphic</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;point&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nx">analyzePoint</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">graphic</span><span class="p">.</span><span class="nx">geometry</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;viewDiv&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Congratulations! You have just created a web map with a toolbar and a GeoEnrichment service. Now it’s yourt turn to be more creative and add more features to the web map.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>4. Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In this tutorial, we have learned how to use the ArcGIS API for Python to create a web map with a toolbar and a GeoEnrichment service. We have also learned how to use Cursor to create a web map with a toolbar and a GeoEnrichment service.</p>
+<p>We have also learned how to use the ArcGIS API for Python to create a web map with a toolbar and a GeoEnrichment service. We have also learned how to use Cursor to create a web map with a toolbar and a GeoEnrichment service.</p>
+<p>We have also learned how to use the ArcGIS API for Python to create a web map with a toolbar and a GeoEnrichment service. We have also learned how to use Cursor to create a web map with a toolbar and a GeoEnrichment service.</p>
 </section>
 </section>
 
@@ -565,10 +1270,19 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agenda">Agenda</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-geoenrichment">1. What is GeoEnrichment?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-geoenrichment-with-python-in-google-colab">2. Using GeoEnrichment with Python in Google Colab</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-access-geoenrichment-service">2.1 How to access GeoEnrichment service?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-geoenrichment-in-google-colab">2. Using GeoEnrichment in Google Colab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-access-geoenrichment-service">2.1 How to access GeoEnrichment service</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-in-google-colab">2.2 Create a Notebook in Google Colab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-geoenrichment-work">2.3 How does GeoEnrichment work</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#develop-a-web-app-with-cursor">3. Develop a Web App with Cursor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-web-map-using-prompts">3.1 Create a web map using prompts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-api-key-and-change-the-basemap">3.2 Add api key and change the basemap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-geoenrichment-service">3.3 Add GeoEnrichment service</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">4. Conclusion</a></li>
 </ul>
   </nav></div>
 
